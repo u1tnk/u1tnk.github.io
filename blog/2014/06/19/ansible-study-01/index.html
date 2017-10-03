@@ -1,0 +1,323 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>ansible 勉強会 #1メモ - u1tnk.log</title>
+  <meta name="author" content="u1tnk">
+
+  
+  <meta name="description" content="Ansible 勉強会 #1 - connpass に行ってきたのでメモ。資料は↑にほぼあるようです。 Ansible の基本 + MySQL レプリケーションを設定する事例 by @IanMLewis まさに基本。普段使ってるので大体押さえられてた。 MySQLを構築してみる bennojoy/ &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://u1tnk.github.io/blog/2014/06/19/ansible-study-01/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="u1tnk.log" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="/stylesheets/custom.css" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-2532590-5']);
+    _gaq.push(['_trackPageview']);
+    _gaq.push(['_setDomainName', 'u1tnk.github.io']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <div id="header-inner">
+    <span class="first"><a href="/">u1tnk.log</a></span>
+    <span><a href="/about">about</a></span>
+    <span><a href="http://www.github.com/">projects</a></span>
+    <span class="last"><a href="/atom.xml" title="subscribe via RSS">rss</a></span>
+  </div>
+</hgroup>
+
+</header>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Ansible 勉強会 #1メモ</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-19T10:35:00+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><a href="http://ansible-users.connpass.com/event/5968/">Ansible 勉強会 #1 - connpass</a></p>
+
+<p>に行ってきたのでメモ。資料は↑にほぼあるようです。</p>
+
+<h3>Ansible の基本 + MySQL レプリケーションを設定する事例  by @IanMLewis</h3>
+
+<p>まさに基本。普段使ってるので大体押さえられてた。</p>
+
+<h4>MySQLを構築してみる</h4>
+
+<ul>
+<li>bennojoy/ansible-roles ansibleworksの人のリポジトリらしい。参考になりそう。</li>
+<li>when あんま使いこなしてないので見とこう。</li>
+<li>サンプルyaml見ると、自分のyamlが使いこなして無い感ある…</li>
+<li>mysql_replicationモジュールは便利感あるが、ちょっと簡単そうに見えないw 基本の直後に見るのはキツい印象。</li>
+</ul>
+
+
+<h3>dynamic inventoryが便利な話: no more host list!  by  @tagomoris</h3>
+
+<ul>
+<li>某巨大メッセージングアプリ企業で普通に使ってるっぽい</li>
+<li>エージェントいらないからCentOS5でも動くという理由が大きいらしい。納得。</li>
+<li>日本語情報あんま無いのが弱点は同意。っつーか俺書け。</li>
+<li>Inventryに普通のvars定義できたという恐らくかなり基本に気づいてなかった…</li>
+<li>hoge[1:2].local → hoge1.local…とか使える。</li>
+<li>Dyanamic Inventry存在すら気づいてなかった…</li>
+<li>ec2用のscriptは既存である。</li>
+<li>JSON返すだけなので自作もラク。</li>
+<li>ansible.cfg置けば -i不要という事に気づいた。</li>
+<li>明日からマネしたい！</li>
+<li>2000台完走実績あるらしい。さすが某巨大メッセージングアプリ企業</li>
+</ul>
+
+
+<h4>おまけ</h4>
+
+<p>DynamicInventryでは_meta使って —host はスキップさせるのがオススメ。</p>
+
+<h3>callback pluginを使ったタスク実行時間の可視化について by @rudy</h3>
+
+<ul>
+<li>pluginはmoduleと違ってpythonで本体を拡張。</li>
+<li>-i “localhost, ” とかできる事に気づいて衝撃。</li>
+<li>callback_plugins に入れるだけ。実行ホストに置けば良いのラクだな。</li>
+<li>実用上は使わない気がするが、bot連携すると面白いかも。</li>
+</ul>
+
+
+<h3>AnsibleのJUNOS設定モジュールを書いてみた by @saito_hideki</h3>
+
+<p>Ansibleでルータ設定をしているという、まったく参考にはならないが衝撃の発表。</p>
+
+<h3>MSPだってansibleしたい by @LaughK</h3>
+
+<ul>
+<li>MSP(運用、保守代行)</li>
+<li>客のサーバだからに(ほとんど)何も入れなくて良いという理由。</li>
+</ul>
+
+
+<h3>目指せ、サーバー構築1200台 by @myb1126</h3>
+
+<ul>
+<li>採用はエージェントレスが決め手との事。</li>
+</ul>
+
+
+<h3>構成管理ツールAnsibleの構成管理について by @iktakahiro</h3>
+
+<ul>
+<li>playbookだけディレクトリ分けるのアリかも。</li>
+<li>「冪等性は忘れよう」w</li>
+<li>発表されてたのは複雑な気がする…とはいえbest practiceは複数サービスになると厳しいので、考えないとまずそう。</li>
+</ul>
+
+
+<h3>Vagrant × Ansible by @tomohiro_urakawa</h3>
+
+<ul>
+<li>inventoryはvagrantが生成すんのか。べんりー</li>
+<li>Vagrant provisionで実行</li>
+<li>正直言うとそれでもわざわざVagrantに実行させるメリットが見えない…っつーか小さくしか見えない。</li>
+</ul>
+
+
+<h3>chefからansibleに乗り換えた話 by @futoase</h3>
+
+<p>やはりchefより良いのは以下2点
+- 対象に何も入れなくて良い
+- 上から順に実行されるから分かりやすい → 「孤独なchef使い]になりにくい</p>
+
+<h2>所感</h2>
+
+<ul>
+<li>想像しているより使われてる</li>
+<li>2000台相手にしても大丈夫というのは安心感ある</li>
+<li>やはり採用にあたり大きいのは以下2点
+
+<ul>
+<li>対象ホストに何も入れなく良い</li>
+<li>「上から実行」という分かり易さ</li>
+</ul>
+</li>
+<li>個人的にはchef等と違ってpush型が基本なので、全サーバに設定ファイル配布…とか小さいところか試しやすいってのも大きい気がする。</li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">u1tnk</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-19T10:35:00+09:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/ansible/'>ansible</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://u1tnk.github.io/blog/2014/06/19/ansible-study-01/" data-via="" data-counturl="http://u1tnk.github.io/blog/2014/06/19/ansible-study-01/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/04/17/aws-price/" title="Previous Post: EC2インスタンス価格の必要なところだけ表にしてみた">&laquo; EC2インスタンス価格の必要なところだけ表にしてみた</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/08/14/grape-research/" title="Next Post: Grapeが良さそうだったけどやめた">Grapeが良さそうだったけどやめた &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/10/04/free/">もともと自営業ですが真の自営業になりました</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/08/14/grape-research/">Grapeが良さそうだったけどやめた</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/19/ansible-study-01/">Ansible 勉強会 #1メモ</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/04/17/aws-price/">EC2インスタンス価格の必要なところだけ表にしてみた</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/20/team-geek/">Team Geek読んだ</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2017 - u1tnk -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

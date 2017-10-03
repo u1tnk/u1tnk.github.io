@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: book | u1tnk.log]]></title>
+  <link href="http://u1tnk.github.io/blog/categories/book/atom.xml" rel="self"/>
+  <link href="http://u1tnk.github.io/"/>
+  <updated>2017-10-03T20:35:41+09:00</updated>
+  <id>http://u1tnk.github.io/</id>
+  <author>
+    <name><![CDATA[u1tnk]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Team Geek読んだ]]></title>
+    <link href="http://u1tnk.github.io/blog/2014/03/20/team-geek/"/>
+    <updated>2014-03-20T10:34:00+09:00</updated>
+    <id>http://u1tnk.github.io/blog/2014/03/20/team-geek</id>
+    <content type="html"><![CDATA[<p>同僚に貸して頂いて読みました。感謝。</p>
+
+<p>Googleの中の人がチーム開発するにあたってどういう事を心がけているか？という本。
+プログラマ本だけどプログラマ専用の内容は少なめ。一部削れば自己啓発書コーナーにあっても不思議じゃない。</p>
+
+<ul>
+<li>とにかくHRT(信頼 Humility、尊敬 Respect、謙虚 Trust)</li>
+<li>有害な人対策なども。無自覚なのも含めて難しい問題だと実感。有害な人対策自体も参考になるが、自分も有害になってないか？で心が痛い。</li>
+<li>採用は妥協しない、チームメイトになったら大人として扱う。</li>
+<li>ミッションステートメントは共有はもちろん今自分がしっかり理解しているとは言えないなぁ…</li>
+<li>かなり社内政治についても書いてる。必要悪的ではあるが。</li>
+</ul>
+
+
+<p>面白かったし、色々参考になった。
+自省としては、HRTはやってるつもりだけど、嗜好が合わないと謙虚さが失われがちなので気をつけようと。</p>
+
+<p><a href="http://www.amazon.co.jp/gp/product/4873116309/ref=as_li_ss_il?ie=UTF8&camp=247&creative=7399&creativeASIN=4873116309&linkCode=as2&tag=u1tnk-22"><img border="0" src="http://ecx.images-amazon.com/images/I/41SlY0zvpKL._SL160_.jpg" ></a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=u1tnk-22&l=as2&o=9&a=4873116309" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: ruby | u1tnk.log]]></title>
+  <link href="http://u1tnk.github.io/blog/categories/ruby/atom.xml" rel="self"/>
+  <link href="http://u1tnk.github.io/"/>
+  <updated>2017-10-03T20:35:41+09:00</updated>
+  <id>http://u1tnk.github.io/</id>
+  <author>
+    <name><![CDATA[u1tnk]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Grapeが良さそうだったけどやめた]]></title>
+    <link href="http://u1tnk.github.io/blog/2014/08/14/grape-research/"/>
+    <updated>2014-08-14T11:19:00+09:00</updated>
+    <id>http://u1tnk.github.io/blog/2014/08/14/grape-research</id>
+    <content type="html"><![CDATA[<p>RailsでAPI作ってるのでGrapeが良さそうと聞いて調べて、おお！やってみよう！
+と思って細かく調べたけど結果やめました。</p>
+
+<h3>参考資料</h3>
+
+<ul>
+<li><a href="https://github.com/intridea/grape">https://github.com/intridea/grape</a></li>
+<li><a href="http://qiita.com/anoworl/items/756f01cc3d188ebad139">Ruby - RailsとGrapeで行う最高のWeb API開発 - Qiita</a></li>
+<li><a href="http://morizyun.github.io/blog/rails-grepe-api-heroku-ruby/">Grape - RailsでスピーディにAPIを作成！ - 酒と泪とRubyとRailsと</a></li>
+<li><a href="http://morishitter.hatenablog.com/entry/2014/03/12/033321">Ruby初心者がRailsとGrapeでREST APIを作る - morishitter blog</a></li>
+</ul>
+
+
+<h3>良さそうな点</h3>
+
+<ul>
+<li>routes情報と全controllerが一つにまとまるので見易い</li>
+<li>versioningやapiのprefix等柔軟に設定できる</li>
+</ul>
+
+
+<h3>微妙なところ</h3>
+
+<ul>
+<li>filterにonly,except等が無かった</li>
+<li>1ファイルで見通しが良いけども、増え過ぎて分割したら何の為にやったのか感が凄そう</li>
+<li>単体で使えるものなのでRailsと重複する機能が多くてもったいない気持ちになる</li>
+</ul>
+
+
+<h3>まとめ</h3>
+
+<p>カバー範囲が違えど、二種のフレームワークを混在して使う事への抵抗が大きかった。大して大きな機能が無いので、だったらRailsのみでシンプルにした方が良いかなと。</p>
+
+<p>Railsと組み合わせて使うなら既存の非APIアプリに追加してシンプルなちょっとしたAPIを作る…とかなら良いのかもという気はしました。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby2.0.0+Rails4.0+MySQLなrailsアプリをherokuにデプロイ(2013/7月版)]]></title>
+    <link href="http://u1tnk.github.io/blog/2013/07/28/heroku-rails4/"/>
+    <updated>2013-07-28T22:22:00+09:00</updated>
+    <id>http://u1tnk.github.io/blog/2013/07/28/heroku-rails4</id>
+    <content type="html"><![CDATA[<p>久しぶりにheroku触ってみるとassetでハマることも無く、ruby2.0.0使うのも一行。
+すごい簡単になってるけど、結構変わってるしメモ。</p>
+
+<p>MySQL使ってるのはこだわりも無いけど、cleardb簡単そうだし、デメリットは初期設定ぐらいっぽいので慣れてる方にしただけ。
+heroku標準postgresの制限に行数があるけど、こちらは容量だけってのも微妙に気になった。</p>
+
+<h2>heroku基本設定</h2>
+
+<p><a href="https://toolbelt.heroku.com/">https://toolbelt.heroku.com/</a> からダウンロード</p>
+
+<p>gem i herokuは非推奨らしい</p>
+
+<p>基本以下参照</p>
+
+<p><a href="https://devcenter.heroku.com/articles/rails3">https://devcenter.heroku.com/articles/rails3</a></p>
+
+<h2>Gemfile</h2>
+
+<pre><code class="sh"># herokuに2.0.0使用を指示
+ruby '2.0.0'
+
+# ローカルでもsqlite3よりmysqlの方が好き、cleardb使うので全てmysql2
+gem 'mysql2'
+</code></pre>
+
+<h2>herokuアプリ作成</h2>
+
+<pre><code>heroku login
+heroku create hoge
+git push heroku master
+</code></pre>
+
+<h2>cleardb(MySQLプラグイン) 設定</h2>
+
+<p>以下のドキュメントに従う
+<a href="https://devcenter.heroku.com/articles/cleardb">https://devcenter.heroku.com/articles/cleardb</a></p>
+
+<ul>
+<li><p>addon追加、無課金範囲でもherokuにクレジットカード登録しないとエラーになるので注意
+<code>
+heroku addons:add cleardb:ignite
+</code></p></li>
+<li><p>herokuから作成されたcleardbのurlを取得
+<code>
+heroku config | grep CLEARDB_DATABASE_URL
+</code></p></li>
+<li><p>上記で調べたURLをmysql://→mysql2://として設定<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>
+<code>
+heroku config:set DATABASE_URL='mysql2://hoge:fuga@us-cdbr-east.cleardb.com/heroku_db?reconnect=true'
+heroku run rake db:migrate
+</code></p></li>
+</ul>
+
+
+<h2>動作確認</h2>
+
+<pre><code>heroku open
+</code></pre>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>上記コマンドでもドキュメントにもmysql://&hellip;と書いてあるが、mysql2://&hellip;にしないとエラーになった。<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+]]></content>
+  </entry>
+  
+</feed>

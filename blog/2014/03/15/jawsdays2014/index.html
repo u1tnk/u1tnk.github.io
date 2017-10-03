@@ -1,0 +1,341 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>JAWS DAYS 2014に行ってきました - u1tnk.log</title>
+  <meta name="author" content="u1tnk">
+
+  
+  <meta name="description" content="Immutable Infrastructure JAWS DAYS 2014、Immutable Infrastructure について - naoyaのはてなダイアリー http://d.hatena.ne.jp/naoya/20140315/1394851727 めっちゃ人居ました。 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://u1tnk.github.io/blog/2014/03/15/jawsdays2014/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="u1tnk.log" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="/stylesheets/custom.css" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-2532590-5']);
+    _gaq.push(['_trackPageview']);
+    _gaq.push(['_setDomainName', 'u1tnk.github.io']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <div id="header-inner">
+    <span class="first"><a href="/">u1tnk.log</a></span>
+    <span><a href="/about">about</a></span>
+    <span><a href="http://www.github.com/">projects</a></span>
+    <span class="last"><a href="/atom.xml" title="subscribe via RSS">rss</a></span>
+  </div>
+</hgroup>
+
+</header>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">JAWS DAYS 2014に行ってきました</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-15T20:47:00+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h2>Immutable Infrastructure</h2>
+
+<p>JAWS DAYS 2014、Immutable Infrastructure について - naoyaのはてなダイアリー <a href="http://d.hatena.ne.jp/naoya/20140315/1394851727">http://d.hatena.ne.jp/naoya/20140315/1394851727</a></p>
+
+<p>めっちゃ人居ました。個人的にrebuild.fm全部聞いてるのでほとんど聞いてたので割愛w</p>
+
+<h2>クックパッドのデプロイとオートスケール</h2>
+
+<p>個人的一番勉強になったセッション。</p>
+
+<p>Cookpad&rsquo;s deployment and auto scaling // Speaker Deck <a href="https://speakerdeck.com/mirakui/cookpads-deployment-and-auto-scaling">https://speakerdeck.com/mirakui/cookpads-deployment-and-auto-scaling</a></p>
+
+<ul>
+<li>nameタグ、hostnameは起動時に自動採取
+
+<ul>
+<li>→これはすぐにでも真似したい。</li>
+</ul>
+</li>
+<li>roleタグというのをつけてデプロイ内容をコントロール
+
+<ul>
+<li>→ふむふむ</li>
+</ul>
+</li>
+<li>Nameタグからip収集してpowerdnsで管理。
+
+<ul>
+<li>→そうしたいよね…</li>
+</ul>
+</li>
+<li><p>ec2からタグ情報取得するApiのImitに到達するらしいw キャッシュしてるとのこと</p></li>
+<li><p>Amazon AutoScaling使って無くて自作！</p>
+
+<ul>
+<li>CloudWatchが最短一分で秒単位で取得したい
+
+<ul>
+<li>そこまで必要なのか…</li>
+</ul>
+</li>
+<li>graceful terminate問題
+
+<ul>
+<li>それは確かに。多少のリクエストなら負荷で落ちるよりマシと思ってやってるが…</li>
+</ul>
+</li>
+<li>ELBでは無くhaproxy使いたい。…
+
+<ul>
+<li>haproxyの方が良いそうな。</li>
+<li>ブラックボックスで問題起こったらよくわからんってのは確かに。</li>
+</ul>
+</li>
+<li> デプロイとにAutoScaalingと排他制御するため
+
+<ul>
+<li>動くとやばいので、排他制御してると。ほー。デプロイ多いからこその問題。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>問題調査のための、staticインスタンスとしてAutoScaleとは別管理のインスタンスがある。</p>
+
+<ul>
+<li>確かに。システムログとか見るヒマ無く勝手に落ちるからな…Amazon Autoscalingでもできるからやりたい</li>
+</ul>
+</li>
+<li><p>蛇足</p>
+
+<ul>
+<li>chefじゃなくてpuppet使ってるらしい。なんでだろ。</li>
+<li>cookpadもhipchatoとのこと</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>プロビジョニング＆デプロイ on AWSのキホン</h2>
+
+<p>The Basics of Provisioning and Deploy on AWS #jawdays #infra <a href="http://www.slideshare.net/Ryuzee/the-basics-of-provisioning-and-deploy-on-aws-jawdays-infra">http://www.slideshare.net/Ryuzee/the-basics-of-provisioning-and-deploy-on-aws-jawdays-infra</a>
+特段目新しい内容は無かったが、とにかく耳の痛い正論セッションでした。</p>
+
+<ul>
+<li>自動化しないリスク、コストを過少評価し過ぎ</li>
+<li>自動化するなら最初から。デプロイするときに考えるじゃ遅い</li>
+<li>自動化しない→ミスる→チェック増やす→コスト増える→＼(^o^)／</li>
+<li>デプロイアンチパターン、手作業混合。
+
+<ul>
+<li>→これはやっちゃう…</li>
+</ul>
+</li>
+<li>テスト自動化！小さい粒度でリリース！</li>
+<li>sunsu+graphite良いと。</li>
+</ul>
+
+
+<h2>カジュアルにVPC作った結果がこれだよ！</h2>
+
+<p><a href="http://www.slideshare.net/Yuryu/aws-casual-talks-1-vpc">http://www.slideshare.net/Yuryu/aws-casual-talks-1-vpc</a>
+行ってないけど、資料流れてきたらめっちゃ気になってた事なので勉強になった。
+カジュアルには行けない事が良くわかったw</p>
+
+<h2>20140315 JAWS DAYS 2014 ACEに聞け！ CloudFormation編</h2>
+
+<p><a href="http://www.slideshare.net/daisuke_m/20140315-jaws-days-2014acecfn">http://www.slideshare.net/daisuke_m/20140315-jaws-days-2014acecfn</a></p>
+
+<p>2番目に勉強になった。</p>
+
+<ul>
+<li>やっぱ基本は一発作るのがメインのものなんだ</li>
+<li>とはいえ、UPDATE_STACKでメンテしていける。</li>
+<li>UPDATE_STACKちゃんとせず、手でメンテすると詰むと。ウチのは完全詰んでるからどっかで精算せねばw</li>
+<li>BLUE-GREEN deploymentを CludFormationだけで実行するデモ。ここまでできると素晴しいなぁ…</li>
+<li>とはいえjsonの定義見るのキツいわw AWS CloudFormation tempate for PHP Blue-Green Deployment environment <a href="https://gist.github.com/miyamoto-daisuke/9544801">https://gist.github.com/miyamoto-daisuke/9544801</a></li>
+</ul>
+
+
+<h1>Immutable Infrastracture パネルディスカッション〜オレにも一言言わせろ〜</h1>
+
+<p>人大杉…立ち見でも厳しそうだったので断念。</p>
+
+<h2>まとめ</h2>
+
+<ul>
+<li>すぐに手をつけたいのはchef/powerdns/cloudformation/tag利用…あたりかなぁ。山積みすぎる…</li>
+<li>人の多さと会場の割り当てに疑問を感じる。立ち見2回で足痛い…</li>
+<li>AWS面白い。改善頑張ろう。</li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">u1tnk</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-15T20:47:00+09:00" pubdate data-updated="true"></time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://u1tnk.github.io/blog/2014/03/15/jawsdays2014/" data-via="" data-counturl="http://u1tnk.github.io/blog/2014/03/15/jawsdays2014/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/07/28/nasne/" title="Previous Post: nasne+iOSは無茶苦茶便利だがTwonkeyBeamは使わない方が幸せ。黙ってDixim使っとけ！">&laquo; nasne+iOSは無茶苦茶便利だがTwonkeyBeamは使わない方が幸せ。黙ってDixim使っとけ！</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/03/20/team-geek/" title="Next Post: Team Geek読んだ">Team Geek読んだ &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/10/04/free/">もともと自営業ですが真の自営業になりました</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/08/14/grape-research/">Grapeが良さそうだったけどやめた</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/19/ansible-study-01/">Ansible 勉強会 #1メモ</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/04/17/aws-price/">EC2インスタンス価格の必要なところだけ表にしてみた</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/20/team-geek/">Team Geek読んだ</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2017 - u1tnk -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

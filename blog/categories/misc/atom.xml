@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: misc | u1tnk.log]]></title>
+  <link href="http://u1tnk.github.io/blog/categories/misc/atom.xml" rel="self"/>
+  <link href="http://u1tnk.github.io/"/>
+  <updated>2017-10-03T20:35:41+09:00</updated>
+  <id>http://u1tnk.github.io/</id>
+  <author>
+    <name><![CDATA[u1tnk]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[nasne+iOSは無茶苦茶便利だがTwonkeyBeamは使わない方が幸せ。黙ってDixim使っとけ！]]></title>
+    <link href="http://u1tnk.github.io/blog/2013/07/28/nasne/"/>
+    <updated>2013-07-28T23:11:00+09:00</updated>
+    <id>http://u1tnk.github.io/blog/2013/07/28/nasne</id>
+    <content type="html"><![CDATA[<p>nasne良さそうだけど、torne持ってるし録画サーバあるしいらんと思ってたけど、録画サーバが壊れた(たぶんPT2の故障)ので検討。</p>
+
+<ol>
+<li>PT2買い替えでなおる気がするけど、実はソフト側の問題でハマったら辛い。</li>
+<li>そもそもPT2+ubuntu環境も結構不安定。番組によっては変換でよくハマってたし。</li>
+<li>以下の記事見て自分の用途(PS3/iPad/iPhoneで見る、たまに持ち出し)が全て満たされると確信。</li>
+</ol>
+
+
+<p><a href="http://blog.kushii.net/archives/1803070.html">年末年始の特番対策に PS3＋torne+nasne で録画環境を強化してみたら外から録画予約も出来るようになったし超満足した件 - 941::blog</a></p>
+
+<h2>設置</h2>
+
+<ol>
+<li>アンテナ挿す</li>
+<li>B-CAS挿す</li>
+<li>電源挿す
+こんだけ、簡単！</li>
+</ol>
+
+
+<h2>設定</h2>
+
+<ul>
+<li>ブラウザで機器設定<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>
+
+<ul>
+<li>チャンネルスキャン</li>
+<li>ネットワーク設定</li>
+<li>予約サービスCHAN-TORU登録
+
+<ul>
+<li>外部予約用だが、PS3無い人はこれで予約すれば良い</li>
+<li>google/twitterアカウント使えるので登録ラク。</li>
+<li>PS3トルネアプリでnasne登録</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>PS3/torneアプリの存在意義</h2>
+
+<p>ここで、torneとはtorneアプリの事であり、PS3外付けチューナ製品の事では無い、そちらはtorneチューナと呼ぶ。</p>
+
+<p>結論から言うとPS3持ってるなら使うだけのメリットはある。</p>
+
+<p>が、持ってなくてメイン視聴がiOSもしくはDLNA機器(DTCP-IP対応)なら買う程では無い。</p>
+
+<p>torneチューナは既に持ってる人なら併用するとダブルチューナの意味はある。が、持ってなければnasne買い足しの方が良い。</p>
+
+<h3>メリット</h3>
+
+<ul>
+<li>録画管理機能使える(予約管理は上述のCHAN-TORUでもできる)</li>
+<li>番組表サクサク便利</li>
+<li>torneチューナと予約/データを統合管理</li>
+<li>torneチューナあるときはここで予約して時間が重複したらtorneチューナで録画してくれる</li>
+<li>未/既視聴管理ができる</li>
+</ul>
+
+
+<h3>デメリット</h3>
+
+<ul>
+<li>torneアプリ、PS3共に起動遅い</li>
+</ul>
+
+
+<h2>torneチューナ運用時との比較で意外に良かったところ</h2>
+
+<p><strong>録画にPS3起動が必要無い!</strong></p>
+
+<p>ささいなようで素晴らしい。突然鳴り響くファンの音に怯える事も無い。部屋も暑くならないんだ！</p>
+
+<h2>Twonkey Beamと Dixim digital TV</h2>
+
+<p>どちらもiOSでDTCP-IP対応DLNAクライアントで、LAN内でnasneの動画が見れます。ライブチューナでTVも見れます。
+が、決定的に「品質」が違います。</p>
+
+<p>以下起動した直後のスクショ。
+こちらがDixim</p>
+
+<p><img src="/images/nasne/dixim.jpg" alt="icon" /></p>
+
+<p>で、こちらがTwonkey</p>
+
+<p><img src="/images/nasne/twonkey.jpg" alt="icon" /></p>
+
+<p>どちらがnasneで動画再生するのにわかりやすいかなんて一目瞭然ですね。
+ちなみにまずは右上のちっさーーーいwifiアイコンをクリックするのが正解です。</p>
+
+<p>これからも万事この調子。</p>
+
+<ul>
+<li>普通に見るのも、ダウンロードするのも「Beam」するんです！意味がわかりません。</li>
+<li>再生中にsuspend-resumeするとよく固まります。</li>
+<li>番組によっては再生できません。<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup></li>
+<li>30秒スキップなんて親切機能はありません。頑張って指で調整して早送りした結果固まります。</li>
+<li>固まらなくてもBeam失敗したときにエラーポップアップすら出ない事が多い。静かにエラー起きてるっぽい。</li>
+</ul>
+
+
+<p>レビュー記事でTwonkeyはUIがちょっとよくない…とか書いてるのを見た事あるけど、</p>
+
+<p><strong>ひどいUIを頑張って理解した結果、UIだけじゃなくて品質自体が悪い事を理解してしまう。</strong>が現実でした。</p>
+
+<p>一方Diximの方は普通です。ちゃんとしてます。「番組によっては固まる」事があるのみ発生しましたが頻度が違います。
+オススメできます</p>
+
+<h2>それでもダウンロードムーブしたい！</h2>
+
+<p>iOSでのダウンロードムーブは2013/07現在Twonkeyしか対応していません。</p>
+
+<p>どうしても持ち出したい！という事であればTwonkeyしか選択肢が無いのです。残念ながら…</p>
+
+<p>私も最初は我慢して使おうと思ってました。…が、</p>
+
+<ul>
+<li>再生できない事がある</li>
+<li>早送りができない(できるけど、調整がめんどい&amp;固まるリスク)</li>
+<li>中断するとresumeで固まるリスク、更に早送りで固まるリスク</li>
+</ul>
+
+
+<p>…めんどくさすぎてほとんど使ってません。</p>
+
+<h2>まとめ</h2>
+
+<p>iPad+nasne+Diximを家で使うのは非常に快適です。リビングも静かになったし買って良かった。</p>
+
+<p>TwonkeyBeamはどうしてもダウンロードムーブがしたくて、ダウンロードしけど見れなかったりしても平気なM気質の方のみオススメです。</p>
+
+<p>普通の人は素直にDiximがダウンロードムーブに対応するのを祈りましょう。</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>ブラウザ設定はIP直指定でできるが、最初はわからんので、PS3のDLNAサーバのところで△→設定選択で設定画面を起動できる。持ってなくてもデフォルトでsambaもDLNAも動いてるようなのでどれかでIPわかればおk<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>最初からとか、CMから本編行くときとかによく固まります。個人的印象で2,3割程度の番組で発生。<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+]]></content>
+  </entry>
+  
+</feed>
