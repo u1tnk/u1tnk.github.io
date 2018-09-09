@@ -4,7 +4,7 @@
   <title><![CDATA[u1tnk.log]]></title>
   <link href="http://u1tnk.github.io/atom.xml" rel="self"/>
   <link href="http://u1tnk.github.io/"/>
-  <updated>2018-07-28T23:33:36+09:00</updated>
+  <updated>2018-09-09T15:17:01+09:00</updated>
   <id>http://u1tnk.github.io/</id>
   <author>
     <name><![CDATA[u1tnk]]></name>
@@ -12,6 +12,130 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[フリーランスとしての自己紹介と仕事の条件]]></title>
+    <link href="http://u1tnk.github.io/blog/2018/09/09/my-price/"/>
+    <updated>2018-09-09T15:16:25+09:00</updated>
+    <id>http://u1tnk.github.io/blog/2018/09/09/my-price</id>
+    <content type="html"><![CDATA[<h2>目的</h2>
+
+<ul>
+<li>新規案件の話を頂いたときの自己紹介、条件の概要をまとめておく</li>
+<li>単価公開されている方が少ないのでフリーランス初心者の方の単価決め、交渉材料になれば良いと思い公開</li>
+</ul>
+
+
+<h2>できる事</h2>
+
+<ul>
+<li>Rails開発</li>
+<li>AWSでサーバサイド全般
+
+<ul>
+<li>EC2からECSまで</li>
+<li>中小規模なら一人でインフラ構築可能</li>
+</ul>
+</li>
+<li>github/ci/pull requestベースの普通の開発</li>
+</ul>
+
+
+<h2>できない事</h2>
+
+<ul>
+<li>CTO</li>
+<li>チームビルディング、採用コンサルなど管理系
+
+<ul>
+<li>ゼロから普通の開発体制を作って経験の浅い方のサポートしつつ開発するとかぐらいならなんとか</li>
+</ul>
+</li>
+<li>モダンなフロントエンド
+
+<ul>
+<li>RailsのAjaxとか難度低めのJSなら問題無い</li>
+<li>案件で必要になったら勉強したいとは思う</li>
+</ul>
+</li>
+<li>機械学習
+
+<ul>
+<li>同上</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>条件</h2>
+
+<ul>
+<li>フルリモート
+
+<ul>
+<li>横浜在住なので打合せは出れるが出社は多くて週一程度</li>
+</ul>
+</li>
+<li>作業時間の縛りは無し
+
+<ul>
+<li>作業のメインは子供が居ない昼頃か寝てからなので</li>
+</ul>
+</li>
+<li>仕事をゼロにしない戦略の為、通常二社以上受けているので週5の仕事は受けられない
+
+<ul>
+<li>2018年9月現在3社受けている</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>経歴</h2>
+
+<ul>
+<li>ソフトウェアエンジニア歴19年
+
+<ul>
+<li>SIer 7年
+
+<ul>
+<li>サポートやら組み込み開発やらを経て後半3年程度がweb開発</li>
+<li>束縛の重い会社アレルギーに罹患</li>
+</ul>
+</li>
+<li>ベンチャー系自社サービス開発会社 7年</li>
+<li>フリーランス 5年</li>
+</ul>
+</li>
+<li>スーパーエンジニアではまったく無いがベテランではある</li>
+<li>思ってたより長かった。19年も働いてるのか…</li>
+</ul>
+
+
+<h2>単価</h2>
+
+<p>7500 円/h (日額6万)</p>
+
+<ul>
+<li>ベースの単価。今受けている仕事が全部この金額では無い
+
+<ul>
+<li>架空の希望では無くこれ以上の実績もある</li>
+<li>依頼内容、状況により上下する</li>
+<li>上がった方が当然嬉しい</li>
+</ul>
+</li>
+<li>相場観が変わったら変更する</li>
+<li>エージェントは使っていない、友人紹介で直接契約</li>
+</ul>
+
+
+<h2>その他</h2>
+
+<p>個人的な相場観とかも参考情報として書こうかと思ったけど、顧客候補に見て頂くページでもあるので別途。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[初心者向けキャンプ用品メーカーまとめ]]></title>

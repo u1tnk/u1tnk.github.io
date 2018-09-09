@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://u1tnk.github.io/blog/2018/09/09/my-price/</loc>
+<lastmod>2018-09-09T15:16:25+09:00</lastmod>
+</url>
+<url>
 <loc>http://u1tnk.github.io/blog/2018/07/28/camp-maker/</loc>
 <lastmod>2018-07-28T23:12:46+09:00</lastmod>
 </url>
@@ -48,13 +52,13 @@
 <loc>http://u1tnk.github.io/404.html</loc>
 </url>
 <url>
+<loc>http://u1tnk.github.io/</loc>
+</url>
+<url>
 <loc>http://u1tnk.github.io/blog/archives/</loc>
 </url>
 <url>
 <loc>http://u1tnk.github.io/blog/</loc>
-</url>
-<url>
-<loc>http://u1tnk.github.io/</loc>
 </url>
 <url>
 <loc>http://u1tnk.github.io/about/</loc>
