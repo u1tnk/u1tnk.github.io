@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: misc | u1tnk.log]]></title>
-  <link href="http://u1tnk.github.io/blog/categories/misc/atom.xml" rel="self"/>
-  <link href="http://u1tnk.github.io/"/>
-  <updated>2018-09-09T15:26:03+09:00</updated>
-  <id>http://u1tnk.github.io/</id>
+  <link href="https://u1tnk.github.io/blog/categories/misc/atom.xml" rel="self"/>
+  <link href="https://u1tnk.github.io/"/>
+  <updated>2018-09-09T18:47:33+09:00</updated>
+  <id>https://u1tnk.github.io/</id>
   <author>
     <name><![CDATA[u1tnk]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[nasne+iOSは無茶苦茶便利だがTwonkeyBeamは使わない方が幸せ。黙ってDixim使っとけ！]]></title>
-    <link href="http://u1tnk.github.io/blog/2013/07/28/nasne/"/>
+    <link href="https://u1tnk.github.io/blog/2013/07/28/nasne/"/>
     <updated>2013-07-28T23:11:00+09:00</updated>
-    <id>http://u1tnk.github.io/blog/2013/07/28/nasne</id>
+    <id>https://u1tnk.github.io/blog/2013/07/28/nasne</id>
     <content type="html"><![CDATA[<p>nasne良さそうだけど、torne持ってるし録画サーバあるしいらんと思ってたけど、録画サーバが壊れた(たぶんPT2の故障)ので検討。</p>
 
 <ol>

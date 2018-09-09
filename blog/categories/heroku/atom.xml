@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: heroku | u1tnk.log]]></title>
-  <link href="http://u1tnk.github.io/blog/categories/heroku/atom.xml" rel="self"/>
-  <link href="http://u1tnk.github.io/"/>
-  <updated>2018-09-09T15:26:03+09:00</updated>
-  <id>http://u1tnk.github.io/</id>
+  <link href="https://u1tnk.github.io/blog/categories/heroku/atom.xml" rel="self"/>
+  <link href="https://u1tnk.github.io/"/>
+  <updated>2018-09-09T18:47:33+09:00</updated>
+  <id>https://u1tnk.github.io/</id>
   <author>
     <name><![CDATA[u1tnk]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Ruby2.0.0+Rails4.0+MySQLなrailsアプリをherokuにデプロイ(2013/7月版)]]></title>
-    <link href="http://u1tnk.github.io/blog/2013/07/28/heroku-rails4/"/>
+    <link href="https://u1tnk.github.io/blog/2013/07/28/heroku-rails4/"/>
     <updated>2013-07-28T22:22:00+09:00</updated>
-    <id>http://u1tnk.github.io/blog/2013/07/28/heroku-rails4</id>
+    <id>https://u1tnk.github.io/blog/2013/07/28/heroku-rails4</id>
     <content type="html"><![CDATA[<p>久しぶりにheroku触ってみるとassetでハマることも無く、ruby2.0.0使うのも一行。
 すごい簡単になってるけど、結構変わってるしメモ。</p>
 

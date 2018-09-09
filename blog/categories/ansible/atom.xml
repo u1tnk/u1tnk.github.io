@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: ansible | u1tnk.log]]></title>
-  <link href="http://u1tnk.github.io/blog/categories/ansible/atom.xml" rel="self"/>
-  <link href="http://u1tnk.github.io/"/>
-  <updated>2018-09-09T15:26:03+09:00</updated>
-  <id>http://u1tnk.github.io/</id>
+  <link href="https://u1tnk.github.io/blog/categories/ansible/atom.xml" rel="self"/>
+  <link href="https://u1tnk.github.io/"/>
+  <updated>2018-09-09T18:47:33+09:00</updated>
+  <id>https://u1tnk.github.io/</id>
   <author>
     <name><![CDATA[u1tnk]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[ansible 勉強会 #1メモ]]></title>
-    <link href="http://u1tnk.github.io/blog/2014/06/19/ansible-study-01/"/>
+    <link href="https://u1tnk.github.io/blog/2014/06/19/ansible-study-01/"/>
     <updated>2014-06-19T10:35:00+09:00</updated>
-    <id>http://u1tnk.github.io/blog/2014/06/19/ansible-study-01</id>
+    <id>https://u1tnk.github.io/blog/2014/06/19/ansible-study-01</id>
     <content type="html"><![CDATA[<p><a href="http://ansible-users.connpass.com/event/5968/">Ansible 勉強会 #1 - connpass</a></p>
 
 <p>に行ってきたのでメモ。資料は↑にほぼあるようです。</p>

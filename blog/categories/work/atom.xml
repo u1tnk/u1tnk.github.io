@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: work | u1tnk.log]]></title>
-  <link href="http://u1tnk.github.io/blog/categories/work/atom.xml" rel="self"/>
-  <link href="http://u1tnk.github.io/"/>
-  <updated>2018-09-09T15:26:03+09:00</updated>
-  <id>http://u1tnk.github.io/</id>
+  <link href="https://u1tnk.github.io/blog/categories/work/atom.xml" rel="self"/>
+  <link href="https://u1tnk.github.io/"/>
+  <updated>2018-09-09T18:47:33+09:00</updated>
+  <id>https://u1tnk.github.io/</id>
   <author>
     <name><![CDATA[u1tnk]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[もともと自営業ですが真の自営業になりました]]></title>
-    <link href="http://u1tnk.github.io/blog/2015/10/04/free/"/>
+    <link href="https://u1tnk.github.io/blog/2015/10/04/free/"/>
     <updated>2015-10-04T14:27:00+09:00</updated>
-    <id>http://u1tnk.github.io/blog/2015/10/04/free</id>
+    <id>https://u1tnk.github.io/blog/2015/10/04/free</id>
     <content type="html"><![CDATA[<p><img src="/images/toua.png" alt="violin" /></p>
 
 <p>退職エントリと言うよりお仕事募集エントリです。基本知り合いに読んで欲しくて書きました。</p>
