@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
+
+  
+    
+    
+      <link href="/css/fonts.css" rel="stylesheet" type="text/css">
+    
+  
+
+  
+  <title>今さらOctopressからHugoに乗りかえた</title>
+
+  
+  
+  <link rel="stylesheet" href="/css/hugo-octopress.css">
+
+  
+  
+
+  
+    <link rel="stylesheet" href="/css/fork-awesome.min.css">
+  
+
+  
+  <link href="https://u1tnk.github.io/favicon.png" rel="icon">
+
+  
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="u1tnk">
+
+  
+  <meta name="generator" content="Hugo 0.40.1" />
+
+  
+  
+
+  
+  
+</head>
+<body>
+
+
+<header role="banner">
+<hgroup>
+  
+  <h1><a href="https://u1tnk.github.io/">u1tnk.log</a></h1>
+    <h2></h2>
+</hgroup></header>
+
+
+<nav role="navigation">
+<fieldset class="mobile-nav">
+  
+  <select onchange="location = this.value;">
+    <option value="">Navigate…</option>
+      
+        <option value="https://u1tnk.github.io/">» posts</option>
+      
+        <option value="https://u1tnk.github.io/about">» about</option>
+      
+        <option value="https://u1tnk.github.io/atom.xml">» rss</option>
+      
+  </select>
+</fieldset>
+
+
+<ul class="main-navigation">
+  
+  
+    
+      <li><a href="https://u1tnk.github.io/" title="posts">posts</a></li>
+    
+  
+    
+      <li><a href="https://u1tnk.github.io/about" title="about" >about</a></li>
+    
+  
+    
+      <li><a href="https://u1tnk.github.io/atom.xml" title="rss" >rss</a></li>
+    
+  
+</ul>
+
+<ul class="subscription">
+  
+</ul>
+
+
+</nav>
+
+
+<div id="main">
+  <div id="content">
+    <div>
+      <article class="hentry" role="article">
+
+        
+        
+
+<header>
+  <p class="meta">2019/1/1
+    
+    
+
+    
+    
+      - <a class="label" href="https://u1tnk.github.io/categories/octopress/">octopress </a><a class="label" href="https://u1tnk.github.io/categories/hugo/">hugo </a>
+    
+  </p>
+  <h1 class="entry-title">
+     今さらOctopressからHugoに乗りかえた 
+  </h1>
+</header>
+
+
+        <div class="entry-content">
+          
+          
+          
+          
+
+<p>Octopressどころか自分でブログをビルドする事自体が乗り遅れてる事は自覚している。</p>
+
+<p>だが、乗りかえに労力を割くのもイヤでそのままにしてたらマシン乗りかえてブログ書く度にgemでハマる。
+Rails開発者なのでruby環境自体は苦では無いがOctopressもはやメンテもされてないので見つからないgemとかあって不毛でしかない。</p>
+
+<p>マネージドサービスも変なところもイヤだし金もかけたくないし、アフィリンク入れたページもあるので規約とか確認するのもめんどい。
+という事で流行ってたhugoにすることにした。aptで入ったしgoでできたコマンド一個で動くようなのでOctopressよりも過去互換性が高そうなので、延命処置には十分かと。jekyllも考えたがより流行ってそうな方にしただけ。</p>
+
+<h2 id="ざっくり乗り替え手順">ざっくり乗り替え手順</h2>
+
+<ol>
+<li>公式の <a href="https://gohugo.io/tools/migrations/">https://gohugo.io/tools/migrations/</a> にあった <a href="https://github.com/codebrane/octohug">https://github.com/codebrane/octohug</a> を実行。ポスト少ないのでvimで頑張ってフォロー。公式だから信用したがたぶんダメツール。
+
+<ul>
+<li>slug(titleじゃないaliasのようなもの？) に日付入りのpathが入っていて、permalinksにはfilenameを使うので消した</li>
+<li>categoriesがCategoriesと間違っていてしかも中身が消えていた。</li>
+<li>titleがfilenameになっていた。日本語タイトルを元からコピー。</li>
+</ul></li>
+<li>themeを選定。参考サイトで使っていた<a href="https://themes.gohugo.io/hugo-octopress/">Hugo Octopress | Hugo Themes</a> を利用。
+
+<ul>
+<li>Octopressにこだわる理由はカケラも無いが、ある程度設定するとthemeごとに挙動が結構変わるので変えるのを諦めた。</li>
+<li>以下、公式の設定にあるっぽいが対応してなかったのでforkして修正
+
+<ul>
+<li>DateFormatが変えられない</li>
+</ul></li>
+</ul></li>
+<li>動作確認しつつ、config.toml等を設定
+
+<ul>
+<li>themeの方にサンプルがあったので編集していった</li>
+</ul></li>
+<li>固定ページは content/hoge.md に移動。</li>
+<li>元のoctopressのデータを削除してhugoのファイルをコピーして以下を submoduleにする
+
+<ul>
+<li>themes以下にthemeを配置</li>
+<li>publicにxxx.github.io.git  (デプロイ用)</li>
+</ul></li>
+</ol>
+
+<h3 id="permalinkを合わせる">permalinkを合わせる</h3>
+
+<pre><code>[permalinks]
+  post = &quot;/blog/:year/:month/:day/:filename/&quot;
+</code></pre>
+
+<h3 id="rssのurlを合わせる">rssのurlを合わせる</h3>
+
+<p>octopressのときは atom.xmlで hugoだと index.xmlだったので合わせた。rssuriという情報もあるが deprecated。
+また、Hugo-Octopressではindex.xmlが直書きだったので無効にしてメニュー作成時に自力でリンクを作った。どうせHugo-Octopressはforkしたので書き替えても良かった。</p>
+
+<pre><code>[outputFormats.RSS]
+baseName = &quot;atom&quot;
+</code></pre>
+
+<h3 id="デプロイ">デプロイ</h3>
+
+<ol>
+<li><p>以下で public を xxx.github.io.git にする。</p>
+
+<pre><code>git submodule add -b master git@github.com:&lt;USERNAME&gt;/&lt;USERNAME&gt;.github.io.git public
+</code></pre></li>
+
+<li><p>サイト生成</p>
+
+<pre><code>hugo
+</code></pre></li>
+
+<li><p>デプロイ実行</p>
+
+<pre><code>cd public
+git push origin master
+</code></pre></li>
+</ol>
+
+<h3 id="ローカルテスト">ローカルテスト</h3>
+
+<p>以下コマンド後 localhost:1313</p>
+
+<pre><code>hugo server --buildDrafts
+</code></pre>
+
+<h3 id="参考サイト">参考サイト</h3>
+
+<ul>
+<li><a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">Host on GitHub | Hugo</a></li>
+<li><a href="https://gohugo.io/tools/migrations/">Migrate to Hugo | Hugo</a></li>
+<li><a href="https://devnull.namaraii.com/post/2018-02-17-hugo-rssuri/">HugoのRSS feedのURIを変更するのにrssuriを使うのはdeprecatedだった</a>
+lkjkj</li>
+</ul>
+
+        </div>
+        
+
+<footer>
+  <p class="meta">
+    <span class="byline author vcard">Posted by <span class="fn">u1tnk</span></span>
+    
+    <time>Jan 2, 2019</time>
+    
+    </span>
+  </p>
+
+  
+
+  <p class="meta">
+    
+        <a class="basic-alignment left" href="https://u1tnk.github.io/blog/2018/09/09/my-price/" title="フリーランスとしての自己紹介と仕事の条件">フリーランスとしての自己紹介と仕事の条件</a>
+    
+
+    
+  </p>
+  
+</footer>
+
+      </article>
+    </div>
+    
+
+<aside class="sidebar thirds">
+  <section class="first odd">
+
+    
+
+    <p>
+      
+    </p>
+  </section>
+
+
+
+  
+  <ul class="sidebar-nav">
+    <li class="sidebar-nav-item">
+      
+      
+      
+      
+      
+         
+      
+      
+      
+      
+      
+      
+      
+      
+
+    
+    
+    </li>
+  </ul>
+
+  
+
+  
+
+  
+  
+  
+</aside>
+
+  </div>
+</div>
+
+    <footer role="contentinfo">
+      <p>Copyright &copy; 2019 u1tnk - <a href="https://u1tnk.github.io/license/">License</a> -
+        <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
+      </p>
+    </footer>
+
+    
+    
+    
+
+    
+      <script>
+        var _gaq=[['_setAccount','UA-2532590-5'],['_trackPageview']];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));
+      </script>
+    
+  </body>
+</html>
+

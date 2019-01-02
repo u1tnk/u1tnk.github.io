@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://u1tnk.github.io/blog/2019/01/02/migrate_hugo/</loc>
+    <lastmod>2019-01-02T12:10:55+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://u1tnk.github.io/about/</loc>
     <lastmod>2019-01-02T00:00:00+00:00</lastmod>
   </url>
@@ -117,6 +122,12 @@
   </url>
   
   <url>
+    <loc>https://u1tnk.github.io/categories/hugo/</loc>
+    <lastmod>2019-01-02T12:10:55+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://u1tnk.github.io/categories/job/</loc>
     <lastmod>2015-10-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -129,8 +140,14 @@
   </url>
   
   <url>
+    <loc>https://u1tnk.github.io/categories/octopress/</loc>
+    <lastmod>2019-01-02T12:10:55+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://u1tnk.github.io/post/</loc>
-    <lastmod>2018-09-09T00:00:00+00:00</lastmod>
+    <lastmod>2019-01-02T12:10:55+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -147,7 +164,7 @@
   
   <url>
     <loc>https://u1tnk.github.io/</loc>
-    <lastmod>2019-01-02T00:00:00+00:00</lastmod>
+    <lastmod>2019-01-02T12:10:55+09:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Octopress on u1tnk.log</title>
+    <link>https://u1tnk.github.io/categories/octopress/</link>
+    <description>Recent content in Octopress on u1tnk.log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Wed, 02 Jan 2019 12:10:55 +0900</lastBuildDate>
+    
+	<atom:link href="https://u1tnk.github.io/categories/octopress/atom.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>今さらOctopressからHugoに乗りかえた</title>
+      <link>https://u1tnk.github.io/blog/2019/01/02/migrate_hugo/</link>
+      <pubDate>Wed, 02 Jan 2019 12:10:55 +0900</pubDate>
+      
+      <guid>https://u1tnk.github.io/blog/2019/01/02/migrate_hugo/</guid>
+      <description>Octopressどころか自分でブログをビルドする事自体が乗り遅れてる事は自覚している。
+だが、乗りかえに労力を割くのもイヤでそのままにしてたらマシン乗りかえてブログ書く度にgemでハマる。 Rails開発者なのでruby環境自体は苦では無いがOctopressもはやメンテもされてないので見つからないgemとかあって不毛でしかない。
+マネージドサービスも変なところもイヤだし金もかけたくないし、アフィリンク入れたページもあるので規約とか確認するのもめんどい。 という事で流行ってたhugoにすることにした。aptで入ったしgoでできたコマンド一個で動くようなのでOctopressよりも過去互換性が高そうなので、延命処置には十分かと。jekyllも考えたがより流行ってそうな方にしただけ。
+ざっくり乗り替え手順  公式の https://gohugo.io/tools/migrations/ にあった https://github.com/codebrane/octohug を実行。ポスト少ないのでvimで頑張ってフォロー。公式だから信用したがたぶんダメツール。  slug(titleじゃないaliasのようなもの？) に日付入りのpathが入っていて、permalinksにはfilenameを使うので消した categoriesがCategoriesと間違っていてしかも中身が消えていた。 titleがfilenameになっていた。日本語タイトルを元からコピー。  themeを選定。参考サイトで使っていたHugo Octopress | Hugo Themes を利用。  Octopressにこだわる理由はカケラも無いが、ある程度設定するとthemeごとに挙動が結構変わるので変えるのを諦めた。 以下、公式の設定にあるっぽいが対応してなかったのでforkして修正  DateFormatが変えられない   動作確認しつつ、config.toml等を設定  themeの方にサンプルがあったので編集していった  固定ページは content/hoge.md に移動。 元のoctopressのデータを削除してhugoのファイルをコピーして以下を submoduleにする  themes以下にthemeを配置 publicにxxx.github.io.git (デプロイ用)   permalinkを合わせる [permalinks] post = &amp;quot;/blog/:year/:month/:day/:filename/&amp;quot;  rssのurlを合わせる octopressのときは atom.xmlで hugoだと index.xmlだったので合わせた。rssuriという情報もあるが deprecated。 また、Hugo-Octopressではindex.xmlが直書きだったので無効にしてメニュー作成時に自力でリンクを作った。どうせHugo-Octopressはforkしたので書き替えても良かった。
+[outputFormats.RSS] baseName = &amp;quot;atom&amp;quot;  デプロイ  以下で public を xxx.</description>
+    </item>
+    
+  </channel>
+</rss>
