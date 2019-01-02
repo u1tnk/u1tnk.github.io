@@ -1,95 +1,137 @@
-
 <!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-  <meta charset="utf-8">
-  <title>EC2インスタンス価格の必要なところだけ表にしてみた - u1tnk.log</title>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
+
+  
+    
+    
+      <link href="/css/fonts.css" rel="stylesheet" type="text/css">
+    
+  
+
+  
+  <title>EC2インスタンス価格の必要なところだけ表にしてみた</title>
+
+  
+  
+  <link rel="stylesheet" href="/css/hugo-octopress.css">
+
+  
+  
+
+  
+    <link rel="stylesheet" href="/css/fork-awesome.min.css">
+  
+
+  
+  <link href="https://u1tnk.github.io/favicon.png" rel="icon">
+
+  
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
   <meta name="author" content="u1tnk">
 
   
-  <meta name="description" content="何？ EC2の価格表で以下が欲しかったので作った。 2月にほぼ手作業で同じようなデータ作ったけど、大幅値下げで既に使いものにならなくなったので業を煮やした。いや値下げは嬉しいんだけど。 同様にネットで見かけるまとめも見やすいものは古くなってたり… 以下公式の不満。 &hellip;">
-  
-
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="Hugo 0.40.1" />
 
   
-  <link rel="canonical" href="https://u1tnk.github.io/blog/2014/04/17/aws-price/">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="u1tnk.log" type="application/atom+xml">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="/stylesheets/custom.css" rel="stylesheet" type="text/css">
+  
 
   
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-2532590-5']);
-    _gaq.push(['_trackPageview']);
-    _gaq.push(['_setDomainName', 'u1tnk.github.io']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-
-
+  
 </head>
+<body>
 
-<body   >
-  <header role="banner"><hgroup>
-  <div id="header-inner">
-    <span class="first"><a href="/">u1tnk.log</a></span>
-    <span><a href="/about">about</a></span>
-    <span><a href="http://www.github.com/">projects</a></span>
-    <span class="last"><a href="/atom.xml" title="subscribe via RSS">rss</a></span>
-  </div>
-</hgroup>
 
+<header role="banner">
+<hgroup>
+  
+  <h1><a href="https://u1tnk.github.io/">u1tnk.log</a></h1>
+    <h2></h2>
+</hgroup></header>
+
+
+<nav role="navigation">
+<fieldset class="mobile-nav">
+  
+  <select onchange="location = this.value;">
+    <option value="">Navigate…</option>
+      
+        <option value="https://u1tnk.github.io/">» posts</option>
+      
+        <option value="https://u1tnk.github.io/about">» about</option>
+      
+        <option value="https://u1tnk.github.io/atom.xml">» rss</option>
+      
+  </select>
+</fieldset>
+
+
+<ul class="main-navigation">
+  
+  
+    
+      <li><a href="https://u1tnk.github.io/" title="posts">posts</a></li>
+    
+  
+    
+      <li><a href="https://u1tnk.github.io/about" title="about" >about</a></li>
+    
+  
+    
+      <li><a href="https://u1tnk.github.io/atom.xml" title="rss" >rss</a></li>
+    
+  
+</ul>
+
+<ul class="subscription">
+  
+</ul>
+
+
+</nav>
+
+
+<div id="main">
+  <div id="content">
+    <div>
+      <article class="hentry" role="article">
+
+        
+        
+
+<header>
+  <p class="meta">2014/4/4
+    
+    
+
+    
+    
+      - <a class="label" href="https://u1tnk.github.io/categories/aws/">aws </a><a class="label" href="https://u1tnk.github.io/categories/money/">money </a>
+    
+  </p>
+  <h1 class="entry-title">
+     EC2インスタンス価格の必要なところだけ表にしてみた 
+  </h1>
 </header>
-  <div id="main">
-    <div id="content">
-      <div>
-<article class="hentry" role="article">
-  
-  <header>
-    
-      <h1 class="entry-title">EC2インスタンス価格の必要なところだけ表にしてみた</h1>
-    
-    
-      <p class="meta">
-        
 
 
+        <div class="entry-content">
+          
+          
+          
+          
 
-
-
-
-
-
-  
-
-
-<time datetime="2014-04-17T22:45:00+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-<div class="entry-content"><h2>何？</h2>
+<h2 id="何">何？</h2>
 
 <p>EC2の価格表で以下が欲しかったので作った。</p>
 
@@ -110,12 +152,10 @@
 
 <ul>
 <li>やはりみづらいのでgoogle spread sheetに貼りつけた <a href="https://docs.google.com/spreadsheets/d/1QzsUHO4Nd07TL5FAnVM2yvLRa3uOslY7pDTrmhwuAf0/edit?usp=sharing">https://docs.google.com/spreadsheets/d/1QzsUHO4Nd07TL5FAnVM2yvLRa3uOslY7pDTrmhwuAf0/edit?usp=sharing</a></li>
-</ul>
-</li>
+</ul></li>
 </ul>
 
-
-<h2>どうやった？</h2>
+<h2 id="どうやった">どうやった？</h2>
 
 <p>以下ページのJSでHTML化。このページのはスナップショットとしてコピペ。
 <a href="https://dl.dropboxusercontent.com/u/3400756/aws_price.html">https://dl.dropboxusercontent.com/u/3400756/aws_price.html</a></p>
@@ -124,8 +164,7 @@
 <li>料金表のページのソースを見るとJSONPで呼んでたので使わせてもらった。おそらく外部利用を想定してないので止まっても文句は言いません。(見れなくなったら困るのでコピペった)</li>
 </ul>
 
-
-<h2>表について</h2>
+<h2 id="表について">表について</h2>
 
 <ul>
 <li>RI = リザーブドインスタンス一年重度使用</li>
@@ -134,8 +173,7 @@
 <li>安い順にソートしている。ファミリー毎の方がコスパとか見やすかったかも。</li>
 </ul>
 
-
-<h2>内容感想</h2>
+<h2 id="内容感想">内容感想</h2>
 
 <ul>
 <li>m1.medium/m1.largeが消えてた…別ページにあるんだろうけど。</li>
@@ -148,8 +186,7 @@
 <li>m3の中途半端さ。largeならc3かr3使うと思う。</li>
 </ul>
 
-
-<h2>4/17時点の価格表</h2>
+<h2 id="4-17時点の価格表">4/17時点の価格表</h2>
 
 <table id="result" border="1">
     <tbody><tr>
@@ -191,124 +228,101 @@
 <tr><td align="left">i2.8xlarge</td><td align="right">32</td><td align="right">104</td><td align="right">244</td><td align="right">8 x 800 SSD</td><td align="right">21354</td><td align="right">1.822</td><td align="right">3091.34</td><td align="right">8.004</td><td align="right">5762.88</td><td align="right">131.21</td><td align="right">55.41</td><td align="right">23.61</td></tr>
 </tbody></table>
 
+        </div>
+        
 
-
-</div>
-
-
-  <footer>
-    <p class="meta">
-      
-  
-
-<span class="byline author vcard">Posted by <span class="fn">u1tnk</span></span>
-
-      
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-04-17T22:45:00+09:00" pubdate data-updated="true"></time>
-      
-
-
-    </p>
+<footer>
+  <p class="meta">
+    <span class="byline author vcard">Posted by <span class="fn">u1tnk</span></span>
     
-      <div class="sharing">
+    <time>Apr 17, 2014</time>
+    
+    </span>
+  </p>
+
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="https://u1tnk.github.io/blog/2014/04/17/aws-price/" data-via="" data-counturl="https://u1tnk.github.io/blog/2014/04/17/aws-price/" >Tweet</a>
-  
-  
-  
-</div>
+
+  <p class="meta">
+    
+        <a class="basic-alignment left" href="https://u1tnk.github.io/blog/2014/03/20/team-geek/" title="Team Geek読んだ">Team Geek読んだ</a>
+    
 
     
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/2014/03/20/team-geek/" title="Previous Post: Team Geek読んだ">&laquo; Team Geek読んだ</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/2014/06/19/ansible-study-01/" title="Next Post: ansible 勉強会 #1メモ">ansible 勉強会 #1メモ &raquo;</a>
+      <a class="basic-alignment right" href="https://u1tnk.github.io/blog/2014/06/19/ansible-study-01/" title="ansible 勉強会 #1メモ">ansible 勉強会 #1メモ</a>
+    
+  </p>
+  
+</footer>
+
+      </article>
+    </div>
+    
+
+<aside class="sidebar thirds">
+  <section class="first odd">
+
+    
+
+    <p>
       
     </p>
-  </footer>
-</article>
+  </section>
 
-</div>
 
-<aside class="sidebar">
+
   
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
+  <ul class="sidebar-nav">
+    <li class="sidebar-nav-item">
+      
+      
+      
+      
+      
+         
+      
+      
+      
+      
+      
+      
+      
+      
+
     
-      <li class="post">
-        <a href="/blog/2018/09/09/my-price/">フリーランスとしての自己紹介と仕事の条件</a>
-      </li>
     
-      <li class="post">
-        <a href="/blog/2018/07/28/camp-maker/">初心者向けキャンプ用品メーカーまとめ</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2018/04/15/bose-sound-sport-free/">Bose SoundSport Free 一ヶ月使用レビュー</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/12/31/bestbuy2017/">買って良かったもの2017</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/10/04/free/">もともと自営業ですが真の自営業になりました</a>
-      </li>
-    
+    </li>
   </ul>
-</section>
 
+  
 
+  
 
-
-
+  
+  
   
 </aside>
 
-
-    </div>
   </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2018 - u1tnk -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
+</div>
 
-</footer>
-  
+    <footer role="contentinfo">
+      <p>Copyright &copy; 2019 u1tnk - <a href="https://u1tnk.github.io/license/">License</a> -
+        <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
+      </p>
+    </footer>
 
+    
+    
+    
 
-
-
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-
-
-
-
-
-</body>
+    
+      <script>
+        var _gaq=[['_setAccount','UA-2532590-5'],['_trackPageview']];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));
+      </script>
+    
+  </body>
 </html>
+

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Money on u1tnk.log</title>
+    <link>https://u1tnk.github.io/categories/money/</link>
+    <description>Recent content in Money on u1tnk.log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Sun, 09 Sep 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://u1tnk.github.io/categories/money/atom.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>フリーランスとしての自己紹介と仕事の条件</title>
+      <link>https://u1tnk.github.io/blog/2018/09/09/my-price/</link>
+      <pubDate>Sun, 09 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://u1tnk.github.io/blog/2018/09/09/my-price/</guid>
+      <description>目的  新規案件の話を頂いたときの自己紹介、条件の概要をまとめておく 単価公開されている方が少ないのでフリーランス初心者の方の単価決め、交渉材料になれば良いと思い公開  できる事  Rails開発 AWSでサーバサイド全般  EC2からECSまで 中小規模なら一人でインフラ構築可能  github/ci/pull requestベースの普通の開発  できない事  CTO チームビルディング、採用コンサルなど管理系  ゼロから普通の開発体制を作って経験の浅い方のサポートしつつ開発するとかぐらいならなんとか  モダンなフロントエンド  RailsのAjaxとか難度低めのJSなら問題無い 案件で必要になったら勉強したいとは思う  機械学習  同上   条件  フルリモート  横浜在住なので打合せは出れるが出社は多くて週一程度  作業時間の縛りは無し  作業のメインは子供が居ない昼頃か寝てからなので  仕事をゼロにしない戦略の為、通常二社以上受けているので週5の仕事は受けられない  2018年9月現在3社受けている   経歴  ソフトウェアエンジニア歴19年  SIer 7年  サポートやら組み込み開発やらを経て後半3年程度がweb開発 束縛の重い会社アレルギーに罹患  ベンチャー系自社サービス開発会社 7年 フリーランス 5年  スーパーエンジニアではまったく無いがベテランではある 思ってたより長かった。19年も働いてるのか…  単価 7500 円/h (日額6万)</description>
+    </item>
+    
+    <item>
+      <title>EC2インスタンス価格の必要なところだけ表にしてみた</title>
+      <link>https://u1tnk.github.io/blog/2014/04/17/aws-price/</link>
+      <pubDate>Thu, 17 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://u1tnk.github.io/blog/2014/04/17/aws-price/</guid>
+      <description>何？ EC2の価格表で以下が欲しかったので作った。
+2月にほぼ手作業で同じようなデータ作ったけど、大幅値下げで既に使いものにならなくなったので業を煮やした。いや値下げは嬉しいんだけど。
+同様にネットで見かけるまとめも見やすいものは古くなってたり…
+以下公式の不満。
+ 一画面でECUとかGiBとか比較できない リザーブドインスタンスにしたときのならし月額(一括払いを月額に按分して時間分と足す)が欲しい(見積りツールにはある) オンデマンドとリザーブドインスタンスどんぐらい違うか見たい ECUあたりとかメモリあたりの単価も比較したい 3年とかさすがに使えないのでいらない 中度とか軽度買うぐらいならオンデマンドで良いのでいらない このページのもデザイン的に見やすくないのでSpreadSheetなりに貼りつけて利用を推奨。(以下リンク先のCSSゼロの方がまだ見やすいという…)  やはりみづらいのでgoogle spread sheetに貼りつけた https://docs.google.com/spreadsheets/d/1QzsUHO4Nd07TL5FAnVM2yvLRa3uOslY7pDTrmhwuAf0/edit?usp=sharing   どうやった？ 以下ページのJSでHTML化。このページのはスナップショットとしてコピペ。 https://dl.dropboxusercontent.com/u/3400756/aws_price.html
+ 料金表のページのソースを見るとJSONPで呼んでたので使わせてもらった。おそらく外部利用を想定してないので止まっても文句は言いません。(見れなくなったら困るのでコピペった)  表について  RI = リザーブドインスタンス一年重度使用 OD = オンデマンド(普通) m1.small比OD価格のm1.small比。 安い順にソートしている。ファミリー毎の方がコスパとか見やすかったかも。  内容感想  m1.medium/m1.largeが消えてた…別ページにあるんだろうけど。 m1.small、特殊用途のhs以外全てSSD化してた。HDDは死んだ… m1.small、単価見ると高い！しょぼい用途には使うけど… m3.mediumも2月時点のm1.small(RIならしで約$34だった)と大差無い。 2月時点のm1.mediumよりC3.largeが安いってw m1.mediumのリザーブドインスタンスどうしろと… c3.largeがオンデマンドでも月一万切る上、メモリ/ECU共にコスパ高い! large以上は特段コスパ良くなったりはしない。 m3の中途半端さ。largeならc3かr3使うと思う。  4/17時点の価格表  size vCPU ECU memoryGiB storageGB RI一括 RI/時間 RIならし月額 OD時間 OD月額 OD m1.small比 OD月額/ECU OD月額/GiB  t1.micro1variable0.615ebsonly620.00911.640.02618.720.42NaN30.43 m1.small111.71 x 1601350.</description>
+    </item>
+    
+  </channel>
+</rss>

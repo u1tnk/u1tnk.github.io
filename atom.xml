@@ -1,1633 +1,184 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-
-  <title><![CDATA[u1tnk.log]]></title>
-  <link href="https://u1tnk.github.io/atom.xml" rel="self"/>
-  <link href="https://u1tnk.github.io/"/>
-  <updated>2018-09-09T18:47:33+09:00</updated>
-  <id>https://u1tnk.github.io/</id>
-  <author>
-    <name><![CDATA[u1tnk]]></name>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>u1tnk.log</title>
+    <link>https://u1tnk.github.io/</link>
+    <description>Recent content on u1tnk.log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Wed, 02 Jan 2019 00:00:00 +0000</lastBuildDate>
     
-  </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
-
-  
-  <entry>
-    <title type="html"><![CDATA[フリーランスとしての自己紹介と仕事の条件]]></title>
-    <link href="https://u1tnk.github.io/blog/2018/09/09/my-price/"/>
-    <updated>2018-09-09T15:16:25+09:00</updated>
-    <id>https://u1tnk.github.io/blog/2018/09/09/my-price</id>
-    <content type="html"><![CDATA[<h2>目的</h2>
-
-<ul>
-<li>新規案件の話を頂いたときの自己紹介、条件の概要をまとめておく</li>
-<li>単価公開されている方が少ないのでフリーランス初心者の方の単価決め、交渉材料になれば良いと思い公開</li>
-</ul>
-
-
-<h2>できる事</h2>
-
-<ul>
-<li>Rails開発</li>
-<li>AWSでサーバサイド全般
-
-<ul>
-<li>EC2からECSまで</li>
-<li>中小規模なら一人でインフラ構築可能</li>
-</ul>
-</li>
-<li>github/ci/pull requestベースの普通の開発</li>
-</ul>
-
-
-<h2>できない事</h2>
-
-<ul>
-<li>CTO</li>
-<li>チームビルディング、採用コンサルなど管理系
-
-<ul>
-<li>ゼロから普通の開発体制を作って経験の浅い方のサポートしつつ開発するとかぐらいならなんとか</li>
-</ul>
-</li>
-<li>モダンなフロントエンド
-
-<ul>
-<li>RailsのAjaxとか難度低めのJSなら問題無い</li>
-<li>案件で必要になったら勉強したいとは思う</li>
-</ul>
-</li>
-<li>機械学習
-
-<ul>
-<li>同上</li>
-</ul>
-</li>
-</ul>
-
-
-<h2>条件</h2>
-
-<ul>
-<li>フルリモート
-
-<ul>
-<li>横浜在住なので打合せは出れるが出社は多くて週一程度</li>
-</ul>
-</li>
-<li>作業時間の縛りは無し
-
-<ul>
-<li>作業のメインは子供が居ない昼頃か寝てからなので</li>
-</ul>
-</li>
-<li>仕事をゼロにしない戦略の為、通常二社以上受けているので週5の仕事は受けられない
-
-<ul>
-<li>2018年9月現在3社受けている</li>
-</ul>
-</li>
-</ul>
-
-
-<h2>経歴</h2>
-
-<ul>
-<li>ソフトウェアエンジニア歴19年
-
-<ul>
-<li>SIer 7年
-
-<ul>
-<li>サポートやら組み込み開発やらを経て後半3年程度がweb開発</li>
-<li>束縛の重い会社アレルギーに罹患</li>
-</ul>
-</li>
-<li>ベンチャー系自社サービス開発会社 7年</li>
-<li>フリーランス 5年</li>
-</ul>
-</li>
-<li>スーパーエンジニアではまったく無いがベテランではある</li>
-<li>思ってたより長かった。19年も働いてるのか…</li>
-</ul>
-
-
-<h2>単価</h2>
-
-<p>7500 円/h (日額6万)</p>
-
-<ul>
-<li>ベースの単価。今受けている仕事が全部この金額では無い
-
-<ul>
-<li>架空の希望では無くこれ以上の実績もある</li>
-<li>依頼内容、状況により上下する</li>
-<li>上がった方が当然嬉しい</li>
-</ul>
-</li>
-<li>相場観が変わったら変更する</li>
-<li>エージェントは使っていない、友人紹介で直接契約</li>
-</ul>
-
-
-<h2>最後に</h2>
-
-<p>有名でもスーパーでも無いエンジニアのリアルな単価の参考資料にして欲しい。</p>
-
-<p>個人的な相場観とかも参考情報として書こうかと思ったけど、顧客候補に見て頂くページでもあるので別途。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[初心者向けキャンプ用品メーカーまとめ]]></title>
-    <link href="https://u1tnk.github.io/blog/2018/07/28/camp-maker/"/>
-    <updated>2018-07-28T23:12:46+09:00</updated>
-    <id>https://u1tnk.github.io/blog/2018/07/28/camp-maker</id>
-    <content type="html"><![CDATA[<h2>TL;DR</h2>
-
-<p>キャンプ始めたいけど、何買って良いかわからんって人をよく見るが、モノ単位で紹介するとマジで果てしないので、メーカーの印象をざっとまとめた。
-服関係もキリが無いので入れてない。買ったモノも入れようかと思ったけど同上。
-友人向けにざっくり書いてるので不正確や漏れもあると思うが容赦頂きたい。
-すげー昔に友人にまとめろって言われたのと、ゆるキャンブームのときに初心者に相談されたのをきっかけで書き始めて、途中で放置して今に至る 😇</p>
-
-<h2>雑なカテゴリ分け表</h2>
-
-<table>
-<thead>
-<tr>
-<th>  </th>
-<th> 高級 </th>
-<th> コスパ </th>
-<th> 安い </th>
-<th> 大物 </th>
-<th> 小物 </th>
-<th> 軽量 </th>
-<th> 特記 </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> モンベル </td>
-<td> ○ </td>
-<td> ○ </td>
-<td>  </td>
-<td> ○ </td>
-<td> ○ </td>
-<td> ○ </td>
-<td>  </td>
-</tr>
-<tr>
-<td> コールマン </td>
-<td> ○ </td>
-<td> ○ </td>
-<td> ○ </td>
-<td> ○ </td>
-<td> ○ </td>
-<td>  </td>
-<td>  </td>
-</tr>
-<tr>
-<td> スノーピーク </td>
-<td> ○ </td>
-<td>  </td>
-<td>  </td>
-<td> ○ </td>
-<td> ○ </td>
-<td>  </td>
-<td>  </td>
-</tr>
-<tr>
-<td> ロゴス </td>
-<td>  </td>
-<td> ○ </td>
-<td>  </td>
-<td> ○ </td>
-<td> ○ </td>
-<td>  </td>
-<td>  </td>
-</tr>
-<tr>
-<td> ユニフレーム </td>
-<td>  </td>
-<td> ○ </td>
-<td>  </td>
-<td>  </td>
-<td> ○ </td>
-<td>  </td>
-<td>  </td>
-</tr>
-<tr>
-<td> キャプテンスタッグ </td>
-<td>  </td>
-<td> ○ </td>
-<td> ○ </td>
-<td> ○ </td>
-<td> ○ </td>
-<td>  </td>
-<td>  </td>
-</tr>
-<tr>
-<td> SOTO </td>
-<td>  </td>
-<td> ○ </td>
-<td>  </td>
-<td>  </td>
-<td> ○ </td>
-<td> ○ </td>
-<td> バーナー </td>
-</tr>
-<tr>
-<td> ジェントス </td>
-<td>  </td>
-<td> ○ </td>
-<td>  </td>
-<td>  </td>
-<td> ○ </td>
-<td>  </td>
-<td> LEDランタン </td>
-</tr>
-<tr>
-<td> ヘリノックス </td>
-<td> ○ </td>
-<td>  </td>
-<td>  </td>
-<td>  </td>
-<td> ○ </td>
-<td> ○ </td>
-<td> ほぼチェア </td>
-</tr>
-<tr>
-<td> サーマレスト </td>
-<td> ○ </td>
-<td> ○ </td>
-<td>  </td>
-<td>  </td>
-<td> ○ </td>
-<td>  </td>
-<td> マット </td>
-</tr>
-</tbody>
-</table>
-
-
-<ul>
-<li>あくまでイメージ</li>
-<li>コスパと安いは 品質がある程度信頼できて安いととにかく安いで分けてます。</li>
-<li>テンマクとか小川とかドッペルギャンガー、ケシュア、MSR、アライ…とかもあるけど初心者向けだし未購入なんで割愛。</li>
-</ul>
-
-
-<h2>ウチのキャンプ用品コンセプト</h2>
-
-<p>やりたいキャンプが違うと欲しいモノも違うので、前提となるウチのコンセプトまとめ。</p>
-
-<ul>
-<li>安全第一
-
-<ul>
-<li>家族で行くので当然</li>
-<li>ある程度品質に信用が置けるもの</li>
-<li>山と違って管理されているキャンプ場ならほぼ死にはしないが、子供にトラウマ作ったりは有り得る</li>
-</ul>
-</li>
-<li>安価
-
-<ul>
-<li>キャンプ用品モノが多くてキリが無い上普段使えないモノ多いので高いもの買ってられない。</li>
-<li>家でも使えるモノなら少し高くても許容</li>
-<li>ある程度品質に信用置けるモノの中で安めに</li>
-</ul>
-</li>
-<li>軽量化
-
-<ul>
-<li>車なんだしサイズ気にしなくて良いのでは？
-
-<ul>
-<li>…とか思ってるとあっと言う間に1500ccの車に3人＋後ろが見えないほど積んで、キャリア積む羽目になる</li>
-<li>コールマンとか買うと「え!？テントの箱デカ!!箱に泊まれそうじゃね？」ってなる。</li>
-</ul>
-</li>
-<li>平屋に駐車場でも積み込み作業結構大変。</li>
-</ul>
-</li>
-<li>手軽
-
-<ul>
-<li>思いたったらさっと行きたい</li>
-<li>BBQとか大変なのはたまにしかしない</li>
-</ul>
-</li>
-</ul>
-
-
-<h2>各メーカー雑感</h2>
-
-<p>画像は寂しいので、各メーカーでウチで愛用しているor愛用していたものを貼った。</p>
-
-<h3>モンベル</h3>
-
-<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B00UPX8BLW/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/41UsmS3CrjL._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B00UPX8BLW/u1tnk-22/" target="_blank" >モンベル(mont-bell) テント クロノスドーム4型 [3～4人用] スカイブルー 1122492-SKB</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="https://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> モンベル(mont-bell)     </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
-
-
-<p>通称山のユニクロ、なんでも揃うし、とりあえず安心。</p>
-
-<ul>
-<li>登山からキャンプ、その他諸々アウトドア用品ならなんでもある…少なくとも一番広範囲ある。</li>
-<li>登山用品からスタートなのでキャンプ用品も軽量のものが多い。</li>
-<li>山だとコンパクトが生命線なので袋がギリギリで入れずらいのが地味な難点。</li>
-<li>品質は信用が置けるし、修理も大抵のもの対応してくれる上、店も多いので安心。
-
-<ul>
-<li>めんどくさいから一通り一店舗で揃える…ってのも可能。</li>
-</ul>
-</li>
-<li>ウチは軽量化とあんまりカネをかけないという条件があるので、モンベル製品多め。</li>
-<li>安く買う方法はアウトレット製品ぐらいで基本ほぼ定価。エブリデイロープライス系。ロープライスと言ってもスノーピークと比べたら圧倒的に安いがキャプテンスタッグよりは全然高い…という感じ。</li>
-</ul>
-
-
-<h3>コールマン</h3>
-
-<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B0002JZFCM/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/41e-j1rGM1L._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B0002JZFCM/u1tnk-22/" target="_blank" >コールマン ハンギングドライネット 170-6496</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="https://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> コールマン(Coleman) 2012-03-26    </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
-
-
-<p>アメリカ的ファミリーキャンプ用品ならなんでもあるぜ。</p>
-
-<ul>
-<li>モンベルと違って登山用品は無い</li>
-<li>どこのキャンプ場でも見るメーカーその1。</li>
-<li>とにかくモノがデカい。先述したがマジで箱もデカい。デカい車が好きな人なら良いのでは。</li>
-<li>品質はピンキリ、安いものから高級ラインまで。</li>
-<li>ガソリンランタンとか伝統かつ定番のモノもある</li>
-<li>ハンギングドライネットとかちょっとした小物が便利だったりする。</li>
-<li>安く買う方法はどこでも売ってるので、キャンプ用品店やら通販の安売りを探す。</li>
-</ul>
-
-
-<h3>スノーピーク</h3>
-
-<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B018XJY8YI/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/41ZQYMUrB9L._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B018XJY8YI/u1tnk-22/" target="_blank" >スノーピーク(snow peak) テント アメニティドームM [5人用]</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="https://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> スノーピーク(snow peak)     </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
-
-
-<p>国産高級キャンプ総合</p>
-
-<ul>
-<li>テントからランタン、食器までキャンプ用品ならなんでも。</li>
-<li>どこのキャンプ場でも見るその2。高めのキャンプ場行くと囲まれてたりする。</li>
-<li>モンベルと違って、高級になるほどゴツく丈夫になる傾向。軽くはならない。</li>
-<li>基本高い。
-
-<ul>
-<li><a href="https://ec.snowpeak.co.jp/snowpeak/ja/%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%97/%E3%83%A9%E3%82%A4%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0/%E3%81%BB%E3%81%8A%E3%81%9A%E3%81%8D-%E3%82%86%E3%81%8D-%5B%E6%98%8E%E3%82%8B%E3%81%95100lm%5D/p/11549">ほおずき ゆき [明るさ100lm](ES-070WH)</a>  小洒落てるとは言え 100ルーメンのLEDランタンがほぼ1万には悶絶した。</li>
-</ul>
-</li>
-<li>信者が多く、スノーピーカーと呼ばれる。
-
-<ul>
-<li>憧れではある。しかし高い…</li>
-<li>先述したランタンを数十個ぶらさげてるスノーピーカーを目撃したときの衝撃は忘れない</li>
-<li>スノーピーク運営のキャンプ場もある。行ってみたいが遠い(新潟)。</li>
-</ul>
-</li>
-<li>公式では雪峰祭というのをセールを年二回ほどやってる様子。アウトドアショップで「全品20%オフ!(ただしスノーピークは10%)」とかを見かける。</li>
-</ul>
-
-
-<h3>ロゴス</h3>
-
-<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B0015FRCHS/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/51fL7lwxVtL._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B0015FRCHS/u1tnk-22/" target="_blank" >ロゴス 着火剤 防水ファイヤーライター 83010000 [HTRC 4.1]</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="https://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> ロゴス(LOGOS) 2011-12-26    </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
-
-
-<p>安物でも高級でも無いコスパ系総合</p>
-
-<ul>
-<li>高級でも無いけど小洒落てるイメージ。</li>
-<li>テント/タープもあるけど、イスとかクーラーとかでよく見る</li>
-<li>着火材とか保冷剤とか地味なところで定評がある。</li>
-</ul>
-
-
-<h3>SOTO</h3>
-
-<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B001CBVCGC/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/41h3F-tXv4L._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B001CBVCGC/u1tnk-22/" target="_blank" >ソト(SOTO) シングルバーナー 【シルバー】 ST-301 シングルバーナー キャンプ用 アウトドアコンパクト カセットガス用 ミニガスバーナー ガスストーブ バーナー 火力が強い ソロキャンプ ツーリング BBQ 登山 キャンプ用品 収納バッグ付き</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="https://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> ソト(SOTO) 2012-04-05    </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
-
-
-<p>新富士バーナーのアウトドアブランド</p>
-
-<ul>
-<li>写真は「BBQは手間がかかる。登山用ストーブは使いづらい、カセットコンロはデカい、安いカセットコンロ用のガスが使えると良い」という我侭を実現してくれた素晴しいアイテム。</li>
-</ul>
-
-
-<h3>ユニフレーム</h3>
-
-<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B000AR5Y90/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/414W0DGCJ9L._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B000AR5Y90/u1tnk-22/" target="_blank" >ユニフレーム UNIFLAME ファイアグリル 683040</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="https://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> ユニフレーム     </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
-
-
-<p>焚き火台とか火を使うまわりで頑丈なモノが多い。比較的安価。焚き火テーブルも定番かつ愛用中。</p>
-
-<h3>キャプテンスタッグ</h3>
-
-<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B000AR4T0A/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/31QMf-hm-uL._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B000AR4T0A/u1tnk-22/" target="_blank" >キャプテンスタッグ(CAPTAIN STAG) テント タープ サンシェルター オルディナ ヘキサ タープ セットM-3167</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="https://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> キャプテンスタッグ(CAPTAIN STAG) 2012-08-11    </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
-
-
-<p>とにかく安価。ここの安めのラインなら2万もあれば最低限揃うんじゃ無かろうか。始めてみたいけど続くかどうか分からなければアリ。ウチも自信が無かったのでテントはもらいものでタープはここからでした。
-その後、モンベルとかスノピのタープ見に行って、ポールの、特に接合部の質が雲泥の差で驚くなど。ウチが持ってたのが特に安いラインであるのは確かだけど。
-たまにこだわり人も買う定番品もあったりする。(鹿ベンチとか)</p>
-
-<h3>ジェントス</h3>
-
-<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B00ICYBAU0/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/41wGmezSjlL._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B00ICYBAU0/u1tnk-22/" target="_blank" >GENTOS(ジェントス) LED ランタン 【3色切替/明るさ380ルーメン/連続点灯14時間/防滴】 エクスプローラー SOL-036C</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="https://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> GENTOS(ジェントス)     </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
-
-
-<p>LEDランタン定番メーカー。
-ガソリンとかになるとコールマンだけど、手軽、コンパクトキャンプ派のウチとしてはLED一択。
-ガソリンランタン派もテント内とか持ち歩き用のサブランタンはLEDなので大抵の人は持ってるイメージ。</p>
-
-<h3>ヘリノックス</h3>
-
-<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B07257DTZ3/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/41CqMqdpmBL._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B07257DTZ3/u1tnk-22/" target="_blank" >Helinox(ヘリノックス) Chair Two Home/チェアツーホーム バーガンディ</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="https://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> Helinox(ヘリノックス)     </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
-
-
-<p>定番軽量チェア。今では有名メーカー含めパチもんを大量に作られている。
-あまり書かれてないが韓国メーカー。品質には定評ある。
-パチもん系にあまり無いハイバックが欲しくて買ったが、買ってから耐荷重:145kg って事に気づいた。パチもんもピンキリだが多くは100kg以下。100kgでも問題無さそうに見えるが、子供がヒザに乗ると超えてしまうため、子供に甘えられる貴重なチャンスを無駄にしたくないけなげなおっさんは気にした方が良い。</p>
-
-<h3>サーマレスト</h3>
-
-<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B005I6R0WC/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/51VjMkTk8iL._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B005I6R0WC/u1tnk-22/" target="_blank" >THERMAREST(サーマレスト) アウトドア用マットレス クローズドセルマットレス Zライト ソル シルバー/レモン R(51×183×厚さ2cm) R値2.6 30670 【日本正規品】</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="https://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> THERMAREST(サーマレスト) 2012-03-12    </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
-
-
-<p>アウトドア寝具関係だけど見た事あるのはマットのみ。
-キャンプ未経験だとテントと寝袋さえちゃんとしてれば快適快眠!…などと思ってしまうが、重要なのは寝袋よりマット。特に夏に行くなら寝袋いらなかったりするが、マットが薄いと寝冷えするし、薄いと石が当たって…と全然眠れない。
-コレを買う前は銀マットを二重にして、余ってた家用コンパクトマットレスを重ねて…とかやってみてたけど、これ一枚で全然寝冷えしなくてむしろ快適で驚愕。そして圧倒的にコンパクト。
-固めのマットがダメな人ならインフレータタイプにした方が良いかも。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Bose SoundSport Free 一ヶ月使用レビュー]]></title>
-    <link href="https://u1tnk.github.io/blog/2018/04/15/bose-sound-sport-free/"/>
-    <updated>2018-04-15T11:07:14+09:00</updated>
-    <id>https://u1tnk.github.io/blog/2018/04/15/bose-sound-sport-free</id>
-    <content type="html"><![CDATA[<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;/zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B074TCH8D9/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/51JsAkPfzML._SL160_.jpg" sttyle="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;/zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B074TCH8D9/u1tnk-22/" target="_blank" >Bose SoundSport Free wireless headphones 完全ワイヤレスイヤホン ミッドナイトブルー/イエローシトロン【国内正規品】</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="http://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> BOSE 2017-11-23    </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
-
-
-<p>買って一ヶ月ぐらい経ったのでまとめ。</p>
-
-<p>まず、総評。
-個人的にはほぼ満足、コスパあまり気にしない人にはオススメ。、接続機器の切り替えを頻繁に使う人、windows10で音楽を聞いてる人はやめとけ、となります。</p>
-
-<h2>before</h2>
-
-<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;/zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B01MRXQIGQ/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/41ST8gT-ZTL._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;/zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B01MRXQIGQ/u1tnk-22/" target="_blank" >Hellodigi K2 Bluetooth 4.1イヤホン 高音質イヤホン カップルヘッドフォン ワイヤレスイヤホン ミニ型 マイク付き 両耳　 (黒)</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="http://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> Hellodigi     </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
-
-
-<ul>
-<li>3000円程度の完全ワイヤレスお試しイヤホン
-
-<ul>
-<li>意外に使えてはいた</li>
-<li>非防水なのに洗濯機にぶちこんでも壊れなかったハイスペックっぷり</li>
-<li>左右に差が無く、接続時の音声を聞いて修正する方法だったのがめんどくさくて仕方が無い</li>
-<li>持ち歩くケースが無いので無くしそうで無くさなかった</li>
-<li>しばしば充電切れを起こしていた</li>
-</ul>
-</li>
-<li>使い勝手は良くないので有線もよく使ってた。使っていたのはEarPods。色々試してはいたけど断線やらなんやらで結局コレ…</li>
-<li>知り合いで欲しい人居たらあげます</li>
-</ul>
-
-
-<h2>after</h2>
-
-<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;/zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B074TCH8D9/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/51JsAkPfzML._SL160_.jpg" sttyle="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;/zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B074TCH8D9/u1tnk-22/" target="_blank" >Bose SoundSport Free wireless headphones 完全ワイヤレスイヤホン ミッドナイトブルー/イエローシトロン【国内正規品】</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="http://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> BOSE 2017-11-23    </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
-
-
-<p>boseの高いけど良さそうなヤツ。
-写真やらスペックやらは詳細なレビューたくさんあるのでそちらを。</p>
-
-<h3>良かったところ</h3>
-
-<ul>
-<li>音質はマニアじゃないので表現は控えるが、個人的には満足。</li>
-<li>ケースから取り出すと勝手に繋がって、左右が分かりやすいのは以前とくらべて感動的に便利。最近の完全ワイヤレスでは当たり前ではある。</li>
-<li>外ではほぼ有線リモコン使わなくなった。</li>
-<li>イヤーピースが良くできててジムで走ったりしても全然ズレない、落ちない。そんで不快感もあんまり無い。デカイのに。ちなみに片耳10gとデカいけど軽いからと思う。</li>
-<li>イヤホン本体にEarPods同様の物理リモコンが付いてて便利。</li>
-<li>イヤホン単体で5時間持つのにケースもバッテリーで切れる気がしない。</li>
-<li>ジムやジョギングで使うので防水の安心感。
-
-<ul>
-<li>ケースに入れるときは充電端子が濡れないようにしないといけないらしいが、それが必要な程汗かいた事無い。</li>
-</ul>
-</li>
-</ul>
-
-
-<h3>イマイチなところ</h3>
-
-<ul>
-<li>デカい。「耳から出るうどん」を避けたのに角でも付いてんのかというサイズ感。</li>
-<li>デカいが故にケースもデカい。外すときは即ケースに収納という世界観なのでケースも持ち歩かざるを得ず、手ぶらで出かけたときにポケットが異様に膨らむ事に。</li>
-<li>再生ボタンのクリック感が微小過ぎる。「音量のプラスとマイナスの間のへこんだところを適当にぐっと押して、反応するまでドキドキして待つ」というレベル。</li>
-<li>充電ケースのボタンのクリック感もイマイチだが見ながら押すし、再生ボタンみたいなラグも無いのでちょっと不便レベル。</li>
-<li>電話するときは右耳だけしか音が鳴らない。</li>
-<li>たまに左だけ切れる。レビューで見て心配してた現象だが、そんなに高い頻度では無かった。
-
-<ul>
-<li>二段階あって、一瞬切れて勝手に復帰するパターンと、完全に切れて、左イヤホンのボタンを押すと一瞬待って復帰するパターン。どちらも当然ながら人が多いところで発生して自宅では一回も起きていない。起きない方が良いが、使用時間(週5で2時間ぐらいは使ってる)から考えるとそんなに気にするものでは無いと思う。頻繁に起きる人は何か干渉する何かを持ってるんじゃないかと。iPhoneとAppleWatchだけ持ってる人は大丈夫と思われる。
-
-<ul>
-<li>一瞬切れるパターンは一ヶ月で3回ほど</li>
-<li>完全に切れるパターンは一ヶ月で2回</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>iPhoneとiPadで切り替えるときは左耳のボタン長押しで一旦切って、聞きたいiPhone/iPadから接続しなおす必要がある。 revolveみたいに複数繋がって再生した方が鳴る…という便利が欲しかった。個人的には切り替え頻度から許容範囲。</li>
-</ul>
-
-
-<h3>ダメなところ</h3>
-
-<p>windows10マシンで音楽を聞こうとすると右耳しか鳴らない。</p>
-
-<p><a href="https://community.bose.com/t5/Wireless-Headphones/Soundsport-Free-Incompatability-with-Windows-10/td-p/96590">Solved: Soundsport Free Incompatability with Windows 10 - Bose Community</a></p>
-
-<p>この問題。headsetとheadphoneの二種類のデバイスとして認識されるが、通常はheadsetしか使用可能にならず、電話と同様に右耳だけとなる。
-solevedになってるけど全然解決してない。
-スレッドの内容をざっとまとめると「接続する度にwindowsの再起動含む煩雑な手順が必要、途中でミスったらまた再起動して頑張ってね」となる。
-私のマシンの事例だと、その上、ボリュームボタン触ったら切れた。完全に使いものにならない。
-何度かコレで解決!って手順が出て来るがどうもOSなりを間違ってるらしく自分のマシンでは解決できなかった。あと、スレッドによるとboseは対応してくれないらしい。
-個人的には家のデスクトップのゲームマシンだけの事なので使わなきゃ良いけど、出先とか会社でwindows PCで音楽を聞く層には致命的だと思われる。
-私の調査能力の問題で、実は解決方法あったら教えてください :bow:</p>
-
-<h2>買わなかったライバル達</h2>
-
-<p>それぞれに書いた理由と、 boseのbluetoothスピーカー2個持ってた信頼と、なんとなくのイメージで決めた。</p>
-
-<h3>Apple AirPods</h3>
-
-<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;/zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B01N2VMGT6/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/311k6OfaSdL._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;/zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B01N2VMGT6/u1tnk-22/" target="_blank" >Apple AirPods 完全ワイヤレスイヤホン Bluetooth対応 マイク付き MMEF2J/A</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="http://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> Apple Computer 2016-12-14    </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
-
-
-<ul>
-<li>みんな持ってる</li>
-<li>うどん感</li>
-<li>EarPodsと音が変わらんという話なのでつまらない</li>
-<li>「めちゃくちゃ便利、Apple製品で染まってればね」という事だが、PCもMBPじゃないし、8割iPhoneたまにiPadで使うぐらいなんでまあ良いかと。</li>
-</ul>
-
-
-<h3>Anker Zolo Liberty+</h3>
-
-<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;/zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B075SS3QH1/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/41mNsGWeHvL._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;/zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B075SS3QH1/u1tnk-22/" target="_blank" >Zolo Liberty+ (Bluetooth 5.0 完全ワイヤレスイヤホン) 【最大48時間音楽再生 / Siri対応 / IPX5防水規格 / 周囲音取り込み機能搭載】(ブラック)</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="http://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> Anker     </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
-
-
-<ul>
-<li>コスパ良いし、コレで良かった感はある。</li>
-<li>左右接続がbluetoothじゃないので切れにくい、とbose使ってて左が切れた後に発見。</li>
-<li>「財布が許す一番良いのを買わないと後で気になる」法則になりそうな気がした。</li>
-</ul>
-
-
-<h3>B&amp;O Beoplay E8</h3>
-
-<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;/zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B074WTKWG6/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/31y4rhjFF%2BL._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;/zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B074WTKWG6/u1tnk-22/" target="_blank" >B&O Play 完全ワイヤレスイヤホン Beoplay E8 NFMI AAC対応 リモコン・マイク付き 通話可能 ブラック(Black) Beoplay E8 Black by Bang & Olufsen(バングアンドオルフセン) 【国内正規品】</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="http://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> B&O play 2017-11-22    </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
-
-
-<ul>
-<li>ankerと同じく左右接続がbluetoothじゃないので切れにくい系だったし、boseよりもサイズ小さいし、boseの弱点が補強されているのでこっちの方が良かったかもしれない。</li>
-<li>ブランドは定評はあるようだが、個人的に馴染みが無かったのでboseになった。長いモノに巻かれた。</li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[買って良かったもの2017]]></title>
-    <link href="https://u1tnk.github.io/blog/2017/12/31/bestbuy2017/"/>
-    <updated>2017-12-31T21:11:45+09:00</updated>
-    <id>https://u1tnk.github.io/blog/2017/12/31/bestbuy2017</id>
-    <content type="html"><![CDATA[<p>流行ってるし、買いものが趣味と言っても過言では無いのに書いた事無かったので。
-まあ大晦日までひっぱってるあたりが我ながらひどい。
-これは買って良かったものでハズレもたくさんあるし、車も買ってて合計金額計算したく無いですね😇</p>
-
-<h1>生活編</h1>
-
-<h2>書いて洗って消えるペン</h2>
-
-<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;/zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B01HEBL8EE/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/611QxpBTkIL._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;/zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B01HEBL8EE/u1tnk-22/" target="_blank" >サランラップに書けるペン 3色セット (赤・青・黒)</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="http://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> 旭化成ホームプロダクツ 2016-08-08    </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
-
-
-<p>嫁に買わされたときそんなに便利なの？って思ったけど、めっちゃ便利。
-ラップというか、結局サクっと洗って消えるペンなので、冷蔵庫で使うくり返し使う収納器とかに日付、何が入ってるとかサクっと書ける。台所まわり適当なメモであふれるようになった。</p>
-
-<ul>
-<li>油温計</li>
-</ul>
-
-
-<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;/zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00029MMZA/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/41mmPBzcU0L._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;/zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00029MMZA/u1tnk-22/" target="_blank" >タニタ 揚げもの用温度計 クックサーモ  5495B</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="http://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> タニタ(TANITA)     </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
-
-
-<p>家族に好評を博してしまったため完全に担当になってしまった唐揚げ作り。
-そのクオリティがたかが千円ちょいで確実にアップ。揚げ過ぎ、カラっとしないヤツの撲滅に貢献してくれる。</p>
-
-<h2>温度設定ができる電気ケトル</h2>
-
-<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;/zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B01I64MG3U/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/41l%2BgdToghL._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;/zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B01I64MG3U/u1tnk-22/" target="_blank" >HARIO(ハリオ) 電気ケトル コーヒードリップ用 温度調整機能付 V60 パワーケトル・ヴォーノ EVKT-80HSV</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="http://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> ハリオ 2016-08-05    </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
-
-
-<p>電気ケトル自体は便利に使ってたが主にコーヒードリップ時の不便を解消。
-- 注ぎ口が細くてドリップ時に注ぎやすい
-- 温度設定便利。コーヒーの90度はまだしも、緑茶80度を体感で冷ますのは無理</p>
-
-<p>ハリオのデザインとコーヒー用の信頼感で買ったので、温度設定できる他の製品の方が便利な可能性は高い。
-今までのワンボンタン押せば沸騰という分かりやすさも損なってるし、ボタンの反応が遅いので、コーヒーよく煎れない人には薦められない。</p>
-
-<h2>布団乾燥機</h2>
-
-<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;/zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B01LYPU0ZJ/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/41r7zEsfzEL._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;/zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B01LYPU0ZJ/u1tnk-22/" target="_blank" >アイリスオーヤマ 布団乾燥機 カラリエ マットなし パールホワイト FK-C2-WP【靴乾燥アタッチメント付】</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="http://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> アイリスオーヤマ(IRIS OHYAMA)     </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
-
-
-<p>先に袋とか使わずに手軽に使える。
-結果、布団乾燥には使わず、専ら寒い夜に寝る前に布団あっためる用途として毎晩使われている。ホッカホカの布団は病み付きになる。</p>
-
-<h2>○○ が臭わない袋</h2>
-
-<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;/zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00NUPS91Y/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/51J%2Bu%2B85wwL._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;/zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00NUPS91Y/u1tnk-22/" target="_blank" >驚異の防臭袋 BOS (ボス) うんちが臭わない袋 ペット用 うんち 処理袋【袋カラー：ブルー】 (Sサイズ　200枚入)</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="http://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> BOS-SHOP     </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
-
-
-<p>ペット用品だから関係無いと思ってたが、アレが臭わないという事は生ゴミも臭わないという事なのです!!!
-Sサイズが三角コーナー替わりの台所ゴミ箱にちょうど良いので特に夏場は重宝する。
-もう不要だけどオムツとかにも使えるはず。名前が直接的過ぎるのが難。</p>
-
-<h1>アウトドア編</h1>
-
-<p>今年のウチのアウトドア用品購入における二大テーマの以下を踏まえて。
-- キャンプ用品のコンパクト化
-    - 思い立ったら行けるように積み込みラクラク
-    - 荷物でバックミラーが見えない車はもういや
-- 日常でも使える
-    - 高いモノなのに年に数回はもったいない</p>
-
-<h2>モンベル軽量テント、タープ</h2>
-
-<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;/zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00UPX8BLW/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/41UsmS3CrjL._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;/zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00UPX8BLW/u1tnk-22/" target="_blank" >モンベル(mont-bell) テント クロノスドーム4型 [3～4人用] スカイブルー 1122492-SKB</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="http://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> モンベル(mont-bell)     </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
-
-
-
-
-<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;/zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00UD3N8XA/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/41qz26%2B9NEL._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;/zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00UD3N8XA/u1tnk-22/" target="_blank" >モンベル(mont-bell) シート クロノスドーム4型用 グラウンドシート ブルーブラック 1122495-BLBK</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="http://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> モンベル(mont-bell)     </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
-
-
-
-
-<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;/zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00VQAQ2OQ/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/31yIl1cr4YL._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;/zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00VQAQ2OQ/u1tnk-22/" target="_blank" >モンベル(mont-bell) タープ ミニタープHX ダークフォレスト 1122474-DKFO</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="http://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> モンベル(mont-bell)     </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
-
-
-<p>この他タープ用のポールを買う必要はあるけど、ここまでで合計5キロ以下。サイドポール増やしてポール4本でも余裕で全部一人で一回で持てます。グラウンドシートは代用品も多いけど、純正が軽くて丈夫でオススメ。
-コール○ン、スノピあたりで買うと快適性は上だけど、タープ、テントセットで20キロ超とか普通。体積になるとえらい差に…
-キャンプメーカーっていくら金出しても丈夫にはなっても軽く小さくはならないので、登山メーカー(モンベルとかMSRとか)のジャストサイズが理想となります。ちなみにMSRは結構高い。</p>
-
-<h2>ヘリノックスの軽量組み立てヘッドレスト付きチェア</h2>
-
-<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;/zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B07257DTZ3/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/41CHEMB0NYL._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;/zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B07257DTZ3/u1tnk-22/" target="_blank" >Helinox(ヘリノックス) Chair Two Home/チェアツーホーム バーガンディ</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="http://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> Helinox(ヘリノックス)     </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
-
-
-<p>これ家族分買ったので今年の気合入れて買ったキャンプ用品オブザイヤーでもある。
-圧倒的軽さのチェアワンは昔から気になってはいたものの、背もたれ小さくてヘッドレストも無いからリラックス度はイマイチだなーと思ったらそこを押さえたチェアツーが出たのが運の尽き。
-しかもちょっと高い方のホーム(A&amp;Fで売ってる方)にしたのは家でも使う前提でデザイン性も重視したため。ちなみにヘリノックス製品そんな安売りしてないけど実店舗ではたまにセール見る。これもセールじゃなければ気合入ってなかったと思われる。
-前に使ってたイスから大幅に軽量化の上組み立てなので単なる体積以上に積載ラク。
-組み立ても簡単。居間と寝室で一脚ずつ使用中。</p>
-
-<h2>常に使える登山用パンツ</h2>
-
-<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;/zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00MLACE2Y/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/41g2Ng1e%2B4L._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;/zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00MLACE2Y/u1tnk-22/" target="_blank" >(ザ・ノース・フェイス)THE NORTH FACE アルパインライトパンツ NT52927 K ブラック L</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="http://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> THE NORTH FACE 2017-08-16    </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
-
-
-<p>普段使ってる頻度大賞。
-紐結ばなければそのまま脱げるぐらい伸びるので履きごこちはほぼジャージで見ためそんなにおかしく無いので使いやすい。
-想定外だったのは普段のチョイ乗りロードバイク用に最適な事。タイトなのでそのままチェーンに絡まず、ポケットにスマホ入れてもチャック着いてて絶対落とさない上伸びるのでペダリングの邪魔にもならない。
-ついでに…と言うのアレだけど足上げても履いてないっけ？って思うぐらい抵抗無く、速乾、撥水なので登山にも最高。</p>
-
-<h2>スマホも使える防風手袋</h2>
-
-<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;/zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B07652PZ85/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/41n2YvYUR-L._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;/zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B07652PZ85/u1tnk-22/" target="_blank" >(ザ・ノース・フェイス)THE NORTH FACE ウインドストッパーイーチップグローブ</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="http://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> THE NORTH FACE 2017-10-16    </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
-
-
-<p>春、秋自転車用途、冬普段用。そんなあったかく無いけど、ウィンドストッパー入ってるので防風効果あって、頑張れば文字入力も可能なぐらいスマホ普通に使える(10本全部)、薄手で伸びるのでストレスレス。
-スマホがマジで普通に使えるのでガジェット中毒者でもずっと付けっぱなしにできて最高。</p>
-
-<h1>ガジェット編</h1>
-
-<h2>Linuxノート</h2>
-
-<p><img src="https://img.esa.io/uploads/production/attachments/4918/2017/12/31/14935/fd013535-bc8d-4a44-8e4e-ad854befb775.png" alt="image.png (416.0 kB)" /></p>
-
-<p><a href="https://www3.lenovo.com/jp/ja/notebooks/thinkpad/x-series/ThinkPad-X1-Carbon-5th-Gen/p/22TP2TXX15G">Thinkpad X1 Carbon
-</a></p>
-
-<p>長らくMacBook派だったがDockerの起動が遅いのがストレスだった上、タッチバー…通称おさわりバーが最高に気に食わない上、タッチバー無しモデルが不当にパフォーマンス低くされてるのが我慢ならないので脱出。
-Linuxガチ勢では無いので一番無難な組み合わせとして Thinkpad + Ubuntuで運用中。予想通りではあるが一ヶ月もすればほぼ違和感無くなりました。
-画面の綺麗さだけはMBPが懐しいところはあるけど、薄い、軽い、丈夫、バッテリーも持つ…あと、新MBPと比べてストローク深めのキーボードかなり好みなのはデカい。
-なお、windowsもmacも保険で確保はしている。</p>
-
-<h2>bose 360度 bluetoothスピーカー</h2>
-
-<p>  <div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;/zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B06Y3PCMPR/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/51az1RMrIzL._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;/zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B06Y3PCMPR/u1tnk-22/" target="_blank" >Bose SoundLink Revolve Bluetooth speaker ポータブルワイヤレススピーカー トリプルブラック【国内正規品】</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="http://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> BOSE 2017-04-28    </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div></p>
-
-<p>360度スピーカーを初使用。どこに置いても良いので気軽にBGMかけられるようになった。防滴で台所で気軽に使えるのも良い。対抗機種で防水もあったが風呂場で聞く習慣無いし。スマートスピーカーはSiriの例からしてガチで使うわけは無いのでスルー。</p>
-
-<h2>車載マグネットホルダー &amp; マグネット対応ケース</h2>
-
-<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;/zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00PZMR2SG/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/517uWQBt5yL._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;/zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00PZMR2SG/u1tnk-22/" target="_blank" >mag-tek マグネット式 スマホ タブレット 車載ホルダー MGTK-201</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="http://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> トライポッドトレーディング     </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
-
-
-
-
-<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;/zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B074CMG68S/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/G/09/nav2/dp/no-image-no-ciu._SL90_.gif" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;/zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B074CMG68S/u1tnk-22/" target="_blank" >【Spigen】 iPhone X ケース, [ Qi 充電 対応 ] [ 超軽量 超薄型 ] [ レンズ保護 ] [ ハードケース ] シン・フィット アイフォン X 用 カバー (iPhone X, メタリック・レッド)</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="http://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> Spigen Japan     </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
-
-
-<p>ずーっと挟むタイプの車載ホルダー使っててそんなストレスは無かったけど、マグネットにしたらめっちゃラクで笑う。チョイ乗り時も使うようになった。
-メタルプレートとか貼付する必要があるのが難点だけど、プレートを中に仕込めるケース使うと良い。</p>
-
-<h2>ちゃんとしたメーカーのドライバー</h2>
-
-<p> <div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;/zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B019C821PC/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/31SiegmAp2L._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;/zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B019C821PC/u1tnk-22/" target="_blank" >ベッセル(VESSEL) ボールラチェットドライバー 2200 +2×100</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="http://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> Vessel(ベッセル) 2015-12-15    </div><div class="kaerebalink-link1" style="margin-top:10px;"><div class="shoplinkamazon" style="display:inline;margin-right:5px"><a href="http://www.amazon.co.jp/gp/search?keywords=%E3%83%99%E3%83%83%E3%82%BB%E3%83%AB%20%E3%83%9C%E3%83%BC%E3%83%AB%E3%83%A9%E3%83%81%E3%82%A7%E3%83%83%E3%83%88&__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&tag=u1tnk-22" target="_blank" >Amazon</a></div></div></div><div class="booklink-footer" style="clear: left"></div></div></p>
-
-<p>2000円以下で、回しやすさ、ネジに入れたときのカッチリ感だいぶ改善でコスパ良し。あとラチェットも付いてるのでネジに挿しっぱなしでオッケー。
-すげー頑張ったドライバーセットとかと悩んだけど一番使うサイズのプラスドライバーで9割済むという現実の前に選択肢は消えた。</p>
-
-<h2>自転車スマホホルダー</h2>
-
-<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;/zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00YHSX1NO/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/G/09/nav2/dp/no-image-no-ciu._SL90_.gif" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;/zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00YHSX1NO/u1tnk-22/" target="_blank" >MINOURA(ミノウラ) スマートフォンホルダー [iH-220-M] Mサイズ 28mm～35mm</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="http://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> MINOURA(ミノウラ)     </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
-
-
-<p>普通に使えるだけスマホホルダー。
-だけど、別メーカーの同じ用途のものがあっさり壊れて友人に勧められたコレ。固定するのラクで固定感も上だったので掲載。ミノウラさん信用できる。</p>
-
-<h2>アンカーのスマホスタンド</h2>
-
-<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;/zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00TN321LQ/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/41-aXWVw41L._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;/zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00TN321LQ/u1tnk-22/" target="_blank" >Anker コンパクトマルチアングルスタンド ブラック A7135011</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="http://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> Anker     </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
-
-
-<p>安い、軽い、スマホもタブレットも問題無しでした。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[もともと自営業ですが真の自営業になりました]]></title>
-    <link href="https://u1tnk.github.io/blog/2015/10/04/free/"/>
-    <updated>2015-10-04T14:27:00+09:00</updated>
-    <id>https://u1tnk.github.io/blog/2015/10/04/free</id>
-    <content type="html"><![CDATA[<p><img src="https://u1tnk.github.io/images/toua.png" alt="violin" /></p>
-
-<p>退職エントリと言うよりお仕事募集エントリです。基本知り合いに読んで欲しくて書きました。</p>
-
-<p>もう4年以上自営業の身分で実質的には企業に所属しておりましたが、この度めでたく真の自営業となりました。<br />
-自宅以外に自分の机が無いというのは就職以来初なので不思議な感覚です。</p>
-
-<h2>ここまでの流れ</h2>
-
-<ol>
-<li>1000人超メーカ系SI新卒入社</li>
-<li>100人ぐらいの会社に転職(当時ベンチャーと思ってたけど、後から考えると大してベンチャー感無い)</li>
-<li>50人ぐらいの会社に転職、ここは社風が独特で合いませんでした</li>
-<li>10〜50人(在籍中に増えた)ぐらいの会社に転職、ここから自営業扱いだが実質普通の社員</li>
-<li>前職に転職。10人ぐらい。ここでも実質社員の自営業</li>
-<li>1年程前、副業を認めてもらって週1〜2を副業にあてるようになる</li>
-<li>担当していたプロジェクトが事業売却したのを機に本業として関わるのを辞めることにした</li>
-</ol>
-
-
-<p>見事にだんだん小さい会社になって行き、今回でこれ以上は無くなりましたw</p>
-
-<h3>蛇足</h3>
-
-<p>ちなみに最初の某SIは激務でした。詳細は伏せます。<br />
-今から考えると健康が一番大事なので体とか心を壊しそうな会社はさっさと辞めましょう！</p>
-
-<h2>理由</h2>
-
-<p>色々考えた結果大体以下3点にまとめられた。
-細かいリスト作りましたがちょっとアレだったので身近の酒のネタにでもします。</p>
-
-<ul>
-<li>公私のメリハリをきっちり付ける事より時間の自由がある方が好き</li>
-<li>経済的に会社に所属するメリットが減ってきた</li>
-<li>家族と過ごす時間を増やしたかった</li>
-</ul>
-
-
-<h2>前職について</h2>
-
-<p><a href="http://www.unicon-ltd.com/">Unicon Inc.</a> で働いてました。</p>
-
-<p>結果離れる事になりましたが、自営業なのに社員同様に扱ってくれたり、副業の許可、リモートワーク(これは全員)などとても柔軟に対処してくれました。<br />
-もちろん仕事なので含む所も多少はありますが、過去在籍した中で最もストレス無く働けたのは間違い無いので感謝しています。<br />
-興味ある方いらっしゃいましたら遊びに行ってみると良いと思います。仲介もします。<br />
-また、外注としての仕事があれば連絡お待ちしております！</p>
-
-<h2>今後</h2>
-
-<p>これまで副業としてやってきた案件を引き続きやりますが、確定しているのは30%程度の為お仕事募集中です。</p>
-
-<h3>スキル概要</h3>
-
-<ul>
-<li>サーバサイドのインフラ寄りプログラマ</li>
-<li>好きな言語はRuby
-
-<ul>
-<li>以下1年以上経験のある言語、やりたい訳では無いですが参考まで。
-
-<ul>
-<li>Python</li>
-<li>Java</li>
-<li>lua/CoronaSDK</li>
-<li>PHP(でももうやりません)</li>
-</ul>
-</li>
-<li>新しい言語の案件(golang/elixir等)はやってみたい</li>
-</ul>
-</li>
-<li>最近の実績
-
-<ul>
-<li>某モバイル向けSDKのサーバサイド(前職)
-
-<ul>
-<li>Pythonで顧客向け画面(django)やらSDKからのリクエスト捌くAPIサーバ(tornado)など</li>
-<li>AWSでインフラまわり
-
-<ul>
-<li>Ansible業含む</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>新規アプリのサーバサイド全般(副業でサーバサイド一人で対応)
-
-<ul>
-<li>Ruby/Rails</li>
-<li>AWS構築</li>
-<li>APIサーバ</li>
-<li>2アプリリリースして運用しています</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>こんな事もやったことあります
-
-<ul>
-<li>CloudSearch</li>
-<li>Elasticsearch
-
-<ul>
-<li>構築もできはしますが運用結構大変なのを思い知ったので <a href="http://aws.typepad.com/aws_japan/2015/10/amazon-elasticsearch-service.html">Amazon Elasticsearch Service</a>を使った方が良いと思います。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>レベルとしては普通。流行りの技術顧問とか無理</li>
-<li>デザイン系はできません</li>
-<li>Android/iOSアプリはできません</li>
-<li>24時間対応はできません</li>
-<li>トラブル対応はベストエフォートでなら行います</li>
-<li>フロントエンド(css/js)はできますが、最近仕事でやってないのでモダンとか言われると厳しいです</li>
-</ul>
-
-
-<p>現状売りになると思っているのは「小規模、AWS利用のアプリ向けサーバAPI開発ならサーバサイドは一人で構築から全部できる」というところかなと思っています。</p>
-
-<h3>条件</h3>
-
-<ul>
-<li>基本リモート(一時的や打ち合わせで伺うのは問題無いです、横浜在住)</li>
-<li>70%以下の工数(30%程度しばらく継続して受ける予定の案件があるため)</li>
-</ul>
-
-
-<p>後は応相談です。
-連絡は<a href="http://u1tnk.github.io/about/">こちら</a>のSNSのどれかでお願います。</p>
-
-<h2>抱負</h2>
-
-<ul>
-<li>これまでより一層健康に気を遣う</li>
-<li>社員時代の年収を下回らない</li>
-<li>社員時代より労働時間を減らす
-
-<ul>
-<li>一人での受託仕事で仕事量オーバーフローすると</li>
-<li>家族と一緒に過ごす時間を増やす</li>
-<li>同僚というインプット元が減るので意識して学習時間を増やす</li>
-</ul>
-</li>
-<li>自分のサービスで食って行けると最高。esaリスペクト。</li>
-</ul>
-
-
-<h2>一言</h2>
-
-<p>頑張って生き残って行きます</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Grapeが良さそうだったけどやめた]]></title>
-    <link href="https://u1tnk.github.io/blog/2014/08/14/grape-research/"/>
-    <updated>2014-08-14T11:19:00+09:00</updated>
-    <id>https://u1tnk.github.io/blog/2014/08/14/grape-research</id>
-    <content type="html"><![CDATA[<p>RailsでAPI作ってるのでGrapeが良さそうと聞いて調べて、おお！やってみよう！
-と思って細かく調べたけど結果やめました。</p>
-
-<h3>参考資料</h3>
-
-<ul>
-<li><a href="https://github.com/intridea/grape">https://github.com/intridea/grape</a></li>
-<li><a href="http://qiita.com/anoworl/items/756f01cc3d188ebad139">Ruby - RailsとGrapeで行う最高のWeb API開発 - Qiita</a></li>
-<li><a href="http://morizyun.github.io/blog/rails-grepe-api-heroku-ruby/">Grape - RailsでスピーディにAPIを作成！ - 酒と泪とRubyとRailsと</a></li>
-<li><a href="http://morishitter.hatenablog.com/entry/2014/03/12/033321">Ruby初心者がRailsとGrapeでREST APIを作る - morishitter blog</a></li>
-</ul>
-
-
-<h3>良さそうな点</h3>
-
-<ul>
-<li>routes情報と全controllerが一つにまとまるので見易い</li>
-<li>versioningやapiのprefix等柔軟に設定できる</li>
-</ul>
-
-
-<h3>微妙なところ</h3>
-
-<ul>
-<li>filterにonly,except等が無かった</li>
-<li>1ファイルで見通しが良いけども、増え過ぎて分割したら何の為にやったのか感が凄そう</li>
-<li>単体で使えるものなのでRailsと重複する機能が多くてもったいない気持ちになる</li>
-</ul>
-
-
-<h3>まとめ</h3>
-
-<p>カバー範囲が違えど、二種のフレームワークを混在して使う事への抵抗が大きかった。大して大きな機能が無いので、だったらRailsのみでシンプルにした方が良いかなと。</p>
-
-<p>Railsと組み合わせて使うなら既存の非APIアプリに追加してシンプルなちょっとしたAPIを作る…とかなら良いのかもという気はしました。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[ansible 勉強会 #1メモ]]></title>
-    <link href="https://u1tnk.github.io/blog/2014/06/19/ansible-study-01/"/>
-    <updated>2014-06-19T10:35:00+09:00</updated>
-    <id>https://u1tnk.github.io/blog/2014/06/19/ansible-study-01</id>
-    <content type="html"><![CDATA[<p><a href="http://ansible-users.connpass.com/event/5968/">Ansible 勉強会 #1 - connpass</a></p>
-
-<p>に行ってきたのでメモ。資料は↑にほぼあるようです。</p>
-
-<h3>Ansible の基本 + MySQL レプリケーションを設定する事例  by @IanMLewis</h3>
-
-<p>まさに基本。普段使ってるので大体押さえられてた。</p>
-
-<h4>MySQLを構築してみる</h4>
-
-<ul>
-<li>bennojoy/ansible-roles ansibleworksの人のリポジトリらしい。参考になりそう。</li>
-<li>when あんま使いこなしてないので見とこう。</li>
-<li>サンプルyaml見ると、自分のyamlが使いこなして無い感ある…</li>
-<li>mysql_replicationモジュールは便利感あるが、ちょっと簡単そうに見えないw 基本の直後に見るのはキツい印象。</li>
-</ul>
-
-
-<h3>dynamic inventoryが便利な話: no more host list!  by  @tagomoris</h3>
-
-<ul>
-<li>某巨大メッセージングアプリ企業で普通に使ってるっぽい</li>
-<li>エージェントいらないからCentOS5でも動くという理由が大きいらしい。納得。</li>
-<li>日本語情報あんま無いのが弱点は同意。っつーか俺書け。</li>
-<li>Inventryに普通のvars定義できたという恐らくかなり基本に気づいてなかった…</li>
-<li>hoge[1:2].local → hoge1.local…とか使える。</li>
-<li>Dyanamic Inventry存在すら気づいてなかった…</li>
-<li>ec2用のscriptは既存である。</li>
-<li>JSON返すだけなので自作もラク。</li>
-<li>ansible.cfg置けば -i不要という事に気づいた。</li>
-<li>明日からマネしたい！</li>
-<li>2000台完走実績あるらしい。さすが某巨大メッセージングアプリ企業</li>
-</ul>
-
-
-<h4>おまけ</h4>
-
-<p>DynamicInventryでは_meta使って —host はスキップさせるのがオススメ。</p>
-
-<h3>callback pluginを使ったタスク実行時間の可視化について by @rudy</h3>
-
-<ul>
-<li>pluginはmoduleと違ってpythonで本体を拡張。</li>
-<li>-i “localhost, ” とかできる事に気づいて衝撃。</li>
-<li>callback_plugins に入れるだけ。実行ホストに置けば良いのラクだな。</li>
-<li>実用上は使わない気がするが、bot連携すると面白いかも。</li>
-</ul>
-
-
-<h3>AnsibleのJUNOS設定モジュールを書いてみた by @saito_hideki</h3>
-
-<p>Ansibleでルータ設定をしているという、まったく参考にはならないが衝撃の発表。</p>
-
-<h3>MSPだってansibleしたい by @LaughK</h3>
-
-<ul>
-<li>MSP(運用、保守代行)</li>
-<li>客のサーバだからに(ほとんど)何も入れなくて良いという理由。</li>
-</ul>
-
-
-<h3>目指せ、サーバー構築1200台 by @myb1126</h3>
-
-<ul>
-<li>採用はエージェントレスが決め手との事。</li>
-</ul>
-
-
-<h3>構成管理ツールAnsibleの構成管理について by @iktakahiro</h3>
-
-<ul>
-<li>playbookだけディレクトリ分けるのアリかも。</li>
-<li>「冪等性は忘れよう」w</li>
-<li>発表されてたのは複雑な気がする…とはいえbest practiceは複数サービスになると厳しいので、考えないとまずそう。</li>
-</ul>
-
-
-<h3>Vagrant × Ansible by @tomohiro_urakawa</h3>
-
-<ul>
-<li>inventoryはvagrantが生成すんのか。べんりー</li>
-<li>Vagrant provisionで実行</li>
-<li>正直言うとそれでもわざわざVagrantに実行させるメリットが見えない…っつーか小さくしか見えない。</li>
-</ul>
-
-
-<h3>chefからansibleに乗り換えた話 by @futoase</h3>
-
-<p>やはりchefより良いのは以下2点
-- 対象に何も入れなくて良い
-- 上から順に実行されるから分かりやすい → 「孤独なchef使い]になりにくい</p>
-
-<h2>所感</h2>
-
-<ul>
-<li>想像しているより使われてる</li>
-<li>2000台相手にしても大丈夫というのは安心感ある</li>
-<li>やはり採用にあたり大きいのは以下2点
-
-<ul>
-<li>対象ホストに何も入れなく良い</li>
-<li>「上から実行」という分かり易さ</li>
-</ul>
-</li>
-<li>個人的にはchef等と違ってpush型が基本なので、全サーバに設定ファイル配布…とか小さいところか試しやすいってのも大きい気がする。</li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[EC2インスタンス価格の必要なところだけ表にしてみた]]></title>
-    <link href="https://u1tnk.github.io/blog/2014/04/17/aws-price/"/>
-    <updated>2014-04-17T22:45:00+09:00</updated>
-    <id>https://u1tnk.github.io/blog/2014/04/17/aws-price</id>
-    <content type="html"><![CDATA[<h2>何？</h2>
-
-<p>EC2の価格表で以下が欲しかったので作った。</p>
-
-<p>2月にほぼ手作業で同じようなデータ作ったけど、大幅値下げで既に使いものにならなくなったので業を煮やした。いや値下げは嬉しいんだけど。</p>
-
-<p>同様にネットで見かけるまとめも見やすいものは古くなってたり…</p>
-
-<p>以下公式の不満。</p>
-
-<ul>
-<li>一画面でECUとかGiBとか比較できない</li>
-<li>リザーブドインスタンスにしたときのならし月額(一括払いを月額に按分して時間分と足す)が欲しい(見積りツールにはある)</li>
-<li>オンデマンドとリザーブドインスタンスどんぐらい違うか見たい</li>
-<li>ECUあたりとかメモリあたりの単価も比較したい</li>
-<li>3年とかさすがに使えないのでいらない</li>
-<li>中度とか軽度買うぐらいならオンデマンドで良いのでいらない</li>
-<li>このページのもデザイン的に見やすくないのでSpreadSheetなりに貼りつけて利用を推奨。(以下リンク先のCSSゼロの方がまだ見やすいという…)
-
-<ul>
-<li>やはりみづらいのでgoogle spread sheetに貼りつけた <a href="https://docs.google.com/spreadsheets/d/1QzsUHO4Nd07TL5FAnVM2yvLRa3uOslY7pDTrmhwuAf0/edit?usp=sharing">https://docs.google.com/spreadsheets/d/1QzsUHO4Nd07TL5FAnVM2yvLRa3uOslY7pDTrmhwuAf0/edit?usp=sharing</a></li>
-</ul>
-</li>
-</ul>
-
-
-<h2>どうやった？</h2>
-
-<p>以下ページのJSでHTML化。このページのはスナップショットとしてコピペ。
-<a href="https://dl.dropboxusercontent.com/u/3400756/aws_price.html">https://dl.dropboxusercontent.com/u/3400756/aws_price.html</a></p>
-
-<ul>
-<li>料金表のページのソースを見るとJSONPで呼んでたので使わせてもらった。おそらく外部利用を想定してないので止まっても文句は言いません。(見れなくなったら困るのでコピペった)</li>
-</ul>
-
-
-<h2>表について</h2>
-
-<ul>
-<li>RI = リザーブドインスタンス一年重度使用</li>
-<li>OD = オンデマンド(普通)</li>
-<li>m1.small比OD価格のm1.small比。</li>
-<li>安い順にソートしている。ファミリー毎の方がコスパとか見やすかったかも。</li>
-</ul>
-
-
-<h2>内容感想</h2>
-
-<ul>
-<li>m1.medium/m1.largeが消えてた…別ページにあるんだろうけど。</li>
-<li>m1.small、特殊用途のhs以外全てSSD化してた。HDDは死んだ…</li>
-<li>m1.small、単価見ると高い！しょぼい用途には使うけど…</li>
-<li>m3.mediumも2月時点のm1.small(RIならしで約$34だった)と大差無い。</li>
-<li>2月時点のm1.mediumよりC3.largeが安いってw m1.mediumのリザーブドインスタンスどうしろと…</li>
-<li>c3.largeがオンデマンドでも月一万切る上、メモリ/ECU共にコスパ高い!</li>
-<li>large以上は特段コスパ良くなったりはしない。</li>
-<li>m3の中途半端さ。largeならc3かr3使うと思う。</li>
-</ul>
-
-
-<h2>4/17時点の価格表</h2>
-
-<table id="result" border="1">
-    <tbody><tr>
-        <th>size</th>
-        <th>vCPU</th>
-        <th>ECU</th>
-        <th>memoryGiB</th>
-        <th>storageGB</th>
-        <th>RI一括</th>
-        <th>RI/時間</th>
-        <th>RIならし月額</th>
-        <th>OD時間</th>
-        <th>OD月額</th>
-        <th>OD m1.small比</th>
-        <th>OD月額/ECU</th>
-        <th>OD月額/GiB</th>
-    </tr>
-<tr><td align="left">t1.micro</td><td align="right">1</td><td align="right">variable</td><td align="right">0.615</td><td align="right">ebsonly</td><td align="right">62</td><td align="right">0.009</td><td align="right">11.64</td><td align="right">0.026</td><td align="right">18.72</td><td align="right">0.42</td><td align="right">NaN</td><td align="right">30.43</td></tr>
-<tr><td align="left">m1.small</td><td align="right">1</td><td align="right">1</td><td align="right">1.7</td><td align="right">1 x 160</td><td align="right">135</td><td align="right">0.017</td><td align="right">23.49</td><td align="right">0.061</td><td align="right">43.92</td><td align="right">1</td><td align="right">43.92</td><td align="right">25.83</td></tr>
-<tr><td align="left">m3.medium</td><td align="right">1</td><td align="right">3</td><td align="right">3.75</td><td align="right">1 x 4 SSD</td><td align="right">244</td><td align="right">0.03</td><td align="right">41.93</td><td align="right">0.101</td><td align="right">72.72</td><td align="right">1.65</td><td align="right">24.24</td><td align="right">19.39</td></tr>
-<tr><td align="left">c3.large</td><td align="right">2</td><td align="right">7</td><td align="right">3.75</td><td align="right">2 x 16 SSD</td><td align="right">357</td><td align="right">0.047</td><td align="right">63.59</td><td align="right">0.128</td><td align="right">92.16</td><td align="right">2.09</td><td align="right">13.16</td><td align="right">24.57</td></tr>
-<tr><td align="left">m3.large</td><td align="right">2</td><td align="right">6.5</td><td align="right">7.5</td><td align="right">1 x 32 SSD</td><td align="right">487</td><td align="right">0.061</td><td align="right">84.5</td><td align="right">0.203</td><td align="right">146.16</td><td align="right">3.32</td><td align="right">22.48</td><td align="right">19.48</td></tr>
-<tr><td align="left">r3.large</td><td align="right">2</td><td align="right">6.5</td><td align="right">15</td><td align="right">1 x 32 SSD</td><td align="right">777</td><td align="right">0.048</td><td align="right">99.31</td><td align="right">0.210</td><td align="right">151.19</td><td align="right">3.44</td><td align="right">23.26</td><td align="right">10.08</td></tr>
-<tr><td align="left">c3.xlarge</td><td align="right">4</td><td align="right">14</td><td align="right">7.5</td><td align="right">2 x 40 SSD</td><td align="right">713</td><td align="right">0.094</td><td align="right">127.09</td><td align="right">0.255</td><td align="right">183.6</td><td align="right">4.18</td><td align="right">13.11</td><td align="right">24.48</td></tr>
-<tr><td align="left">m3.xlarge</td><td align="right">4</td><td align="right">13</td><td align="right">15</td><td align="right">2 x 40 SSD</td><td align="right">973</td><td align="right">0.123</td><td align="right">169.64</td><td align="right">0.405</td><td align="right">291.6</td><td align="right">6.63</td><td align="right">22.43</td><td align="right">19.44</td></tr>
-<tr><td align="left">r3.xlarge</td><td align="right">4</td><td align="right">13</td><td align="right">30.5</td><td align="right">1 x 80 SSD</td><td align="right">1554</td><td align="right">0.096</td><td align="right">198.62</td><td align="right">0.420</td><td align="right">302.39</td><td align="right">6.88</td><td align="right">23.26</td><td align="right">9.91</td></tr>
-<tr><td align="left">c3.2xlarge</td><td align="right">8</td><td align="right">28</td><td align="right">15</td><td align="right">2 x 80 SSD</td><td align="right">1427</td><td align="right">0.188</td><td align="right">254.27</td><td align="right">0.511</td><td align="right">367.91</td><td align="right">8.37</td><td align="right">13.13</td><td align="right">24.52</td></tr>
-<tr><td align="left">m3.2xlarge</td><td align="right">8</td><td align="right">26</td><td align="right">30</td><td align="right">2 x 80 SSD</td><td align="right">1948</td><td align="right">0.246</td><td align="right">339.45</td><td align="right">0.810</td><td align="right">583.2</td><td align="right">13.27</td><td align="right">22.43</td><td align="right">19.44</td></tr>
-<tr><td align="left">r3.2xlarge</td><td align="right">8</td><td align="right">26</td><td align="right">61</td><td align="right">1 x 160 SSD</td><td align="right">3108</td><td align="right">0.192</td><td align="right">397.24</td><td align="right">0.840</td><td align="right">604.79</td><td align="right">13.77</td><td align="right">23.26</td><td align="right">9.91</td></tr>
-<tr><td align="left">g2.2xlarge</td><td align="right">8</td><td align="right">26</td><td align="right">15</td><td align="right">60 SSD</td><td align="right">3406</td><td align="right">0.21</td><td align="right">435.03</td><td align="right">0.898</td><td align="right">646.55</td><td align="right">14.72</td><td align="right">24.86</td><td align="right">43.1</td></tr>
-<tr><td align="left">i2.xlarge</td><td align="right">4</td><td align="right">14</td><td align="right">30.5</td><td align="right">1 x 800 SSD</td><td align="right">2670</td><td align="right">0.228</td><td align="right">386.66</td><td align="right">1.001</td><td align="right">720.71</td><td align="right">16.4</td><td align="right">51.48</td><td align="right">23.63</td></tr>
-<tr><td align="left">c3.4xlarge</td><td align="right">16</td><td align="right">55</td><td align="right">30</td><td align="right">2 x 160 SSD</td><td align="right">2854</td><td align="right">0.375</td><td align="right">507.83</td><td align="right">1.021</td><td align="right">735.11</td><td align="right">16.73</td><td align="right">13.36</td><td align="right">24.5</td></tr>
-<tr><td align="left">r3.4xlarge</td><td align="right">16</td><td align="right">52</td><td align="right">122</td><td align="right">1 x 320 SSD</td><td align="right">6216</td><td align="right">0.384</td><td align="right">794.48</td><td align="right">1.680</td><td align="right">1209.59</td><td align="right">27.54</td><td align="right">23.26</td><td align="right">9.91</td></tr>
-<tr><td align="left">i2.2xlarge</td><td align="right">8</td><td align="right">27</td><td align="right">61</td><td align="right">2 x 800 SSD</td><td align="right">5339</td><td align="right">0.456</td><td align="right">773.23</td><td align="right">2.001</td><td align="right">1440.72</td><td align="right">32.8</td><td align="right">53.36</td><td align="right">23.61</td></tr>
-<tr><td align="left">c3.8xlarge</td><td align="right">32</td><td align="right">108</td><td align="right">60</td><td align="right">2 x 320 SSD</td><td align="right">5708</td><td align="right">0.75</td><td align="right">1015.66</td><td align="right">2.043</td><td align="right">1470.96</td><td align="right">33.49</td><td align="right">13.62</td><td align="right">24.51</td></tr>
-<tr><td align="left">r3.8xlarge</td><td align="right">32</td><td align="right">104</td><td align="right">244</td><td align="right">2 x 320 SSD</td><td align="right">12432</td><td align="right">0.768</td><td align="right">1588.96</td><td align="right">3.360</td><td align="right">2419.19</td><td align="right">55.08</td><td align="right">23.26</td><td align="right">9.91</td></tr>
-<tr><td align="left">i2.4xlarge</td><td align="right">16</td><td align="right">53</td><td align="right">122</td><td align="right">4 x 800 SSD</td><td align="right">10677</td><td align="right">0.91</td><td align="right">1544.95</td><td align="right">4.002</td><td align="right">2881.44</td><td align="right">65.6</td><td align="right">54.36</td><td align="right">23.61</td></tr>
-<tr><td align="left">hs1.8xlarge</td><td align="right">16</td><td align="right">35</td><td align="right">117</td><td align="right">24 x 2048</td><td align="right">12822</td><td align="right">1.317</td><td align="right">2016.73</td><td align="right">5.400</td><td align="right">3888</td><td align="right">88.52</td><td align="right">111.08</td><td align="right">33.23</td></tr>
-<tr><td align="left">i2.8xlarge</td><td align="right">32</td><td align="right">104</td><td align="right">244</td><td align="right">8 x 800 SSD</td><td align="right">21354</td><td align="right">1.822</td><td align="right">3091.34</td><td align="right">8.004</td><td align="right">5762.88</td><td align="right">131.21</td><td align="right">55.41</td><td align="right">23.61</td></tr>
-</tbody></table>
-
-
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Team Geek読んだ]]></title>
-    <link href="https://u1tnk.github.io/blog/2014/03/20/team-geek/"/>
-    <updated>2014-03-20T10:34:00+09:00</updated>
-    <id>https://u1tnk.github.io/blog/2014/03/20/team-geek</id>
-    <content type="html"><![CDATA[<p>同僚に貸して頂いて読みました。感謝。</p>
-
-<p>Googleの中の人がチーム開発するにあたってどういう事を心がけているか？という本。
-プログラマ本だけどプログラマ専用の内容は少なめ。一部削れば自己啓発書コーナーにあっても不思議じゃない。</p>
-
-<ul>
-<li>とにかくHRT(信頼 Humility、尊敬 Respect、謙虚 Trust)</li>
-<li>有害な人対策なども。無自覚なのも含めて難しい問題だと実感。有害な人対策自体も参考になるが、自分も有害になってないか？で心が痛い。</li>
-<li>採用は妥協しない、チームメイトになったら大人として扱う。</li>
-<li>ミッションステートメントは共有はもちろん今自分がしっかり理解しているとは言えないなぁ…</li>
-<li>かなり社内政治についても書いてる。必要悪的ではあるが。</li>
-</ul>
-
-
-<p>面白かったし、色々参考になった。
-自省としては、HRTはやってるつもりだけど、嗜好が合わないと謙虚さが失われがちなので気をつけようと。</p>
-
-<p><a href="http://www.amazon.co.jp/gp/product/4873116309/ref=as_li_ss_il?ie=UTF8&camp=247&creative=7399&creativeASIN=4873116309&linkCode=as2&tag=u1tnk-22"><img border="0" src="http://ecx.images-amazon.com/images/I/41SlY0zvpKL._SL160_.jpg" ></a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=u1tnk-22&l=as2&o=9&a=4873116309" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[JAWS DAYS 2014に行ってきました]]></title>
-    <link href="https://u1tnk.github.io/blog/2014/03/15/jawsdays2014/"/>
-    <updated>2014-03-15T20:47:00+09:00</updated>
-    <id>https://u1tnk.github.io/blog/2014/03/15/jawsdays2014</id>
-    <content type="html"><![CDATA[<h2>Immutable Infrastructure</h2>
-
-<p>JAWS DAYS 2014、Immutable Infrastructure について - naoyaのはてなダイアリー <a href="http://d.hatena.ne.jp/naoya/20140315/1394851727">http://d.hatena.ne.jp/naoya/20140315/1394851727</a></p>
-
-<p>めっちゃ人居ました。個人的にrebuild.fm全部聞いてるのでほとんど聞いてたので割愛w</p>
-
-<h2>クックパッドのデプロイとオートスケール</h2>
-
-<p>個人的一番勉強になったセッション。</p>
-
-<p>Cookpad&rsquo;s deployment and auto scaling // Speaker Deck <a href="https://speakerdeck.com/mirakui/cookpads-deployment-and-auto-scaling">https://speakerdeck.com/mirakui/cookpads-deployment-and-auto-scaling</a></p>
-
-<ul>
-<li>nameタグ、hostnameは起動時に自動採取
-
-<ul>
-<li>→これはすぐにでも真似したい。</li>
-</ul>
-</li>
-<li>roleタグというのをつけてデプロイ内容をコントロール
-
-<ul>
-<li>→ふむふむ</li>
-</ul>
-</li>
-<li>Nameタグからip収集してpowerdnsで管理。
-
-<ul>
-<li>→そうしたいよね…</li>
-</ul>
-</li>
-<li><p>ec2からタグ情報取得するApiのImitに到達するらしいw キャッシュしてるとのこと</p></li>
-<li><p>Amazon AutoScaling使って無くて自作！</p>
-
-<ul>
-<li>CloudWatchが最短一分で秒単位で取得したい
-
-<ul>
-<li>そこまで必要なのか…</li>
-</ul>
-</li>
-<li>graceful terminate問題
-
-<ul>
-<li>それは確かに。多少のリクエストなら負荷で落ちるよりマシと思ってやってるが…</li>
-</ul>
-</li>
-<li>ELBでは無くhaproxy使いたい。…
-
-<ul>
-<li>haproxyの方が良いそうな。</li>
-<li>ブラックボックスで問題起こったらよくわからんってのは確かに。</li>
-</ul>
-</li>
-<li> デプロイとにAutoScaalingと排他制御するため
-
-<ul>
-<li>動くとやばいので、排他制御してると。ほー。デプロイ多いからこその問題。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>問題調査のための、staticインスタンスとしてAutoScaleとは別管理のインスタンスがある。</p>
-
-<ul>
-<li>確かに。システムログとか見るヒマ無く勝手に落ちるからな…Amazon Autoscalingでもできるからやりたい</li>
-</ul>
-</li>
-<li><p>蛇足</p>
-
-<ul>
-<li>chefじゃなくてpuppet使ってるらしい。なんでだろ。</li>
-<li>cookpadもhipchatoとのこと</li>
-</ul>
-</li>
-</ul>
-
-
-<h2>プロビジョニング＆デプロイ on AWSのキホン</h2>
-
-<p>The Basics of Provisioning and Deploy on AWS #jawdays #infra <a href="http://www.slideshare.net/Ryuzee/the-basics-of-provisioning-and-deploy-on-aws-jawdays-infra">http://www.slideshare.net/Ryuzee/the-basics-of-provisioning-and-deploy-on-aws-jawdays-infra</a>
-特段目新しい内容は無かったが、とにかく耳の痛い正論セッションでした。</p>
-
-<ul>
-<li>自動化しないリスク、コストを過少評価し過ぎ</li>
-<li>自動化するなら最初から。デプロイするときに考えるじゃ遅い</li>
-<li>自動化しない→ミスる→チェック増やす→コスト増える→＼(^o^)／</li>
-<li>デプロイアンチパターン、手作業混合。
-
-<ul>
-<li>→これはやっちゃう…</li>
-</ul>
-</li>
-<li>テスト自動化！小さい粒度でリリース！</li>
-<li>sunsu+graphite良いと。</li>
-</ul>
-
-
-<h2>カジュアルにVPC作った結果がこれだよ！</h2>
-
-<p><a href="http://www.slideshare.net/Yuryu/aws-casual-talks-1-vpc">http://www.slideshare.net/Yuryu/aws-casual-talks-1-vpc</a>
-行ってないけど、資料流れてきたらめっちゃ気になってた事なので勉強になった。
-カジュアルには行けない事が良くわかったw</p>
-
-<h2>20140315 JAWS DAYS 2014 ACEに聞け！ CloudFormation編</h2>
-
-<p><a href="http://www.slideshare.net/daisuke_m/20140315-jaws-days-2014acecfn">http://www.slideshare.net/daisuke_m/20140315-jaws-days-2014acecfn</a></p>
-
-<p>2番目に勉強になった。</p>
-
-<ul>
-<li>やっぱ基本は一発作るのがメインのものなんだ</li>
-<li>とはいえ、UPDATE_STACKでメンテしていける。</li>
-<li>UPDATE_STACKちゃんとせず、手でメンテすると詰むと。ウチのは完全詰んでるからどっかで精算せねばw</li>
-<li>BLUE-GREEN deploymentを CludFormationだけで実行するデモ。ここまでできると素晴しいなぁ…</li>
-<li>とはいえjsonの定義見るのキツいわw AWS CloudFormation tempate for PHP Blue-Green Deployment environment <a href="https://gist.github.com/miyamoto-daisuke/9544801">https://gist.github.com/miyamoto-daisuke/9544801</a></li>
-</ul>
-
-
-<h1>Immutable Infrastracture パネルディスカッション〜オレにも一言言わせろ〜</h1>
-
-<p>人大杉…立ち見でも厳しそうだったので断念。</p>
-
-<h2>まとめ</h2>
-
-<ul>
-<li>すぐに手をつけたいのはchef/powerdns/cloudformation/tag利用…あたりかなぁ。山積みすぎる…</li>
-<li>人の多さと会場の割り当てに疑問を感じる。立ち見2回で足痛い…</li>
-<li>AWS面白い。改善頑張ろう。</li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[nasne+iOSは無茶苦茶便利だがTwonkeyBeamは使わない方が幸せ。黙ってDixim使っとけ！]]></title>
-    <link href="https://u1tnk.github.io/blog/2013/07/28/nasne/"/>
-    <updated>2013-07-28T23:11:00+09:00</updated>
-    <id>https://u1tnk.github.io/blog/2013/07/28/nasne</id>
-    <content type="html"><![CDATA[<p>nasne良さそうだけど、torne持ってるし録画サーバあるしいらんと思ってたけど、録画サーバが壊れた(たぶんPT2の故障)ので検討。</p>
-
-<ol>
-<li>PT2買い替えでなおる気がするけど、実はソフト側の問題でハマったら辛い。</li>
-<li>そもそもPT2+ubuntu環境も結構不安定。番組によっては変換でよくハマってたし。</li>
-<li>以下の記事見て自分の用途(PS3/iPad/iPhoneで見る、たまに持ち出し)が全て満たされると確信。</li>
-</ol>
-
-
-<p><a href="http://blog.kushii.net/archives/1803070.html">年末年始の特番対策に PS3＋torne+nasne で録画環境を強化してみたら外から録画予約も出来るようになったし超満足した件 - 941::blog</a></p>
-
-<h2>設置</h2>
-
-<ol>
-<li>アンテナ挿す</li>
-<li>B-CAS挿す</li>
-<li>電源挿す
-こんだけ、簡単！</li>
-</ol>
-
-
-<h2>設定</h2>
-
-<ul>
-<li>ブラウザで機器設定<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>
-
-<ul>
-<li>チャンネルスキャン</li>
-<li>ネットワーク設定</li>
-<li>予約サービスCHAN-TORU登録
-
-<ul>
-<li>外部予約用だが、PS3無い人はこれで予約すれば良い</li>
-<li>google/twitterアカウント使えるので登録ラク。</li>
-<li>PS3トルネアプリでnasne登録</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-<h2>PS3/torneアプリの存在意義</h2>
-
-<p>ここで、torneとはtorneアプリの事であり、PS3外付けチューナ製品の事では無い、そちらはtorneチューナと呼ぶ。</p>
-
-<p>結論から言うとPS3持ってるなら使うだけのメリットはある。</p>
-
-<p>が、持ってなくてメイン視聴がiOSもしくはDLNA機器(DTCP-IP対応)なら買う程では無い。</p>
-
-<p>torneチューナは既に持ってる人なら併用するとダブルチューナの意味はある。が、持ってなければnasne買い足しの方が良い。</p>
-
-<h3>メリット</h3>
-
-<ul>
-<li>録画管理機能使える(予約管理は上述のCHAN-TORUでもできる)</li>
-<li>番組表サクサク便利</li>
-<li>torneチューナと予約/データを統合管理</li>
-<li>torneチューナあるときはここで予約して時間が重複したらtorneチューナで録画してくれる</li>
-<li>未/既視聴管理ができる</li>
-</ul>
-
-
-<h3>デメリット</h3>
-
-<ul>
-<li>torneアプリ、PS3共に起動遅い</li>
-</ul>
-
-
-<h2>torneチューナ運用時との比較で意外に良かったところ</h2>
-
-<p><strong>録画にPS3起動が必要無い!</strong></p>
-
-<p>ささいなようで素晴らしい。突然鳴り響くファンの音に怯える事も無い。部屋も暑くならないんだ！</p>
-
-<h2>Twonkey Beamと Dixim digital TV</h2>
-
-<p>どちらもiOSでDTCP-IP対応DLNAクライアントで、LAN内でnasneの動画が見れます。ライブチューナでTVも見れます。
-が、決定的に「品質」が違います。</p>
-
-<p>以下起動した直後のスクショ。
-こちらがDixim</p>
-
-<p><img src="https://u1tnk.github.io/images/nasne/dixim.jpg" alt="icon" /></p>
-
-<p>で、こちらがTwonkey</p>
-
-<p><img src="https://u1tnk.github.io/images/nasne/twonkey.jpg" alt="icon" /></p>
-
-<p>どちらがnasneで動画再生するのにわかりやすいかなんて一目瞭然ですね。
-ちなみにまずは右上のちっさーーーいwifiアイコンをクリックするのが正解です。</p>
-
-<p>これからも万事この調子。</p>
-
-<ul>
-<li>普通に見るのも、ダウンロードするのも「Beam」するんです！意味がわかりません。</li>
-<li>再生中にsuspend-resumeするとよく固まります。</li>
-<li>番組によっては再生できません。<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup></li>
-<li>30秒スキップなんて親切機能はありません。頑張って指で調整して早送りした結果固まります。</li>
-<li>固まらなくてもBeam失敗したときにエラーポップアップすら出ない事が多い。静かにエラー起きてるっぽい。</li>
-</ul>
-
-
-<p>レビュー記事でTwonkeyはUIがちょっとよくない…とか書いてるのを見た事あるけど、</p>
-
-<p><strong>ひどいUIを頑張って理解した結果、UIだけじゃなくて品質自体が悪い事を理解してしまう。</strong>が現実でした。</p>
-
-<p>一方Diximの方は普通です。ちゃんとしてます。「番組によっては固まる」事があるのみ発生しましたが頻度が違います。
-オススメできます</p>
-
-<h2>それでもダウンロードムーブしたい！</h2>
-
-<p>iOSでのダウンロードムーブは2013/07現在Twonkeyしか対応していません。</p>
-
-<p>どうしても持ち出したい！という事であればTwonkeyしか選択肢が無いのです。残念ながら…</p>
-
-<p>私も最初は我慢して使おうと思ってました。…が、</p>
-
-<ul>
-<li>再生できない事がある</li>
-<li>早送りができない(できるけど、調整がめんどい&amp;固まるリスク)</li>
-<li>中断するとresumeで固まるリスク、更に早送りで固まるリスク</li>
-</ul>
-
-
-<p>…めんどくさすぎてほとんど使ってません。</p>
-
-<h2>まとめ</h2>
-
-<p>iPad+nasne+Diximを家で使うのは非常に快適です。リビングも静かになったし買って良かった。</p>
-
-<p>TwonkeyBeamはどうしてもダウンロードムーブがしたくて、ダウンロードしけど見れなかったりしても平気なM気質の方のみオススメです。</p>
-
-<p>普通の人は素直にDiximがダウンロードムーブに対応するのを祈りましょう。</p>
-<div class="footnotes">
-<hr/>
-<ol>
-<li id="fn:1">
-<p>ブラウザ設定はIP直指定でできるが、最初はわからんので、PS3のDLNAサーバのところで△→設定選択で設定画面を起動できる。持ってなくてもデフォルトでsambaもDLNAも動いてるようなのでどれかでIPわかればおk<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
-<li id="fn:2">
-<p>最初からとか、CMから本編行くときとかによく固まります。個人的印象で2,3割程度の番組で発生。<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
-</ol>
-</div>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Ruby2.0.0+Rails4.0+MySQLなrailsアプリをherokuにデプロイ(2013/7月版)]]></title>
-    <link href="https://u1tnk.github.io/blog/2013/07/28/heroku-rails4/"/>
-    <updated>2013-07-28T22:22:00+09:00</updated>
-    <id>https://u1tnk.github.io/blog/2013/07/28/heroku-rails4</id>
-    <content type="html"><![CDATA[<p>久しぶりにheroku触ってみるとassetでハマることも無く、ruby2.0.0使うのも一行。
-すごい簡単になってるけど、結構変わってるしメモ。</p>
-
-<p>MySQL使ってるのはこだわりも無いけど、cleardb簡単そうだし、デメリットは初期設定ぐらいっぽいので慣れてる方にしただけ。
-heroku標準postgresの制限に行数があるけど、こちらは容量だけってのも微妙に気になった。</p>
-
-<h2>heroku基本設定</h2>
-
-<p><a href="https://toolbelt.heroku.com/">https://toolbelt.heroku.com/</a> からダウンロード</p>
-
-<p>gem i herokuは非推奨らしい</p>
-
-<p>基本以下参照</p>
-
-<p><a href="https://devcenter.heroku.com/articles/rails3">https://devcenter.heroku.com/articles/rails3</a></p>
-
-<h2>Gemfile</h2>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c"># herokuに2.0.0使用を指示</span>
-</span><span class='line'>ruby <span class="s1">&#39;2.0.0&#39;</span>
-</span><span class='line'>
-</span><span class='line'><span class="c"># ローカルでもsqlite3よりmysqlの方が好き、cleardb使うので全てmysql2</span>
-</span><span class='line'>gem <span class="s1">&#39;mysql2&#39;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>herokuアプリ作成</h2>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>heroku login
-</span><span class='line'>heroku create hoge
-</span><span class='line'>git push heroku master
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>cleardb(MySQLプラグイン) 設定</h2>
-
-<p>以下のドキュメントに従う
-<a href="https://devcenter.heroku.com/articles/cleardb">https://devcenter.heroku.com/articles/cleardb</a></p>
-
-<ul>
-<li>addon追加、無課金範囲でもherokuにクレジットカード登録しないとエラーになるので注意</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>heroku addons:add cleardb:ignite
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>herokuから作成されたcleardbのurlを取得</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>heroku config <span class="p">|</span> grep CLEARDB_DATABASE_URL
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>上記で調べたURLをmysql://→mysql2://として設定<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>heroku config:set <span class="nv">DATABASE_URL</span><span class="o">=</span><span class="s1">&#39;mysql2://hoge:fuga@us-cdbr-east.cleardb.com/heroku_db?reconnect=true&#39;</span>
-</span><span class='line'>heroku run rake db:migrate
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>動作確認</h2>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>heroku open
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-<div class="footnotes">
-<hr/>
-<ol>
-<li id="fn:1">
-<p>上記コマンドでもドキュメントにもmysql://&hellip;と書いてあるが、mysql2://&hellip;にしないとエラーになった。<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
-</ol>
-</div>
-
-]]></content>
-  </entry>
-  
-</feed>
+	<atom:link href="https://u1tnk.github.io/atom.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>about</title>
+      <link>https://u1tnk.github.io/about/</link>
+      <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://u1tnk.github.io/about/</guid>
+      <description>u1tnk
+フリーランス引きこもりプログラマ。
+技術系記事はこちらにも多少 Qiita
+GitHub
+twitter</description>
+    </item>
+    
+    <item>
+      <title>フリーランスとしての自己紹介と仕事の条件</title>
+      <link>https://u1tnk.github.io/blog/2018/09/09/my-price/</link>
+      <pubDate>Sun, 09 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://u1tnk.github.io/blog/2018/09/09/my-price/</guid>
+      <description>目的  新規案件の話を頂いたときの自己紹介、条件の概要をまとめておく 単価公開されている方が少ないのでフリーランス初心者の方の単価決め、交渉材料になれば良いと思い公開  できる事  Rails開発 AWSでサーバサイド全般  EC2からECSまで 中小規模なら一人でインフラ構築可能  github/ci/pull requestベースの普通の開発  できない事  CTO チームビルディング、採用コンサルなど管理系  ゼロから普通の開発体制を作って経験の浅い方のサポートしつつ開発するとかぐらいならなんとか  モダンなフロントエンド  RailsのAjaxとか難度低めのJSなら問題無い 案件で必要になったら勉強したいとは思う  機械学習  同上   条件  フルリモート  横浜在住なので打合せは出れるが出社は多くて週一程度  作業時間の縛りは無し  作業のメインは子供が居ない昼頃か寝てからなので  仕事をゼロにしない戦略の為、通常二社以上受けているので週5の仕事は受けられない  2018年9月現在3社受けている   経歴  ソフトウェアエンジニア歴19年  SIer 7年  サポートやら組み込み開発やらを経て後半3年程度がweb開発 束縛の重い会社アレルギーに罹患  ベンチャー系自社サービス開発会社 7年 フリーランス 5年  スーパーエンジニアではまったく無いがベテランではある 思ってたより長かった。19年も働いてるのか…  単価 7500 円/h (日額6万)</description>
+    </item>
+    
+    <item>
+      <title>初心者向けキャンプ用品メーカーまとめ</title>
+      <link>https://u1tnk.github.io/blog/2018/07/28/camp-maker/</link>
+      <pubDate>Sat, 28 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://u1tnk.github.io/blog/2018/07/28/camp-maker/</guid>
+      <description>TL;DR キャンプ始めたいけど、何買って良いかわからんって人をよく見るが、モノ単位で紹介するとマジで果てしないので、メーカーの印象をざっとまとめた。 服関係もキリが無いので入れてない。買ったモノも入れようかと思ったけど同上。 友人向けにざっくり書いてるので不正確や漏れもあると思うが容赦頂きたい。 すげー昔に友人にまとめろって言われたのと、ゆるキャンブームのときに初心者に相談されたのをきっかけで書き始めて、途中で放置して今に至る 😇
+雑なカテゴリ分け表     高級 コスパ 安い 大物 小物 軽量 特記     モンベル ○ ○  ○ ○ ○    コールマン ○ ○ ○ ○ ○     スノーピーク ○   ○ ○     ロゴス  ○  ○ ○     ユニフレーム  ○   ○     キャプテンスタッグ  ○ ○ ○ ○     SOTO  ○   ○ ○ バーナー   ジェントス  ○   ○  LEDランタン   ヘリノックス ○    ○ ○ ほぼチェア   サーマレスト ○ ○   ○  マット     あくまでイメージ コスパと安いは 品質がある程度信頼できて安いととにかく安いで分けてます。 テンマクとか小川とかドッペルギャンガー、ケシュア、MSR、アライ…とかもあるけど初心者向けだし未購入なんで割愛。  ウチのキャンプ用品コンセプト やりたいキャンプが違うと欲しいモノも違うので、前提となるウチのコンセプトまとめ。</description>
+    </item>
+    
+    <item>
+      <title>Bose SoundSport Free 一ヶ月使用レビュー</title>
+      <link>https://u1tnk.github.io/blog/2018/04/15/bose-sound-sport-free/</link>
+      <pubDate>Sun, 15 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://u1tnk.github.io/blog/2018/04/15/bose-sound-sport-free/</guid>
+      <description>Bose SoundSport Free wireless headphones 完全ワイヤレスイヤホン ミッドナイトブルー/イエローシトロン【国内正規品】posted with カエレバBOSE 2017-11-23  買って一ヶ月ぐらい経ったのでまとめ。
+まず、総評。 個人的にはほぼ満足、コスパあまり気にしない人にはオススメ。、接続機器の切り替えを頻繁に使う人、windows10で音楽を聞いてる人はやめとけ、となります。
+before Hellodigi K2 Bluetooth 4.1イヤホン 高音質イヤホン カップルヘッドフォン ワイヤレスイヤホン ミニ型 マイク付き 両耳　(黒)posted with カエレバHellodigi   3000円程度の完全ワイヤレスお試しイヤホン  意外に使えてはいた 非防水なのに洗濯機にぶちこんでも壊れなかったハイスペックっぷり 左右に差が無く、接続時の音声を聞いて修正する方法だったのがめんどくさくて仕方が無い 持ち歩くケースが無いので無くしそうで無くさなかった しばしば充電切れを起こしていた  使い勝手は良くないので有線もよく使ってた。使っていたのはEarPods。色々試してはいたけど断線やらなんやらで結局コレ… 知り合いで欲しい人居たらあげます  after Bose SoundSport Free wireless headphones 完全ワイヤレスイヤホン ミッドナイトブルー/イエローシトロン【国内正規品】posted with カエレバBOSE 2017-11-23  boseの高いけど良さそうなヤツ。 写真やらスペックやらは詳細なレビューたくさんあるのでそちらを。
+良かったところ  音質はマニアじゃないので表現は控えるが、個人的には満足。 ケースから取り出すと勝手に繋がって、左右が分かりやすいのは以前とくらべて感動的に便利。最近の完全ワイヤレスでは当たり前ではある。 外ではほぼ有線リモコン使わなくなった。 イヤーピースが良くできててジムで走ったりしても全然ズレない、落ちない。そんで不快感もあんまり無い。デカイのに。ちなみに片耳10gとデカいけど軽いからと思う。 イヤホン本体にEarPods同様の物理リモコンが付いてて便利。 イヤホン単体で5時間持つのにケースもバッテリーで切れる気がしない。 ジムやジョギングで使うので防水の安心感。  ケースに入れるときは充電端子が濡れないようにしないといけないらしいが、それが必要な程汗かいた事無い。   イマイチなところ  デカい。「耳から出るうどん」を避けたのに角でも付いてんのかというサイズ感。 デカいが故にケースもデカい。外すときは即ケースに収納という世界観なのでケースも持ち歩かざるを得ず、手ぶらで出かけたときにポケットが異様に膨らむ事に。 再生ボタンのクリック感が微小過ぎる。「音量のプラスとマイナスの間のへこんだところを適当にぐっと押して、反応するまでドキドキして待つ」というレベル。 充電ケースのボタンのクリック感もイマイチだが見ながら押すし、再生ボタンみたいなラグも無いのでちょっと不便レベル。 電話するときは右耳だけしか音が鳴らない。 たまに左だけ切れる。レビューで見て心配してた現象だが、そんなに高い頻度では無かった。  二段階あって、一瞬切れて勝手に復帰するパターンと、完全に切れて、左イヤホンのボタンを押すと一瞬待って復帰するパターン。どちらも当然ながら人が多いところで発生して自宅では一回も起きていない。起きない方が良いが、使用時間(週5で2時間ぐらいは使ってる)から考えるとそんなに気にするものでは無いと思う。頻繁に起きる人は何か干渉する何かを持ってるんじゃないかと。iPhoneとAppleWatchだけ持ってる人は大丈夫と思われる。  一瞬切れるパターンは一ヶ月で3回ほど 完全に切れるパターンは一ヶ月で2回   iPhoneとiPadで切り替えるときは左耳のボタン長押しで一旦切って、聞きたいiPhone/iPadから接続しなおす必要がある。 revolveみたいに複数繋がって再生した方が鳴る…という便利が欲しかった。個人的には切り替え頻度から許容範囲。  ダメなところ windows10マシンで音楽を聞こうとすると右耳しか鳴らない。</description>
+    </item>
+    
+    <item>
+      <title>買って良かったもの2017</title>
+      <link>https://u1tnk.github.io/blog/2017/12/31/bestbuy2017/</link>
+      <pubDate>Sun, 31 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://u1tnk.github.io/blog/2017/12/31/bestbuy2017/</guid>
+      <description>流行ってるし、買いものが趣味と言っても過言では無いのに書いた事無かったので。 まあ大晦日までひっぱってるあたりが我ながらひどい。 これは買って良かったものでハズレもたくさんあるし、車も買ってて合計金額計算したく無いですね😇
+生活編 書いて洗って消えるペン サランラップに書けるペン 3色セット (赤・青・黒)posted with カエレバ旭化成ホームプロダクツ 2016-08-08  嫁に買わされたときそんなに便利なの？って思ったけど、めっちゃ便利。 ラップというか、結局サクっと洗って消えるペンなので、冷蔵庫で使うくり返し使う収納器とかに日付、何が入ってるとかサクっと書ける。台所まわり適当なメモであふれるようになった。
+ 油温計 タニタ 揚げもの用温度計 クックサーモ 5495Bposted with カエレバタニタ(TANITA)   家族に好評を博してしまったため完全に担当になってしまった唐揚げ作り。 そのクオリティがたかが千円ちょいで確実にアップ。揚げ過ぎ、カラっとしないヤツの撲滅に貢献してくれる。
+温度設定ができる電気ケトル HARIO(ハリオ) 電気ケトル コーヒードリップ用 温度調整機能付 V60 パワーケトル・ヴォーノ EVKT-80HSVposted with カエレバハリオ 2016-08-05  電気ケトル自体は便利に使ってたが主にコーヒードリップ時の不便を解消。 - 注ぎ口が細くてドリップ時に注ぎやすい - 温度設定便利。コーヒーの90度はまだしも、緑茶80度を体感で冷ますのは無理
+ハリオのデザインとコーヒー用の信頼感で買ったので、温度設定できる他の製品の方が便利な可能性は高い。 今までのワンボンタン押せば沸騰という分かりやすさも損なってるし、ボタンの反応が遅いので、コーヒーよく煎れない人には薦められない。
+布団乾燥機 アイリスオーヤマ 布団乾燥機 カラリエ マットなし パールホワイト FK-C2-WP【靴乾燥アタッチメント付】posted with カエレバアイリスオーヤマ(IRIS OHYAMA)  先に袋とか使わずに手軽に使える。 結果、布団乾燥には使わず、専ら寒い夜に寝る前に布団あっためる用途として毎晩使われている。ホッカホカの布団は病み付きになる。
+○○ が臭わない袋 驚異の防臭袋 BOS (ボス) うんちが臭わない袋 ペット用 うんち 処理袋【袋カラー：ブルー】 (Sサイズ　200枚入)posted with カエレバBOS-SHOP  ペット用品だから関係無いと思ってたが、アレが臭わないという事は生ゴミも臭わないという事なのです!</description>
+    </item>
+    
+    <item>
+      <title>もともと自営業ですが真の自営業になりました</title>
+      <link>https://u1tnk.github.io/blog/2015/10/04/free/</link>
+      <pubDate>Sun, 04 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://u1tnk.github.io/blog/2015/10/04/free/</guid>
+      <description>退職エントリと言うよりお仕事募集エントリです。基本知り合いに読んで欲しくて書きました。
+もう4年以上自営業の身分で実質的には企業に所属しておりましたが、この度めでたく真の自営業となりました。
+自宅以外に自分の机が無いというのは就職以来初なので不思議な感覚です。
+ここまでの流れ  1000人超メーカ系SI新卒入社 100人ぐらいの会社に転職(当時ベンチャーと思ってたけど、後から考えると大してベンチャー感無い) 50人ぐらいの会社に転職、ここは社風が独特で合いませんでした 10〜50人(在籍中に増えた)ぐらいの会社に転職、ここから自営業扱いだが実質普通の社員 前職に転職。10人ぐらい。ここでも実質社員の自営業 1年程前、副業を認めてもらって週1〜2を副業にあてるようになる 担当していたプロジェクトが事業売却したのを機に本業として関わるのを辞めることにした  見事にだんだん小さい会社になって行き、今回でこれ以上は無くなりましたw
+蛇足 ちなみに最初の某SIは激務でした。詳細は伏せます。
+今から考えると健康が一番大事なので体とか心を壊しそうな会社はさっさと辞めましょう！
+理由 色々考えた結果大体以下3点にまとめられた。 細かいリスト作りましたがちょっとアレだったので身近の酒のネタにでもします。
+ 公私のメリハリをきっちり付ける事より時間の自由がある方が好き 経済的に会社に所属するメリットが減ってきた 家族と過ごす時間を増やしたかった  前職について Unicon Inc. で働いてました。
+結果離れる事になりましたが、自営業なのに社員同様に扱ってくれたり、副業の許可、リモートワーク(これは全員)などとても柔軟に対処してくれました。
+もちろん仕事なので含む所も多少はありますが、過去在籍した中で最もストレス無く働けたのは間違い無いので感謝しています。
+興味ある方いらっしゃいましたら遊びに行ってみると良いと思います。仲介もします。
+また、外注としての仕事があれば連絡お待ちしております！
+今後 これまで副業としてやってきた案件を引き続きやりますが、確定しているのは30%程度の為お仕事募集中です。
+スキル概要  サーバサイドのインフラ寄りプログラマ 好きな言語はRuby  以下1年以上経験のある言語、やりたい訳では無いですが参考まで。  Python Java lua/CoronaSDK PHP(でももうやりません)  新しい言語の案件(golang/elixir等)はやってみたい  最近の実績  某モバイル向けSDKのサーバサイド(前職)  Pythonで顧客向け画面(django)やらSDKからのリクエスト捌くAPIサーバ(tornado)など AWSでインフラまわり  Ansible業含む   新規アプリのサーバサイド全般(副業でサーバサイド一人で対応)  Ruby/Rails AWS構築 APIサーバ 2アプリリリースして運用しています   こんな事もやったことあります  CloudSearch Elasticsearch  構築もできはしますが運用結構大変なのを思い知ったので Amazon Elasticsearch Serviceを使った方が良いと思います。   レベルとしては普通。流行りの技術顧問とか無理 デザイン系はできません Android/iOSアプリはできません 24時間対応はできません トラブル対応はベストエフォートでなら行います フロントエンド(css/js)はできますが、最近仕事でやってないのでモダンとか言われると厳しいです  現状売りになると思っているのは「小規模、AWS利用のアプリ向けサーバAPI開発ならサーバサイドは一人で構築から全部できる」というところかなと思っています。</description>
+    </item>
+    
+    <item>
+      <title>Grapeが良さそうだったけどやめた</title>
+      <link>https://u1tnk.github.io/blog/2014/08/14/grape-research/</link>
+      <pubDate>Thu, 14 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://u1tnk.github.io/blog/2014/08/14/grape-research/</guid>
+      <description>RailsでAPI作ってるのでGrapeが良さそうと聞いて調べて、おお！やってみよう！ と思って細かく調べたけど結果やめました。
+参考資料  https://github.com/intridea/grape Ruby - RailsとGrapeで行う最高のWeb API開発 - Qiita Grape - RailsでスピーディにAPIを作成！ - 酒と泪とRubyとRailsと Ruby初心者がRailsとGrapeでREST APIを作る - morishitter blog  良さそうな点  routes情報と全controllerが一つにまとまるので見易い versioningやapiのprefix等柔軟に設定できる  微妙なところ  filterにonly,except等が無かった 1ファイルで見通しが良いけども、増え過ぎて分割したら何の為にやったのか感が凄そう 単体で使えるものなのでRailsと重複する機能が多くてもったいない気持ちになる  まとめ カバー範囲が違えど、二種のフレームワークを混在して使う事への抵抗が大きかった。大して大きな機能が無いので、だったらRailsのみでシンプルにした方が良いかなと。
+Railsと組み合わせて使うなら既存の非APIアプリに追加してシンプルなちょっとしたAPIを作る…とかなら良いのかもという気はしました。</description>
+    </item>
+    
+    <item>
+      <title>ansible 勉強会 #1メモ</title>
+      <link>https://u1tnk.github.io/blog/2014/06/19/ansible-study-01/</link>
+      <pubDate>Thu, 19 Jun 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://u1tnk.github.io/blog/2014/06/19/ansible-study-01/</guid>
+      <description>Ansible 勉強会 #1 - connpass
+に行ってきたのでメモ。資料は↑にほぼあるようです。
+Ansible の基本 + MySQL レプリケーションを設定する事例 by @IanMLewis まさに基本。普段使ってるので大体押さえられてた。
+MySQLを構築してみる  bennojoy/ansible-roles ansibleworksの人のリポジトリらしい。参考になりそう。 when あんま使いこなしてないので見とこう。 サンプルyaml見ると、自分のyamlが使いこなして無い感ある… mysql_replicationモジュールは便利感あるが、ちょっと簡単そうに見えないw 基本の直後に見るのはキツい印象。  dynamic inventoryが便利な話: no more host list! by @tagomoris  某巨大メッセージングアプリ企業で普通に使ってるっぽい エージェントいらないからCentOS5でも動くという理由が大きいらしい。納得。 日本語情報あんま無いのが弱点は同意。っつーか俺書け。 Inventryに普通のvars定義できたという恐らくかなり基本に気づいてなかった… hoge[1:2].local → hoge1.local…とか使える。 Dyanamic Inventry存在すら気づいてなかった… ec2用のscriptは既存である。 JSON返すだけなので自作もラク。 ansible.cfg置けば -i不要という事に気づいた。 明日からマネしたい！ 2000台完走実績あるらしい。さすが某巨大メッセージングアプリ企業  おまけ DynamicInventryでは_meta使って —host はスキップさせるのがオススメ。
+callback pluginを使ったタスク実行時間の可視化について by @rudy  pluginはmoduleと違ってpythonで本体を拡張。 -i “localhost, ” とかできる事に気づいて衝撃。 callback_plugins に入れるだけ。実行ホストに置けば良いのラクだな。 実用上は使わない気がするが、bot連携すると面白いかも。  AnsibleのJUNOS設定モジュールを書いてみた by @saito_hideki Ansibleでルータ設定をしているという、まったく参考にはならないが衝撃の発表。</description>
+    </item>
+    
+    <item>
+      <title>EC2インスタンス価格の必要なところだけ表にしてみた</title>
+      <link>https://u1tnk.github.io/blog/2014/04/17/aws-price/</link>
+      <pubDate>Thu, 17 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://u1tnk.github.io/blog/2014/04/17/aws-price/</guid>
+      <description>何？ EC2の価格表で以下が欲しかったので作った。
+2月にほぼ手作業で同じようなデータ作ったけど、大幅値下げで既に使いものにならなくなったので業を煮やした。いや値下げは嬉しいんだけど。
+同様にネットで見かけるまとめも見やすいものは古くなってたり…
+以下公式の不満。
+ 一画面でECUとかGiBとか比較できない リザーブドインスタンスにしたときのならし月額(一括払いを月額に按分して時間分と足す)が欲しい(見積りツールにはある) オンデマンドとリザーブドインスタンスどんぐらい違うか見たい ECUあたりとかメモリあたりの単価も比較したい 3年とかさすがに使えないのでいらない 中度とか軽度買うぐらいならオンデマンドで良いのでいらない このページのもデザイン的に見やすくないのでSpreadSheetなりに貼りつけて利用を推奨。(以下リンク先のCSSゼロの方がまだ見やすいという…)  やはりみづらいのでgoogle spread sheetに貼りつけた https://docs.google.com/spreadsheets/d/1QzsUHO4Nd07TL5FAnVM2yvLRa3uOslY7pDTrmhwuAf0/edit?usp=sharing   どうやった？ 以下ページのJSでHTML化。このページのはスナップショットとしてコピペ。 https://dl.dropboxusercontent.com/u/3400756/aws_price.html
+ 料金表のページのソースを見るとJSONPで呼んでたので使わせてもらった。おそらく外部利用を想定してないので止まっても文句は言いません。(見れなくなったら困るのでコピペった)  表について  RI = リザーブドインスタンス一年重度使用 OD = オンデマンド(普通) m1.small比OD価格のm1.small比。 安い順にソートしている。ファミリー毎の方がコスパとか見やすかったかも。  内容感想  m1.medium/m1.largeが消えてた…別ページにあるんだろうけど。 m1.small、特殊用途のhs以外全てSSD化してた。HDDは死んだ… m1.small、単価見ると高い！しょぼい用途には使うけど… m3.mediumも2月時点のm1.small(RIならしで約$34だった)と大差無い。 2月時点のm1.mediumよりC3.largeが安いってw m1.mediumのリザーブドインスタンスどうしろと… c3.largeがオンデマンドでも月一万切る上、メモリ/ECU共にコスパ高い! large以上は特段コスパ良くなったりはしない。 m3の中途半端さ。largeならc3かr3使うと思う。  4/17時点の価格表  size vCPU ECU memoryGiB storageGB RI一括 RI/時間 RIならし月額 OD時間 OD月額 OD m1.small比 OD月額/ECU OD月額/GiB  t1.micro1variable0.615ebsonly620.00911.640.02618.720.42NaN30.43 m1.small111.71 x 1601350.</description>
+    </item>
+    
+    <item>
+      <title>Team Geek読んだ</title>
+      <link>https://u1tnk.github.io/blog/2014/03/20/team-geek/</link>
+      <pubDate>Thu, 20 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://u1tnk.github.io/blog/2014/03/20/team-geek/</guid>
+      <description>同僚に貸して頂いて読みました。感謝。
+Googleの中の人がチーム開発するにあたってどういう事を心がけているか？という本。 プログラマ本だけどプログラマ専用の内容は少なめ。一部削れば自己啓発書コーナーにあっても不思議じゃない。
+ とにかくHRT(信頼 Humility、尊敬 Respect、謙虚 Trust) 有害な人対策なども。無自覚なのも含めて難しい問題だと実感。有害な人対策自体も参考になるが、自分も有害になってないか？で心が痛い。 採用は妥協しない、チームメイトになったら大人として扱う。 ミッションステートメントは共有はもちろん今自分がしっかり理解しているとは言えないなぁ… かなり社内政治についても書いてる。必要悪的ではあるが。  面白かったし、色々参考になった。 自省としては、HRTはやってるつもりだけど、嗜好が合わないと謙虚さが失われがちなので気をつけようと。</description>
+    </item>
+    
+    <item>
+      <title>JAWS DAYS 2014に行ってきました</title>
+      <link>https://u1tnk.github.io/blog/2014/03/15/jawsdays2014/</link>
+      <pubDate>Sat, 15 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://u1tnk.github.io/blog/2014/03/15/jawsdays2014/</guid>
+      <description>Immutable Infrastructure JAWS DAYS 2014、Immutable Infrastructure について - naoyaのはてなダイアリー http://d.hatena.ne.jp/naoya/20140315/1394851727
+めっちゃ人居ました。個人的にrebuild.fm全部聞いてるのでほとんど聞いてたので割愛w
+クックパッドのデプロイとオートスケール 個人的一番勉強になったセッション。
+Cookpad&amp;rsquo;s deployment and auto scaling // Speaker Deck https://speakerdeck.com/mirakui/cookpads-deployment-and-auto-scaling
+ nameタグ、hostnameは起動時に自動採取  →これはすぐにでも真似したい。  roleタグというのをつけてデプロイ内容をコントロール  →ふむふむ  Nameタグからip収集してpowerdnsで管理。  →そうしたいよね…  ec2からタグ情報取得するApiのImitに到達するらしいw キャッシュしてるとのこと
+ Amazon AutoScaling使って無くて自作！
+ CloudWatchが最短一分で秒単位で取得したい  そこまで必要なのか…  graceful terminate問題  それは確かに。多少のリクエストなら負荷で落ちるよりマシと思ってやってるが…  ELBでは無くhaproxy使いたい。…  haproxyの方が良いそうな。 ブラックボックスで問題起こったらよくわからんってのは確かに。  デプロイとにAutoScaalingと排他制御するため  動くとやばいので、排他制御してると。ほー。デプロイ多いからこその問題。   問題調査のための、staticインスタンスとしてAutoScaleとは別管理のインスタンスがある。
+ 確かに。システムログとか見るヒマ無く勝手に落ちるからな…Amazon Autoscalingでもできるからやりたい  蛇足
+ chefじゃなくてpuppet使ってるらしい。なんでだろ。 cookpadもhipchatoとのこと   プロビジョニング＆デプロイ on AWSのキホン The Basics of Provisioning and Deploy on AWS #jawdays #infra http://www.</description>
+    </item>
+    
+    <item>
+      <title>nasne&#43;iOSは無茶苦茶便利だがTwonkeyBeamは使わない方が幸せ。黙ってDixim使っとけ！</title>
+      <link>https://u1tnk.github.io/blog/2013/07/28/nasne/</link>
+      <pubDate>Sun, 28 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://u1tnk.github.io/blog/2013/07/28/nasne/</guid>
+      <description>nasne良さそうだけど、torne持ってるし録画サーバあるしいらんと思ってたけど、録画サーバが壊れた(たぶんPT2の故障)ので検討。
+ PT2買い替えでなおる気がするけど、実はソフト側の問題でハマったら辛い。 そもそもPT2+ubuntu環境も結構不安定。番組によっては変換でよくハマってたし。 以下の記事見て自分の用途(PS3/iPad/iPhoneで見る、たまに持ち出し)が全て満たされると確信。  年末年始の特番対策に PS3＋torne+nasne で録画環境を強化してみたら外から録画予約も出来るようになったし超満足した件 - 941::blog
+設置  アンテナ挿す B-CAS挿す 電源挿す こんだけ、簡単！  設定  ブラウザで機器設定1  チャンネルスキャン ネットワーク設定 予約サービスCHAN-TORU登録 外部予約用だが、PS3無い人はこれで予約すれば良い google/twitterアカウント使えるので登録ラク。 PS3トルネアプリでnasne登録   PS3/torneアプリの存在意義 ここで、torneとはtorneアプリの事であり、PS3外付けチューナ製品の事では無い、そちらはtorneチューナと呼ぶ。
+結論から言うとPS3持ってるなら使うだけのメリットはある。
+が、持ってなくてメイン視聴がiOSもしくはDLNA機器(DTCP-IP対応)なら買う程では無い。
+torneチューナは既に持ってる人なら併用するとダブルチューナの意味はある。が、持ってなければnasne買い足しの方が良い。
+メリット  録画管理機能使える(予約管理は上述のCHAN-TORUでもできる) 番組表サクサク便利 torneチューナと予約/データを統合管理 torneチューナあるときはここで予約して時間が重複したらtorneチューナで録画してくれる 未/既視聴管理ができる  デメリット  torneアプリ、PS3共に起動遅い  torneチューナ運用時との比較で意外に良かったところ 録画にPS3起動が必要無い!
+ささいなようで素晴らしい。突然鳴り響くファンの音に怯える事も無い。部屋も暑くならないんだ！
+Twonkey Beamと Dixim digital TV どちらもiOSでDTCP-IP対応DLNAクライアントで、LAN内でnasneの動画が見れます。ライブチューナでTVも見れます。 が、決定的に「品質」が違います。
+以下起動した直後のスクショ。 こちらがDixim
+で、こちらがTwonkey
+どちらがnasneで動画再生するのにわかりやすいかなんて一目瞭然ですね。 ちなみにまずは右上のちっさーーーいwifiアイコンをクリックするのが正解です。
+これからも万事この調子。
+ 普通に見るのも、ダウンロードするのも「Beam」するんです！意味がわかりません。 再生中にsuspend-resumeするとよく固まります。 番組によっては再生できません。2 30秒スキップなんて親切機能はありません。頑張って指で調整して早送りした結果固まります。 固まらなくてもBeam失敗したときにエラーポップアップすら出ない事が多い。静かにエラー起きてるっぽい。  レビュー記事でTwonkeyはUIがちょっとよくない…とか書いてるのを見た事あるけど、</description>
+    </item>
+    
+  </channel>
+</rss>

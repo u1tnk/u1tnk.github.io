@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: 
-
-Sitemap: https://u1tnk.github.io/sitemap.xml 
