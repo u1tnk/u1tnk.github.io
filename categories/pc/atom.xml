@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pc on u1tnk.log</title>
+    <link>https://u1tnk.github.io/categories/pc/</link>
+    <description>Recent content in Pc on u1tnk.log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Fri, 04 Jan 2019 13:30:58 +0900</lastBuildDate>
+    
+	<atom:link href="https://u1tnk.github.io/categories/pc/atom.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ryzen1700オーバークロック、電力計測</title>
+      <link>https://u1tnk.github.io/blog/2019/01/04/ryzen1700oc/</link>
+      <pubDate>Fri, 04 Jan 2019 13:30:58 +0900</pubDate>
+      
+      <guid>https://u1tnk.github.io/blog/2019/01/04/ryzen1700oc/</guid>
+      <description>購入から1年版経って今さらオーバークロックやってみるなど。 当初サーバ扱いしてたからオーバークロックなんぞよりも安定性と省電力が至上！って思ってガン無視ししてたけど、常用するようになったし、BIOSで設定一個変えるだけでマザボ側が勝手に安全な範囲で上げてくれる世の中なので一応やってみた。
+変更前  2900MHzちょい CPU温度 min33度、max 57度 (1月、室内18度) 消費電力
+ idle  80w 1.7円/h  CPUベンチ  CPU-Z  マルチスレッド3600程度  140w 3.0円/h  GPUベンチ
+ モンハンフロンティア4k  11000程度  240w 5.4円/h
+変更後   ASUSマザボのおまかせOC機能
+ 3641MHz
+ CPU温度 min36度、max 71度 (1月、室内18度)
+ 消費電力 - idle - 83w - 1.8円/h
+ CPUベンチ  CPU-Z  マルチスレッド4500程度 大体1.3倍の向上 CPU-Zの1800Xのスコアと大差無し  165w 3.6円/h  モンハンベンチはほぼ変わらないので省略    まとめ オーバークロックしてもidle時の商品電力はほとんど変わってなかった。現代のCPU賢い。 結局のところ使ってる期間のほとんどは大したCPU使用率にはならないのでほぼコスト変わらないのでは？となった。2018年にもなってエンコードしまくる事なんて無いし。ゲームについてはCPUの影響小さいし。 max70度は夏場で室温＋10度になるとサーマルスロットリング発動する可能性があるかもなので強いCPUクーラーに変えても良いかもしれない。簡易水冷でも検討しよう、楽しいし。</description>
+    </item>
+    
+  </channel>
+</rss>

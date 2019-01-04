@@ -1842,7 +1842,7 @@ h6 {
 
 /* Force gist linenos to be the same size as code linenos */
 .gist .blob-num {
-    font-size: 0.938em !important;
+    font-size: 0.938em !important; 
 }
 
 .gist .highlight, .gist .blob-code-inner {
@@ -1887,7 +1887,7 @@ h6 {
 .gist .pl-s, .gist .pl-pds, .gist .pl-s .pl-pse .pl-s1, .gist .pl-sr,
 .gist .pl-sr .pl-cce, .gist .pl-sr .pl-sre, .gist .pl-sr .pl-sra {
     color: #2aa198 !important;
-
+    
 }
 
 .gist .pl-s, .gist .pl-pds, .gist .pl-s .pl-pse .pl-s1, .gist .pl-sr,

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
+
+  
+    
+    
+      <link href="/css/fonts.css" rel="stylesheet" type="text/css">
+    
+  
+
+  
+  <title>Ryzen1700オーバークロック、電力計測</title>
+
+  
+  
+  <link rel="stylesheet" href="/css/hugo-octopress.css">
+
+  
+  
+    <link rel="stylesheet" href="https://u1tnk.github.io/css/custom.css">
+  
+
+  
+    <link rel="stylesheet" href="/css/fork-awesome.min.css">
+  
+
+  
+  <link href="https://u1tnk.github.io/favicon.png" rel="icon">
+
+  
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="u1tnk">
+
+  
+  <meta name="generator" content="Hugo 0.40.1" />
+
+  
+  
+
+  
+  
+</head>
+<body>
+
+
+<header role="banner">
+<hgroup>
+  
+  <h1><a href="https://u1tnk.github.io/">u1tnk.log</a></h1>
+    <h2></h2>
+</hgroup></header>
+
+
+<nav role="navigation">
+<fieldset class="mobile-nav">
+  
+  <select onchange="location = this.value;">
+    <option value="">Navigate…</option>
+      
+        <option value="https://u1tnk.github.io/">» posts</option>
+      
+        <option value="https://u1tnk.github.io/about">» about</option>
+      
+        <option value="https://u1tnk.github.io/atom.xml">» rss</option>
+      
+  </select>
+</fieldset>
+
+
+<ul class="main-navigation">
+  
+  
+    
+      <li><a href="https://u1tnk.github.io/" title="posts">posts</a></li>
+    
+  
+    
+      <li><a href="https://u1tnk.github.io/about" title="about" >about</a></li>
+    
+  
+    
+      <li><a href="https://u1tnk.github.io/atom.xml" title="rss" >rss</a></li>
+    
+  
+</ul>
+
+<ul class="subscription">
+  
+</ul>
+
+
+</nav>
+
+
+<div id="main">
+  <div id="content">
+    <div>
+      <article class="hentry" role="article">
+
+        
+        
+
+<header>
+  <p class="meta">2019/1/1
+    
+    
+
+    
+    
+      - <a class="label" href="https://u1tnk.github.io/categories/pc/">pc </a><a class="label" href="https://u1tnk.github.io/categories/benchmark/">benchmark </a>
+    
+  </p>
+  <h1 class="entry-title">
+     Ryzen1700オーバークロック、電力計測 
+  </h1>
+</header>
+
+
+        <div class="entry-content">
+          
+          
+          
+          
+
+<p>購入から1年版経って今さらオーバークロックやってみるなど。
+当初サーバ扱いしてたからオーバークロックなんぞよりも安定性と省電力が至上！って思ってガン無視ししてたけど、常用するようになったし、BIOSで設定一個変えるだけでマザボ側が勝手に安全な範囲で上げてくれる世の中なので一応やってみた。</p>
+
+<h2 id="変更前">変更前</h2>
+
+<ul>
+<li>2900MHzちょい</li>
+<li>CPU温度 min33度、max 57度 (1月、室内18度)</li>
+
+<li><p>消費電力</p>
+
+<ul>
+<li>idle
+
+<ul>
+<li>80w</li>
+<li>1.7円/h</li>
+</ul></li>
+<li>CPUベンチ
+
+<ul>
+<li>CPU-Z
+
+<ul>
+<li>マルチスレッド3600程度</li>
+</ul></li>
+<li>140w</li>
+<li>3.0円/h</li>
+</ul></li>
+
+<li><p>GPUベンチ</p>
+
+<ul>
+<li>モンハンフロンティア4k
+
+<ul>
+<li>11000程度</li>
+</ul></li>
+<li>240w</li>
+
+<li><p>5.4円/h</p>
+
+<h2 id="変更後">変更後</h2></li>
+</ul></li>
+</ul></li>
+
+<li><p>ASUSマザボのおまかせOC機能</p></li>
+
+<li><p>3641MHz</p></li>
+
+<li><p>CPU温度 min36度、max 71度 (1月、室内18度)</p></li>
+
+<li><p>消費電力
+    - idle
+        - 83w
+        - 1.8円/h</p>
+
+<ul>
+<li>CPUベンチ
+
+<ul>
+<li>CPU-Z
+
+<ul>
+<li>マルチスレッド4500程度</li>
+<li>大体1.3倍の向上</li>
+<li>CPU-Zの1800Xのスコアと大差無し</li>
+</ul></li>
+<li>165w</li>
+<li>3.6円/h</li>
+</ul></li>
+<li>モンハンベンチはほぼ変わらないので省略
+<img src="/images/ryzen1700oc/after.png" alt="oc_after.png" /></li>
+</ul></li>
+</ul>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>オーバークロックしてもidle時の商品電力はほとんど変わってなかった。現代のCPU賢い。
+結局のところ使ってる期間のほとんどは大したCPU使用率にはならないのでほぼコスト変わらないのでは？となった。2018年にもなってエンコードしまくる事なんて無いし。ゲームについてはCPUの影響小さいし。
+max70度は夏場で室温＋10度になるとサーマルスロットリング発動する可能性があるかもなので強いCPUクーラーに変えても良いかもしれない。簡易水冷でも検討しよう、楽しいし。</p>
+
+<p>あと、ウチのデスクトップPC、idleだと 1.8*24*30=1296円、ぶん回して5.4円計算で3888円。スリープしてる時間もあるのでざっくりで1000円ぐらいしか使ってなさそうで意外。ディスプレイは別ですが…調べたらウチのディスプレイ P2715Qは50〜100Wらしい。今度計測してみよう。</p>
+
+        </div>
+        
+
+<footer>
+  <p class="meta">
+    <span class="byline author vcard">Posted by <span class="fn">u1tnk</span></span>
+    
+    <time>Jan 4, 2019</time>
+    
+    </span>
+  </p>
+
+  
+
+  <p class="meta">
+    
+        <a class="basic-alignment left" href="https://u1tnk.github.io/blog/2019/01/02/migrate_hugo/" title="今さらOctopressからHugoに乗りかえた">今さらOctopressからHugoに乗りかえた</a>
+    
+
+    
+  </p>
+  
+</footer>
+
+      </article>
+    </div>
+    
+
+<aside class="sidebar thirds">
+  <section class="first odd">
+
+    
+
+    <p>
+      
+    </p>
+  </section>
+
+
+
+  
+  <ul class="sidebar-nav">
+    <li class="sidebar-nav-item">
+      
+      
+      
+      
+      
+         
+      
+      
+      
+      
+      
+      
+      
+      
+
+    
+    
+    </li>
+  </ul>
+
+  
+
+  
+
+  
+  
+  
+</aside>
+
+  </div>
+</div>
+
+    <footer role="contentinfo">
+      <p>Copyright &copy; 2019 u1tnk - <a href="https://u1tnk.github.io/license/">License</a> -
+        <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
+      </p>
+    </footer>
+
+    
+    
+    
+
+    
+      <script>
+        var _gaq=[['_setAccount','UA-2532590-5'],['_trackPageview']];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));
+      </script>
+    
+  </body>
+</html>
+
