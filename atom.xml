@@ -6,10 +6,27 @@
     <description>Recent content on u1tnk.log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Fri, 04 Jan 2019 13:30:58 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 05 Jan 2019 08:47:57 +0900</lastBuildDate>
     
 	<atom:link href="https://u1tnk.github.io/atom.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>自作デスクトップの構成2018年1月</title>
+      <link>https://u1tnk.github.io/blog/2019/01/05/my-desktop-201801/</link>
+      <pubDate>Sat, 05 Jan 2019 08:47:57 +0900</pubDate>
+      
+      <guid>https://u1tnk.github.io/blog/2019/01/05/my-desktop-201801/</guid>
+      <description>完全に自分用まとめ。
+…のはずだったのに結構労作になってしまった。どのパーツがどんぐらい古いのかとかあやふやだったからちょうど良いか。
+CPU Ryzen1700 2017年5月購入 AMD CPU Ryzen7 1700 with WraithSpire 65W cooler AM4 YD1700BBAEBOXposted with カエレバAMD 2017-03-03 
+経済的8コアで選んだけどオーバークロック耐性高くてラッキー Ryzen1700オーバークロック、電力計測
+内部でDocker使ってるVM立てててもオール100%になる事などほぼ無いので8コアあれば現状十分。 クーラーはリテールそのまま。
+GPU GTX 1070 2017年5月購入 ZOTAC GEFORCE GTX 1070 MINI グラフィックスボード VD6148 ZTGTX1070-8GD5MINI01posted with カエレバZOTAC 2016-09-23 
+最低限VR readyなものを…と考えて選択。VRは堪能してもうやらないのでストVにはオーバースペック感。ファンはあるが、ゲームやらない限り回らない(65度あたりかららしい)ので静音。
+メモリ DDR4 32GB 2017年5月購入 2017年7月購入(16GB買い足し) CORSAIR DDR4-2666MHz デスクトップPC用 メモリモジュール VENGEANCE LPX Series 8GB×2枚キット CMK16GX4M2A2666C16posted with カエレバCorsair 2015-08-01 
+Crucial [Micron製] DDR4 デスクPC用メモリー 8GB x2 ( 2133MT/s / PC4-17000 / CL15 / 288pin / DR x8 Unbuffered DIMM ) 永久保証 CT2K8G4DFD8213posted with カエレバCrucial(クルーシャル) 2014-09-09  どうしてPC4-21300とPC4-17000 が混ざってるんでしょうね…表記がバラバラなのが悪いんや 😭 よくわからなくなったらPCx-xxxx のところだけ見ましょう。 まあ量の方が大事だし体感できるレベルの差じゃないので良しとしましょう。AMD Ryzenのゲーミング性能はメモリークロックが重要 | ちもろぐ らしいんだけど… 😓 とはいえノートでは16GB生活しかしてなったので32GBはまったく不足しなくて快適です。</description>
+    </item>
     
     <item>
       <title>Ryzen1700オーバークロック、電力計測</title>
