@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
+
+  
+    
+    
+      <link href="/css/fonts.css" rel="stylesheet" type="text/css">
+    
+  
+
+  
+  <title>ヤマハルータRTX810でipv6とds-liteを両立させた</title>
+
+  
+  
+  <link rel="stylesheet" href="/css/hugo-octopress.css">
+
+  
+  
+    <link rel="stylesheet" href="https://u1tnk.github.io/css/custom.css">
+  
+
+  
+    <link rel="stylesheet" href="/css/fork-awesome.min.css">
+  
+
+  
+  <link href="https://u1tnk.github.io/favicon.png" rel="icon">
+
+  
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="u1tnk">
+
+  
+  <meta name="generator" content="Hugo 0.40.1" />
+
+  
+  
+
+  
+  
+</head>
+<body>
+
+
+<header role="banner">
+<hgroup>
+  
+  <h1><a href="https://u1tnk.github.io/">u1tnk.log</a></h1>
+    <h2></h2>
+</hgroup></header>
+
+
+<nav role="navigation">
+<fieldset class="mobile-nav">
+  
+  <select onchange="location = this.value;">
+    <option value="">Navigate…</option>
+      
+        <option value="https://u1tnk.github.io/">» posts</option>
+      
+        <option value="https://u1tnk.github.io/about">» about</option>
+      
+        <option value="https://u1tnk.github.io/atom.xml">» rss</option>
+      
+  </select>
+</fieldset>
+
+
+<ul class="main-navigation">
+  
+  
+    
+      <li><a href="https://u1tnk.github.io/" title="posts">posts</a></li>
+    
+  
+    
+      <li><a href="https://u1tnk.github.io/about" title="about" >about</a></li>
+    
+  
+    
+      <li><a href="https://u1tnk.github.io/atom.xml" title="rss" >rss</a></li>
+    
+  
+</ul>
+
+<ul class="subscription">
+  
+</ul>
+
+
+</nav>
+
+
+<div id="main">
+  <div id="content">
+    <div>
+      <article class="hentry" role="article">
+
+        
+        
+
+<header>
+  <p class="meta">2019/4/4
+    
+    
+
+    
+    
+      - <a class="label" href="https://u1tnk.github.io/categories/network/">network </a>
+    
+  </p>
+  <h1 class="entry-title">
+     ヤマハルータRTX810でipv6とds-liteを両立させた 
+  </h1>
+</header>
+
+
+        <div class="entry-content">
+          
+          
+          
+          
+
+<p>ローカルはipv4のみでds-liteを使っていたが、ちゃんとipv6を使いたくなったので、iijのIPoEオプション契約にて、 ipv6のトラフィックはipv6で、ipv4はds-liteで通信する設定がうまく動いたので保存。</p>
+
+<h2 id="作成した手順">作成した手順</h2>
+
+<p>そのもの同じ事をしてるサイトは無く、設定読みながら関係ありそうなところを切り貼りするもうまく動かず、設定オールリセットして、GUIのウィザードでipv6のみ設定、ipv6のみ疎通したところで、ds-liteの設定のみ追加してうまく動いた。</p>
+
+<p>メモ
+- <code>ipv6 route default gateway dhcp lan2</code> ipv6だけダメだったときに設定してみたが、うまく動かない。現状からこれ追加してもダメなので何かが間違っているらしい。
+- filter類は無くても繋がるだろうと思って無視してたが、現状は入っている、必要だったのか？</p>
+
+<h2 id="設定">設定</h2>
+
+<p>以下動作状況からレポート機能で出力して、冗長なコメントを削った。</p>
+
+<pre><code>#	RTX810 Rev.11.01.33 (Fri Apr 20 08:44:58 2018)
+#
+#	Reporting Date: Apr 14 14:41:32 2019
+
+#
+# IP configuration
+#
+
+ip route default gateway tunnel 1
+
+#
+# IPv6 configuration
+#
+
+ipv6 prefix 1 ra-prefix@lan2::/64
+
+#
+# LAN configuration
+#
+
+ip lan1 address 192.168.100.1/24
+ipv6 lan1 address ra-prefix@lan2::1/64
+ipv6 lan1 rtadv send 1 o_flag=on
+ipv6 lan1 dhcp service server
+ipv6 lan2 secure filter in 101030 101031 101032 101098
+ipv6 lan2 secure filter out 101099 dynamic 101080 101081 101082 101083 101084 101085 101098 101099
+ipv6 lan2 dhcp service client ir=on
+
+
+#
+# Provider Type configuration
+#
+
+provider lan1 name LAN:
+provider lan2 name ipv6 PRV/0/4/0/0/1/1:iij
+
+#
+# PP configuration
+#
+
+pp disable all
+
+#
+# TUNNEL configuration
+#
+
+no tunnel enable all
+
+### TUNNEL 1 ###
+
+tunnel select 1
+ tunnel encapsulation ipip
+ tunnel endpoint address 2404:8e00::feed:101
+ tunnel enable 1
+
+
+#
+# IP filter configuration
+#
+
+ip filter 500000 restrict * * * * *
+
+#
+# IPv6 filter configuration
+#
+
+ipv6 filter 101030 pass * * icmp6 * *
+ipv6 filter 101031 pass * * tcp * ident
+ipv6 filter 101032 pass * * udp * 546
+ipv6 filter 101098 reject * * * * *
+ipv6 filter 101099 pass * * * * *
+
+#
+# IPv6 dynamic filter configuration
+#
+
+ipv6 filter dynamic 101080 * * ftp
+ipv6 filter dynamic 101081 * * domain
+ipv6 filter dynamic 101082 * * www
+ipv6 filter dynamic 101083 * * smtp
+ipv6 filter dynamic 101084 * * pop3
+ipv6 filter dynamic 101085 * * submission
+ipv6 filter dynamic 101098 * * tcp
+ipv6 filter dynamic 101099 * * udp
+
+
+#
+# TELNETD configuration
+#
+
+telnetd host lan
+
+#
+# DHCP configuration
+#
+
+dhcp service server
+dhcp server rfc2131 compliant except remain-silent
+dhcp scope 1 192.168.100.20-192.168.100.191/24
+
+#
+# DNS configuration
+#
+
+dns service fallback on
+dns server dhcp lan2
+dns private address spoof on
+</code></pre>
+
+        </div>
+        
+
+<footer>
+  <p class="meta">
+    <span class="byline author vcard">Posted by <span class="fn">u1tnk</span></span>
+    
+    <time>Apr 14, 2019</time>
+    
+    </span>
+  </p>
+
+  
+
+  <p class="meta">
+    
+        <a class="basic-alignment left" href="https://u1tnk.github.io/blog/2019/04/13/junior_high_school_exam_total/" title="中学受験総括">中学受験総括</a>
+    
+
+    
+  </p>
+  
+</footer>
+
+      </article>
+    </div>
+    
+
+<aside class="sidebar thirds">
+  <section class="first odd">
+
+    
+
+    <p>
+      
+    </p>
+  </section>
+
+
+
+  
+  <ul class="sidebar-nav">
+    <li class="sidebar-nav-item">
+      
+      
+      
+      
+      
+         
+      
+      
+      
+      
+      
+      
+      
+      
+
+    
+    
+    </li>
+  </ul>
+
+  
+
+  
+
+  
+  
+  
+</aside>
+
+  </div>
+</div>
+
+    <footer role="contentinfo">
+      <p>Copyright &copy; 2019 u1tnk - <a href="https://u1tnk.github.io/license/">License</a> -
+        <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
+      </p>
+    </footer>
+
+    
+    
+    
+
+    
+      <script>
+        var _gaq=[['_setAccount','UA-2532590-5'],['_trackPageview']];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));
+      </script>
+    
+  </body>
+</html>
+
