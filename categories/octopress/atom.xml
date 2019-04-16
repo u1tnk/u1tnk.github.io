@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Octopress on u1tnk.log</title>
+    <title>octopress on u1tnk.log</title>
     <link>https://u1tnk.github.io/categories/octopress/</link>
-    <description>Recent content in Octopress on u1tnk.log</description>
+    <description>Recent content in octopress on u1tnk.log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Wed, 02 Jan 2019 12:10:55 +0900</lastBuildDate>
