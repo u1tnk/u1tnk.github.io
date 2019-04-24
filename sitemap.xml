@@ -8,6 +8,11 @@
   </url>
   
   <url>
+    <loc>https://u1tnk.github.io/blog/2019/04/16/fukuoka_other_gourmet/</loc>
+    <lastmod>2019-04-16T21:16:51+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://u1tnk.github.io/blog/2019/04/14/rtx810_ipv6_config/</loc>
     <lastmod>2019-04-14T19:43:43+09:00</lastmod>
   </url>
@@ -147,6 +152,12 @@
   <url>
     <loc>https://u1tnk.github.io/categories/family/</loc>
     <lastmod>2019-04-13T00:25:42+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://u1tnk.github.io/categories/food/</loc>
+    <lastmod>2019-04-16T21:16:51+09:00</lastmod>
     <priority>0</priority>
   </url>
   
