@@ -6,10 +6,24 @@
     <description>Recent content in Posts on u1tnk.log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 14 Apr 2019 19:43:43 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 24 Apr 2019 23:24:31 +0900</lastBuildDate>
     
 	<atom:link href="https://u1tnk.github.io/post/atom.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>「フリーランスを完全に理解できる本」を読んだ</title>
+      <link>https://u1tnk.github.io/blog/2019/04/24/understand_freelancer_completely/</link>
+      <pubDate>Wed, 24 Apr 2019 23:24:31 +0900</pubDate>
+      
+      <guid>https://u1tnk.github.io/blog/2019/04/24/understand_freelancer_completely/</guid>
+      <description> フリーランスを完全に理解できる本(電子) - きりみんちゃんねるしょっぷ - BOOTH
+噂になってた技術書展のフリーランス本読んだので感想をまとめておく。
+まず、目次で予想はしてたけど、僕がフリーランス本書いたら同じような感じになるなーって感じでした 😅
+途中で出てくる、「月65万フリーランスは安いのか？」に対する感想とか単価相場感、正社員との比較とかの感覚も大体同じでびっくり。 今まで読んだフリーランス系のまとめは微妙に業種が違ったり、地域が違ったりしてた結果ズレてたんだろうなと。
+結論として、私がこれからフリーランスまわりのノウハウをまとめる必要無くね？ってなるぐらいだったし、薄い本なのでしっかり読んでも一時間かからないぐらいだったので、フリーランスのプログラマにマジメになろうと考えてる人は読んだ方が良いです。
+雑感  単価履歴、相場観、経費の基準について同人誌とは言え書きづらそうなところまでしっかり書かれている。私の単価履歴だけのまとめ フリーランスになってからの単価変遷史｜u1tnk｜note が1500円なのでコスパが比較にならない。 税理士頼んで無いみたいだけど、記帳を自分でやって相談と申告まわりだけお願いするとわりと安くやってくれるところもあるので税務調査とか不安な方はオススメ。 最初のコラムのエージェントのマージンの話は涙溢れる 😢 どうしても初期は授業料を取られがちなのでこの本読んだ方は気をつけましょう。 さっとは書いてあったけど、小規模企業共済、個人型確定拠出年金(iDeCo)は節税、資産形成に重要なのでもうちょっと触れても良いかなと思った。 最初からフリーランスは勧めないのは同意。個人的にはtwitter求職も珍しく無い世の中で、上前ハネる系エージェントはコスパ悪すぎるので、直接契約取れるようになってからフリーになるぐらいで良いと思う。  </description>
+    </item>
     
     <item>
       <title>ヤマハルータRTX810でipv6とds-liteを両立させた</title>
