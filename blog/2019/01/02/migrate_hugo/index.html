@@ -43,7 +43,7 @@
   <meta name="author" content="u1tnk">
 
   
-  <meta name="generator" content="Hugo 0.40.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
 
   
   
@@ -131,94 +131,69 @@
           
           
           
-          
-
-<p>Octopressどころか自分でブログをビルドする事自体が乗り遅れてる事は自覚している。</p>
-
+          <p>Octopressどころか自分でブログをビルドする事自体が乗り遅れてる事は自覚している。</p>
 <p>だが、乗りかえに労力を割くのもイヤでそのままにしてたらマシン乗りかえてブログ書く度にgemでハマる。
 Rails開発者なのでruby環境自体は苦では無いがOctopressもはやメンテもされてないので見つからないgemとかあって不毛でしかない。</p>
-
 <p>マネージドサービスも変なところもイヤだし金もかけたくないし、アフィリンク入れたページもあるので規約とか確認するのもめんどい。
 という事で流行ってたhugoにすることにした。aptで入ったしgoでできたコマンド一個で動くようなのでOctopressよりも過去互換性が高そうなので、延命処置には十分かと。jekyllも考えたがより流行ってそうな方にしただけ。</p>
-
 <h2 id="ざっくり乗り替え手順">ざっくり乗り替え手順</h2>
-
 <ol>
 <li>公式の <a href="https://gohugo.io/tools/migrations/">https://gohugo.io/tools/migrations/</a> にあった <a href="https://github.com/codebrane/octohug">https://github.com/codebrane/octohug</a> を実行。ポスト少ないのでvimで頑張ってフォロー。公式だから信用したがたぶんダメツール。
-
 <ul>
 <li>slug(titleじゃないaliasのようなもの？) に日付入りのpathが入っていて、permalinksにはfilenameを使うので消した</li>
 <li>categoriesがCategoriesと間違っていてしかも中身が消えていた。</li>
 <li>titleがfilenameになっていた。日本語タイトルを元からコピー。</li>
-</ul></li>
+</ul>
+</li>
 <li>themeを選定。参考サイトで使っていた<a href="https://themes.gohugo.io/hugo-octopress/">Hugo Octopress | Hugo Themes</a> を利用。
-
 <ul>
 <li>Octopressにこだわる理由はカケラも無いが、ある程度設定するとthemeごとに挙動が結構変わるので変えるのを諦めた。</li>
 <li>以下、公式の設定にあるっぽいが対応してなかったのでforkして修正
-
 <ul>
 <li>DateFormatが変えられない</li>
-</ul></li>
-</ul></li>
+</ul>
+</li>
+</ul>
+</li>
 <li>動作確認しつつ、config.toml等を設定
-
 <ul>
 <li>themeの方にサンプルがあったので編集していった</li>
-</ul></li>
+</ul>
+</li>
 <li>固定ページは content/hoge.md に移動。</li>
 <li>元のoctopressのデータを削除してhugoのファイルをコピーして以下を submoduleにする
-
 <ul>
 <li>themes以下にthemeを配置</li>
 <li>publicにxxx.github.io.git  (デプロイ用)</li>
-</ul></li>
+</ul>
+</li>
 </ol>
-
 <h3 id="permalinkを合わせる">permalinkを合わせる</h3>
-
 <pre><code>[permalinks]
   post = &quot;/blog/:year/:month/:day/:filename/&quot;
-</code></pre>
-
-<h3 id="rssのurlを合わせる">rssのurlを合わせる</h3>
-
+</code></pre><h3 id="rssのurlを合わせる">rssのurlを合わせる</h3>
 <p>octopressのときは atom.xmlで hugoだと index.xmlだったので合わせた。rssuriという情報もあるが deprecated。
 また、Hugo-Octopressではindex.xmlが直書きだったので無効にしてメニュー作成時に自力でリンクを作った。どうせHugo-Octopressはforkしたので書き替えても良かった。</p>
-
 <pre><code>[outputFormats.RSS]
 baseName = &quot;atom&quot;
-</code></pre>
-
-<h3 id="デプロイ">デプロイ</h3>
-
+</code></pre><h3 id="デプロイ">デプロイ</h3>
 <ol>
-<li><p>以下で public を xxx.github.io.git にする。</p>
-
+<li>以下で public を xxx.github.io.git にする。</li>
+</ol>
 <pre><code>git submodule add -b master git@github.com:&lt;USERNAME&gt;/&lt;USERNAME&gt;.github.io.git public
-</code></pre></li>
-
-<li><p>サイト生成</p>
-
+</code></pre><ol>
+<li>サイト生成</li>
+</ol>
 <pre><code>hugo
-</code></pre></li>
-
-<li><p>デプロイ実行</p>
-
+</code></pre><ol>
+<li>デプロイ実行</li>
+</ol>
 <pre><code>cd public
 git push origin master
-</code></pre></li>
-</ol>
-
-<h3 id="ローカルテスト">ローカルテスト</h3>
-
+</code></pre><h3 id="ローカルテスト">ローカルテスト</h3>
 <p>以下コマンド後 localhost:1313</p>
-
 <pre><code>hugo server --buildDrafts
-</code></pre>
-
-<h3 id="参考サイト">参考サイト</h3>
-
+</code></pre><h3 id="参考サイト">参考サイト</h3>
 <ul>
 <li><a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">Host on GitHub | Hugo</a></li>
 <li><a href="https://gohugo.io/tools/migrations/">Migrate to Hugo | Hugo</a></li>

@@ -43,7 +43,7 @@
   <meta name="author" content="u1tnk">
 
   
-  <meta name="generator" content="Hugo 0.40.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
 
   
   
@@ -131,18 +131,11 @@
           
           
           
-          
-
-<h2 id="何">何？</h2>
-
+          <h2 id="何">何？</h2>
 <p>EC2の価格表で以下が欲しかったので作った。</p>
-
 <p>2月にほぼ手作業で同じようなデータ作ったけど、大幅値下げで既に使いものにならなくなったので業を煮やした。いや値下げは嬉しいんだけど。</p>
-
 <p>同様にネットで見かけるまとめも見やすいものは古くなってたり…</p>
-
 <p>以下公式の不満。</p>
-
 <ul>
 <li>一画面でECUとかGiBとか比較できない</li>
 <li>リザーブドインスタンスにしたときのならし月額(一括払いを月額に按分して時間分と足す)が欲しい(見積りツールにはある)</li>
@@ -151,32 +144,25 @@
 <li>3年とかさすがに使えないのでいらない</li>
 <li>中度とか軽度買うぐらいならオンデマンドで良いのでいらない</li>
 <li>このページのもデザイン的に見やすくないのでSpreadSheetなりに貼りつけて利用を推奨。(以下リンク先のCSSゼロの方がまだ見やすいという…)
-
 <ul>
 <li>やはりみづらいのでgoogle spread sheetに貼りつけた <a href="https://docs.google.com/spreadsheets/d/1QzsUHO4Nd07TL5FAnVM2yvLRa3uOslY7pDTrmhwuAf0/edit?usp=sharing">https://docs.google.com/spreadsheets/d/1QzsUHO4Nd07TL5FAnVM2yvLRa3uOslY7pDTrmhwuAf0/edit?usp=sharing</a></li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <h2 id="どうやった">どうやった？</h2>
-
 <p>以下ページのJSでHTML化。このページのはスナップショットとしてコピペ。
 <a href="https://dl.dropboxusercontent.com/u/3400756/aws_price.html">https://dl.dropboxusercontent.com/u/3400756/aws_price.html</a></p>
-
 <ul>
 <li>料金表のページのソースを見るとJSONPで呼んでたので使わせてもらった。おそらく外部利用を想定してないので止まっても文句は言いません。(見れなくなったら困るのでコピペった)</li>
 </ul>
-
 <h2 id="表について">表について</h2>
-
 <ul>
 <li>RI = リザーブドインスタンス一年重度使用</li>
 <li>OD = オンデマンド(普通)</li>
 <li>m1.small比OD価格のm1.small比。</li>
 <li>安い順にソートしている。ファミリー毎の方がコスパとか見やすかったかも。</li>
 </ul>
-
 <h2 id="内容感想">内容感想</h2>
-
 <ul>
 <li>m1.medium/m1.largeが消えてた…別ページにあるんだろうけど。</li>
 <li>m1.small、特殊用途のhs以外全てSSD化してた。HDDは死んだ…</li>
@@ -187,9 +173,7 @@
 <li>large以上は特段コスパ良くなったりはしない。</li>
 <li>m3の中途半端さ。largeならc3かr3使うと思う。</li>
 </ul>
-
-<h2 id="4-17時点の価格表">4/17時点の価格表</h2>
-
+<h2 id="417時点の価格表">4/17時点の価格表</h2>
 <table id="result" border="1">
     <tbody><tr>
         <th>size</th>
