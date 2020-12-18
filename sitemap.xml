@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://u1tnk.github.io/post/</loc>
+    <lastmod>2020-12-17T20:04:36+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://u1tnk.github.io/blog/2020/12/17/structured_programming/</loc>
+    <lastmod>2020-12-17T20:04:36+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://u1tnk.github.io/categories/</loc>
     <lastmod>2020-09-28T11:02:45+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://u1tnk.github.io/categories/health/</loc>
-    <lastmod>2020-09-28T11:02:45+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/post/</loc>
     <lastmod>2020-09-28T11:02:45+09:00</lastmod>
   </url>
   
