@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>freelancer on u1tnk.log</title>
+    <title>Freelancer on u1tnk.log</title>
     <link>https://u1tnk.github.io/categories/freelancer/</link>
-    <description>Recent content in freelancer on u1tnk.log</description>
+    <description>Recent content in Freelancer on u1tnk.log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Wed, 24 Apr 2019 23:24:31 +0900</lastBuildDate>
@@ -17,7 +17,7 @@
       <pubDate>Wed, 24 Apr 2019 23:24:31 +0900</pubDate>
       
       <guid>https://u1tnk.github.io/blog/2019/04/24/understand_freelancer_completely/</guid>
-      <description>フリーランスを完全に理解できる本(電子) - きりみんちゃんねるしょっぷ - BOOTH
+      <description> フリーランスを完全に理解できる本(電子) - きりみんちゃんねるしょっぷ - BOOTH
 噂になってた技術書展のフリーランス本読んだので感想をまとめておく。
 まず、目次で予想はしてたけど、僕がフリーランス本書いたら同じような感じになるなーって感じでした 😅
 途中で出てくる、「月65万フリーランスは安いのか？」に対する感想とか単価相場感、正社員との比較とかの感覚も大体同じでびっくり。 今まで読んだフリーランス系のまとめは微妙に業種が違ったり、地域が違ったりしてた結果ズレてたんだろうなと。
@@ -44,7 +44,7 @@
 興味ある方いらっしゃいましたら遊びに行ってみると良いと思います。仲介もします。
 また、外注としての仕事があれば連絡お待ちしております！
 今後 これまで副業としてやってきた案件を引き続きやりますが、確定しているのは30%程度の為お仕事募集中です。
-スキル概要  サーバサイドのインフラ寄りプログラマ 好きな言語はRuby  以下1年以上経験のある言語、やりたい訳では無いですが参考まで。  Python Java lua/CoronaSDK PHP(でももうやりません)   新しい言語の案件(golang/elixir等)はやってみたい   最近の実績  某モバイル向けSDKのサーバサイド(前職)  Pythonで顧客向け画面(django)やらSDKからのリクエスト捌くAPIサーバ(tornado)など AWSでインフラまわり  Ansible業含む     新規アプリのサーバサイド全般(副業でサーバサイド一人で対応)  Ruby/Rails AWS構築 APIサーバ 2アプリリリースして運用しています     こんな事もやったことあります  CloudSearch Elasticsearch  構築もできはしますが運用結構大変なのを思い知ったので Amazon Elasticsearch Serviceを使った方が良いと思います。     レベルとしては普通。流行りの技術顧問とか無理 デザイン系はできません Android/iOSアプリはできません 24時間対応はできません トラブル対応はベストエフォートでなら行います フロントエンド(css/js)はできますが、最近仕事でやってないのでモダンとか言われると厳しいです  現状売りになると思っているのは「小規模、AWS利用のアプリ向けサーバAPI開発ならサーバサイドは一人で構築から全部できる」というところかなと思っています。</description>
+スキル概要  サーバサイドのインフラ寄りプログラマ 好きな言語はRuby  以下1年以上経験のある言語、やりたい訳では無いですが参考まで。  Python Java lua/CoronaSDK PHP(でももうやりません)  新しい言語の案件(golang/elixir等)はやってみたい  最近の実績  某モバイル向けSDKのサーバサイド(前職)  Pythonで顧客向け画面(django)やらSDKからのリクエスト捌くAPIサーバ(tornado)など AWSでインフラまわり  Ansible業含む   新規アプリのサーバサイド全般(副業でサーバサイド一人で対応)  Ruby/Rails AWS構築 APIサーバ 2アプリリリースして運用しています   こんな事もやったことあります  CloudSearch Elasticsearch  構築もできはしますが運用結構大変なのを思い知ったので Amazon Elasticsearch Serviceを使った方が良いと思います。   レベルとしては普通。流行りの技術顧問とか無理 デザイン系はできません Android/iOSアプリはできません 24時間対応はできません トラブル対応はベストエフォートでなら行います フロントエンド(css/js)はできますが、最近仕事でやってないのでモダンとか言われると厳しいです  現状売りになると思っているのは「小規模、AWS利用のアプリ向けサーバAPI開発ならサーバサイドは一人で構築から全部できる」というところかなと思っています。</description>
     </item>
     
   </channel>

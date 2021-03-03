@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on u1tnk.log</title>
@@ -6,157 +6,13 @@
     <description>Recent content in Categories on u1tnk.log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Mon, 28 Sep 2020 11:02:45 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 19 Jun 2014 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://u1tnk.github.io/categories/atom.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>health</title>
-      <link>https://u1tnk.github.io/categories/health/</link>
-      <pubDate>Mon, 28 Sep 2020 11:02:45 +0900</pubDate>
-      
-      <guid>https://u1tnk.github.io/categories/health/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>gadget</title>
-      <link>https://u1tnk.github.io/categories/gadget/</link>
-      <pubDate>Tue, 07 Jan 2020 11:29:59 +0900</pubDate>
-      
-      <guid>https://u1tnk.github.io/categories/gadget/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>pc</title>
-      <link>https://u1tnk.github.io/categories/pc/</link>
-      <pubDate>Wed, 18 Dec 2019 01:46:00 +0900</pubDate>
-      
-      <guid>https://u1tnk.github.io/categories/pc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>freelancer</title>
-      <link>https://u1tnk.github.io/categories/freelancer/</link>
-      <pubDate>Wed, 24 Apr 2019 23:24:31 +0900</pubDate>
-      
-      <guid>https://u1tnk.github.io/categories/freelancer/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>job</title>
-      <link>https://u1tnk.github.io/categories/job/</link>
-      <pubDate>Wed, 24 Apr 2019 23:24:31 +0900</pubDate>
-      
-      <guid>https://u1tnk.github.io/categories/job/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>food</title>
-      <link>https://u1tnk.github.io/categories/food/</link>
-      <pubDate>Tue, 16 Apr 2019 21:16:51 +0900</pubDate>
-      
-      <guid>https://u1tnk.github.io/categories/food/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>network</title>
-      <link>https://u1tnk.github.io/categories/network/</link>
-      <pubDate>Sun, 14 Apr 2019 19:43:43 +0900</pubDate>
-      
-      <guid>https://u1tnk.github.io/categories/network/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>family</title>
-      <link>https://u1tnk.github.io/categories/family/</link>
-      <pubDate>Sat, 13 Apr 2019 00:25:42 +0900</pubDate>
-      
-      <guid>https://u1tnk.github.io/categories/family/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>money</title>
-      <link>https://u1tnk.github.io/categories/money/</link>
-      <pubDate>Mon, 04 Feb 2019 20:16:16 +0900</pubDate>
-      
-      <guid>https://u1tnk.github.io/categories/money/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>benchmark</title>
-      <link>https://u1tnk.github.io/categories/benchmark/</link>
-      <pubDate>Fri, 04 Jan 2019 13:30:58 +0900</pubDate>
-      
-      <guid>https://u1tnk.github.io/categories/benchmark/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hugo</title>
-      <link>https://u1tnk.github.io/categories/hugo/</link>
-      <pubDate>Wed, 02 Jan 2019 12:10:55 +0900</pubDate>
-      
-      <guid>https://u1tnk.github.io/categories/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>octopress</title>
-      <link>https://u1tnk.github.io/categories/octopress/</link>
-      <pubDate>Wed, 02 Jan 2019 12:10:55 +0900</pubDate>
-      
-      <guid>https://u1tnk.github.io/categories/octopress/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>camp</title>
-      <link>https://u1tnk.github.io/categories/camp/</link>
-      <pubDate>Sat, 28 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://u1tnk.github.io/categories/camp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>bose</title>
-      <link>https://u1tnk.github.io/categories/bose/</link>
-      <pubDate>Sun, 15 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://u1tnk.github.io/categories/bose/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>grape</title>
-      <link>https://u1tnk.github.io/categories/grape/</link>
-      <pubDate>Thu, 14 Aug 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://u1tnk.github.io/categories/grape/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>rails</title>
-      <link>https://u1tnk.github.io/categories/rails/</link>
-      <pubDate>Thu, 14 Aug 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://u1tnk.github.io/categories/rails/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ansible</title>
+      <title>Ansible</title>
       <link>https://u1tnk.github.io/categories/ansible/</link>
       <pubDate>Thu, 19 Jun 2014 00:00:00 +0000</pubDate>
       
@@ -165,7 +21,7 @@
     </item>
     
     <item>
-      <title>aws</title>
+      <title>Aws</title>
       <link>https://u1tnk.github.io/categories/aws/</link>
       <pubDate>Thu, 17 Apr 2014 00:00:00 +0000</pubDate>
       
@@ -174,11 +30,155 @@
     </item>
     
     <item>
-      <title>book</title>
+      <title>Benchmark</title>
+      <link>https://u1tnk.github.io/categories/benchmark/</link>
+      <pubDate>Fri, 04 Jan 2019 13:30:58 +0900</pubDate>
+      
+      <guid>https://u1tnk.github.io/categories/benchmark/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Book</title>
       <link>https://u1tnk.github.io/categories/book/</link>
       <pubDate>Thu, 20 Mar 2014 00:00:00 +0000</pubDate>
       
       <guid>https://u1tnk.github.io/categories/book/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bose</title>
+      <link>https://u1tnk.github.io/categories/bose/</link>
+      <pubDate>Sun, 15 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://u1tnk.github.io/categories/bose/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Camp</title>
+      <link>https://u1tnk.github.io/categories/camp/</link>
+      <pubDate>Sat, 28 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://u1tnk.github.io/categories/camp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Family</title>
+      <link>https://u1tnk.github.io/categories/family/</link>
+      <pubDate>Sat, 13 Apr 2019 00:25:42 +0900</pubDate>
+      
+      <guid>https://u1tnk.github.io/categories/family/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Food</title>
+      <link>https://u1tnk.github.io/categories/food/</link>
+      <pubDate>Tue, 16 Apr 2019 21:16:51 +0900</pubDate>
+      
+      <guid>https://u1tnk.github.io/categories/food/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Freelancer</title>
+      <link>https://u1tnk.github.io/categories/freelancer/</link>
+      <pubDate>Wed, 24 Apr 2019 23:24:31 +0900</pubDate>
+      
+      <guid>https://u1tnk.github.io/categories/freelancer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gadget</title>
+      <link>https://u1tnk.github.io/categories/gadget/</link>
+      <pubDate>Tue, 07 Jan 2020 11:29:59 +0900</pubDate>
+      
+      <guid>https://u1tnk.github.io/categories/gadget/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Grape</title>
+      <link>https://u1tnk.github.io/categories/grape/</link>
+      <pubDate>Thu, 14 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://u1tnk.github.io/categories/grape/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Health</title>
+      <link>https://u1tnk.github.io/categories/health/</link>
+      <pubDate>Mon, 28 Sep 2020 11:02:45 +0900</pubDate>
+      
+      <guid>https://u1tnk.github.io/categories/health/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://u1tnk.github.io/categories/hugo/</link>
+      <pubDate>Wed, 02 Jan 2019 12:10:55 +0900</pubDate>
+      
+      <guid>https://u1tnk.github.io/categories/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Job</title>
+      <link>https://u1tnk.github.io/categories/job/</link>
+      <pubDate>Wed, 24 Apr 2019 23:24:31 +0900</pubDate>
+      
+      <guid>https://u1tnk.github.io/categories/job/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Money</title>
+      <link>https://u1tnk.github.io/categories/money/</link>
+      <pubDate>Mon, 04 Feb 2019 20:16:16 +0900</pubDate>
+      
+      <guid>https://u1tnk.github.io/categories/money/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Network</title>
+      <link>https://u1tnk.github.io/categories/network/</link>
+      <pubDate>Sun, 14 Apr 2019 19:43:43 +0900</pubDate>
+      
+      <guid>https://u1tnk.github.io/categories/network/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Octopress</title>
+      <link>https://u1tnk.github.io/categories/octopress/</link>
+      <pubDate>Wed, 02 Jan 2019 12:10:55 +0900</pubDate>
+      
+      <guid>https://u1tnk.github.io/categories/octopress/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pc</title>
+      <link>https://u1tnk.github.io/categories/pc/</link>
+      <pubDate>Wed, 18 Dec 2019 01:46:00 +0900</pubDate>
+      
+      <guid>https://u1tnk.github.io/categories/pc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rails</title>
+      <link>https://u1tnk.github.io/categories/rails/</link>
+      <pubDate>Thu, 14 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://u1tnk.github.io/categories/rails/</guid>
       <description></description>
     </item>
     

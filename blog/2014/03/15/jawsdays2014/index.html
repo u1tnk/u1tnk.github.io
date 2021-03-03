@@ -43,7 +43,7 @@
   <meta name="author" content="u1tnk">
 
   
-  <meta name="generator" content="Hugo 0.68.3" />
+  <meta name="generator" content="Hugo 0.40.1" />
 
   
   
@@ -131,93 +131,109 @@
           
           
           
-          <h2 id="immutable-infrastructure">Immutable Infrastructure</h2>
+          
+
+<h2 id="immutable-infrastructure">Immutable Infrastructure</h2>
+
 <p>JAWS DAYS 2014、Immutable Infrastructure について - naoyaのはてなダイアリー <a href="http://d.hatena.ne.jp/naoya/20140315/1394851727">http://d.hatena.ne.jp/naoya/20140315/1394851727</a></p>
+
 <p>めっちゃ人居ました。個人的にrebuild.fm全部聞いてるのでほとんど聞いてたので割愛w</p>
+
 <h2 id="クックパッドのデプロイとオートスケール">クックパッドのデプロイとオートスケール</h2>
+
 <p>個人的一番勉強になったセッション。</p>
+
 <p>Cookpad&rsquo;s deployment and auto scaling // Speaker Deck <a href="https://speakerdeck.com/mirakui/cookpads-deployment-and-auto-scaling">https://speakerdeck.com/mirakui/cookpads-deployment-and-auto-scaling</a></p>
+
 <ul>
-<li>
-<p>nameタグ、hostnameは起動時に自動採取</p>
+<li>nameタグ、hostnameは起動時に自動採取
+
 <ul>
 <li>→これはすぐにでも真似したい。</li>
-</ul>
-</li>
-<li>
-<p>roleタグというのをつけてデプロイ内容をコントロール</p>
+</ul></li>
+<li>roleタグというのをつけてデプロイ内容をコントロール
+
 <ul>
 <li>→ふむふむ</li>
-</ul>
-</li>
-<li>
-<p>Nameタグからip収集してpowerdnsで管理。</p>
+</ul></li>
+<li>Nameタグからip収集してpowerdnsで管理。
+
 <ul>
 <li>→そうしたいよね…</li>
-</ul>
-</li>
-<li>
-<p>ec2からタグ情報取得するApiのImitに到達するらしいw キャッシュしてるとのこと</p>
-</li>
-<li>
-<p>Amazon AutoScaling使って無くて自作！</p>
+</ul></li>
+
+<li><p>ec2からタグ情報取得するApiのImitに到達するらしいw キャッシュしてるとのこと</p></li>
+
+<li><p>Amazon AutoScaling使って無くて自作！</p>
+
 <ul>
 <li>CloudWatchが最短一分で秒単位で取得したい
+
 <ul>
 <li>そこまで必要なのか…</li>
-</ul>
-</li>
+</ul></li>
 <li>graceful terminate問題
+
 <ul>
 <li>それは確かに。多少のリクエストなら負荷で落ちるよりマシと思ってやってるが…</li>
-</ul>
-</li>
+</ul></li>
 <li>ELBでは無くhaproxy使いたい。…
+
 <ul>
 <li>haproxyの方が良いそうな。</li>
 <li>ブラックボックスで問題起こったらよくわからんってのは確かに。</li>
-</ul>
-</li>
+</ul></li>
 <li>デプロイとにAutoScaalingと排他制御するため
-- 動くとやばいので、排他制御してると。ほー。デプロイ多いからこその問題。</li>
-</ul>
-</li>
-<li>
-<p>問題調査のための、staticインスタンスとしてAutoScaleとは別管理のインスタンスがある。</p>
+
+<ul>
+<li>動くとやばいので、排他制御してると。ほー。デプロイ多いからこその問題。</li>
+</ul></li>
+</ul></li>
+
+<li><p>問題調査のための、staticインスタンスとしてAutoScaleとは別管理のインスタンスがある。</p>
+
 <ul>
 <li>確かに。システムログとか見るヒマ無く勝手に落ちるからな…Amazon Autoscalingでもできるからやりたい</li>
-</ul>
-</li>
-<li>
-<p>蛇足</p>
+</ul></li>
+
+<li><p>蛇足</p>
+
 <ul>
 <li>chefじゃなくてpuppet使ってるらしい。なんでだろ。</li>
 <li>cookpadもhipchatoとのこと</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h2 id="プロビジョニングデプロイ-on-awsのキホン">プロビジョニング＆デプロイ on AWSのキホン</h2>
+
+<h2 id="プロビジョニング-デプロイ-on-awsのキホン">プロビジョニング＆デプロイ on AWSのキホン</h2>
+
 <p>The Basics of Provisioning and Deploy on AWS #jawdays #infra <a href="http://www.slideshare.net/Ryuzee/the-basics-of-provisioning-and-deploy-on-aws-jawdays-infra">http://www.slideshare.net/Ryuzee/the-basics-of-provisioning-and-deploy-on-aws-jawdays-infra</a>
 特段目新しい内容は無かったが、とにかく耳の痛い正論セッションでした。</p>
+
 <ul>
 <li>自動化しないリスク、コストを過少評価し過ぎ</li>
 <li>自動化するなら最初から。デプロイするときに考えるじゃ遅い</li>
 <li>自動化しない→ミスる→チェック増やす→コスト増える→＼(^o^)／</li>
 <li>デプロイアンチパターン、手作業混合。
+
 <ul>
 <li>→これはやっちゃう…</li>
-</ul>
-</li>
+</ul></li>
 <li>テスト自動化！小さい粒度でリリース！</li>
 <li>sunsu+graphite良いと。</li>
 </ul>
+
 <h2 id="カジュアルにvpc作った結果がこれだよ">カジュアルにVPC作った結果がこれだよ！</h2>
+
 <p><a href="http://www.slideshare.net/Yuryu/aws-casual-talks-1-vpc">http://www.slideshare.net/Yuryu/aws-casual-talks-1-vpc</a>
 行ってないけど、資料流れてきたらめっちゃ気になってた事なので勉強になった。
 カジュアルには行けない事が良くわかったw</p>
+
 <h2 id="20140315-jaws-days-2014-aceに聞け-cloudformation編">20140315 JAWS DAYS 2014 ACEに聞け！ CloudFormation編</h2>
+
 <p><a href="http://www.slideshare.net/daisuke_m/20140315-jaws-days-2014acecfn">http://www.slideshare.net/daisuke_m/20140315-jaws-days-2014acecfn</a></p>
+
 <p>2番目に勉強になった。</p>
+
 <ul>
 <li>やっぱ基本は一発作るのがメインのものなんだ</li>
 <li>とはいえ、UPDATE_STACKでメンテしていける。</li>
@@ -225,9 +241,13 @@
 <li>BLUE-GREEN deploymentを CludFormationだけで実行するデモ。ここまでできると素晴しいなぁ…</li>
 <li>とはいえjsonの定義見るのキツいわw AWS CloudFormation tempate for PHP Blue-Green Deployment environment <a href="https://gist.github.com/miyamoto-daisuke/9544801">https://gist.github.com/miyamoto-daisuke/9544801</a></li>
 </ul>
-<h1 id="immutable-infrastracture-パネルディスカッションオレにも一言言わせろ">Immutable Infrastracture パネルディスカッション〜オレにも一言言わせろ〜</h1>
+
+<h1 id="immutable-infrastracture-パネルディスカッション-オレにも一言言わせろ">Immutable Infrastracture パネルディスカッション〜オレにも一言言わせろ〜</h1>
+
 <p>人大杉…立ち見でも厳しそうだったので断念。</p>
+
 <h2 id="まとめ">まとめ</h2>
+
 <ul>
 <li>すぐに手をつけたいのはchef/powerdns/cloudformation/tag利用…あたりかなぁ。山積みすぎる…</li>
 <li>人の多さと会場の割り当てに疑問を感じる。立ち見2回で足痛い…</li>
