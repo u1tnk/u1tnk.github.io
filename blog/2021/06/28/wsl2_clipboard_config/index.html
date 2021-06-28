@@ -17,7 +17,7 @@
   
 
   
-  <title>WSL2で rails test:system を動かす為の設定</title>
+  <title>WSL2でvim/tmuxでクリップボード共有できるようにする</title>
 
   
   
@@ -119,7 +119,7 @@
     
   </p>
   <h1 class="entry-title">
-     WSL2で rails test:system を動かす為の設定 
+     WSL2でvim/tmuxでクリップボード共有できるようにする 
   </h1>
 </header>
 
@@ -130,62 +130,45 @@
           
           
 
-<p>chromeインストールなど若干環境構築難易度が高いのでまとめた。</p>
+<h2 id="概要">概要</h2>
 
-<h2 id="前提">前提</h2>
+<p>vim、tmux、windws側のcopy/pasteを全て連携させる。
+WSL2移行前に使っていたVIrtualBox環境からの移行で、結局の所ssh+x転送をやめた結果 xselが使えなくなったのでwindowsのexeを直接叩けばOKだった…というだけ。</p>
 
-<p>Railsはインストールして systemテスト以外は動いている前提。</p>
+<h1 id="windows側のクリップボードを双方向で使えるアプリをインストール">windows側のクリップボードを双方向で使えるアプリをインストール</h1>
 
-<h2 id="イメージ">イメージ</h2>
+<p><a href="https://github.com/equalsraf/win32yank">https://github.com/equalsraf/win32yank</a>  を利用。</p>
 
-<p>ubuntu18.04。 20.04だと 2021/1/4当時動かないspecが存在したので18.04を利用。</p>
+<p>windowsにデフォルトに入っている <code>clipboard.exe</code> はクリップボードへの書き込みはできるが、逆はできず。
+逆は <a href="https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.management/get-clipboard?view=powershell-5.1">https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.management/get-clipboard?view=powershell-5.1</a> で可能なようだがWSL側から動かす方向が分からなかったので手軽なコレを採用した。
+インストールしてWSL側のPATHに入れておく。</p>
 
-<h2 id="ライブラリ">ライブラリ</h2>
+<h2 id="tmux">tmux</h2>
 
-<pre><code>sudo apt update
- sudo apt install curl build-essential unzip wget
+<p>以下設定は vim形式のキーバインド前提となっている。</p>
+
+<p>tmux.conf</p>
+
+<pre><code>bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel &quot;win32yank.exe -i&quot;
+bind p run-shell 'win32yank.exe -o | xargs -0 -I{} tmux set-buffer -- {} &amp;&amp; tmux paste-buffer'
 </code></pre>
 
-<h2 id="chromeのインストール">chromeのインストール</h2>
+<h2 id="vim">vim</h2>
 
-<pre><code>wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo apt install ./google-chrome-stable_current_amd64.deb -y
+<p>tmuxとは関係なくコレだけで共有できる。WSL便利というか不思議というか。
+vimをclipboard利用できるようにビルドする必要はあるが、情報はいくらでもあるので割愛。
+個人的にはneovimを使っているので最初から使えた。</p>
+
+<pre><code>set clipboard&amp;
+set clipboard^=unnamedplus
 </code></pre>
 
-<h2 id="chromedriverのインストール">chromedriverのインストール</h2>
+<h2 id="所感">所感</h2>
 
-<pre><code>export LATEST_VERSION=`curl https://chromedriver.storage.googleapis.com/LATEST_RELEASE`
-wget https://chromedriver.storage.googleapis.com/$LATEST_VERSION/chromedriver_linux64.zip
-unzip chromedriver_linux64.zip
-sudo mv chromedriver /usr/local/bin/
-</code></pre>
+<p>まとめてみると記事にまとめる意味あんのかコレ。というレベルの内容になったが、WSL2の情報は少なくて、当初うまく動かないときにXServer入れないとvimからクリップボード使えないのでは？とか標準だから clipboard.exeとか使ってハマったりしたので、たったこんだけでできるよ！という事で。</p>
 
-<h2 id="systemテストの設定">systemテストの設定</h2>
-
-<p><a href="https://qiita.com/jhanyu/items/e2f467684873d806ad00">System specを動かすのにはまった - Qiita</a> から引用。
-headlessで動作するよう設定する。
- 画面を表示したい場合はwindows側に X serverインストール、転送の設定などが必要になる。</p>
-
-<p>rails_helper.rb (rails関係のtestをするファイルからrequireしておく)</p>
-
-<pre><code>Capybara.default_driver = :selenium_chrome_headless
-Capybara.register_driver :selenium_chrome_headless do |app|
-  options = Selenium::WebDriver::Chrome::Options.new
-  options.add_argument('--headless')
-  options.add_argument('--no-sandbox')
-  options.add_argument('--disable-gpu')
-  options.add_argument('--window-size=1280,1024')
-
-  Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
-end
-</code></pre>
-
-<p>spec_helper.rb</p>
-
-<pre><code>  config.before(:each, type: :system) do
-    driven_by :selenium_chrome_headless
-  end
-</code></pre>
+<p>当初これのやり方が分からず、WSL2でもsshサーバ起動してRLoginからsshしていたりしていたが、XServerの不調とかにコピペ失敗して気づいてXServer再起動したり、ひどいときにはXServer再起動に失敗してwindows再起動したり… 😭  などのイライラ一切無く、超安定
+するようになっている。満足。</p>
 
         </div>
         
@@ -203,11 +186,9 @@ end
 
   <p class="meta">
     
-        <a class="basic-alignment left" href="https://u1tnk.github.io/blog/2020/12/17/structured_programming/" title="失なわれた構造化プログラミング、そしてオブジェクト指向へ…">失なわれた構造化プログラミング、そしてオブジェクト指向へ…</a>
+        <a class="basic-alignment left" href="https://u1tnk.github.io/blog/2021/06/28/wsl2_rails_test_system_config/" title="WSL2で rails test:system を動かす為の設定">WSL2で rails test:system を動かす為の設定</a>
     
 
-    
-      <a class="basic-alignment right" href="https://u1tnk.github.io/blog/2021/06/28/wsl2_clipboard_config/" title="WSL2でvim/tmuxでクリップボード共有できるようにする">WSL2でvim/tmuxでクリップボード共有できるようにする</a>
     
   </p>
   
