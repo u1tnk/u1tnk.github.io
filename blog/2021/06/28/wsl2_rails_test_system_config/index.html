@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
+
+  
+    
+    
+      <link href="/css/fonts.css" rel="stylesheet" type="text/css">
+    
+  
+
+  
+  <title>WSL2で rails test:system を動かす為の設定</title>
+
+  
+  
+  <link rel="stylesheet" href="/css/hugo-octopress.css">
+
+  
+  
+    <link rel="stylesheet" href="https://u1tnk.github.io/css/custom.css">
+  
+
+  
+    <link rel="stylesheet" href="/css/fork-awesome.min.css">
+  
+
+  
+  <link href="https://u1tnk.github.io/favicon.png" rel="icon">
+
+  
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="u1tnk">
+
+  
+  <meta name="generator" content="Hugo 0.40.1" />
+
+  
+  
+
+  
+  
+</head>
+<body>
+
+
+<header role="banner">
+<hgroup>
+  
+  <h1><a href="https://u1tnk.github.io/">u1tnk.log</a></h1>
+    <h2></h2>
+</hgroup></header>
+
+
+<nav role="navigation">
+<fieldset class="mobile-nav">
+  
+  <select onchange="location = this.value;">
+    <option value="">Navigate…</option>
+      
+        <option value="https://u1tnk.github.io/">» posts</option>
+      
+        <option value="https://u1tnk.github.io/about">» about</option>
+      
+        <option value="https://u1tnk.github.io/atom.xml">» rss</option>
+      
+  </select>
+</fieldset>
+
+
+<ul class="main-navigation">
+  
+  
+    
+      <li><a href="https://u1tnk.github.io/" title="posts">posts</a></li>
+    
+  
+    
+      <li><a href="https://u1tnk.github.io/about" title="about" >about</a></li>
+    
+  
+    
+      <li><a href="https://u1tnk.github.io/atom.xml" title="rss" >rss</a></li>
+    
+  
+</ul>
+
+<ul class="subscription">
+  
+</ul>
+
+
+</nav>
+
+
+<div id="main">
+  <div id="content">
+    <div>
+      <article class="hentry" role="article">
+
+        
+        
+
+<header>
+  <p class="meta">2021/06/28
+    
+    
+
+    
+  </p>
+  <h1 class="entry-title">
+     WSL2で rails test:system を動かす為の設定 
+  </h1>
+</header>
+
+
+        <div class="entry-content">
+          
+          
+          
+          
+
+<p>chromeインストールなど若干環境構築難易度が高いのでまとめた。</p>
+
+<h2 id="前提">前提</h2>
+
+<p>Railsはインストールして systemテスト以外は動いている前提。</p>
+
+<h2 id="イメージ">イメージ</h2>
+
+<p>ubuntu18.04。 20.04だと 2021/1/4当時動かないspecが存在したので18.04を利用。</p>
+
+<h2 id="ライブラリ">ライブラリ</h2>
+
+<pre><code>sudo apt update
+ sudo apt install curl build-essential unzip wget
+</code></pre>
+
+<h2 id="chromeのインストール">chromeのインストール</h2>
+
+<pre><code>wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt install ./google-chrome-stable_current_amd64.deb -y
+</code></pre>
+
+<h2 id="chromedriverのインストール">chromedriverのインストール</h2>
+
+<pre><code>export LATEST_VERSION=`curl https://chromedriver.storage.googleapis.com/LATEST_RELEASE`
+wget https://chromedriver.storage.googleapis.com/$LATEST_VERSION/chromedriver_linux64.zip
+unzip chromedriver_linux64.zip
+sudo mv chromedriver /usr/local/bin/
+</code></pre>
+
+<h2 id="systemテストの設定">systemテストの設定</h2>
+
+<p><a href="https://qiita.com/jhanyu/items/e2f467684873d806ad00">System specを動かすのにはまった - Qiita</a> から引用。
+headlessで動作するよう設定する。
+ 画面を表示したい場合はwindows側に X serverインストール、転送の設定などが必要になる。</p>
+
+<p>rails_helper.rb (rails関係のtestをするファイルからrequireしておく)</p>
+
+<pre><code>Capybara.default_driver = :selenium_chrome_headless
+Capybara.register_driver :selenium_chrome_headless do |app|
+  options = Selenium::WebDriver::Chrome::Options.new
+  options.add_argument('--headless')
+  options.add_argument('--no-sandbox')
+  options.add_argument('--disable-gpu')
+  options.add_argument('--window-size=1280,1024')
+
+  Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
+end
+</code></pre>
+
+<p>spec_helper.rb</p>
+
+<pre><code>  config.before(:each, type: :system) do
+    driven_by :selenium_chrome_headless
+  end
+</code></pre>
+
+        </div>
+        
+
+<footer>
+  <p class="meta">
+    <span class="byline author vcard">Posted by <span class="fn">u1tnk</span></span>
+    
+    <time>Jun 28, 2021</time>
+    
+    </span>
+  </p>
+
+  
+
+  <p class="meta">
+    
+        <a class="basic-alignment left" href="https://u1tnk.github.io/blog/2020/12/17/structured_programming/" title="失なわれた構造化プログラミング、そしてオブジェクト指向へ…">失なわれた構造化プログラミング、そしてオブジェクト指向へ…</a>
+    
+
+    
+  </p>
+  
+</footer>
+
+      </article>
+    </div>
+    
+
+<aside class="sidebar thirds">
+  <section class="first odd">
+
+    
+
+    <p>
+      
+    </p>
+  </section>
+
+
+
+  
+  <ul class="sidebar-nav">
+    <li class="sidebar-nav-item">
+      
+      
+      
+      
+      
+         
+      
+      
+      
+      
+      
+      
+      
+      
+
+    
+    
+    </li>
+  </ul>
+
+  
+
+  
+
+  
+  
+  
+</aside>
+
+  </div>
+</div>
+
+    <footer role="contentinfo">
+      <p>Copyright &copy; 2021 u1tnk - <a href="https://u1tnk.github.io/license/">License</a> -
+        <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
+      </p>
+    </footer>
+
+    
+    
+    
+
+    
+      <script>
+        var _gaq=[['_setAccount','UA-2532590-5'],['_trackPageview']];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));
+      </script>
+    
+  </body>
+</html>
+
