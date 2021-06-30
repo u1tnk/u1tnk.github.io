@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
+
+  
+    
+    
+      <link href="/css/fonts.css" rel="stylesheet" type="text/css">
+    
+  
+
+  
+  <title>WSL2でのweb開発環境構築tips</title>
+
+  
+  
+  <link rel="stylesheet" href="/css/hugo-octopress.css">
+
+  
+  
+    <link rel="stylesheet" href="https://u1tnk.github.io/css/custom.css">
+  
+
+  
+    <link rel="stylesheet" href="/css/fork-awesome.min.css">
+  
+
+  
+  <link href="https://u1tnk.github.io/favicon.png" rel="icon">
+
+  
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="u1tnk">
+
+  
+  <meta name="generator" content="Hugo 0.40.1" />
+
+  
+  
+
+  
+  
+</head>
+<body>
+
+
+<header role="banner">
+<hgroup>
+  
+  <h1><a href="https://u1tnk.github.io/">u1tnk.log</a></h1>
+    <h2></h2>
+</hgroup></header>
+
+
+<nav role="navigation">
+<fieldset class="mobile-nav">
+  
+  <select onchange="location = this.value;">
+    <option value="">Navigate…</option>
+      
+        <option value="https://u1tnk.github.io/">» posts</option>
+      
+        <option value="https://u1tnk.github.io/about">» about</option>
+      
+        <option value="https://u1tnk.github.io/atom.xml">» rss</option>
+      
+  </select>
+</fieldset>
+
+
+<ul class="main-navigation">
+  
+  
+    
+      <li><a href="https://u1tnk.github.io/" title="posts">posts</a></li>
+    
+  
+    
+      <li><a href="https://u1tnk.github.io/about" title="about" >about</a></li>
+    
+  
+    
+      <li><a href="https://u1tnk.github.io/atom.xml" title="rss" >rss</a></li>
+    
+  
+</ul>
+
+<ul class="subscription">
+  
+</ul>
+
+
+</nav>
+
+
+<div id="main">
+  <div id="content">
+    <div>
+      <article class="hentry" role="article">
+
+        
+        
+
+<header>
+  <p class="meta">2021/06/30
+    
+    
+
+    
+    
+      - <a class="label" href="https://u1tnk.github.io/categories/wsl2/">wsl2 </a><a class="label" href="https://u1tnk.github.io/categories/docker/">docker </a>
+    
+  </p>
+  <h1 class="entry-title">
+     WSL2でのweb開発環境構築tips 
+  </h1>
+</header>
+
+
+        <div class="entry-content">
+          
+          
+          
+          
+
+<p>tipsというかWSL2に移行して開発していてハマったことや、定着した運用方法についてのメモ。</p>
+
+<h2 id="前提">前提</h2>
+
+<ul>
+<li>主にRails開発をしていて、vim/tmuxとほぼターミナルとブラウザだけで開発作業を行っているのでその範囲。</li>
+<li>ubuntu-18.04利用。</li>
+<li>linuxの知識はある前提で書いている。</li>
+<li>WindowsTerminalを使用している</li>
+</ul>
+
+<h2 id="linuxインストールまで">Linuxインストールまで</h2>
+
+<p><a href="https://bootcamp.fjord.jp/articles/6">WSL2でLinuxを使おう | FJORD BOOT CAMP（フィヨルドブートキャンプ）</a></p>
+
+<p>僕がメンターをしているフィヨルドブートキャンプのこの資料で大丈夫です(ちょっと宣伝)</p>
+
+<h2 id="ubuntuのバージョンについて">ubuntuのバージョンについて</h2>
+
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">WSL2/ubuntu20.04で capybara動かんのか… <br>NotImplementedError (fork() function is unimplemented on this machine)<br>が回避できぬ。<br>WSL2でも ubuntu18.04なら動くっぽいんだが…</p>&mdash; ゆーいち@イカX (@u1tnk) <a href="https://twitter.com/u1tnk/status/1345901647885529088?ref_src=twsrc%5Etfw">January 4, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>という事があり、20.04をやめて18.04を利用している。この時点なので今は不明。
+GUIも無いし、WSL2だとデバイスドライバとかも関係無いので新しいメリットも無いので安定バージョンで良い。</p>
+
+<h2 id="起動と終了">起動と終了</h2>
+
+<p>ubuntuアプリを起動したり、wslコマンドで起動する。WindowsTerminalを使えば内部では wslコマンドを使っているので勝手に起動する。
+終了するときは <code>wsl --shutdown</code> をpowershellなりで実行すれば良い。</p>
+
+<h2 id="systemdが動いていない">systemdが動いていない</h2>
+
+<p>本物のubuntuと違いsystemdが動いていないので、サービスの自動起動ができない。よってcrondとかも起動していないので注意。</p>
+
+<p>自動起動はできないが動かないわけでは無いので、zshrc(shellによって調整してください)に以下のようなscriptをしこんでWindowsTerminalから開いたときに自動で起動するようにしている。
+ここではdockerの起動とsmbサーバへのmountをやっている</p>
+
+<pre><code>#! /usr/bin/env ruby
+exit unless `ps aux | grep docker | grep -v grep`.empty?
+
+`sudo service docker start`
+
+`sudo mount -t cifs -o username=xxxx,password=xxxx,iocharset=utf8 //192.168.100.1/share /mnt/share`
+</code></pre>
+
+<h2 id="dockerについて">dockerについて</h2>
+
+<p>docker for windowsを入れれば自動起動という点では問題無いが詳細記録し忘れたが何度かトラブルがあったし、自動起動の仕組みを整えたので使っていない。
+インストールも通常のubuntu用の手順で問題無いし起動以外にdocker for windowsを使う理由は特に無いので。</p>
+
+<h2 id="バックアップ-リストア">バックアップ/リストア</h2>
+
+<p><a href="https://forest.watch.impress.co.jp/docs/serial/yajiuma/1220926.html">「WSL」ディストリビューションのインポート・エクスポートはこんなに簡単！ - やじうまの杜 - 窓の杜</a></p>
+
+<p>のように wslコマンドを使えば簡単にできる。VirtualBox等のイメージと同じように使える。windowsはmacよりバックアップ関係が弱いので引越し時にとても助かる。</p>
+
+<p>ただ、復旧した後にログインユーザがrootになり、起動ディレクトリがおかしくなる場合がある。対応は以下。</p>
+
+<h3 id="ログインユーザを修正する">ログインユーザを修正する。</h3>
+
+<p>2021年にもなって恐縮だが registry editで修正する。</p>
+
+<p><a href="https://github.com/microsoft/WSL/issues/4276">WSL2 starting as root when starting with wsl.exe · Issue #4276 · microsoft/WSL</a></p>
+
+<p>を参考に</p>
+
+<p><code>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss\{MY-UUID}</code> の <code>DefaultUid</code>の値をlinux上のuidを調べて入力する。</p>
+
+<h3 id="起動ディレクトリをhomeディレクトリにする">起動ディレクトリをhomeディレクトリにする</h3>
+
+<p>WinsowTerminalのプロファイル設定で、通常</p>
+
+<p><code>wsl.exe -d Ubuntu18.04</code></p>
+
+<p>のようになっているところを</p>
+
+<p><code>wsl.exe ~ -d Ubuntu18.04</code></p>
+
+<p>と修正する。</p>
+
+<h2 id="その他">その他</h2>
+
+<ul>
+<li>先に書いたtips
+
+<ul>
+<li><a href="https://u1tnk.github.io/blog/2021/06/28/wsl2_clipboard_config/">WSL2でvim/tmuxでクリップボード共有できるようにする</a></li>
+<li><a href="https://u1tnk.github.io/blog/2021/06/28/wsl2_rails_test_system_config/">WSL2で rails test:system を動かす為の設定</a></li>
+</ul></li>
+<li>localhost/127.0.0.1でwslで立ちあげたサーバにアクセスできるが、実際は別のIPが振られていて、windows側で制御してくれている。
+
+<ul>
+<li>windowsのhostsに 127.0.0.1にマッピングしたhost名だと動かない現象が起きていたが、現在再現しないので改善されたと思われる。上述の起動スクリプトで自動更新するバッチを書いたばかりなのでちょっと悲しい 😭</li>
+</ul></li>
+<li>クリップボード共有のところでも書いたが、WSL2からwindowsのexeが実行できる。不思議。</li>
+<li>元はVirtualBoxでRLoginというsshクライアントを使っていた事もあり、当初はWindowsTerminalを使わずにsshで開発していたが、windows上のXServerがあまり安定しない事やフォントなどの扱いにクセがある事でいくつか不満点があったが、WindowsTerminalに移行してまったく問題無くなった。</li>
+</ul>
+
+<h2 id="雑感">雑感</h2>
+
+<p>VirtualBoxのような純粋なVMともmacのようにそのまま動いてるとも違うので最初は色々戸惑ったが、Windows+VirtualBoxに比べると起動は軽いし、安定していて明らかに改善された。</p>
+
+<p>もちろんローカルで動いてるmacよりも重いはずだが、バックアップや環境のリセットが簡単なVMならではの利点があるし、macにはdocker for macという足枷があるので動作は軽い気がする。</p>
+
+<p>m1 macより遅い可能性はあるが、私がmacを捨てた理由の大きな一つはハードウェアの選択肢が少ない事で、現状はコロナ禍もあって8コア32GB、nvme ssdと盛ったマシンパワーもあって、パフォーマンス面での不満はまったく無い。</p>
+
+<p>欠点は困ったときに情報が少ない事なので、macに不満のある方は是非移行して情報を増やしましょう！</p>
+
+        </div>
+        
+
+<footer>
+  <p class="meta">
+    <span class="byline author vcard">Posted by <span class="fn">u1tnk</span></span>
+    
+    <time>Jun 30, 2021</time>
+    
+    </span>
+  </p>
+
+  
+
+  <p class="meta">
+    
+        <a class="basic-alignment left" href="https://u1tnk.github.io/blog/2021/06/28/wsl2_clipboard_config/" title="WSL2でvim/tmuxでクリップボード共有できるようにする">WSL2でvim/tmuxでクリップボード共有できるようにする</a>
+    
+
+    
+  </p>
+  
+</footer>
+
+      </article>
+    </div>
+    
+
+<aside class="sidebar thirds">
+  <section class="first odd">
+
+    
+
+    <p>
+      
+    </p>
+  </section>
+
+
+
+  
+  <ul class="sidebar-nav">
+    <li class="sidebar-nav-item">
+      
+      
+      
+      
+      
+         
+      
+      
+      
+      
+      
+      
+      
+      
+
+    
+    
+    </li>
+  </ul>
+
+  
+
+  
+
+  
+  
+  
+</aside>
+
+  </div>
+</div>
+
+    <footer role="contentinfo">
+      <p>Copyright &copy; 2021 u1tnk - <a href="https://u1tnk.github.io/license/">License</a> -
+        <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
+      </p>
+    </footer>
+
+    
+    
+    
+
+    
+      <script>
+        var _gaq=[['_setAccount','UA-2532590-5'],['_trackPageview']];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));
+      </script>
+    
+  </body>
+</html>
+
