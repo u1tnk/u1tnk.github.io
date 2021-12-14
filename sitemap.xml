@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://u1tnk.github.io/blog/2021/12/04/fbc-is-not-overcharging/</loc>
+    <lastmod>2021-12-04T23:38:58+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://u1tnk.github.io/blog/2021/06/30/wsl2_tips/</loc>
     <lastmod>2021-06-30T19:11:23+09:00</lastmod>
   </url>
@@ -202,6 +207,18 @@
   </url>
   
   <url>
+    <loc>https://u1tnk.github.io/categories/fbc/</loc>
+    <lastmod>2021-12-04T23:38:58+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://u1tnk.github.io/categories/fjordbootcamp/</loc>
+    <lastmod>2021-12-04T23:38:58+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://u1tnk.github.io/categories/food/</loc>
     <lastmod>2019-04-16T21:16:51+09:00</lastmod>
     <priority>0</priority>
@@ -269,7 +286,7 @@
   
   <url>
     <loc>https://u1tnk.github.io/post/</loc>
-    <lastmod>2021-06-30T19:11:23+09:00</lastmod>
+    <lastmod>2021-12-04T23:38:58+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -292,7 +309,7 @@
   
   <url>
     <loc>https://u1tnk.github.io/</loc>
-    <lastmod>2021-06-30T19:11:23+09:00</lastmod>
+    <lastmod>2021-12-04T23:38:58+09:00</lastmod>
     <priority>0</priority>
   </url>
   
