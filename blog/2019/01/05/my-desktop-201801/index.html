@@ -1,227 +1,277 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<html lang="en" dir="auto">
 
-  
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
-  <meta name="google-site-verification" content="Y9uGA9O73sv0k2GEuyVrCdITKeDD-VHTqab7KUM0olc" />
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>自作デスクトップの構成2018年1月 | u1tnk.log</title>
+<meta name="keywords" content="">
+<meta name="description" content="完全に自分用まとめ。
+…のはずだったのに結構労作になってしまった。どのパーツがどんぐらい古いのかとかあやふやだったからちょうど良いか。
+CPU Ryzen1700 2017年5月購入
+AMD CPU Ryzen7 1700 with WraithSpire 65W cooler AM4 YD1700BBAEBOXposted with カエレバ AMD 2017-03-03 経済的8コアで選んだけどオーバークロック耐性高くてラッキー Ryzen1700オーバークロック、電力計測
+内部でDocker使ってるVM立てててもオール100%になる事などほぼ無いので8コアあれば現状十分。 クーラーはリテールそのまま。
+GPU GTX 1070 2017年5月購入
+ZOTAC GEFORCE GTX 1070 MINI グラフィックスボード VD6148 ZTGTX1070-8GD5MINI01posted with カエレバ ZOTAC 2016-09-23 最低限VR readyなものを…と考えて選択。VRは堪能してもうやらないのでストVにはオーバースペック感。ファンはあるが、ゲームやらない限り回らない(65度あたりかららしい)ので静音。
+メモリ DDR4 32GB 2017年5月購入 2017年7月購入(16GB買い足し)
+CORSAIR DDR4-2666MHz デスクトップPC用 メモリモジュール VENGEANCE LPX Series 8GB×2枚キット CMK16GX4M2A2666C16posted with カエレバ Corsair 2015-08-01 Crucial [Micron製] DDR4 デスクPC用メモリー 8GB x2 ( 2133MT/s / PC4-17000 / CL15 / 288pin / DR x8 Unbuffered DIMM ) 永久保証 CT2K8G4DFD8213posted with カエレバ Crucial(クルーシャル) 2014-09-09 どうしてPC4-21300とPC4-17000 が混ざってるんでしょうね…表記がバラバラなのが悪いんや 😭 よくわからなくなったらPCx-xxxx のところだけ見ましょう。 まあ量の方が大事だし体感できるレベルの差じゃないので良しとしましょう。AMD Ryzenのゲーミング性能はメモリークロックが重要 | ちもろぐ らしいんだけど… 😓 とはいえノートでは16GB生活しかしてなったので32GBはまったく不足しなくて快適です。">
+<meta name="author" content="u1tnk">
+<link rel="canonical" href="https://u1tnk.github.io/blog/2019/01/05/my-desktop-201801/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.bc1149f4a72aa4858d3a9f71462f75e5884ffe8073ea9d6d5761d5663d651e20.css" integrity="sha256-vBFJ9KcqpIWNOp9xRi915YhP/oBz6p1tV2HVZj1lHiA=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://u1tnk.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://u1tnk.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://u1tnk.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://u1tnk.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://u1tnk.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
 
-  
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="自作デスクトップの構成2018年1月" />
+<meta property="og:description" content="完全に自分用まとめ。
+…のはずだったのに結構労作になってしまった。どのパーツがどんぐらい古いのかとかあやふやだったからちょうど良いか。
+CPU Ryzen1700 2017年5月購入
+AMD CPU Ryzen7 1700 with WraithSpire 65W cooler AM4 YD1700BBAEBOXposted with カエレバ AMD 2017-03-03 経済的8コアで選んだけどオーバークロック耐性高くてラッキー Ryzen1700オーバークロック、電力計測
+内部でDocker使ってるVM立てててもオール100%になる事などほぼ無いので8コアあれば現状十分。 クーラーはリテールそのまま。
+GPU GTX 1070 2017年5月購入
+ZOTAC GEFORCE GTX 1070 MINI グラフィックスボード VD6148 ZTGTX1070-8GD5MINI01posted with カエレバ ZOTAC 2016-09-23 最低限VR readyなものを…と考えて選択。VRは堪能してもうやらないのでストVにはオーバースペック感。ファンはあるが、ゲームやらない限り回らない(65度あたりかららしい)ので静音。
+メモリ DDR4 32GB 2017年5月購入 2017年7月購入(16GB買い足し)
+CORSAIR DDR4-2666MHz デスクトップPC用 メモリモジュール VENGEANCE LPX Series 8GB×2枚キット CMK16GX4M2A2666C16posted with カエレバ Corsair 2015-08-01 Crucial [Micron製] DDR4 デスクPC用メモリー 8GB x2 ( 2133MT/s / PC4-17000 / CL15 / 288pin / DR x8 Unbuffered DIMM ) 永久保証 CT2K8G4DFD8213posted with カエレバ Crucial(クルーシャル) 2014-09-09 どうしてPC4-21300とPC4-17000 が混ざってるんでしょうね…表記がバラバラなのが悪いんや 😭 よくわからなくなったらPCx-xxxx のところだけ見ましょう。 まあ量の方が大事だし体感できるレベルの差じゃないので良しとしましょう。AMD Ryzenのゲーミング性能はメモリークロックが重要 | ちもろぐ らしいんだけど… 😓 とはいえノートでは16GB生活しかしてなったので32GBはまったく不足しなくて快適です。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://u1tnk.github.io/blog/2019/01/05/my-desktop-201801/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2019-01-05T08:47:57+09:00" />
+<meta property="article:modified_time" content="2019-01-05T08:47:57+09:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="自作デスクトップの構成2018年1月"/>
+<meta name="twitter:description" content="完全に自分用まとめ。
+…のはずだったのに結構労作になってしまった。どのパーツがどんぐらい古いのかとかあやふやだったからちょうど良いか。
+CPU Ryzen1700 2017年5月購入
+AMD CPU Ryzen7 1700 with WraithSpire 65W cooler AM4 YD1700BBAEBOXposted with カエレバ AMD 2017-03-03 経済的8コアで選んだけどオーバークロック耐性高くてラッキー Ryzen1700オーバークロック、電力計測
+内部でDocker使ってるVM立てててもオール100%になる事などほぼ無いので8コアあれば現状十分。 クーラーはリテールそのまま。
+GPU GTX 1070 2017年5月購入
+ZOTAC GEFORCE GTX 1070 MINI グラフィックスボード VD6148 ZTGTX1070-8GD5MINI01posted with カエレバ ZOTAC 2016-09-23 最低限VR readyなものを…と考えて選択。VRは堪能してもうやらないのでストVにはオーバースペック感。ファンはあるが、ゲームやらない限り回らない(65度あたりかららしい)ので静音。
+メモリ DDR4 32GB 2017年5月購入 2017年7月購入(16GB買い足し)
+CORSAIR DDR4-2666MHz デスクトップPC用 メモリモジュール VENGEANCE LPX Series 8GB×2枚キット CMK16GX4M2A2666C16posted with カエレバ Corsair 2015-08-01 Crucial [Micron製] DDR4 デスクPC用メモリー 8GB x2 ( 2133MT/s / PC4-17000 / CL15 / 288pin / DR x8 Unbuffered DIMM ) 永久保証 CT2K8G4DFD8213posted with カエレバ Crucial(クルーシャル) 2014-09-09 どうしてPC4-21300とPC4-17000 が混ざってるんでしょうね…表記がバラバラなのが悪いんや 😭 よくわからなくなったらPCx-xxxx のところだけ見ましょう。 まあ量の方が大事だし体感できるレベルの差じゃないので良しとしましょう。AMD Ryzenのゲーミング性能はメモリークロックが重要 | ちもろぐ らしいんだけど… 😓 とはいえノートでは16GB生活しかしてなったので32GBはまったく不足しなくて快適です。"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://u1tnk.github.io/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "自作デスクトップの構成2018年1月",
+      "item": "https://u1tnk.github.io/blog/2019/01/05/my-desktop-201801/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "自作デスクトップの構成2018年1月",
+  "name": "自作デスクトップの構成2018年1月",
+  "description": "完全に自分用まとめ。\n…のはずだったのに結構労作になってしまった。どのパーツがどんぐらい古いのかとかあやふやだったからちょうど良いか。\nCPU Ryzen1700 2017年5月購入\nAMD CPU Ryzen7 1700 with WraithSpire 65W cooler AM4 YD1700BBAEBOXposted with カエレバ AMD 2017-03-03 経済的8コアで選んだけどオーバークロック耐性高くてラッキー Ryzen1700オーバークロック、電力計測\n内部でDocker使ってるVM立てててもオール100%になる事などほぼ無いので8コアあれば現状十分。 クーラーはリテールそのまま。\nGPU GTX 1070 2017年5月購入\nZOTAC GEFORCE GTX 1070 MINI グラフィックスボード VD6148 ZTGTX1070-8GD5MINI01posted with カエレバ ZOTAC 2016-09-23 最低限VR readyなものを…と考えて選択。VRは堪能してもうやらないのでストVにはオーバースペック感。ファンはあるが、ゲームやらない限り回らない(65度あたりかららしい)ので静音。\nメモリ DDR4 32GB 2017年5月購入 2017年7月購入(16GB買い足し)\nCORSAIR DDR4-2666MHz デスクトップPC用 メモリモジュール VENGEANCE LPX Series 8GB×2枚キット CMK16GX4M2A2666C16posted with カエレバ Corsair 2015-08-01 Crucial [Micron製] DDR4 デスクPC用メモリー 8GB x2 ( 2133MT/s / PC4-17000 / CL15 / 288pin / DR x8 Unbuffered DIMM ) 永久保証 CT2K8G4DFD8213posted with カエレバ Crucial(クルーシャル) 2014-09-09 どうしてPC4-21300とPC4-17000 が混ざってるんでしょうね…表記がバラバラなのが悪いんや 😭 よくわからなくなったらPCx-xxxx のところだけ見ましょう。 まあ量の方が大事だし体感できるレベルの差じゃないので良しとしましょう。AMD Ryzenのゲーミング性能はメモリークロックが重要 | ちもろぐ らしいんだけど… 😓 とはいえノートでは16GB生活しかしてなったので32GBはまったく不足しなくて快適です。",
+  "keywords": [
     
-    
-      <link href="/css/fonts.css" rel="stylesheet" type="text/css">
-    
-  
-
-  
-  <title>自作デスクトップの構成2018年1月</title>
-
-  
-  
-  <link rel="stylesheet" href="/css/hugo-octopress.css">
-
-  
-  
-    <link rel="stylesheet" href="https://u1tnk.github.io/css/custom.css">
-  
-
-  
-    <link rel="stylesheet" href="/css/fork-awesome.min.css">
-  
-
-  
-  <link href="https://u1tnk.github.io/favicon.png" rel="icon">
-
-  
-  
-
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-  <meta name="author" content="u1tnk">
-
-  
-  <meta name="generator" content="Hugo 0.40.1" />
-
-  
-  
-
-  
-  
+  ],
+  "articleBody": "完全に自分用まとめ。\n…のはずだったのに結構労作になってしまった。どのパーツがどんぐらい古いのかとかあやふやだったからちょうど良いか。\nCPU Ryzen1700 2017年5月購入\nAMD CPU Ryzen7 1700 with WraithSpire 65W cooler AM4 YD1700BBAEBOXposted with カエレバ AMD 2017-03-03 経済的8コアで選んだけどオーバークロック耐性高くてラッキー Ryzen1700オーバークロック、電力計測\n内部でDocker使ってるVM立てててもオール100%になる事などほぼ無いので8コアあれば現状十分。 クーラーはリテールそのまま。\nGPU GTX 1070 2017年5月購入\nZOTAC GEFORCE GTX 1070 MINI グラフィックスボード VD6148 ZTGTX1070-8GD5MINI01posted with カエレバ ZOTAC 2016-09-23 最低限VR readyなものを…と考えて選択。VRは堪能してもうやらないのでストVにはオーバースペック感。ファンはあるが、ゲームやらない限り回らない(65度あたりかららしい)ので静音。\nメモリ DDR4 32GB 2017年5月購入 2017年7月購入(16GB買い足し)\nCORSAIR DDR4-2666MHz デスクトップPC用 メモリモジュール VENGEANCE LPX Series 8GB×2枚キット CMK16GX4M2A2666C16posted with カエレバ Corsair 2015-08-01 Crucial [Micron製] DDR4 デスクPC用メモリー 8GB x2 ( 2133MT/s / PC4-17000 / CL15 / 288pin / DR x8 Unbuffered DIMM ) 永久保証 CT2K8G4DFD8213posted with カエレバ Crucial(クルーシャル) 2014-09-09 どうしてPC4-21300とPC4-17000 が混ざってるんでしょうね…表記がバラバラなのが悪いんや 😭 よくわからなくなったらPCx-xxxx のところだけ見ましょう。 まあ量の方が大事だし体感できるレベルの差じゃないので良しとしましょう。AMD Ryzenのゲーミング性能はメモリークロックが重要 | ちもろぐ らしいんだけど… 😓 とはいえノートでは16GB生活しかしてなったので32GBはまったく不足しなくて快適です。\nSSD intel 545シリーズ SATA 512GB 2018年8月購入\nインテル SSD 545シリーズ 512GB 2.5インチ TLC SSDSC2KW512G8X1posted with カエレバ インテル 2017-08-23 WDのNVMEを使っていたが高温のせいか2度もダメになり(起動時認識不安定)、NVMEはきちんと冷却体制を整えない限り使わないようにする事にした。チップ用ヒートシンク付けても常時50度ぐらいだった。こちらにしてから30度程度(夏場、今測ったら25度) ベンチ上遅いがやはり不満になるレベルでは無い。\nHDD HGST Deskstar NAS 4TB 3.5インチ 7200rpm 64MBキャッシュ SATA 6Gb/s 0S03667 ×2 2016年6月購入\nHGST(エイチ・ジー・エス・ティー) Deskstar NAS 4TB パッケージ版 3.5インチ 7200rpm 64MBキャッシュ SATA 6Gb/s 【3年保証】 0S03667posted with カエレバ HGSTジャパン 2014-03-12 デカいファイルとバックアップ用。RAIDの運用はうんざりなので、シンプルに一台を常用して二台目に定期バックアップしている。 バックアップしてるとはいえストレージの故障はめんどうなのでNAS用HDD必須。 2台で3.6万だったはずだが今だと後継品が2.2万。WD REDは1.5万なので今ならWDかな。3年保証だから保証期間はあと半年か…どこまでひっぱるかなー ケース Fractal Design Meshify Mini C Tempered Glass 2018年7月購入\nFractal Design Meshify Mini C Tempered Glass ミニタワー型PCケース CS7104 FD-CA-MESH-C-MINI-BKO-TGDposted with カエレバ Fractal Design 2018-03-31 NVME問題始め発熱が課題となったが、以前使ってたANTEC PCケース SOLO BLACKが静音重視でエアフローが悪いので買い替え。 結局ケースが一番長時間使うので高めでも良いから良いヤツ買おうと…思ったけどそんな派手なのはイヤだしサイズも抑えめにしたかったので 大して前と変わらなかった。とはいえ安物なら三千円台からだし。 その前のケースが8年前なので5インチシャドーベイがゼロなのを始め、多少サイズダウンしたのにめちゃくちゃ作業しやすくて感動した。見た目もひかえめに中見えるようになってて気に入っている。ただ、メインマシン化したのでmicro-ATXだとちょっと不安あるATXギリで入るサイズにしといた方がマザボの選択肢も増えたなと。\nマザーボード ASUSTeK PRIME B350M-A【μATX 2017年5月購入\nASUSTeK AMD B350搭載 マザーボード PRIME B350M-A【μATX】posted with カエレバ Asustek 2017-03-03 DDR4 4スロット、m2付いててで安心のASUSだし。ぐらいの適当な感じで選んだ。一点後悔したのはNVMEの発熱問題対策にはx16 slot使うボードを使うのが良いようなのだがslotが足りず断念。結果m2が余ってるのが悔しい。次はそこも注意。\n電源 Corsair 550W GOLD 2017年5月購入\nCorsair RM550x 80PLUS GOLD認証取得 550W静音電源ユニット PS592 CP-9020090-JPposted with カエレバ Corsair 2015-12-19 電源も長期間使うのでこだわったがGOLD超えるとコスパが一気に悪化するのでGOLDで妥協。電源もモジュラータイプが普通になってて進歩を感じる。 高負荷時に必要な電力×2が余裕持った電力という事で現状ギリ。参GPUやCPUもうちょっと頑張ると厳しいので650Wにしといた方が安心だった。反省。 参考: 【自作PC】電源ユニットの選び方を自作経験者がガチ解説する | ちもろぐ\nNIC インテル 2013年1月購入\nインテル Gigabit CT Desktop Adapter EXPI9301CTposted with カエレバ インテル 2012-08-16 なんかネットワーク(だったかどうか不明)が不安定だった時期があって、5年程前に勢いで購入したが、さすがにオンボードで十分と思われる。小さいし1xスロット他に用途も無いしまあ付けとくかーぐらいのノリで付け続けそうだけど。\nディスプレイ DELL P2715Q 4K 2016年2月購入\nP2715Q ブラック[27インチ]posted with カエレバ DELL(デル) 発売当初「え！？こんな価格で4K！？」となってしばらくしてディスプレイ壊れて飛びついた。 現状でもそんなに不満あるわけじゃないけど、HDRとレイテンシは欲しい。 通常9ms、高速6msの応答遅延がゲームにはネックではあるが今やってるイカ的には60fpsなのでスペック的には問題無さそうだ。俺が下手なのはディスプレイのせいじゃなかった… 😢 ちなみにこれ書いてて通常モードになってた事に気づいたのでもうちょっとウデマエが上がるかもしれない 😎 P2415Q と P2715QモニターでHDMI 2.0接続にて4K x 2K 60Hzをサポートできるような設定方法 | Dell 日本 そしてほんの3ヶ月前に実はHDMI2.0に対応していた事に気づくなど。応答遅延もだけどデフォルト良い方にしといてくれ… 私が購入した月から対応してたから結果的に発売直後に飛びつかなくて良かった。 広い机になったらゲーミングモニターを買い足してデュアル運用したい。\nキーボード HHKB PRO墨 無刻印 2010年9月購入\nPFU Happy Hacking Keyboard Professional2 墨/無刻印 英語配列 USBキーボード 静電容量無接点 UNIX配列 WINDOWS/MAC両対応 ブラック PD-KB400BNposted with カエレバ PFU 2006-03-23 世は自作キーボードブームまっさかりだが、静電容量無接点の打鍵感なじみきってるんだよな… あと墨色が好き。 壊れたらワンチャンと思うも8年3ヶ月経過して一切不調になった事が無い。壊れなさが凄い。 もうBTモデル買ってデュアルで使ってみようかなと計画中。\nトラックボール Logicool MX ERGO 2018年8月 購入\nLogicool ロジクール MXTB1s bluetooth ワイヤレス トラックボール MX ERGO Windows,Mac対応 筋緊張20%軽減 8ボタン 高速充電式 2年間無償保証posted with カエレバ ロジクール 2017-09-22 ERGOだけあって斜めになった感じがしっくり来る。自転車で言うとドロップハンドルを持つ角度で持てる。 デカいけどマウスパッド不要で実は省スペース。マウスが勝ってるの細かい作業ぐらいだけど精密モードあるし、他全部こっちの方が良いのでまったく戻る気が無い。しかも3日ぐらいで慣れた。おすすめ。\nまとめ あらためてまとめてみた結果、以前「Macやめてデスクトップなら20万もあればまったく不満無い環境作れる」と言ったが、すまん、あれはウソだ。 とはいえ最古の部品で8年モノだし一回ごとの買いものは最高でも10万ちょいなので2〜3年ごとに30万弱使うMBPよりは経済的なのは間違い無し。 妻子持ちでコスパの概念が捨てられないし、去年までメイン機はノートだったので大体ミドルレンジになってるけど、今は仕事のメイン機なんでもうちょっとこだわっていきたい 💪 【リーク】AMD、Computex 2019でRyzen 3000シリーズ(Zen2)の発表をするかも : 汎用型自作PCまとめ 真偽はわからんけどRyzen3000が6月発表、夏発売という噂なので、そこらへんで改善したいところ、簡易水冷とか…\n参考:CPU-Z reportの抜粋 CPU-Z TXT Report ------------------------------------------------------------------------- Binaries ------------------------------------------------------------------------- CPU-Z version\t1.87.0.x64 Processors ------------------------------------------------------------------------- Number of sockets\t1 Number of threads\t16 APICs ------------------------------------------------------------------------- Timers ------------------------------------------------------------------------- ACPI timer\t3.580 MHz Perf timer\t10.000 MHz Sys timer\t1.000 KHz Processors Information ------------------------------------------------------------------------- Socket 1\tID = 0 Number of cores\t8 (max 8) Number of threads\t16 (max 16) Name\tAMD Ryzen 7 1700 Codename\tSummit Ridge Specification\tAMD Ryzen 7 1700 Eight-Core Processor Package Socket AM4 (1331) CPUID\tF.1.1 Extended CPUID\t17.1 Core Stepping\tZP-B1 Technology\t14 nm TDP Limit\t65.0 Watts Tjmax\t95.0 ｰC Core Speed\t3641.3 MHz Multiplier x Bus Speed\t36.5 x 99.8 MHz Base frequency (cores)\t99.8 MHz Base frequency (ext.)\t99.8 MHz Instructions sets\tMMX (+), SSE, SSE2, SSE3, SSSE3, SSE4.1, SSE4.2, SSE4A, x86-64, AMD-V, AES, AVX, AVX2, FMA3, SHA Microcode Revision\t0x8001126 L1 Data cache\t8 x 32 KBytes, 8-way set associative, 64-byte line size L1 Instruction cache\t8 x 64 KBytes, 4-way set associative, 64-byte line size L2 cache\t8 x 512 KBytes, 8-way set associative, 64-byte line size L3 cache\t2 x 8 MBytes, 16-way set associative, 64-byte line size Max CPUID level\t0000000Dh Max CPUID ext. level\t8000001Fh Cache descriptor\tLevel 1, D, 32 KB, 2 thread(s) Cache descriptor\tLevel 1, I, 64 KB, 2 thread(s) Cache descriptor\tLevel 2, U, 512 KB, 2 thread(s) Cache descriptor\tLevel 3, U, 8 MB, 8 thread(s) FID/VID Control\tyes SMU Version\t25.77.00 TDP/TJMAX\t0x41005F TCTL Offset\t0x0 Temperature 0\t41 degC (106 degF) (Package (Node 0)) Voltage 0\t1.00 Volts (VID) Voltage 1\t1.17 Volts (CPU VDD (Node 0)) BIOS ------------------------------------------------------------------------- UEFI\tYes AMD AGESA\tSummitPI-AM4 1.0.0.6 Chipset ------------------------------------------------------------------------- Northbridge\tAMD Ryzen SOC rev. 00 Southbridge\tAMD B350 rev. 51 Graphic Interface\tPCI-Express PCI-E Link Width\tx16 PCI-E Max Link Width\tx16 Memory Type\tDDR4 Memory Size\t32 GBytes Channels\tDual Memory Frequency\t1064.1 MHz (3:32) CAS# latency (CL)\t15.0 RAS# to CAS# delay (tRCD)\t15 RAS# Precharge (tRP)\t15 Cycle Time (tRAS)\t36 Bank Cycle Time (tRC)\t51 Command Rate (CR)\t2T Uncore Frequency\t1064.1 MHz Memory SPD ------------------------------------------------------------------------- DIMM #\t1 SMBus address\t0x50 Memory type\tDDR4 Module format\tUDIMM Manufacturer (ID)\tCrucial Technology (7F7F7F7F7F9B0000000000) Size\t8192 MBytes Max bandwidth\tDDR4-2132 (1066 MHz) Part number\tCT8G4DFD8213.M16FA Serial number\tE03AC251 Manufacturing date\tWeek 44/Year 16 Nominal Voltage\t1.20 Volts EPP\tno XMP\tno AMP\tno JEDEC timings table\tCL-tRCD-tRP-tRAS-tRC @ frequency JEDEC #1\t9.0-9-9-22-31 @ 666 MHz JEDEC #2\t11.0-11-11-27-38 @ 814 MHz JEDEC #3\t12.0-12-12-30-42 @ 888 MHz JEDEC #4\t13.0-13-13-32-45 @ 962 MHz JEDEC #5\t14.0-14-14-35-49 @ 1037 MHz JEDEC #6\t15.0-15-15-36-50 @ 1066 MHz JEDEC #7\t16.0-15-15-36-50 @ 1066 MHz JEDEC #8\t17.0-15-15-36-50 @ 1066 MHz JEDEC #9\t18.0-15-15-36-50 @ 1066 MHz JEDEC #10\t19.0-15-15-36-50 @ 1066 MHz DIMM #\t2 SMBus address\t0x51 Memory type\tDDR4 Module format\tUDIMM Manufacturer (ID)\tCrucial Technology (7F7F7F7F7F9B0000000000) Size\t8192 MBytes Max bandwidth\tDDR4-2132 (1066 MHz) Part number\tCT8G4DFD8213.M16FA Serial number\tE03AC250 Manufacturing date\tWeek 44/Year 16 Nominal Voltage\t1.20 Volts EPP\tno XMP\tno AMP\tno JEDEC timings table\tCL-tRCD-tRP-tRAS-tRC @ frequency JEDEC #1\t9.0-9-9-22-31 @ 666 MHz JEDEC #2\t11.0-11-11-27-38 @ 814 MHz JEDEC #3\t12.0-12-12-30-42 @ 888 MHz JEDEC #4\t13.0-13-13-32-45 @ 962 MHz JEDEC #5\t14.0-14-14-35-49 @ 1037 MHz JEDEC #6\t15.0-15-15-36-50 @ 1066 MHz JEDEC #7\t16.0-15-15-36-50 @ 1066 MHz JEDEC #8\t17.0-15-15-36-50 @ 1066 MHz JEDEC #9\t18.0-15-15-36-50 @ 1066 MHz JEDEC #10\t19.0-15-15-36-50 @ 1066 MHz DIMM #\t3 SMBus address\t0x52 Memory type\tDDR4 Module format\tUDIMM Manufacturer (ID)\tCorsair (7F7F9E0000000000000000) Size\t8192 MBytes Max bandwidth\tDDR4-2132 (1066 MHz) Part number\tCMK16GX4M2A2666C16 Nominal Voltage\t1.20 Volts EPP\tno XMP\tyes XMP revision\t2.0 AMP\tno DIMM #\t4 SMBus address\t0x53 Memory type\tDDR4 Module format\tUDIMM Manufacturer (ID)\tCorsair (7F7F9E0000000000000000) Size\t8192 MBytes Max bandwidth\tDDR4-2132 (1066 MHz) Part number\tCMK16GX4M2A2666C16 Nominal Voltage\t1.20 Volts EPP\tno XMP\tyes XMP revision\t2.0 AMP\tno Description\tPCI to PCI Bridge Location\tbus 0 (0x00), device 7 (0x07), function 1 (0x01) Common header Vendor ID\t0x1022 Model ID\t0x1454 Revision ID\t0x00 PI\t0x00 SubClass\t0x04 BaseClass\t0x06 Cache Line\t0x10 Latency\t0x00 Header\t0x81 PCI header Primary bus\t0x00 Secondary bus\t0x28 Int. Line\t0xFF Int. Pin\t0x01 PCI capability Caps class\tPower Management Caps offset\t0x50 Caps version\t1.2 PCI capability Caps class\tPCI Express Caps offset\t0x58 Device type\tRoot Port of PCI-E Root Complex Port\t0 Version\t2.0 Physical slot\tIntegrated device Link width\t16x (max 16x) PCI capability Caps class\tMessage Signalled Interrupts Caps offset\t0xA0 PCI capability Caps class\tSubsystem Vendor Caps offset\t0xC0 SubVendor ID\t0x1022 SubSystem ID\t0x1454 PCI capability Caps class\tHyperTransport Caps offset\t0xC8 Interface type\tMSI Mapping Extended capabilities Caps class\tVendor Specific Caps offset\t0x100 Vendor ID\t1 Size\t16 Caps class\t0x19 Caps offset\t0x270 Storage ------------------------------------------------------------------------- Drive\t0 Name\tHGST HDN724040ALE640 Revision\tMJAOA5E0 Serial\tPK1334PEJDR6TS Capacity\t3726.0 GB Type\tFixed Bus Type\tSATA (11) Rotation speed\t7200 RPM Features\tSMART Volume\td:\\, 3725.8 GBytes (34.0 percent available) Drive\t1 Name\tHGST HDN724040ALE640 Revision\tMJAOA5E0 Serial\tPK1334PEJLSSJS Capacity\t3726.0 GB Type\tFixed Bus Type\tSATA (11) Rotation speed\t7200 RPM Features\tSMART Volume\te:\\, 3725.8 GBytes (35.6 percent available) Drive\t2 Name\tINTEL SSDSC2KW512G8 Revision\tLHF002C Serial\tBTLA82200B2R512DGN Capacity\t476.9 GB Type\tFixed, SSD Bus Type\tSATA (11) Features\tSMART, TRIM Volume\tc:\\, 290.1 GBytes (25.1 percent available) Graphics ------------------------------------------------------------------------- Number of adapters\t1 Graphic APIs ------------------------------------------------------------------------- API\tD3D API\tNVIDIA I/O API\tNVIDIA NVAPI Display Adapters ------------------------------------------------------------------------- Display adapter 0 ID\t0x1090304 Name\tNVIDIA GeForce GTX 1070 Board Manufacturer\tZOTAC International Ltd. Revision\tA1 Codename\tGP104 Core family\t0x134 (GP104) Technology\t16 nm Memory size\t8 GB Memory type\tGDDR5 Memory vendor\tMicron PCI device\tbus 39 (0x27), device 0 (0x0), function 0 (0x0) Vendor ID\t0x10DE (0x19DA) Model ID\t0x1B81 (0x1445) Revision ID\t0xA1 Performance Level\t0 Core clock\t860.5 MHz Memory clock\t4006.8 MHz ",
+  "wordCount" : "1309",
+  "inLanguage": "en",
+  "datePublished": "2019-01-05T08:47:57+09:00",
+  "dateModified": "2019-01-05T08:47:57+09:00",
+  "author":{
+    "@type": "Person",
+    "name": "u1tnk"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://u1tnk.github.io/blog/2019/01/05/my-desktop-201801/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "u1tnk.log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://u1tnk.github.io/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
-<body>
 
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
 
-<header role="banner">
-<hgroup>
-  
-  <h1><a href="https://u1tnk.github.io/">u1tnk.log</a></h1>
-    <h2></h2>
-</hgroup></header>
+</script>
 
-
-<nav role="navigation">
-<fieldset class="mobile-nav">
-  
-  <select onchange="location = this.value;">
-    <option value="">Navigate…</option>
-      
-        <option value="https://u1tnk.github.io/">» posts</option>
-      
-        <option value="https://u1tnk.github.io/about">» about</option>
-      
-        <option value="https://u1tnk.github.io/atom.xml">» rss</option>
-      
-  </select>
-</fieldset>
-
-
-<ul class="main-navigation">
-  
-  
-    
-      <li><a href="https://u1tnk.github.io/" title="posts">posts</a></li>
-    
-  
-    
-      <li><a href="https://u1tnk.github.io/about" title="about" >about</a></li>
-    
-  
-    
-      <li><a href="https://u1tnk.github.io/atom.xml" title="rss" >rss</a></li>
-    
-  
-</ul>
-
-<ul class="subscription">
-  
-</ul>
-
-
-</nav>
-
-
-<div id="main">
-  <div id="content">
-    <div>
-      <article class="hentry" role="article">
-
-        
-        
-
-<header>
-  <p class="meta">2019/01/05
-    
-    
-
-    
-    
-      - <a class="label" href="https://u1tnk.github.io/categories/pc/">pc </a>
-    
-  </p>
-  <h1 class="entry-title">
-     自作デスクトップの構成2018年1月 
-  </h1>
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://u1tnk.github.io/" accesskey="h" title="u1tnk.log (Alt + H)">u1tnk.log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://u1tnk.github.io/" title="posts">
+                    <span>posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://u1tnk.github.io/about" title="about">
+                    <span>about</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://u1tnk.github.io/atom.xml" title="rss">
+                    <span>rss</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 </header>
+<main class="main">
 
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      自作デスクトップの構成2018年1月
+    </h1>
+    <div class="post-meta"><span title='2019-01-05 08:47:57 +0900 JST'>2019/01/05</span>&nbsp;·&nbsp;u1tnk
 
-        <div class="entry-content">
-          
-          
-          
-          
-
-<p>完全に自分用まとめ。</p>
-
+</div>
+  </header> 
+  <div class="post-content"><p>完全に自分用まとめ。</p>
 <p>…のはずだったのに結構労作になってしまった。どのパーツがどんぐらい古いのかとかあやふやだったからちょうど良いか。</p>
-
-<h2 id="cpu-ryzen1700">CPU Ryzen1700</h2>
-
-<p>2017年5月購入
-<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B06WP5YCX6/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/41WU%2B432f%2BL._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B06WP5YCX6/u1tnk-22/" target="_blank" >AMD CPU Ryzen7 1700 with WraithSpire 65W cooler AM4 YD1700BBAEBOX</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="https://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> AMD 2017-03-03    </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div></p>
-
+<h2 id="cpu-ryzen1700">CPU Ryzen1700<a hidden class="anchor" aria-hidden="true" href="#cpu-ryzen1700">#</a></h2>
+<p>2017年5月購入</p>
+<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B06WP5YCX6/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/41WU%2B432f%2BL._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B06WP5YCX6/u1tnk-22/" target="_blank" >AMD CPU Ryzen7 1700 with WraithSpire 65W cooler AM4 YD1700BBAEBOX</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="https://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> AMD 2017-03-03    </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
 <p>経済的8コアで選んだけどオーバークロック耐性高くてラッキー <a href="https://u1tnk.github.io/blog/2019/01/04/ryzen1700oc/">Ryzen1700オーバークロック、電力計測</a></p>
-
 <p>内部でDocker使ってるVM立てててもオール100%になる事などほぼ無いので8コアあれば現状十分。
 クーラーはリテールそのまま。</p>
-
-<h2 id="gpu-gtx-1070">GPU GTX 1070</h2>
-
-<p>2017年5月購入
-<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B01M0I80J3/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/51LS-i8HGPL._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B01M0I80J3/u1tnk-22/" target="_blank" >ZOTAC GEFORCE GTX 1070 MINI グラフィックスボード VD6148 ZTGTX1070-8GD5MINI01</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="https://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> ZOTAC 2016-09-23    </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div></p>
-
+<h2 id="gpu-gtx-1070">GPU GTX 1070<a hidden class="anchor" aria-hidden="true" href="#gpu-gtx-1070">#</a></h2>
+<p>2017年5月購入</p>
+<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B01M0I80J3/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/51LS-i8HGPL._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B01M0I80J3/u1tnk-22/" target="_blank" >ZOTAC GEFORCE GTX 1070 MINI グラフィックスボード VD6148 ZTGTX1070-8GD5MINI01</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="https://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> ZOTAC 2016-09-23    </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
 <p>最低限VR readyなものを…と考えて選択。VRは堪能してもうやらないのでストVにはオーバースペック感。ファンはあるが、ゲームやらない限り回らない(65度あたりかららしい)ので静音。</p>
-
-<h2 id="メモリ-ddr4-32gb">メモリ DDR4 32GB</h2>
-
+<h2 id="メモリ-ddr4-32gb">メモリ DDR4 32GB<a hidden class="anchor" aria-hidden="true" href="#メモリ-ddr4-32gb">#</a></h2>
 <p>2017年5月購入
-2017年7月購入(16GB買い足し)
-<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B0123ZC44Y/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/31Cn5jd6ihL._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B0123ZC44Y/u1tnk-22/" target="_blank" >CORSAIR DDR4-2666MHz デスクトップPC用 メモリモジュール VENGEANCE LPX Series 8GB×2枚キット CMK16GX4M2A2666C16</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="https://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> Corsair 2015-08-01    </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div></p>
-
+2017年7月購入(16GB買い足し)</p>
+<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B0123ZC44Y/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/31Cn5jd6ihL._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B0123ZC44Y/u1tnk-22/" target="_blank" >CORSAIR DDR4-2666MHz デスクトップPC用 メモリモジュール VENGEANCE LPX Series 8GB×2枚キット CMK16GX4M2A2666C16</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="https://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> Corsair 2015-08-01    </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
 <div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B00MMLUYQK/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/41DlHh3oxDL._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B00MMLUYQK/u1tnk-22/" target="_blank" >Crucial [Micron製] DDR4 デスクPC用メモリー 8GB x2 ( 2133MT/s / PC4-17000 / CL15 / 288pin / DR x8 Unbuffered DIMM ) 永久保証 CT2K8G4DFD8213</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="https://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> Crucial(クルーシャル) 2014-09-09    </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
-
 <p>どうしてPC4-21300とPC4-17000 が混ざってるんでしょうね…表記がバラバラなのが悪いんや 😭
 よくわからなくなったらPCx-xxxx のところだけ見ましょう。
 まあ量の方が大事だし体感できるレベルの差じゃないので良しとしましょう。<a href="https://chimolog.co/bto-ryzen-ram-speed/">AMD Ryzenのゲーミング性能はメモリークロックが重要 | ちもろぐ</a> らしいんだけど… 😓
 とはいえノートでは16GB生活しかしてなったので32GBはまったく不足しなくて快適です。</p>
-
-<h2 id="ssd-intel-545シリーズ-sata-512gb">SSD  intel 545シリーズ SATA 512GB</h2>
-
-<p>2018年8月購入
-<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B074SGXN81/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/31boUJN3tTL._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B074SGXN81/u1tnk-22/" target="_blank" >インテル SSD 545シリーズ 512GB 2.5インチ TLC SSDSC2KW512G8X1</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="https://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> インテル 2017-08-23    </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div></p>
-
+<h2 id="ssd--intel-545シリーズ-sata-512gb">SSD  intel 545シリーズ SATA 512GB<a hidden class="anchor" aria-hidden="true" href="#ssd--intel-545シリーズ-sata-512gb">#</a></h2>
+<p>2018年8月購入</p>
+<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B074SGXN81/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/31boUJN3tTL._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B074SGXN81/u1tnk-22/" target="_blank" >インテル SSD 545シリーズ 512GB 2.5インチ TLC SSDSC2KW512G8X1</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="https://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> インテル 2017-08-23    </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
 <p>WDのNVMEを使っていたが高温のせいか2度もダメになり(起動時認識不安定)、NVMEはきちんと冷却体制を整えない限り使わないようにする事にした。チップ用ヒートシンク付けても常時50度ぐらいだった。こちらにしてから30度程度(夏場、今測ったら25度) ベンチ上遅いがやはり不満になるレベルでは無い。</p>
-
-<h2 id="hdd-hgst-deskstar-nas-4tb-3-5インチ-7200rpm-64mbキャッシュ-sata-6gb-s-0s03667-2">HDD HGST Deskstar NAS 4TB 3.5インチ 7200rpm 64MBキャッシュ SATA 6Gb/s  0S03667 ×2</h2>
-
-<p>2016年6月購入
+<h2 id="hdd-hgst-deskstar-nas-4tb-35インチ-7200rpm-64mbキャッシュ-sata-6gbs--0s03667-2">HDD HGST Deskstar NAS 4TB 3.5インチ 7200rpm 64MBキャッシュ SATA 6Gb/s  0S03667 ×2<a hidden class="anchor" aria-hidden="true" href="#hdd-hgst-deskstar-nas-4tb-35インチ-7200rpm-64mbキャッシュ-sata-6gbs--0s03667-2">#</a></h2>
+<p>2016年6月購入</p>
 <div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B00KD9641W/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/41n2nHpE7xL._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B00KD9641W/u1tnk-22/" target="_blank" >HGST(エイチ・ジー・エス・ティー) Deskstar NAS 4TB パッケージ版 3.5インチ 7200rpm 64MBキャッシュ SATA 6Gb/s 【3年保証】 0S03667</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="https://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> HGSTジャパン 2014-03-12    </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
 デカいファイルとバックアップ用。RAIDの運用はうんざりなので、シンプルに一台を常用して二台目に定期バックアップしている。
 バックアップしてるとはいえストレージの故障はめんどうなのでNAS用HDD必須。
-2台で3.6万だったはずだが今だと後継品が2.2万。WD REDは1.5万なので今ならWDかな。3年保証だから保証期間はあと半年か…どこまでひっぱるかなー</p>
-
-<h2 id="ケース-fractal-design-meshify-mini-c-tempered-glass">ケース Fractal Design Meshify Mini C Tempered Glass</h2>
-
-<p>2018年7月購入
-<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B07BS36Z9F/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/41zty1IKzXL._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B07BS36Z9F/u1tnk-22/" target="_blank" >Fractal Design Meshify Mini C Tempered Glass ミニタワー型PCケース CS7104 FD-CA-MESH-C-MINI-BKO-TGD</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="https://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> Fractal Design 2018-03-31    </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div></p>
-
+2台で3.6万だったはずだが今だと後継品が2.2万。WD REDは1.5万なので今ならWDかな。3年保証だから保証期間はあと半年か…どこまでひっぱるかなー
+<h2 id="ケース-fractal-design-meshify-mini-c-tempered-glass">ケース Fractal Design Meshify Mini C Tempered Glass<a hidden class="anchor" aria-hidden="true" href="#ケース-fractal-design-meshify-mini-c-tempered-glass">#</a></h2>
+<p>2018年7月購入</p>
+<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B07BS36Z9F/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/41zty1IKzXL._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B07BS36Z9F/u1tnk-22/" target="_blank" >Fractal Design Meshify Mini C Tempered Glass ミニタワー型PCケース CS7104 FD-CA-MESH-C-MINI-BKO-TGD</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="https://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> Fractal Design 2018-03-31    </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
 <p>NVME問題始め発熱が課題となったが、以前使ってた<a href="https://www.amazon.co.jp/exec/obidos/ASIN/B001EBITWA/u1tnk-22/" target="_blank" >ANTEC PCケース SOLO BLACK</a>が静音重視でエアフローが悪いので買い替え。
 結局ケースが一番長時間使うので高めでも良いから良いヤツ買おうと…思ったけどそんな派手なのはイヤだしサイズも抑えめにしたかったので
 大して前と変わらなかった。とはいえ安物なら三千円台からだし。
 その前のケースが8年前なので5インチシャドーベイがゼロなのを始め、多少サイズダウンしたのにめちゃくちゃ作業しやすくて感動した。見た目もひかえめに中見えるようになってて気に入っている。ただ、メインマシン化したのでmicro-ATXだとちょっと不安あるATXギリで入るサイズにしといた方がマザボの選択肢も増えたなと。</p>
-
-<h2 id="マザーボード-asustek-prime-b350m-a-μatx">マザーボード ASUSTeK PRIME B350M-A【μATX</h2>
-
-<p>2017年5月購入
-<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B06WRWZNJC/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/51qC1viTO9L._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B06WRWZNJC/u1tnk-22/" target="_blank" >ASUSTeK AMD B350搭載 マザーボード PRIME B350M-A【μATX】</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="https://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> Asustek 2017-03-03    </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div></p>
-
-<p>DDR4 4スロット、m2付いててで安心のASUSだし。ぐらいの適当な感じで選んだ。一点後悔したのはNVMEの発熱問題対策にはx16 slot使うボードを使うのが良いようなのだがslotが足りず断念。結果m2が余ってるのが悔しい。次はそこも注意。</p>
-
-<h2 id="電源-corsair-550w-gold">電源 Corsair 550W GOLD</h2>
-
+<h2 id="マザーボード-asustek-prime-b350m-aμatx">マザーボード ASUSTeK PRIME B350M-A【μATX<a hidden class="anchor" aria-hidden="true" href="#マザーボード-asustek-prime-b350m-aμatx">#</a></h2>
 <p>2017年5月購入</p>
-
+<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B06WRWZNJC/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/51qC1viTO9L._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B06WRWZNJC/u1tnk-22/" target="_blank" >ASUSTeK AMD B350搭載 マザーボード PRIME B350M-A【μATX】</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="https://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> Asustek 2017-03-03    </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
+<p>DDR4 4スロット、m2付いててで安心のASUSだし。ぐらいの適当な感じで選んだ。一点後悔したのはNVMEの発熱問題対策にはx16 slot使うボードを使うのが良いようなのだがslotが足りず断念。結果m2が余ってるのが悔しい。次はそこも注意。</p>
+<h2 id="電源-corsair-550w-gold">電源 Corsair 550W GOLD<a hidden class="anchor" aria-hidden="true" href="#電源-corsair-550w-gold">#</a></h2>
+<p>2017年5月購入</p>
 <div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B0190M08FA/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/51PjNk2jbTL._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B0190M08FA/u1tnk-22/" target="_blank" >Corsair RM550x 80PLUS GOLD認証取得 550W静音電源ユニット PS592 CP-9020090-JP</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="https://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> Corsair 2015-12-19    </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
-
 <p>電源も長期間使うのでこだわったがGOLD超えるとコスパが一気に悪化するのでGOLDで妥協。電源もモジュラータイプが普通になってて進歩を感じる。
 高負荷時に必要な電力×2が余裕持った電力という事で現状ギリ。参GPUやCPUもうちょっと頑張ると厳しいので650Wにしといた方が安心だった。反省。
 参考: <a href="https://chimolog.co/bto-choose-psu/">【自作PC】電源ユニットの選び方を自作経験者がガチ解説する | ちもろぐ</a></p>
-
-<h2 id="nic-インテル">NIC インテル</h2>
-
-<p>2013年1月購入
-<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B001CXWWBE/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/41UxYipp4FL._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B001CXWWBE/u1tnk-22/" target="_blank" >インテル Gigabit CT Desktop Adapter EXPI9301CT</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="https://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> インテル 2012-08-16    </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div></p>
-
+<h2 id="nic-インテル">NIC インテル<a hidden class="anchor" aria-hidden="true" href="#nic-インテル">#</a></h2>
+<p>2013年1月購入</p>
+<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B001CXWWBE/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/41UxYipp4FL._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B001CXWWBE/u1tnk-22/" target="_blank" >インテル Gigabit CT Desktop Adapter EXPI9301CT</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="https://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> インテル 2012-08-16    </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
 <p>なんかネットワーク(だったかどうか不明)が不安定だった時期があって、5年程前に勢いで購入したが、さすがにオンボードで十分と思われる。小さいし1xスロット他に用途も無いしまあ付けとくかーぐらいのノリで付け続けそうだけど。</p>
-
-<h2 id="ディスプレイ-dell-p2715q-4k">ディスプレイ DELL P2715Q 4K</h2>
-
-<p>2016年2月購入
-<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B00R420U8O/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/41l7zuoRPrL._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B00R420U8O/u1tnk-22/" target="_blank" >P2715Q ブラック[27インチ]</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="https://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> DELL(デル)     </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div></p>
-
+<h2 id="ディスプレイ-dell-p2715q-4k">ディスプレイ DELL P2715Q 4K<a hidden class="anchor" aria-hidden="true" href="#ディスプレイ-dell-p2715q-4k">#</a></h2>
+<p>2016年2月購入</p>
+<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B00R420U8O/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/41l7zuoRPrL._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B00R420U8O/u1tnk-22/" target="_blank" >P2715Q ブラック[27インチ]</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="https://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> DELL(デル)     </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
 <p>発売当初「え！？こんな価格で4K！？」となってしばらくしてディスプレイ壊れて飛びついた。
 現状でもそんなに不満あるわけじゃないけど、HDRとレイテンシは欲しい。
 通常9ms、高速6msの応答遅延がゲームにはネックではあるが今やってるイカ的には60fpsなのでスペック的には問題無さそうだ。俺が下手なのはディスプレイのせいじゃなかった… 😢
@@ -230,35 +280,25 @@
 そしてほんの3ヶ月前に実はHDMI2.0に対応していた事に気づくなど。応答遅延もだけどデフォルト良い方にしといてくれ…
 私が購入した月から対応してたから結果的に発売直後に飛びつかなくて良かった。
 広い机になったらゲーミングモニターを買い足してデュアル運用したい。</p>
-
-<h2 id="キーボード-hhkb-pro墨-無刻印">キーボード HHKB PRO墨 無刻印</h2>
-
-<p>2010年9月購入
-<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B000F8OECM/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/41E7HCZ8EZL._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B000F8OECM/u1tnk-22/" target="_blank" >PFU Happy Hacking Keyboard Professional2 墨/無刻印 英語配列 USBキーボード 静電容量無接点 UNIX配列 WINDOWS/MAC両対応 ブラック PD-KB400BN</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="https://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> PFU 2006-03-23    </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div></p>
-
+<h2 id="キーボード-hhkb-pro墨-無刻印">キーボード HHKB PRO墨 無刻印<a hidden class="anchor" aria-hidden="true" href="#キーボード-hhkb-pro墨-無刻印">#</a></h2>
+<p>2010年9月購入</p>
+<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B000F8OECM/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/41E7HCZ8EZL._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B000F8OECM/u1tnk-22/" target="_blank" >PFU Happy Hacking Keyboard Professional2 墨/無刻印 英語配列 USBキーボード 静電容量無接点 UNIX配列 WINDOWS/MAC両対応 ブラック PD-KB400BN</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="https://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> PFU 2006-03-23    </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
 <p>世は自作キーボードブームまっさかりだが、静電容量無接点の打鍵感なじみきってるんだよな… あと墨色が好き。
 壊れたらワンチャンと思うも8年3ヶ月経過して一切不調になった事が無い。壊れなさが凄い。
 もうBTモデル買ってデュアルで使ってみようかなと計画中。</p>
-
-<h2 id="トラックボール-logicool-mx-ergo">トラックボール Logicool MX ERGO</h2>
-
-<p>2018年8月 購入
-<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B074Z71C2M/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/41K9u5UAKdL._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B074Z71C2M/u1tnk-22/" target="_blank" >Logicool ロジクール MXTB1s bluetooth ワイヤレス トラックボール MX ERGO Windows,Mac対応 筋緊張20%軽減 8ボタン 高速充電式 2年間無償保証</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="https://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> ロジクール 2017-09-22    </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div></p>
-
+<h2 id="トラックボール-logicool-mx-ergo">トラックボール Logicool MX ERGO<a hidden class="anchor" aria-hidden="true" href="#トラックボール-logicool-mx-ergo">#</a></h2>
+<p>2018年8月 購入</p>
+<div class="kaerebalink-box" style="text-align:left;padding-bottom:20px;font-size:small;zoom: 1;overflow: hidden;"><div class="kaerebalink-image" style="float:left;margin:0 15px 10px 0;"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B074Z71C2M/u1tnk-22/" target="_blank" ><img src="https://images-fe.ssl-images-amazon.com/images/I/41K9u5UAKdL._SL160_.jpg" style="border: none;" /></a></div><div class="kaerebalink-info" style="line-height:120%;zoom: 1;overflow: hidden;"><div class="kaerebalink-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/exec/obidos/ASIN/B074Z71C2M/u1tnk-22/" target="_blank" >Logicool ロジクール MXTB1s bluetooth ワイヤレス トラックボール MX ERGO Windows,Mac対応 筋緊張20%軽減 8ボタン 高速充電式 2年間無償保証</a><div class="kaerebalink-powered-date" style="font-size:8pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="https://kaereba.com" rel="nofollow" target="_blank">カエレバ</a></div></div><div class="kaerebalink-detail" style="margin-bottom:5px;"> ロジクール 2017-09-22    </div><div class="kaerebalink-link1" style="margin-top:10px;"></div></div><div class="booklink-footer" style="clear: left"></div></div>
 <p>ERGOだけあって斜めになった感じがしっくり来る。自転車で言うとドロップハンドルを持つ角度で持てる。
 デカいけどマウスパッド不要で実は省スペース。マウスが勝ってるの細かい作業ぐらいだけど精密モードあるし、他全部こっちの方が良いのでまったく戻る気が無い。しかも3日ぐらいで慣れた。おすすめ。</p>
-
-<h2 id="まとめ">まとめ</h2>
-
+<h2 id="まとめ">まとめ<a hidden class="anchor" aria-hidden="true" href="#まとめ">#</a></h2>
 <p>あらためてまとめてみた結果、以前「Macやめてデスクトップなら20万もあればまったく不満無い環境作れる」と言ったが、すまん、あれはウソだ。
 とはいえ最古の部品で8年モノだし一回ごとの買いものは最高でも10万ちょいなので2〜3年ごとに30万弱使うMBPよりは経済的なのは間違い無し。
 妻子持ちでコスパの概念が捨てられないし、去年までメイン機はノートだったので大体ミドルレンジになってるけど、今は仕事のメイン機なんでもうちょっとこだわっていきたい 💪
 <a href="http://www.jisaka.com/archives/29847896.html">【リーク】AMD、Computex 2019でRyzen 3000シリーズ(Zen2)の発表をするかも : 汎用型自作PCまとめ</a>
 真偽はわからんけどRyzen3000が6月発表、夏発売という噂なので、そこらへんで改善したいところ、簡易水冷とか…</p>
-
-<h2 id="参考-cpu-z-reportの抜粋">参考:CPU-Z reportの抜粋</h2>
-
-<pre><code>CPU-Z TXT Report
+<h2 id="参考cpu-z-reportの抜粋">参考:CPU-Z reportの抜粋<a hidden class="anchor" aria-hidden="true" href="#参考cpu-z-reportの抜粋">#</a></h2>
+<pre tabindex="0"><code>CPU-Z TXT Report
 -------------------------------------------------------------------------
 
 Binaries
@@ -557,105 +597,85 @@ Display adapter 0
 	Performance Level	0
 		Core clock	860.5 MHz
 		Memory clock	4006.8 MHz
-
-
 </code></pre>
 
-        </div>
-        
-
-<footer>
-  <p class="meta">
-    <span class="byline author vcard">Posted by <span class="fn">u1tnk</span></span>
-    
-    <time>Jan 5, 2019</time>
-    
-    </span>
-  </p>
-
-  
-
-  <p class="meta">
-    
-        <a class="basic-alignment left" href="https://u1tnk.github.io/blog/2019/01/04/ryzen1700oc/" title="Ryzen1700オーバークロック、電力計測">Ryzen1700オーバークロック、電力計測</a>
-    
-
-    
-      <a class="basic-alignment right" href="https://u1tnk.github.io/blog/2019/02/04/junior_high_school_exam_cost/" title="中学受験ウチの場合の費用まとめ">中学受験ウチの場合の費用まとめ</a>
-    
-  </p>
-  
-</footer>
-
-      </article>
-    </div>
-    
-
-<aside class="sidebar thirds">
-  <section class="first odd">
-
-    
-
-    <p>
-      
-    </p>
-  </section>
-
-
-
-  
-  <ul class="sidebar-nav">
-    <li class="sidebar-nav-item">
-      
-      
-      
-      
-      
-         
-      
-      
-      
-      
-      
-      
-      
-      
-
-    
-    
-    </li>
-  </ul>
-
-  
-
-  
-
-  
-  
-  
-</aside>
-
   </div>
-</div>
 
-    <footer role="contentinfo">
-      <p>Copyright &copy; 2022 u1tnk - <a href="https://u1tnk.github.io/license/">License</a> -
-        <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
-      </p>
-    </footer>
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://u1tnk.github.io/">u1tnk.log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
 
-    
-    
-    
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
 
-    
-      <script>
-        var _gaq=[['_setAccount','UA-2532590-5'],['_trackPageview']];
-        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-        s.parentNode.insertBefore(g,s)}(document,'script'));
-      </script>
-    
-  </body>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
 </html>
-

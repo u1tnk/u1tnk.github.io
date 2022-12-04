@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[初心者向け]変数の命名、基本のキ | u1tnk.log</title>
+<meta name="keywords" content="">
+<meta name="description" content="フィヨルドブートキャンプ Part 2 Advent Calendar 2022 - Adventar の4日目の記事です。
+フィヨルドブートキャンプ | FBC (以下FBC)の提出物のレビューをするときに参考URLに使えそうな資料を自分で書こうシリーズの2年ぶり2回目となります。
+って書いていて気づきましたがAdventCalendarが3回目ということは丸二年以上メンターやってるんですね。早いなあ😲
+なにこれ？ FBCの提出物をレビューしていて、rubyの最初の方でよく変数名についての指摘をするので、右も左も分からない初心者の方に変数名の大事さ、どういう事を気をつけて欲しいかを説明します。
+注意事項 プログラミング初心者向けの記事です。 「初心者に分かりやすい」を最優先でざっくり書くので正確では無かったりしてもご容赦ください 🙏 頻出の例を書くので、生徒さんの提出物と同じ例があるかもしれませんが特定の提出物を貶す意図はありません。 前提: 変数名がなぜ大事なのか FBCで教えるプログラミングは仕事で使うものなので読みやすいプログラムにする必要があります。仕事で使う文章を分かりやすくすることと同じ。 その変数に何が入っているか？は変数名で推測できなければ処理の流れを追うしかなくてとても大変。 Rubyの作者の Matz の好きな言葉は 「名前重要」ってぐらい大事なんです。 Rubyist Hotlinks 【第 1 回】 まつもとゆきひろさん
+どんな変数名が良いのか 理想を書くと「そのプログラムを読む人全員が中身を推測でき、読みやすく書きやすい簡潔な名前であること」です。
+「書きやすい」は自分なのですぐ分かりますが、「読みやすい」は書いているときは分かるので注意しづらいです。 他の人(仕事であれば同僚、レビュワー、未来の自分)が読みやすくなるようにという視点を持つと良いです。
+指摘事例 名前と中身が違う file_content = &#34;/path/file.txt&#34; ↓
+file_path = &#34;/path/file.txt&#34; この例だとfile_contentなのでファイルの中身と思いきやファイルパスが入っているので中身が違うという事です。
+最初からすみませんがあんまり良い例では無い気はします 😓
+この問題自体は頻出ですが、違い方が幅広くて引用すると具体的になり過ぎてしまうので 🙏
+こんな事はしないって思うかもしれませんが、英語の意味を考えるとちょっと違うとか、変数名を同じパターンでつけてたけど一部のデータがちょっと意味が違う…とか気を抜くといつのまにか発生してしまうものです。
+表記ゆれ file_string = read_file(&#39;path/file.txt&#39;) formatted_text = format(file_string) ↓
+file_string = read_file(&#39;path/file.txt&#39;) formatted_string = format(file_string) ここはstringとtextと同じ意味なのに同じプログラムで複数使ってしまっているということです。
+同じプログラムで同じようなものに別の単語を使っているとそこに意図があるものかと考えてしまいます。">
+<meta name="author" content="u1tnk">
+<link rel="canonical" href="https://u1tnk.github.io/blog/2022/12/04/naming_variable/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.bc1149f4a72aa4858d3a9f71462f75e5884ffe8073ea9d6d5761d5663d651e20.css" integrity="sha256-vBFJ9KcqpIWNOp9xRi915YhP/oBz6p1tV2HVZj1lHiA=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://u1tnk.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://u1tnk.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://u1tnk.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://u1tnk.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://u1tnk.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="[初心者向け]変数の命名、基本のキ" />
+<meta property="og:description" content="フィヨルドブートキャンプ Part 2 Advent Calendar 2022 - Adventar の4日目の記事です。
+フィヨルドブートキャンプ | FBC (以下FBC)の提出物のレビューをするときに参考URLに使えそうな資料を自分で書こうシリーズの2年ぶり2回目となります。
+って書いていて気づきましたがAdventCalendarが3回目ということは丸二年以上メンターやってるんですね。早いなあ😲
+なにこれ？ FBCの提出物をレビューしていて、rubyの最初の方でよく変数名についての指摘をするので、右も左も分からない初心者の方に変数名の大事さ、どういう事を気をつけて欲しいかを説明します。
+注意事項 プログラミング初心者向けの記事です。 「初心者に分かりやすい」を最優先でざっくり書くので正確では無かったりしてもご容赦ください 🙏 頻出の例を書くので、生徒さんの提出物と同じ例があるかもしれませんが特定の提出物を貶す意図はありません。 前提: 変数名がなぜ大事なのか FBCで教えるプログラミングは仕事で使うものなので読みやすいプログラムにする必要があります。仕事で使う文章を分かりやすくすることと同じ。 その変数に何が入っているか？は変数名で推測できなければ処理の流れを追うしかなくてとても大変。 Rubyの作者の Matz の好きな言葉は 「名前重要」ってぐらい大事なんです。 Rubyist Hotlinks 【第 1 回】 まつもとゆきひろさん
+どんな変数名が良いのか 理想を書くと「そのプログラムを読む人全員が中身を推測でき、読みやすく書きやすい簡潔な名前であること」です。
+「書きやすい」は自分なのですぐ分かりますが、「読みやすい」は書いているときは分かるので注意しづらいです。 他の人(仕事であれば同僚、レビュワー、未来の自分)が読みやすくなるようにという視点を持つと良いです。
+指摘事例 名前と中身が違う file_content = &#34;/path/file.txt&#34; ↓
+file_path = &#34;/path/file.txt&#34; この例だとfile_contentなのでファイルの中身と思いきやファイルパスが入っているので中身が違うという事です。
+最初からすみませんがあんまり良い例では無い気はします 😓
+この問題自体は頻出ですが、違い方が幅広くて引用すると具体的になり過ぎてしまうので 🙏
+こんな事はしないって思うかもしれませんが、英語の意味を考えるとちょっと違うとか、変数名を同じパターンでつけてたけど一部のデータがちょっと意味が違う…とか気を抜くといつのまにか発生してしまうものです。
+表記ゆれ file_string = read_file(&#39;path/file.txt&#39;) formatted_text = format(file_string) ↓
+file_string = read_file(&#39;path/file.txt&#39;) formatted_string = format(file_string) ここはstringとtextと同じ意味なのに同じプログラムで複数使ってしまっているということです。
+同じプログラムで同じようなものに別の単語を使っているとそこに意図があるものかと考えてしまいます。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://u1tnk.github.io/blog/2022/12/04/naming_variable/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-12-04T15:52:17+09:00" />
+<meta property="article:modified_time" content="2022-12-04T15:52:17+09:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[初心者向け]変数の命名、基本のキ"/>
+<meta name="twitter:description" content="フィヨルドブートキャンプ Part 2 Advent Calendar 2022 - Adventar の4日目の記事です。
+フィヨルドブートキャンプ | FBC (以下FBC)の提出物のレビューをするときに参考URLに使えそうな資料を自分で書こうシリーズの2年ぶり2回目となります。
+って書いていて気づきましたがAdventCalendarが3回目ということは丸二年以上メンターやってるんですね。早いなあ😲
+なにこれ？ FBCの提出物をレビューしていて、rubyの最初の方でよく変数名についての指摘をするので、右も左も分からない初心者の方に変数名の大事さ、どういう事を気をつけて欲しいかを説明します。
+注意事項 プログラミング初心者向けの記事です。 「初心者に分かりやすい」を最優先でざっくり書くので正確では無かったりしてもご容赦ください 🙏 頻出の例を書くので、生徒さんの提出物と同じ例があるかもしれませんが特定の提出物を貶す意図はありません。 前提: 変数名がなぜ大事なのか FBCで教えるプログラミングは仕事で使うものなので読みやすいプログラムにする必要があります。仕事で使う文章を分かりやすくすることと同じ。 その変数に何が入っているか？は変数名で推測できなければ処理の流れを追うしかなくてとても大変。 Rubyの作者の Matz の好きな言葉は 「名前重要」ってぐらい大事なんです。 Rubyist Hotlinks 【第 1 回】 まつもとゆきひろさん
+どんな変数名が良いのか 理想を書くと「そのプログラムを読む人全員が中身を推測でき、読みやすく書きやすい簡潔な名前であること」です。
+「書きやすい」は自分なのですぐ分かりますが、「読みやすい」は書いているときは分かるので注意しづらいです。 他の人(仕事であれば同僚、レビュワー、未来の自分)が読みやすくなるようにという視点を持つと良いです。
+指摘事例 名前と中身が違う file_content = &#34;/path/file.txt&#34; ↓
+file_path = &#34;/path/file.txt&#34; この例だとfile_contentなのでファイルの中身と思いきやファイルパスが入っているので中身が違うという事です。
+最初からすみませんがあんまり良い例では無い気はします 😓
+この問題自体は頻出ですが、違い方が幅広くて引用すると具体的になり過ぎてしまうので 🙏
+こんな事はしないって思うかもしれませんが、英語の意味を考えるとちょっと違うとか、変数名を同じパターンでつけてたけど一部のデータがちょっと意味が違う…とか気を抜くといつのまにか発生してしまうものです。
+表記ゆれ file_string = read_file(&#39;path/file.txt&#39;) formatted_text = format(file_string) ↓
+file_string = read_file(&#39;path/file.txt&#39;) formatted_string = format(file_string) ここはstringとtextと同じ意味なのに同じプログラムで複数使ってしまっているということです。
+同じプログラムで同じようなものに別の単語を使っているとそこに意図があるものかと考えてしまいます。"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://u1tnk.github.io/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[初心者向け]変数の命名、基本のキ",
+      "item": "https://u1tnk.github.io/blog/2022/12/04/naming_variable/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[初心者向け]変数の命名、基本のキ",
+  "name": "[初心者向け]変数の命名、基本のキ",
+  "description": "フィヨルドブートキャンプ Part 2 Advent Calendar 2022 - Adventar の4日目の記事です。\nフィヨルドブートキャンプ | FBC (以下FBC)の提出物のレビューをするときに参考URLに使えそうな資料を自分で書こうシリーズの2年ぶり2回目となります。\nって書いていて気づきましたがAdventCalendarが3回目ということは丸二年以上メンターやってるんですね。早いなあ😲\nなにこれ？ FBCの提出物をレビューしていて、rubyの最初の方でよく変数名についての指摘をするので、右も左も分からない初心者の方に変数名の大事さ、どういう事を気をつけて欲しいかを説明します。\n注意事項 プログラミング初心者向けの記事です。 「初心者に分かりやすい」を最優先でざっくり書くので正確では無かったりしてもご容赦ください 🙏 頻出の例を書くので、生徒さんの提出物と同じ例があるかもしれませんが特定の提出物を貶す意図はありません。 前提: 変数名がなぜ大事なのか FBCで教えるプログラミングは仕事で使うものなので読みやすいプログラムにする必要があります。仕事で使う文章を分かりやすくすることと同じ。 その変数に何が入っているか？は変数名で推測できなければ処理の流れを追うしかなくてとても大変。 Rubyの作者の Matz の好きな言葉は 「名前重要」ってぐらい大事なんです。 Rubyist Hotlinks 【第 1 回】 まつもとゆきひろさん\nどんな変数名が良いのか 理想を書くと「そのプログラムを読む人全員が中身を推測でき、読みやすく書きやすい簡潔な名前であること」です。\n「書きやすい」は自分なのですぐ分かりますが、「読みやすい」は書いているときは分かるので注意しづらいです。 他の人(仕事であれば同僚、レビュワー、未来の自分)が読みやすくなるようにという視点を持つと良いです。\n指摘事例 名前と中身が違う file_content = \u0026#34;/path/file.txt\u0026#34; ↓\nfile_path = \u0026#34;/path/file.txt\u0026#34; この例だとfile_contentなのでファイルの中身と思いきやファイルパスが入っているので中身が違うという事です。\n最初からすみませんがあんまり良い例では無い気はします 😓\nこの問題自体は頻出ですが、違い方が幅広くて引用すると具体的になり過ぎてしまうので 🙏\nこんな事はしないって思うかもしれませんが、英語の意味を考えるとちょっと違うとか、変数名を同じパターンでつけてたけど一部のデータがちょっと意味が違う…とか気を抜くといつのまにか発生してしまうものです。\n表記ゆれ file_string = read_file(\u0026#39;path/file.txt\u0026#39;) formatted_text = format(file_string) ↓\nfile_string = read_file(\u0026#39;path/file.txt\u0026#39;) formatted_string = format(file_string) ここはstringとtextと同じ意味なのに同じプログラムで複数使ってしまっているということです。\n同じプログラムで同じようなものに別の単語を使っているとそこに意図があるものかと考えてしまいます。",
+  "keywords": [
+    
+  ],
+  "articleBody": "フィヨルドブートキャンプ Part 2 Advent Calendar 2022 - Adventar の4日目の記事です。\nフィヨルドブートキャンプ | FBC (以下FBC)の提出物のレビューをするときに参考URLに使えそうな資料を自分で書こうシリーズの2年ぶり2回目となります。\nって書いていて気づきましたがAdventCalendarが3回目ということは丸二年以上メンターやってるんですね。早いなあ😲\nなにこれ？ FBCの提出物をレビューしていて、rubyの最初の方でよく変数名についての指摘をするので、右も左も分からない初心者の方に変数名の大事さ、どういう事を気をつけて欲しいかを説明します。\n注意事項 プログラミング初心者向けの記事です。 「初心者に分かりやすい」を最優先でざっくり書くので正確では無かったりしてもご容赦ください 🙏 頻出の例を書くので、生徒さんの提出物と同じ例があるかもしれませんが特定の提出物を貶す意図はありません。 前提: 変数名がなぜ大事なのか FBCで教えるプログラミングは仕事で使うものなので読みやすいプログラムにする必要があります。仕事で使う文章を分かりやすくすることと同じ。 その変数に何が入っているか？は変数名で推測できなければ処理の流れを追うしかなくてとても大変。 Rubyの作者の Matz の好きな言葉は 「名前重要」ってぐらい大事なんです。 Rubyist Hotlinks 【第 1 回】 まつもとゆきひろさん\nどんな変数名が良いのか 理想を書くと「そのプログラムを読む人全員が中身を推測でき、読みやすく書きやすい簡潔な名前であること」です。\n「書きやすい」は自分なのですぐ分かりますが、「読みやすい」は書いているときは分かるので注意しづらいです。 他の人(仕事であれば同僚、レビュワー、未来の自分)が読みやすくなるようにという視点を持つと良いです。\n指摘事例 名前と中身が違う file_content = \"/path/file.txt\" ↓\nfile_path = \"/path/file.txt\" この例だとfile_contentなのでファイルの中身と思いきやファイルパスが入っているので中身が違うという事です。\n最初からすみませんがあんまり良い例では無い気はします 😓\nこの問題自体は頻出ですが、違い方が幅広くて引用すると具体的になり過ぎてしまうので 🙏\nこんな事はしないって思うかもしれませんが、英語の意味を考えるとちょっと違うとか、変数名を同じパターンでつけてたけど一部のデータがちょっと意味が違う…とか気を抜くといつのまにか発生してしまうものです。\n表記ゆれ file_string = read_file('path/file.txt') formatted_text = format(file_string) ↓\nfile_string = read_file('path/file.txt') formatted_string = format(file_string) ここはstringとtextと同じ意味なのに同じプログラムで複数使ってしまっているということです。\n同じプログラムで同じようなものに別の単語を使っているとそこに意図があるものかと考えてしまいます。\n例えばstring/textが使い分けられていると、「もしかしてtextを使っているところはstringよりも長い文字列が入っているので区別してるのかな？」と考えてしまったりします。\n大規模になると厳しくなってきますが、一つのプログラムでは同じ概念は同じ単語を使うようにしましょう。\n抽象的過ぎる単語を使う(info/dataなど) file_info = read_file_info('path/file.txt') row_data = count(text) ↓\nfile_attributes = read_file_attributes('path/file.txt') row_count = count(text) ほぼinfo/dataの事ですが、変数は全て情報だしデータなので、大体のパターンはinfo/dataを消しても大差ないです。まずは消してみましょう。\nもちろん情報量がゼロでは無いのでfile_infoだと「ファイルの本文以外の情報」が入っているのでinfoをつけたというケースはあって、意味はあります。\nその場合はfile_attributes/file_metadataなど(row_dataの方ならrow_count)もっと具体的な単語が使えるので言い替えを考えてみましょう。\n省略し過ぎ、慣習に無い省略 ざっくり言うと「省略した方が読みやすく、分かりやすい事もあるが、慣習や事例を色々見ないとうまく省略するのは難しいので初心者のうちは省略しないようにした方が良いよ」という事です。\nここについては以下にいつも使わせてもらっているFBCメンターの @jnchito さんの良いまとめがあるので見て欲しいです。 プログラミング初心者は変数名やメソッド名を略さない方がいいよ、という話 - give IT a try\n長過ぎ file_contents_with_file_attributes_from_arguments ↓\nfile まあこれは見ればわかると思います。これが一回ならともかく何度も出てくると読むのも書くのもキツいですね 😓\nこれはケースによりますが中身と属性情報両方あってfileなので file_contents_with_file_attributes → file、from_argumentsという情報はこの変数を利用するときに重要じゃなければカットするとかですね。\n単語を言い替えたり概念をまとめたり比較的重要では無い情報をカットするなどして短くしてみてください。\n前項の省略とのバランスが難しいのですが、優先順位として「意味の分からない短い名前」よりは「長過ぎるけど意味は分かる」方が良いので困ったらこちらを妥協した方が良いです。\nxxx_list/xxx_array file_list = [file1, file2] new_user_array = [User.new, User.new] ↓\nfiles = [file1, file2] new_users = [User.new, User.new] これは慣習の問題で、他と比べて具体的になってしまいますが、本当によく見るので掲載。 他言語では違うこともありますが、Ruby(少なくともRails界隈は確実に)配列を表現するときに複数形を使います。 個人的にも_list/_arrayよりも複数形の方がシンプルになるので好きです。(デメリットは複数形が無い単語を避ける必要があるところ)\nまた、ちょっと高度な話ですが、例えばusersという変数名でUserクラスが存在すればUserクラスのインスタンスの配列である事を期待するという事も覚えておいて欲しいです。\nまとめ 事例集なので配列の例ぐらいしか書けませんでしたが、慣習は大事です。「よく見る名前を使ったよく見るパターンのよく見るプログラム」が一番分かりやすいので。\nたくさんプログラムを読むのが大事ですが、最初は良いコードが何かわからないと思うので、技術書のサンプルコードを読むときに命名についても意識してもらえば参考になるかなあと思います。\n名前付けについてもっと知りたい！という方におすすめは雑誌の一特集ですが、以下の雑誌の特集「名前付け大全」をオススメしています。\nWEB+DB PRESS Vol.110｜技術評論社\nリーダブルコードとかの名著で命名に関連するものもありますが、この記事は一時間もあれば読めるのにすごく良くまとまっているのでイチオシです。 有料ですが興味あれば是非。\nより良い命名への道は遠いです。\nというか10年プログラム書いてても迷う事はよくあるので一緒により良い命名ができるよう精進していきましょう 💪\n明日は いっしー さんの 「就職して1ヶ月経過したお気持ち系記事」です。楽しみですね 😄\n",
+  "wordCount" : "151",
+  "inLanguage": "en",
+  "datePublished": "2022-12-04T15:52:17+09:00",
+  "dateModified": "2022-12-04T15:52:17+09:00",
+  "author":{
+    "@type": "Person",
+    "name": "u1tnk"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://u1tnk.github.io/blog/2022/12/04/naming_variable/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "u1tnk.log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://u1tnk.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://u1tnk.github.io/" accesskey="h" title="u1tnk.log (Alt + H)">u1tnk.log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://u1tnk.github.io/" title="posts">
+                    <span>posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://u1tnk.github.io/about" title="about">
+                    <span>about</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://u1tnk.github.io/atom.xml" title="rss">
+                    <span>rss</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      [初心者向け]変数の命名、基本のキ
+    </h1>
+    <div class="post-meta"><span title='2022-12-04 15:52:17 +0900 JST'>2022/12/04</span>&nbsp;·&nbsp;u1tnk
+
+</div>
+  </header> 
+  <div class="post-content"><p><a href="https://adventar.org/calendars/7786">フィヨルドブートキャンプ Part 2 Advent Calendar 2022 - Adventar</a> の4日目の記事です。</p>
+<p><a href="https://bootcamp.fjord.jp/">フィヨルドブートキャンプ | FBC</a> (以下FBC)の提出物のレビューをするときに参考URLに使えそうな資料を自分で書こうシリーズの2年ぶり2回目となります。</p>
+<p>って書いていて気づきましたがAdventCalendarが3回目ということは丸二年以上メンターやってるんですね。早いなあ😲</p>
+<h2 id="なにこれ">なにこれ？<a hidden class="anchor" aria-hidden="true" href="#なにこれ">#</a></h2>
+<p>FBCの提出物をレビューしていて、rubyの最初の方でよく変数名についての指摘をするので、右も左も分からない初心者の方に変数名の大事さ、どういう事を気をつけて欲しいかを説明します。</p>
+<h3 id="注意事項">注意事項<a hidden class="anchor" aria-hidden="true" href="#注意事項">#</a></h3>
+<ul>
+<li>プログラミング初心者向けの記事です。</li>
+<li>「初心者に分かりやすい」を最優先でざっくり書くので正確では無かったりしてもご容赦ください 🙏</li>
+<li>頻出の例を書くので、生徒さんの提出物と同じ例があるかもしれませんが特定の提出物を貶す意図はありません。</li>
+</ul>
+<h2 id="前提-変数名がなぜ大事なのか">前提: 変数名がなぜ大事なのか<a hidden class="anchor" aria-hidden="true" href="#前提-変数名がなぜ大事なのか">#</a></h2>
+<ul>
+<li>FBCで教えるプログラミングは仕事で使うものなので読みやすいプログラムにする必要があります。仕事で使う文章を分かりやすくすることと同じ。</li>
+<li>その変数に何が入っているか？は変数名で推測できなければ処理の流れを追うしかなくてとても大変。</li>
+</ul>
+<p>Rubyの作者の Matz の好きな言葉は 「名前重要」ってぐらい大事なんです。
+<a href="https://magazine.rubyist.net/articles/0001/0001-Hotlinks.html">Rubyist Hotlinks 【第 1 回】 まつもとゆきひろさん</a></p>
+<h2 id="どんな変数名が良いのか">どんな変数名が良いのか<a hidden class="anchor" aria-hidden="true" href="#どんな変数名が良いのか">#</a></h2>
+<p>理想を書くと「そのプログラムを読む人全員が中身を推測でき、読みやすく書きやすい簡潔な名前であること」です。</p>
+<p>「書きやすい」は自分なのですぐ分かりますが、「読みやすい」は書いているときは分かるので注意しづらいです。
+他の人(仕事であれば同僚、レビュワー、未来の自分)が読みやすくなるようにという視点を持つと良いです。</p>
+<h2 id="指摘事例">指摘事例<a hidden class="anchor" aria-hidden="true" href="#指摘事例">#</a></h2>
+<h3 id="名前と中身が違う">名前と中身が違う<a hidden class="anchor" aria-hidden="true" href="#名前と中身が違う">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>file_content <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/path/file.txt&#34;</span>
+</span></span></code></pre></div><p>↓</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>file_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/path/file.txt&#34;</span>
+</span></span></code></pre></div><p>この例だと<code>file_content</code>なのでファイルの中身と思いきやファイルパスが入っているので中身が違うという事です。</p>
+<p>最初からすみませんがあんまり良い例では無い気はします 😓</p>
+<p>この問題自体は頻出ですが、違い方が幅広くて引用すると具体的になり過ぎてしまうので 🙏</p>
+<p>こんな事はしないって思うかもしれませんが、英語の意味を考えるとちょっと違うとか、変数名を同じパターンでつけてたけど一部のデータがちょっと意味が違う…とか気を抜くといつのまにか発生してしまうものです。</p>
+<h3 id="表記ゆれ">表記ゆれ<a hidden class="anchor" aria-hidden="true" href="#表記ゆれ">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>file_string <span style="color:#f92672">=</span> read_file(<span style="color:#e6db74">&#39;path/file.txt&#39;</span>)
+</span></span><span style="display:flex;"><span>formatted_text <span style="color:#f92672">=</span> format(file_string)
+</span></span></code></pre></div><p>↓</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>file_string <span style="color:#f92672">=</span> read_file(<span style="color:#e6db74">&#39;path/file.txt&#39;</span>)
+</span></span><span style="display:flex;"><span>formatted_string <span style="color:#f92672">=</span> format(file_string)
+</span></span></code></pre></div><p>ここはstringとtextと同じ意味なのに同じプログラムで複数使ってしまっているということです。</p>
+<p>同じプログラムで同じようなものに別の単語を使っているとそこに意図があるものかと考えてしまいます。</p>
+<p>例えばstring/textが使い分けられていると、「もしかしてtextを使っているところはstringよりも長い文字列が入っているので区別してるのかな？」と考えてしまったりします。</p>
+<p>大規模になると厳しくなってきますが、一つのプログラムでは同じ概念は同じ単語を使うようにしましょう。</p>
+<h3 id="抽象的過ぎる単語を使うinfodataなど">抽象的過ぎる単語を使う(info/dataなど)<a hidden class="anchor" aria-hidden="true" href="#抽象的過ぎる単語を使うinfodataなど">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>file_info <span style="color:#f92672">=</span> read_file_info(<span style="color:#e6db74">&#39;path/file.txt&#39;</span>)
+</span></span><span style="display:flex;"><span>row_data <span style="color:#f92672">=</span> count(text)
+</span></span></code></pre></div><p>↓</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>file_attributes <span style="color:#f92672">=</span> read_file_attributes(<span style="color:#e6db74">&#39;path/file.txt&#39;</span>)
+</span></span><span style="display:flex;"><span>row_count <span style="color:#f92672">=</span> count(text)
+</span></span></code></pre></div><p>ほぼinfo/dataの事ですが、変数は全て情報だしデータなので、大体のパターンはinfo/dataを消しても大差ないです。まずは消してみましょう。</p>
+<p>もちろん情報量がゼロでは無いので<code>file_info</code>だと「ファイルの本文以外の情報」が入っているのでinfoをつけたというケースはあって、意味はあります。</p>
+<p>その場合は<code>file_attributes</code>/<code>file_metadata</code>など(<code>row_data</code>の方なら<code>row_count</code>)もっと具体的な単語が使えるので言い替えを考えてみましょう。</p>
+<h3 id="省略し過ぎ慣習に無い省略">省略し過ぎ、慣習に無い省略<a hidden class="anchor" aria-hidden="true" href="#省略し過ぎ慣習に無い省略">#</a></h3>
+<p>ざっくり言うと「省略した方が読みやすく、分かりやすい事もあるが、慣習や事例を色々見ないとうまく省略するのは難しいので初心者のうちは省略しないようにした方が良いよ」という事です。</p>
+<p>ここについては以下にいつも使わせてもらっているFBCメンターの <a href="https://twitter.com/jnchito">@jnchito</a> さんの良いまとめがあるので見て欲しいです。
+<a href="https://blog.jnito.com/entry/2020/10/20/092724">プログラミング初心者は変数名やメソッド名を略さない方がいいよ、という話 - give IT a try</a></p>
+<h3 id="長過ぎ">長過ぎ<a hidden class="anchor" aria-hidden="true" href="#長過ぎ">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>file_contents_with_file_attributes_from_arguments
+</span></span></code></pre></div><p>↓</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>file
+</span></span></code></pre></div><p>まあこれは見ればわかると思います。これが一回ならともかく何度も出てくると読むのも書くのもキツいですね 😓</p>
+<p>これはケースによりますが中身と属性情報両方あってfileなので <code>file_contents_with_file_attributes</code> →  <code>file</code>、<code>from_arguments</code>という情報はこの変数を利用するときに重要じゃなければカットするとかですね。</p>
+<p>単語を言い替えたり概念をまとめたり比較的重要では無い情報をカットするなどして短くしてみてください。</p>
+<p>前項の省略とのバランスが難しいのですが、優先順位として「意味の分からない短い名前」よりは「長過ぎるけど意味は分かる」方が良いので困ったらこちらを妥協した方が良いです。</p>
+<h3 id="xxx_listxxx_array">xxx_list/xxx_array<a hidden class="anchor" aria-hidden="true" href="#xxx_listxxx_array">#</a></h3>
+<pre tabindex="0"><code>file_list = [file1, file2]
+new_user_array = [User.new, User.new]
+</code></pre><p>↓</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>files <span style="color:#f92672">=</span> <span style="color:#f92672">[</span>file1, file2<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>new_users <span style="color:#f92672">=</span> <span style="color:#f92672">[</span><span style="color:#66d9ef">User</span><span style="color:#f92672">.</span>new, <span style="color:#66d9ef">User</span><span style="color:#f92672">.</span>new<span style="color:#f92672">]</span>
+</span></span></code></pre></div><p>これは慣習の問題で、他と比べて具体的になってしまいますが、本当によく見るので掲載。
+他言語では違うこともありますが、Ruby(少なくともRails界隈は確実に)配列を表現するときに複数形を使います。
+個人的にも<code>_list</code>/<code>_array</code>よりも複数形の方がシンプルになるので好きです。(デメリットは複数形が無い単語を避ける必要があるところ)</p>
+<p>また、ちょっと高度な話ですが、例えば<code>users</code>という変数名でUserクラスが存在すればUserクラスのインスタンスの配列である事を期待するという事も覚えておいて欲しいです。</p>
+<h2 id="まとめ">まとめ<a hidden class="anchor" aria-hidden="true" href="#まとめ">#</a></h2>
+<p>事例集なので配列の例ぐらいしか書けませんでしたが、慣習は大事です。「よく見る名前を使ったよく見るパターンのよく見るプログラム」が一番分かりやすいので。</p>
+<p>たくさんプログラムを読むのが大事ですが、最初は良いコードが何かわからないと思うので、技術書のサンプルコードを読むときに命名についても意識してもらえば参考になるかなあと思います。</p>
+<p>名前付けについてもっと知りたい！という方におすすめは雑誌の一特集ですが、以下の雑誌の特集「名前付け大全」をオススメしています。</p>
+<p><a href="https://gihyo.jp/magazine/wdpress/archive/2019/vol110">WEB+DB PRESS Vol.110｜技術評論社</a></p>
+<p>リーダブルコードとかの名著で命名に関連するものもありますが、この記事は一時間もあれば読めるのにすごく良くまとまっているのでイチオシです。 有料ですが興味あれば是非。</p>
+<p>より良い命名への道は遠いです。</p>
+<p>というか10年プログラム書いてても迷う事はよくあるので一緒により良い命名ができるよう精進していきましょう 💪</p>
+<p>明日は いっしー さんの 「就職して1ヶ月経過したお気持ち系記事」です。楽しみですね 😄</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://u1tnk.github.io/">u1tnk.log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

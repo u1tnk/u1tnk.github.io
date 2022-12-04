@@ -1,274 +1,321 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<html lang="en" dir="auto">
 
-  
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
-  <meta name="google-site-verification" content="Y9uGA9O73sv0k2GEuyVrCdITKeDD-VHTqab7KUM0olc" />
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>WSL2でvim/tmuxでクリップボード共有できるようにする | u1tnk.log</title>
+<meta name="keywords" content="">
+<meta name="description" content="概要 vim、tmux、windws側のcopy/pasteを全て連携させる。 WSL2移行前に使っていたVIrtualBox環境からの移行で、結局の所ssh&#43;x転送をやめた結果 xselが使えなくなったのでwindowsのexeを直接叩けばOKだった…というだけ。
+windows側のクリップボードを双方向で使えるアプリをインストール https://github.com/equalsraf/win32yank を利用。
+windowsにデフォルトに入っている clipboard.exe はクリップボードへの書き込みはできるが、逆はできず。 逆は https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.management/get-clipboard?view=powershell-5.1 で可能なようだがWSL側から動かす方向が分からなかったので手軽なコレを採用した。 インストールしてWSL側のPATHに入れておく。
+tmux 以下設定は vim形式のキーバインド前提となっている。
+tmux.conf
+bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel &#34;win32yank.exe -i&#34; bind p run-shell &#39;win32yank.exe -o | xargs -0 -I{} tmux set-buffer -- {} &amp;&amp; tmux paste-buffer&#39; vim tmuxとは関係なくコレだけで共有できる。WSL便利というか不思議というか。 vimをclipboard利用できるようにビルドする必要はあるが、情報はいくらでもあるので割愛。 個人的にはneovimを使っているので最初から使えた。
+set clipboard&amp; set clipboard^=unnamedplus 所感 まとめてみると記事にまとめる意味あんのかコレ。というレベルの内容になったが、WSL2の情報は少なくて、当初うまく動かないときにXServer入れないとvimからクリップボード使えないのでは？とか標準だから clipboard.exeとか使ってハマったりしたので、たったこんだけでできるよ！という事で。
+当初これのやり方が分からず、WSL2でもsshサーバ起動してRLoginからsshしていたりしていたが、XServerの不調とかにコピペ失敗して気づいてXServer再起動したり、ひどいときにはXServer再起動に失敗してwindows再起動したり… 😭 などのイライラ一切無く、超安定 するようになっている。満足。">
+<meta name="author" content="u1tnk">
+<link rel="canonical" href="https://u1tnk.github.io/blog/2021/06/28/wsl2_clipboard_config/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.bc1149f4a72aa4858d3a9f71462f75e5884ffe8073ea9d6d5761d5663d651e20.css" integrity="sha256-vBFJ9KcqpIWNOp9xRi915YhP/oBz6p1tV2HVZj1lHiA=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://u1tnk.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://u1tnk.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://u1tnk.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://u1tnk.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://u1tnk.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
 
-  
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="WSL2でvim/tmuxでクリップボード共有できるようにする" />
+<meta property="og:description" content="概要 vim、tmux、windws側のcopy/pasteを全て連携させる。 WSL2移行前に使っていたVIrtualBox環境からの移行で、結局の所ssh&#43;x転送をやめた結果 xselが使えなくなったのでwindowsのexeを直接叩けばOKだった…というだけ。
+windows側のクリップボードを双方向で使えるアプリをインストール https://github.com/equalsraf/win32yank を利用。
+windowsにデフォルトに入っている clipboard.exe はクリップボードへの書き込みはできるが、逆はできず。 逆は https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.management/get-clipboard?view=powershell-5.1 で可能なようだがWSL側から動かす方向が分からなかったので手軽なコレを採用した。 インストールしてWSL側のPATHに入れておく。
+tmux 以下設定は vim形式のキーバインド前提となっている。
+tmux.conf
+bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel &#34;win32yank.exe -i&#34; bind p run-shell &#39;win32yank.exe -o | xargs -0 -I{} tmux set-buffer -- {} &amp;&amp; tmux paste-buffer&#39; vim tmuxとは関係なくコレだけで共有できる。WSL便利というか不思議というか。 vimをclipboard利用できるようにビルドする必要はあるが、情報はいくらでもあるので割愛。 個人的にはneovimを使っているので最初から使えた。
+set clipboard&amp; set clipboard^=unnamedplus 所感 まとめてみると記事にまとめる意味あんのかコレ。というレベルの内容になったが、WSL2の情報は少なくて、当初うまく動かないときにXServer入れないとvimからクリップボード使えないのでは？とか標準だから clipboard.exeとか使ってハマったりしたので、たったこんだけでできるよ！という事で。
+当初これのやり方が分からず、WSL2でもsshサーバ起動してRLoginからsshしていたりしていたが、XServerの不調とかにコピペ失敗して気づいてXServer再起動したり、ひどいときにはXServer再起動に失敗してwindows再起動したり… 😭 などのイライラ一切無く、超安定 するようになっている。満足。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://u1tnk.github.io/blog/2021/06/28/wsl2_clipboard_config/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-06-28T15:26:11+09:00" />
+<meta property="article:modified_time" content="2021-06-28T15:26:11+09:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="WSL2でvim/tmuxでクリップボード共有できるようにする"/>
+<meta name="twitter:description" content="概要 vim、tmux、windws側のcopy/pasteを全て連携させる。 WSL2移行前に使っていたVIrtualBox環境からの移行で、結局の所ssh&#43;x転送をやめた結果 xselが使えなくなったのでwindowsのexeを直接叩けばOKだった…というだけ。
+windows側のクリップボードを双方向で使えるアプリをインストール https://github.com/equalsraf/win32yank を利用。
+windowsにデフォルトに入っている clipboard.exe はクリップボードへの書き込みはできるが、逆はできず。 逆は https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.management/get-clipboard?view=powershell-5.1 で可能なようだがWSL側から動かす方向が分からなかったので手軽なコレを採用した。 インストールしてWSL側のPATHに入れておく。
+tmux 以下設定は vim形式のキーバインド前提となっている。
+tmux.conf
+bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel &#34;win32yank.exe -i&#34; bind p run-shell &#39;win32yank.exe -o | xargs -0 -I{} tmux set-buffer -- {} &amp;&amp; tmux paste-buffer&#39; vim tmuxとは関係なくコレだけで共有できる。WSL便利というか不思議というか。 vimをclipboard利用できるようにビルドする必要はあるが、情報はいくらでもあるので割愛。 個人的にはneovimを使っているので最初から使えた。
+set clipboard&amp; set clipboard^=unnamedplus 所感 まとめてみると記事にまとめる意味あんのかコレ。というレベルの内容になったが、WSL2の情報は少なくて、当初うまく動かないときにXServer入れないとvimからクリップボード使えないのでは？とか標準だから clipboard.exeとか使ってハマったりしたので、たったこんだけでできるよ！という事で。
+当初これのやり方が分からず、WSL2でもsshサーバ起動してRLoginからsshしていたりしていたが、XServerの不調とかにコピペ失敗して気づいてXServer再起動したり、ひどいときにはXServer再起動に失敗してwindows再起動したり… 😭 などのイライラ一切無く、超安定 するようになっている。満足。"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://u1tnk.github.io/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "WSL2でvim/tmuxでクリップボード共有できるようにする",
+      "item": "https://u1tnk.github.io/blog/2021/06/28/wsl2_clipboard_config/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "WSL2でvim/tmuxでクリップボード共有できるようにする",
+  "name": "WSL2でvim\/tmuxでクリップボード共有できるようにする",
+  "description": "概要 vim、tmux、windws側のcopy/pasteを全て連携させる。 WSL2移行前に使っていたVIrtualBox環境からの移行で、結局の所ssh+x転送をやめた結果 xselが使えなくなったのでwindowsのexeを直接叩けばOKだった…というだけ。\nwindows側のクリップボードを双方向で使えるアプリをインストール https://github.com/equalsraf/win32yank を利用。\nwindowsにデフォルトに入っている clipboard.exe はクリップボードへの書き込みはできるが、逆はできず。 逆は https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.management/get-clipboard?view=powershell-5.1 で可能なようだがWSL側から動かす方向が分からなかったので手軽なコレを採用した。 インストールしてWSL側のPATHに入れておく。\ntmux 以下設定は vim形式のキーバインド前提となっている。\ntmux.conf\nbind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel \u0026#34;win32yank.exe -i\u0026#34; bind p run-shell \u0026#39;win32yank.exe -o | xargs -0 -I{} tmux set-buffer -- {} \u0026amp;\u0026amp; tmux paste-buffer\u0026#39; vim tmuxとは関係なくコレだけで共有できる。WSL便利というか不思議というか。 vimをclipboard利用できるようにビルドする必要はあるが、情報はいくらでもあるので割愛。 個人的にはneovimを使っているので最初から使えた。\nset clipboard\u0026amp; set clipboard^=unnamedplus 所感 まとめてみると記事にまとめる意味あんのかコレ。というレベルの内容になったが、WSL2の情報は少なくて、当初うまく動かないときにXServer入れないとvimからクリップボード使えないのでは？とか標準だから clipboard.exeとか使ってハマったりしたので、たったこんだけでできるよ！という事で。\n当初これのやり方が分からず、WSL2でもsshサーバ起動してRLoginからsshしていたりしていたが、XServerの不調とかにコピペ失敗して気づいてXServer再起動したり、ひどいときにはXServer再起動に失敗してwindows再起動したり… 😭 などのイライラ一切無く、超安定 するようになっている。満足。",
+  "keywords": [
     
-    
-      <link href="/css/fonts.css" rel="stylesheet" type="text/css">
-    
-  
-
-  
-  <title>WSL2でvim/tmuxでクリップボード共有できるようにする</title>
-
-  
-  
-  <link rel="stylesheet" href="/css/hugo-octopress.css">
-
-  
-  
-    <link rel="stylesheet" href="https://u1tnk.github.io/css/custom.css">
-  
-
-  
-    <link rel="stylesheet" href="/css/fork-awesome.min.css">
-  
-
-  
-  <link href="https://u1tnk.github.io/favicon.png" rel="icon">
-
-  
-  
-
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-  <meta name="author" content="u1tnk">
-
-  
-  <meta name="generator" content="Hugo 0.40.1" />
-
-  
-  
-
-  
-  
+  ],
+  "articleBody": "概要 vim、tmux、windws側のcopy/pasteを全て連携させる。 WSL2移行前に使っていたVIrtualBox環境からの移行で、結局の所ssh+x転送をやめた結果 xselが使えなくなったのでwindowsのexeを直接叩けばOKだった…というだけ。\nwindows側のクリップボードを双方向で使えるアプリをインストール https://github.com/equalsraf/win32yank を利用。\nwindowsにデフォルトに入っている clipboard.exe はクリップボードへの書き込みはできるが、逆はできず。 逆は https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.management/get-clipboard?view=powershell-5.1 で可能なようだがWSL側から動かす方向が分からなかったので手軽なコレを採用した。 インストールしてWSL側のPATHに入れておく。\ntmux 以下設定は vim形式のキーバインド前提となっている。\ntmux.conf\nbind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel \"win32yank.exe -i\" bind p run-shell 'win32yank.exe -o | xargs -0 -I{} tmux set-buffer -- {} \u0026\u0026 tmux paste-buffer' vim tmuxとは関係なくコレだけで共有できる。WSL便利というか不思議というか。 vimをclipboard利用できるようにビルドする必要はあるが、情報はいくらでもあるので割愛。 個人的にはneovimを使っているので最初から使えた。\nset clipboard\u0026 set clipboard^=unnamedplus 所感 まとめてみると記事にまとめる意味あんのかコレ。というレベルの内容になったが、WSL2の情報は少なくて、当初うまく動かないときにXServer入れないとvimからクリップボード使えないのでは？とか標準だから clipboard.exeとか使ってハマったりしたので、たったこんだけでできるよ！という事で。\n当初これのやり方が分からず、WSL2でもsshサーバ起動してRLoginからsshしていたりしていたが、XServerの不調とかにコピペ失敗して気づいてXServer再起動したり、ひどいときにはXServer再起動に失敗してwindows再起動したり… 😭 などのイライラ一切無く、超安定 するようになっている。満足。\n",
+  "wordCount" : "58",
+  "inLanguage": "en",
+  "datePublished": "2021-06-28T15:26:11+09:00",
+  "dateModified": "2021-06-28T15:26:11+09:00",
+  "author":{
+    "@type": "Person",
+    "name": "u1tnk"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://u1tnk.github.io/blog/2021/06/28/wsl2_clipboard_config/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "u1tnk.log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://u1tnk.github.io/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
-<body>
 
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
 
-<header role="banner">
-<hgroup>
-  
-  <h1><a href="https://u1tnk.github.io/">u1tnk.log</a></h1>
-    <h2></h2>
-</hgroup></header>
+</script>
 
-
-<nav role="navigation">
-<fieldset class="mobile-nav">
-  
-  <select onchange="location = this.value;">
-    <option value="">Navigate…</option>
-      
-        <option value="https://u1tnk.github.io/">» posts</option>
-      
-        <option value="https://u1tnk.github.io/about">» about</option>
-      
-        <option value="https://u1tnk.github.io/atom.xml">» rss</option>
-      
-  </select>
-</fieldset>
-
-
-<ul class="main-navigation">
-  
-  
-    
-      <li><a href="https://u1tnk.github.io/" title="posts">posts</a></li>
-    
-  
-    
-      <li><a href="https://u1tnk.github.io/about" title="about" >about</a></li>
-    
-  
-    
-      <li><a href="https://u1tnk.github.io/atom.xml" title="rss" >rss</a></li>
-    
-  
-</ul>
-
-<ul class="subscription">
-  
-</ul>
-
-
-</nav>
-
-
-<div id="main">
-  <div id="content">
-    <div>
-      <article class="hentry" role="article">
-
-        
-        
-
-<header>
-  <p class="meta">2021/06/28
-    
-    
-
-    
-    
-      - <a class="label" href="https://u1tnk.github.io/categories/wsl2/">wsl2 </a><a class="label" href="https://u1tnk.github.io/categories/docker/">docker </a>
-    
-  </p>
-  <h1 class="entry-title">
-     WSL2でvim/tmuxでクリップボード共有できるようにする 
-  </h1>
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://u1tnk.github.io/" accesskey="h" title="u1tnk.log (Alt + H)">u1tnk.log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://u1tnk.github.io/" title="posts">
+                    <span>posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://u1tnk.github.io/about" title="about">
+                    <span>about</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://u1tnk.github.io/atom.xml" title="rss">
+                    <span>rss</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 </header>
+<main class="main">
 
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      WSL2でvim/tmuxでクリップボード共有できるようにする
+    </h1>
+    <div class="post-meta"><span title='2021-06-28 15:26:11 +0900 JST'>2021/06/28</span>&nbsp;·&nbsp;u1tnk
 
-        <div class="entry-content">
-          
-          
-          
-          
-
-<h2 id="概要">概要</h2>
-
+</div>
+  </header> 
+  <div class="post-content"><h2 id="概要">概要<a hidden class="anchor" aria-hidden="true" href="#概要">#</a></h2>
 <p>vim、tmux、windws側のcopy/pasteを全て連携させる。
 WSL2移行前に使っていたVIrtualBox環境からの移行で、結局の所ssh+x転送をやめた結果 xselが使えなくなったのでwindowsのexeを直接叩けばOKだった…というだけ。</p>
-
-<h1 id="windows側のクリップボードを双方向で使えるアプリをインストール">windows側のクリップボードを双方向で使えるアプリをインストール</h1>
-
+<h1 id="windows側のクリップボードを双方向で使えるアプリをインストール">windows側のクリップボードを双方向で使えるアプリをインストール<a hidden class="anchor" aria-hidden="true" href="#windows側のクリップボードを双方向で使えるアプリをインストール">#</a></h1>
 <p><a href="https://github.com/equalsraf/win32yank">https://github.com/equalsraf/win32yank</a>  を利用。</p>
-
 <p>windowsにデフォルトに入っている <code>clipboard.exe</code> はクリップボードへの書き込みはできるが、逆はできず。
 逆は <a href="https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.management/get-clipboard?view=powershell-5.1">https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.management/get-clipboard?view=powershell-5.1</a> で可能なようだがWSL側から動かす方向が分からなかったので手軽なコレを採用した。
 インストールしてWSL側のPATHに入れておく。</p>
-
-<h2 id="tmux">tmux</h2>
-
+<h2 id="tmux">tmux<a hidden class="anchor" aria-hidden="true" href="#tmux">#</a></h2>
 <p>以下設定は vim形式のキーバインド前提となっている。</p>
-
 <p>tmux.conf</p>
-
-<pre><code>bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel &quot;win32yank.exe -i&quot;
-bind p run-shell 'win32yank.exe -o | xargs -0 -I{} tmux set-buffer -- {} &amp;&amp; tmux paste-buffer'
-</code></pre>
-
-<h2 id="vim">vim</h2>
-
+<pre tabindex="0"><code>bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel &#34;win32yank.exe -i&#34;
+bind p run-shell &#39;win32yank.exe -o | xargs -0 -I{} tmux set-buffer -- {} &amp;&amp; tmux paste-buffer&#39;
+</code></pre><h2 id="vim">vim<a hidden class="anchor" aria-hidden="true" href="#vim">#</a></h2>
 <p>tmuxとは関係なくコレだけで共有できる。WSL便利というか不思議というか。
 vimをclipboard利用できるようにビルドする必要はあるが、情報はいくらでもあるので割愛。
 個人的にはneovimを使っているので最初から使えた。</p>
-
-<pre><code>set clipboard&amp;
+<pre tabindex="0"><code>set clipboard&amp;
 set clipboard^=unnamedplus
-</code></pre>
-
-<h2 id="所感">所感</h2>
-
+</code></pre><h2 id="所感">所感<a hidden class="anchor" aria-hidden="true" href="#所感">#</a></h2>
 <p>まとめてみると記事にまとめる意味あんのかコレ。というレベルの内容になったが、WSL2の情報は少なくて、当初うまく動かないときにXServer入れないとvimからクリップボード使えないのでは？とか標準だから clipboard.exeとか使ってハマったりしたので、たったこんだけでできるよ！という事で。</p>
-
 <p>当初これのやり方が分からず、WSL2でもsshサーバ起動してRLoginからsshしていたりしていたが、XServerの不調とかにコピペ失敗して気づいてXServer再起動したり、ひどいときにはXServer再起動に失敗してwindows再起動したり… 😭  などのイライラ一切無く、超安定
 するようになっている。満足。</p>
 
-        </div>
-        
-
-<footer>
-  <p class="meta">
-    <span class="byline author vcard">Posted by <span class="fn">u1tnk</span></span>
-    
-    <time>Jun 28, 2021</time>
-    
-    </span>
-  </p>
-
-  
-
-  <p class="meta">
-    
-        <a class="basic-alignment left" href="https://u1tnk.github.io/blog/2021/06/28/wsl2_rails_test_system_config/" title="WSL2で rails test:system を動かす為の設定">WSL2で rails test:system を動かす為の設定</a>
-    
-
-    
-      <a class="basic-alignment right" href="https://u1tnk.github.io/blog/2021/06/30/wsl2_tips/" title="WSL2でのweb開発環境構築tips">WSL2でのweb開発環境構築tips</a>
-    
-  </p>
-  
-</footer>
-
-      </article>
-    </div>
-    
-
-<aside class="sidebar thirds">
-  <section class="first odd">
-
-    
-
-    <p>
-      
-    </p>
-  </section>
-
-
-
-  
-  <ul class="sidebar-nav">
-    <li class="sidebar-nav-item">
-      
-      
-      
-      
-      
-         
-      
-      
-      
-      
-      
-      
-      
-      
-
-    
-    
-    </li>
-  </ul>
-
-  
-
-  
-
-  
-  
-  
-</aside>
 
   </div>
-</div>
 
-    <footer role="contentinfo">
-      <p>Copyright &copy; 2022 u1tnk - <a href="https://u1tnk.github.io/license/">License</a> -
-        <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
-      </p>
-    </footer>
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://u1tnk.github.io/">u1tnk.log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
 
-    
-    
-    
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
 
-    
-      <script>
-        var _gaq=[['_setAccount','UA-2532590-5'],['_trackPageview']];
-        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-        s.parentNode.insertBefore(g,s)}(document,'script'));
-      </script>
-    
-  </body>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
 </html>
-

@@ -1,158 +1,225 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<html lang="en" dir="auto">
 
-  
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
-  <meta name="google-site-verification" content="Y9uGA9O73sv0k2GEuyVrCdITKeDD-VHTqab7KUM0olc" />
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>ansible 勉強会 #1メモ | u1tnk.log</title>
+<meta name="keywords" content="">
+<meta name="description" content="Ansible 勉強会 #1 - connpass
+に行ってきたのでメモ。資料は↑にほぼあるようです。
+Ansible の基本 &#43; MySQL レプリケーションを設定する事例 by @IanMLewis まさに基本。普段使ってるので大体押さえられてた。
+MySQLを構築してみる bennojoy/ansible-roles ansibleworksの人のリポジトリらしい。参考になりそう。 when あんま使いこなしてないので見とこう。 サンプルyaml見ると、自分のyamlが使いこなして無い感ある… mysql_replicationモジュールは便利感あるが、ちょっと簡単そうに見えないw 基本の直後に見るのはキツい印象。 dynamic inventoryが便利な話: no more host list! by @tagomoris 某巨大メッセージングアプリ企業で普通に使ってるっぽい エージェントいらないからCentOS5でも動くという理由が大きいらしい。納得。 日本語情報あんま無いのが弱点は同意。っつーか俺書け。 Inventryに普通のvars定義できたという恐らくかなり基本に気づいてなかった… hoge[1:2].local → hoge1.local…とか使える。 Dyanamic Inventry存在すら気づいてなかった… ec2用のscriptは既存である。 JSON返すだけなので自作もラク。 ansible.cfg置けば -i不要という事に気づいた。 明日からマネしたい！ 2000台完走実績あるらしい。さすが某巨大メッセージングアプリ企業 おまけ DynamicInventryでは_meta使って —host はスキップさせるのがオススメ。
+callback pluginを使ったタスク実行時間の可視化について by @rudy pluginはmoduleと違ってpythonで本体を拡張。 -i “localhost, ” とかできる事に気づいて衝撃。 callback_plugins に入れるだけ。実行ホストに置けば良いのラクだな。 実用上は使わない気がするが、bot連携すると面白いかも。 AnsibleのJUNOS設定モジュールを書いてみた by @saito_hideki Ansibleでルータ設定をしているという、まったく参考にはならないが衝撃の発表。
+MSPだってansibleしたい by @LaughK MSP(運用、保守代行) 客のサーバだからに(ほとんど)何も入れなくて良いという理由。 目指せ、サーバー構築1200台 by @myb1126 採用はエージェントレスが決め手との事。 構成管理ツールAnsibleの構成管理について by @iktakahiro playbookだけディレクトリ分けるのアリかも。 「冪等性は忘れよう」w 発表されてたのは複雑な気がする…とはいえbest practiceは複数サービスになると厳しいので、考えないとまずそう。 Vagrant × Ansible by @tomohiro_urakawa inventoryはvagrantが生成すんのか。べんりー Vagrant provisionで実行 正直言うとそれでもわざわざVagrantに実行させるメリットが見えない…っつーか小さくしか見えない。 chefからansibleに乗り換えた話 by @futoase やはりchefより良いのは以下2点">
+<meta name="author" content="u1tnk">
+<link rel="canonical" href="https://u1tnk.github.io/blog/2014/06/19/ansible-study-01/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.bc1149f4a72aa4858d3a9f71462f75e5884ffe8073ea9d6d5761d5663d651e20.css" integrity="sha256-vBFJ9KcqpIWNOp9xRi915YhP/oBz6p1tV2HVZj1lHiA=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://u1tnk.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://u1tnk.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://u1tnk.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://u1tnk.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://u1tnk.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
 
-  
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="ansible 勉強会 #1メモ" />
+<meta property="og:description" content="Ansible 勉強会 #1 - connpass
+に行ってきたのでメモ。資料は↑にほぼあるようです。
+Ansible の基本 &#43; MySQL レプリケーションを設定する事例 by @IanMLewis まさに基本。普段使ってるので大体押さえられてた。
+MySQLを構築してみる bennojoy/ansible-roles ansibleworksの人のリポジトリらしい。参考になりそう。 when あんま使いこなしてないので見とこう。 サンプルyaml見ると、自分のyamlが使いこなして無い感ある… mysql_replicationモジュールは便利感あるが、ちょっと簡単そうに見えないw 基本の直後に見るのはキツい印象。 dynamic inventoryが便利な話: no more host list! by @tagomoris 某巨大メッセージングアプリ企業で普通に使ってるっぽい エージェントいらないからCentOS5でも動くという理由が大きいらしい。納得。 日本語情報あんま無いのが弱点は同意。っつーか俺書け。 Inventryに普通のvars定義できたという恐らくかなり基本に気づいてなかった… hoge[1:2].local → hoge1.local…とか使える。 Dyanamic Inventry存在すら気づいてなかった… ec2用のscriptは既存である。 JSON返すだけなので自作もラク。 ansible.cfg置けば -i不要という事に気づいた。 明日からマネしたい！ 2000台完走実績あるらしい。さすが某巨大メッセージングアプリ企業 おまけ DynamicInventryでは_meta使って —host はスキップさせるのがオススメ。
+callback pluginを使ったタスク実行時間の可視化について by @rudy pluginはmoduleと違ってpythonで本体を拡張。 -i “localhost, ” とかできる事に気づいて衝撃。 callback_plugins に入れるだけ。実行ホストに置けば良いのラクだな。 実用上は使わない気がするが、bot連携すると面白いかも。 AnsibleのJUNOS設定モジュールを書いてみた by @saito_hideki Ansibleでルータ設定をしているという、まったく参考にはならないが衝撃の発表。
+MSPだってansibleしたい by @LaughK MSP(運用、保守代行) 客のサーバだからに(ほとんど)何も入れなくて良いという理由。 目指せ、サーバー構築1200台 by @myb1126 採用はエージェントレスが決め手との事。 構成管理ツールAnsibleの構成管理について by @iktakahiro playbookだけディレクトリ分けるのアリかも。 「冪等性は忘れよう」w 発表されてたのは複雑な気がする…とはいえbest practiceは複数サービスになると厳しいので、考えないとまずそう。 Vagrant × Ansible by @tomohiro_urakawa inventoryはvagrantが生成すんのか。べんりー Vagrant provisionで実行 正直言うとそれでもわざわざVagrantに実行させるメリットが見えない…っつーか小さくしか見えない。 chefからansibleに乗り換えた話 by @futoase やはりchefより良いのは以下2点" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://u1tnk.github.io/blog/2014/06/19/ansible-study-01/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2014-06-19T00:00:00+00:00" />
+<meta property="article:modified_time" content="2014-06-19T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ansible 勉強会 #1メモ"/>
+<meta name="twitter:description" content="Ansible 勉強会 #1 - connpass
+に行ってきたのでメモ。資料は↑にほぼあるようです。
+Ansible の基本 &#43; MySQL レプリケーションを設定する事例 by @IanMLewis まさに基本。普段使ってるので大体押さえられてた。
+MySQLを構築してみる bennojoy/ansible-roles ansibleworksの人のリポジトリらしい。参考になりそう。 when あんま使いこなしてないので見とこう。 サンプルyaml見ると、自分のyamlが使いこなして無い感ある… mysql_replicationモジュールは便利感あるが、ちょっと簡単そうに見えないw 基本の直後に見るのはキツい印象。 dynamic inventoryが便利な話: no more host list! by @tagomoris 某巨大メッセージングアプリ企業で普通に使ってるっぽい エージェントいらないからCentOS5でも動くという理由が大きいらしい。納得。 日本語情報あんま無いのが弱点は同意。っつーか俺書け。 Inventryに普通のvars定義できたという恐らくかなり基本に気づいてなかった… hoge[1:2].local → hoge1.local…とか使える。 Dyanamic Inventry存在すら気づいてなかった… ec2用のscriptは既存である。 JSON返すだけなので自作もラク。 ansible.cfg置けば -i不要という事に気づいた。 明日からマネしたい！ 2000台完走実績あるらしい。さすが某巨大メッセージングアプリ企業 おまけ DynamicInventryでは_meta使って —host はスキップさせるのがオススメ。
+callback pluginを使ったタスク実行時間の可視化について by @rudy pluginはmoduleと違ってpythonで本体を拡張。 -i “localhost, ” とかできる事に気づいて衝撃。 callback_plugins に入れるだけ。実行ホストに置けば良いのラクだな。 実用上は使わない気がするが、bot連携すると面白いかも。 AnsibleのJUNOS設定モジュールを書いてみた by @saito_hideki Ansibleでルータ設定をしているという、まったく参考にはならないが衝撃の発表。
+MSPだってansibleしたい by @LaughK MSP(運用、保守代行) 客のサーバだからに(ほとんど)何も入れなくて良いという理由。 目指せ、サーバー構築1200台 by @myb1126 採用はエージェントレスが決め手との事。 構成管理ツールAnsibleの構成管理について by @iktakahiro playbookだけディレクトリ分けるのアリかも。 「冪等性は忘れよう」w 発表されてたのは複雑な気がする…とはいえbest practiceは複数サービスになると厳しいので、考えないとまずそう。 Vagrant × Ansible by @tomohiro_urakawa inventoryはvagrantが生成すんのか。べんりー Vagrant provisionで実行 正直言うとそれでもわざわざVagrantに実行させるメリットが見えない…っつーか小さくしか見えない。 chefからansibleに乗り換えた話 by @futoase やはりchefより良いのは以下2点"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://u1tnk.github.io/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "ansible 勉強会 #1メモ",
+      "item": "https://u1tnk.github.io/blog/2014/06/19/ansible-study-01/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "ansible 勉強会 #1メモ",
+  "name": "ansible 勉強会 #1メモ",
+  "description": "Ansible 勉強会 #1 - connpass\nに行ってきたのでメモ。資料は↑にほぼあるようです。\nAnsible の基本 + MySQL レプリケーションを設定する事例 by @IanMLewis まさに基本。普段使ってるので大体押さえられてた。\nMySQLを構築してみる bennojoy/ansible-roles ansibleworksの人のリポジトリらしい。参考になりそう。 when あんま使いこなしてないので見とこう。 サンプルyaml見ると、自分のyamlが使いこなして無い感ある… mysql_replicationモジュールは便利感あるが、ちょっと簡単そうに見えないw 基本の直後に見るのはキツい印象。 dynamic inventoryが便利な話: no more host list! by @tagomoris 某巨大メッセージングアプリ企業で普通に使ってるっぽい エージェントいらないからCentOS5でも動くという理由が大きいらしい。納得。 日本語情報あんま無いのが弱点は同意。っつーか俺書け。 Inventryに普通のvars定義できたという恐らくかなり基本に気づいてなかった… hoge[1:2].local → hoge1.local…とか使える。 Dyanamic Inventry存在すら気づいてなかった… ec2用のscriptは既存である。 JSON返すだけなので自作もラク。 ansible.cfg置けば -i不要という事に気づいた。 明日からマネしたい！ 2000台完走実績あるらしい。さすが某巨大メッセージングアプリ企業 おまけ DynamicInventryでは_meta使って —host はスキップさせるのがオススメ。\ncallback pluginを使ったタスク実行時間の可視化について by @rudy pluginはmoduleと違ってpythonで本体を拡張。 -i “localhost, ” とかできる事に気づいて衝撃。 callback_plugins に入れるだけ。実行ホストに置けば良いのラクだな。 実用上は使わない気がするが、bot連携すると面白いかも。 AnsibleのJUNOS設定モジュールを書いてみた by @saito_hideki Ansibleでルータ設定をしているという、まったく参考にはならないが衝撃の発表。\nMSPだってansibleしたい by @LaughK MSP(運用、保守代行) 客のサーバだからに(ほとんど)何も入れなくて良いという理由。 目指せ、サーバー構築1200台 by @myb1126 採用はエージェントレスが決め手との事。 構成管理ツールAnsibleの構成管理について by @iktakahiro playbookだけディレクトリ分けるのアリかも。 「冪等性は忘れよう」w 発表されてたのは複雑な気がする…とはいえbest practiceは複数サービスになると厳しいので、考えないとまずそう。 Vagrant × Ansible by @tomohiro_urakawa inventoryはvagrantが生成すんのか。べんりー Vagrant provisionで実行 正直言うとそれでもわざわざVagrantに実行させるメリットが見えない…っつーか小さくしか見えない。 chefからansibleに乗り換えた話 by @futoase やはりchefより良いのは以下2点",
+  "keywords": [
     
-    
-      <link href="/css/fonts.css" rel="stylesheet" type="text/css">
-    
-  
-
-  
-  <title>ansible 勉強会 #1メモ</title>
-
-  
-  
-  <link rel="stylesheet" href="/css/hugo-octopress.css">
-
-  
-  
-    <link rel="stylesheet" href="https://u1tnk.github.io/css/custom.css">
-  
-
-  
-    <link rel="stylesheet" href="/css/fork-awesome.min.css">
-  
-
-  
-  <link href="https://u1tnk.github.io/favicon.png" rel="icon">
-
-  
-  
-
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-  <meta name="author" content="u1tnk">
-
-  
-  <meta name="generator" content="Hugo 0.40.1" />
-
-  
-  
-
-  
-  
+  ],
+  "articleBody": "Ansible 勉強会 #1 - connpass\nに行ってきたのでメモ。資料は↑にほぼあるようです。\nAnsible の基本 + MySQL レプリケーションを設定する事例 by @IanMLewis まさに基本。普段使ってるので大体押さえられてた。\nMySQLを構築してみる bennojoy/ansible-roles ansibleworksの人のリポジトリらしい。参考になりそう。 when あんま使いこなしてないので見とこう。 サンプルyaml見ると、自分のyamlが使いこなして無い感ある… mysql_replicationモジュールは便利感あるが、ちょっと簡単そうに見えないw 基本の直後に見るのはキツい印象。 dynamic inventoryが便利な話: no more host list! by @tagomoris 某巨大メッセージングアプリ企業で普通に使ってるっぽい エージェントいらないからCentOS5でも動くという理由が大きいらしい。納得。 日本語情報あんま無いのが弱点は同意。っつーか俺書け。 Inventryに普通のvars定義できたという恐らくかなり基本に気づいてなかった… hoge[1:2].local → hoge1.local…とか使える。 Dyanamic Inventry存在すら気づいてなかった… ec2用のscriptは既存である。 JSON返すだけなので自作もラク。 ansible.cfg置けば -i不要という事に気づいた。 明日からマネしたい！ 2000台完走実績あるらしい。さすが某巨大メッセージングアプリ企業 おまけ DynamicInventryでは_meta使って —host はスキップさせるのがオススメ。\ncallback pluginを使ったタスク実行時間の可視化について by @rudy pluginはmoduleと違ってpythonで本体を拡張。 -i “localhost, ” とかできる事に気づいて衝撃。 callback_plugins に入れるだけ。実行ホストに置けば良いのラクだな。 実用上は使わない気がするが、bot連携すると面白いかも。 AnsibleのJUNOS設定モジュールを書いてみた by @saito_hideki Ansibleでルータ設定をしているという、まったく参考にはならないが衝撃の発表。\nMSPだってansibleしたい by @LaughK MSP(運用、保守代行) 客のサーバだからに(ほとんど)何も入れなくて良いという理由。 目指せ、サーバー構築1200台 by @myb1126 採用はエージェントレスが決め手との事。 構成管理ツールAnsibleの構成管理について by @iktakahiro playbookだけディレクトリ分けるのアリかも。 「冪等性は忘れよう」w 発表されてたのは複雑な気がする…とはいえbest practiceは複数サービスになると厳しいので、考えないとまずそう。 Vagrant × Ansible by @tomohiro_urakawa inventoryはvagrantが生成すんのか。べんりー Vagrant provisionで実行 正直言うとそれでもわざわざVagrantに実行させるメリットが見えない…っつーか小さくしか見えない。 chefからansibleに乗り換えた話 by @futoase やはりchefより良いのは以下2点\n対象に何も入れなくて良い 上から順に実行されるから分かりやすい → 「孤独なchef使い]になりにくい 所感 想像しているより使われてる 2000台相手にしても大丈夫というのは安心感ある やはり採用にあたり大きいのは以下2点 対象ホストに何も入れなく良い 「上から実行」という分かり易さ 個人的にはchef等と違ってpush型が基本なので、全サーバに設定ファイル配布…とか小さいところか試しやすいってのも大きい気がする。 ",
+  "wordCount" : "105",
+  "inLanguage": "en",
+  "datePublished": "2014-06-19T00:00:00Z",
+  "dateModified": "2014-06-19T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "u1tnk"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://u1tnk.github.io/blog/2014/06/19/ansible-study-01/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "u1tnk.log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://u1tnk.github.io/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
-<body>
 
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
 
-<header role="banner">
-<hgroup>
-  
-  <h1><a href="https://u1tnk.github.io/">u1tnk.log</a></h1>
-    <h2></h2>
-</hgroup></header>
+</script>
 
-
-<nav role="navigation">
-<fieldset class="mobile-nav">
-  
-  <select onchange="location = this.value;">
-    <option value="">Navigate…</option>
-      
-        <option value="https://u1tnk.github.io/">» posts</option>
-      
-        <option value="https://u1tnk.github.io/about">» about</option>
-      
-        <option value="https://u1tnk.github.io/atom.xml">» rss</option>
-      
-  </select>
-</fieldset>
-
-
-<ul class="main-navigation">
-  
-  
-    
-      <li><a href="https://u1tnk.github.io/" title="posts">posts</a></li>
-    
-  
-    
-      <li><a href="https://u1tnk.github.io/about" title="about" >about</a></li>
-    
-  
-    
-      <li><a href="https://u1tnk.github.io/atom.xml" title="rss" >rss</a></li>
-    
-  
-</ul>
-
-<ul class="subscription">
-  
-</ul>
-
-
-</nav>
-
-
-<div id="main">
-  <div id="content">
-    <div>
-      <article class="hentry" role="article">
-
-        
-        
-
-<header>
-  <p class="meta">2014/06/19
-    
-    
-
-    
-    
-      - <a class="label" href="https://u1tnk.github.io/categories/ansible/">ansible </a>
-    
-  </p>
-  <h1 class="entry-title">
-     ansible 勉強会 #1メモ 
-  </h1>
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://u1tnk.github.io/" accesskey="h" title="u1tnk.log (Alt + H)">u1tnk.log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://u1tnk.github.io/" title="posts">
+                    <span>posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://u1tnk.github.io/about" title="about">
+                    <span>about</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://u1tnk.github.io/atom.xml" title="rss">
+                    <span>rss</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 </header>
+<main class="main">
 
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      ansible 勉強会 #1メモ
+    </h1>
+    <div class="post-meta"><span title='2014-06-19 00:00:00 +0000 UTC'>2014/06/19</span>&nbsp;·&nbsp;u1tnk
 
-        <div class="entry-content">
-          
-          
-          
-          
-
-<p><a href="http://ansible-users.connpass.com/event/5968/">Ansible 勉強会 #1 - connpass</a></p>
-
+</div>
+  </header> 
+  <div class="post-content"><p><a href="http://ansible-users.connpass.com/event/5968/">Ansible 勉強会 #1 - connpass</a></p>
 <p>に行ってきたのでメモ。資料は↑にほぼあるようです。</p>
-
-<h3 id="ansible-の基本-mysql-レプリケーションを設定する事例-by-ianmlewis">Ansible の基本 + MySQL レプリケーションを設定する事例  by @IanMLewis</h3>
-
+<h3 id="ansible-の基本--mysql-レプリケーションを設定する事例--by-ianmlewis">Ansible の基本 + MySQL レプリケーションを設定する事例  by @IanMLewis<a hidden class="anchor" aria-hidden="true" href="#ansible-の基本--mysql-レプリケーションを設定する事例--by-ianmlewis">#</a></h3>
 <p>まさに基本。普段使ってるので大体押さえられてた。</p>
-
-<h4 id="mysqlを構築してみる">MySQLを構築してみる</h4>
-
+<h4 id="mysqlを構築してみる">MySQLを構築してみる<a hidden class="anchor" aria-hidden="true" href="#mysqlを構築してみる">#</a></h4>
 <ul>
 <li>bennojoy/ansible-roles ansibleworksの人のリポジトリらしい。参考になりそう。</li>
 <li>when あんま使いこなしてないので見とこう。</li>
 <li>サンプルyaml見ると、自分のyamlが使いこなして無い感ある…</li>
 <li>mysql_replicationモジュールは便利感あるが、ちょっと簡単そうに見えないw 基本の直後に見るのはキツい印象。</li>
 </ul>
-
-<h3 id="dynamic-inventoryが便利な話-no-more-host-list-by-tagomoris">dynamic inventoryが便利な話: no more host list!  by  @tagomoris</h3>
-
+<h3 id="dynamic-inventoryが便利な話-no-more-host-list--by--tagomoris">dynamic inventoryが便利な話: no more host list!  by  @tagomoris<a hidden class="anchor" aria-hidden="true" href="#dynamic-inventoryが便利な話-no-more-host-list--by--tagomoris">#</a></h3>
 <ul>
 <li>某巨大メッセージングアプリ企業で普通に使ってるっぽい</li>
 <li>エージェントいらないからCentOS5でも動くという理由が大きいらしい。納得。</li>
@@ -166,168 +233,135 @@
 <li>明日からマネしたい！</li>
 <li>2000台完走実績あるらしい。さすが某巨大メッセージングアプリ企業</li>
 </ul>
-
-<h4 id="おまけ">おまけ</h4>
-
+<h4 id="おまけ">おまけ<a hidden class="anchor" aria-hidden="true" href="#おまけ">#</a></h4>
 <p>DynamicInventryでは_meta使って —host はスキップさせるのがオススメ。</p>
-
-<h3 id="callback-pluginを使ったタスク実行時間の可視化について-by-rudy">callback pluginを使ったタスク実行時間の可視化について by @rudy</h3>
-
+<h3 id="callback-pluginを使ったタスク実行時間の可視化について-by-rudy">callback pluginを使ったタスク実行時間の可視化について by @rudy<a hidden class="anchor" aria-hidden="true" href="#callback-pluginを使ったタスク実行時間の可視化について-by-rudy">#</a></h3>
 <ul>
 <li>pluginはmoduleと違ってpythonで本体を拡張。</li>
 <li>-i “localhost, ” とかできる事に気づいて衝撃。</li>
 <li>callback_plugins に入れるだけ。実行ホストに置けば良いのラクだな。</li>
 <li>実用上は使わない気がするが、bot連携すると面白いかも。</li>
 </ul>
-
-<h3 id="ansibleのjunos設定モジュールを書いてみた-by-saito-hideki">AnsibleのJUNOS設定モジュールを書いてみた by @saito_hideki</h3>
-
+<h3 id="ansibleのjunos設定モジュールを書いてみた-by-saito_hideki">AnsibleのJUNOS設定モジュールを書いてみた by @saito_hideki<a hidden class="anchor" aria-hidden="true" href="#ansibleのjunos設定モジュールを書いてみた-by-saito_hideki">#</a></h3>
 <p>Ansibleでルータ設定をしているという、まったく参考にはならないが衝撃の発表。</p>
-
-<h3 id="mspだってansibleしたい-by-laughk">MSPだってansibleしたい by @LaughK</h3>
-
+<h3 id="mspだってansibleしたい-by-laughk">MSPだってansibleしたい by @LaughK<a hidden class="anchor" aria-hidden="true" href="#mspだってansibleしたい-by-laughk">#</a></h3>
 <ul>
 <li>MSP(運用、保守代行)</li>
 <li>客のサーバだからに(ほとんど)何も入れなくて良いという理由。</li>
 </ul>
-
-<h3 id="目指せ-サーバー構築1200台-by-myb1126">目指せ、サーバー構築1200台 by @myb1126</h3>
-
+<h3 id="目指せサーバー構築1200台-by-myb1126">目指せ、サーバー構築1200台 by @myb1126<a hidden class="anchor" aria-hidden="true" href="#目指せサーバー構築1200台-by-myb1126">#</a></h3>
 <ul>
 <li>採用はエージェントレスが決め手との事。</li>
 </ul>
-
-<h3 id="構成管理ツールansibleの構成管理について-by-iktakahiro">構成管理ツールAnsibleの構成管理について by @iktakahiro</h3>
-
+<h3 id="構成管理ツールansibleの構成管理について-by-iktakahiro">構成管理ツールAnsibleの構成管理について by @iktakahiro<a hidden class="anchor" aria-hidden="true" href="#構成管理ツールansibleの構成管理について-by-iktakahiro">#</a></h3>
 <ul>
 <li>playbookだけディレクトリ分けるのアリかも。</li>
 <li>「冪等性は忘れよう」w</li>
 <li>発表されてたのは複雑な気がする…とはいえbest practiceは複数サービスになると厳しいので、考えないとまずそう。</li>
 </ul>
-
-<h3 id="vagrant-ansible-by-tomohiro-urakawa">Vagrant × Ansible by @tomohiro_urakawa</h3>
-
+<h3 id="vagrant--ansible-by-tomohiro_urakawa">Vagrant × Ansible by @tomohiro_urakawa<a hidden class="anchor" aria-hidden="true" href="#vagrant--ansible-by-tomohiro_urakawa">#</a></h3>
 <ul>
 <li>inventoryはvagrantが生成すんのか。べんりー</li>
 <li>Vagrant provisionで実行</li>
 <li>正直言うとそれでもわざわざVagrantに実行させるメリットが見えない…っつーか小さくしか見えない。</li>
 </ul>
-
-<h3 id="chefからansibleに乗り換えた話-by-futoase">chefからansibleに乗り換えた話 by @futoase</h3>
-
-<p>やはりchefより良いのは以下2点
-- 対象に何も入れなくて良い
-- 上から順に実行されるから分かりやすい → 「孤独なchef使い]になりにくい</p>
-
-<h2 id="所感">所感</h2>
-
+<h3 id="chefからansibleに乗り換えた話-by-futoase">chefからansibleに乗り換えた話 by @futoase<a hidden class="anchor" aria-hidden="true" href="#chefからansibleに乗り換えた話-by-futoase">#</a></h3>
+<p>やはりchefより良いのは以下2点</p>
+<ul>
+<li>対象に何も入れなくて良い</li>
+<li>上から順に実行されるから分かりやすい → 「孤独なchef使い]になりにくい</li>
+</ul>
+<h2 id="所感">所感<a hidden class="anchor" aria-hidden="true" href="#所感">#</a></h2>
 <ul>
 <li>想像しているより使われてる</li>
 <li>2000台相手にしても大丈夫というのは安心感ある</li>
 <li>やはり採用にあたり大きいのは以下2点
-
 <ul>
 <li>対象ホストに何も入れなく良い</li>
 <li>「上から実行」という分かり易さ</li>
-</ul></li>
+</ul>
+</li>
 <li>個人的にはchef等と違ってpush型が基本なので、全サーバに設定ファイル配布…とか小さいところか試しやすいってのも大きい気がする。</li>
 </ul>
 
-        </div>
-        
-
-<footer>
-  <p class="meta">
-    <span class="byline author vcard">Posted by <span class="fn">u1tnk</span></span>
-    
-    <time>Jun 19, 2014</time>
-    
-    </span>
-  </p>
-
-  
-
-  <p class="meta">
-    
-        <a class="basic-alignment left" href="https://u1tnk.github.io/blog/2014/04/17/aws-price/" title="EC2インスタンス価格の必要なところだけ表にしてみた">EC2インスタンス価格の必要なところだけ表にしてみた</a>
-    
-
-    
-      <a class="basic-alignment right" href="https://u1tnk.github.io/blog/2014/08/14/grape-research/" title="Grapeが良さそうだったけどやめた">Grapeが良さそうだったけどやめた</a>
-    
-  </p>
-  
-</footer>
-
-      </article>
-    </div>
-    
-
-<aside class="sidebar thirds">
-  <section class="first odd">
-
-    
-
-    <p>
-      
-    </p>
-  </section>
-
-
-
-  
-  <ul class="sidebar-nav">
-    <li class="sidebar-nav-item">
-      
-      
-      
-      
-      
-         
-      
-      
-      
-      
-      
-      
-      
-      
-
-    
-    
-    </li>
-  </ul>
-
-  
-
-  
-
-  
-  
-  
-</aside>
 
   </div>
-</div>
 
-    <footer role="contentinfo">
-      <p>Copyright &copy; 2022 u1tnk - <a href="https://u1tnk.github.io/license/">License</a> -
-        <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
-      </p>
-    </footer>
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://u1tnk.github.io/">u1tnk.log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
 
-    
-    
-    
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
 
-    
-      <script>
-        var _gaq=[['_setAccount','UA-2532590-5'],['_trackPageview']];
-        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-        s.parentNode.insertBefore(g,s)}(document,'script'));
-      </script>
-    
-  </body>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
 </html>
-

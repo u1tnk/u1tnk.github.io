@@ -1,318 +1,356 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<html lang="en" dir="auto">
 
-  
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
-  <meta name="google-site-verification" content="Y9uGA9O73sv0k2GEuyVrCdITKeDD-VHTqab7KUM0olc" />
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Ryzen1700オーバークロック、電力計測 | u1tnk.log</title>
+<meta name="keywords" content="">
+<meta name="description" content="購入から1年版経って今さらオーバークロックやってみるなど。 当初サーバ扱いしてたからオーバークロックなんぞよりも安定性と省電力が至上！って思ってガン無視ししてたけど、常用するようになったし、BIOSで設定一個変えるだけでマザボ側が勝手に安全な範囲で上げてくれる世の中なので一応やってみた。
+変更前 2900MHzちょい CPU温度 min33度、max 57度 (1月、室内18度) 消費電力 idle 80w 1.7円/h CPUベンチ CPU-Z マルチスレッド3600程度 140w 3.0円/h GPUベンチ モンハンフロンティア4k 11000程度 240w 5.4円/h 変更後 ASUSマザボのおまかせOC機能 3641MHz CPU温度 min36度、max 71度 (1月、室内18度) 消費電力 - idle - 83w - 1.8円/h CPUベンチ CPU-Z マルチスレッド4500程度 大体1.3倍の向上 CPU-Zの1800Xのスコアと大差無し 165w 3.6円/h モンハンベンチはほぼ変わらないので省略 まとめ オーバークロックしてもidle時の商品電力はほとんど変わってなかった。現代のCPU賢い。 結局のところ使ってる期間のほとんどは大したCPU使用率にはならないのでほぼコスト変わらないのでは？となった。2018年にもなってエンコードしまくる事なんて無いし。ゲームについてはCPUの影響小さいし。 max70度は夏場で室温＋10度になるとサーマルスロットリング発動する可能性があるかもなので強いCPUクーラーに変えても良いかもしれない。簡易水冷でも検討しよう、楽しいし。
+あと、ウチのデスクトップPC、idleだと 1.82430=1296円、ぶん回して5.4円計算で3888円。スリープしてる時間もあるのでざっくりで1000円ぐらいしか使ってなさそうで意外。ディスプレイは別ですが…調べたらウチのディスプレイ P2715Qは50〜100Wらしい。今度計測してみよう。">
+<meta name="author" content="u1tnk">
+<link rel="canonical" href="https://u1tnk.github.io/blog/2019/01/04/ryzen1700oc/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.bc1149f4a72aa4858d3a9f71462f75e5884ffe8073ea9d6d5761d5663d651e20.css" integrity="sha256-vBFJ9KcqpIWNOp9xRi915YhP/oBz6p1tV2HVZj1lHiA=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://u1tnk.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://u1tnk.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://u1tnk.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://u1tnk.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://u1tnk.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
 
-  
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Ryzen1700オーバークロック、電力計測" />
+<meta property="og:description" content="購入から1年版経って今さらオーバークロックやってみるなど。 当初サーバ扱いしてたからオーバークロックなんぞよりも安定性と省電力が至上！って思ってガン無視ししてたけど、常用するようになったし、BIOSで設定一個変えるだけでマザボ側が勝手に安全な範囲で上げてくれる世の中なので一応やってみた。
+変更前 2900MHzちょい CPU温度 min33度、max 57度 (1月、室内18度) 消費電力 idle 80w 1.7円/h CPUベンチ CPU-Z マルチスレッド3600程度 140w 3.0円/h GPUベンチ モンハンフロンティア4k 11000程度 240w 5.4円/h 変更後 ASUSマザボのおまかせOC機能 3641MHz CPU温度 min36度、max 71度 (1月、室内18度) 消費電力 - idle - 83w - 1.8円/h CPUベンチ CPU-Z マルチスレッド4500程度 大体1.3倍の向上 CPU-Zの1800Xのスコアと大差無し 165w 3.6円/h モンハンベンチはほぼ変わらないので省略 まとめ オーバークロックしてもidle時の商品電力はほとんど変わってなかった。現代のCPU賢い。 結局のところ使ってる期間のほとんどは大したCPU使用率にはならないのでほぼコスト変わらないのでは？となった。2018年にもなってエンコードしまくる事なんて無いし。ゲームについてはCPUの影響小さいし。 max70度は夏場で室温＋10度になるとサーマルスロットリング発動する可能性があるかもなので強いCPUクーラーに変えても良いかもしれない。簡易水冷でも検討しよう、楽しいし。
+あと、ウチのデスクトップPC、idleだと 1.82430=1296円、ぶん回して5.4円計算で3888円。スリープしてる時間もあるのでざっくりで1000円ぐらいしか使ってなさそうで意外。ディスプレイは別ですが…調べたらウチのディスプレイ P2715Qは50〜100Wらしい。今度計測してみよう。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://u1tnk.github.io/blog/2019/01/04/ryzen1700oc/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2019-01-04T13:30:58+09:00" />
+<meta property="article:modified_time" content="2019-01-04T13:30:58+09:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ryzen1700オーバークロック、電力計測"/>
+<meta name="twitter:description" content="購入から1年版経って今さらオーバークロックやってみるなど。 当初サーバ扱いしてたからオーバークロックなんぞよりも安定性と省電力が至上！って思ってガン無視ししてたけど、常用するようになったし、BIOSで設定一個変えるだけでマザボ側が勝手に安全な範囲で上げてくれる世の中なので一応やってみた。
+変更前 2900MHzちょい CPU温度 min33度、max 57度 (1月、室内18度) 消費電力 idle 80w 1.7円/h CPUベンチ CPU-Z マルチスレッド3600程度 140w 3.0円/h GPUベンチ モンハンフロンティア4k 11000程度 240w 5.4円/h 変更後 ASUSマザボのおまかせOC機能 3641MHz CPU温度 min36度、max 71度 (1月、室内18度) 消費電力 - idle - 83w - 1.8円/h CPUベンチ CPU-Z マルチスレッド4500程度 大体1.3倍の向上 CPU-Zの1800Xのスコアと大差無し 165w 3.6円/h モンハンベンチはほぼ変わらないので省略 まとめ オーバークロックしてもidle時の商品電力はほとんど変わってなかった。現代のCPU賢い。 結局のところ使ってる期間のほとんどは大したCPU使用率にはならないのでほぼコスト変わらないのでは？となった。2018年にもなってエンコードしまくる事なんて無いし。ゲームについてはCPUの影響小さいし。 max70度は夏場で室温＋10度になるとサーマルスロットリング発動する可能性があるかもなので強いCPUクーラーに変えても良いかもしれない。簡易水冷でも検討しよう、楽しいし。
+あと、ウチのデスクトップPC、idleだと 1.82430=1296円、ぶん回して5.4円計算で3888円。スリープしてる時間もあるのでざっくりで1000円ぐらいしか使ってなさそうで意外。ディスプレイは別ですが…調べたらウチのディスプレイ P2715Qは50〜100Wらしい。今度計測してみよう。"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://u1tnk.github.io/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Ryzen1700オーバークロック、電力計測",
+      "item": "https://u1tnk.github.io/blog/2019/01/04/ryzen1700oc/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Ryzen1700オーバークロック、電力計測",
+  "name": "Ryzen1700オーバークロック、電力計測",
+  "description": "購入から1年版経って今さらオーバークロックやってみるなど。 当初サーバ扱いしてたからオーバークロックなんぞよりも安定性と省電力が至上！って思ってガン無視ししてたけど、常用するようになったし、BIOSで設定一個変えるだけでマザボ側が勝手に安全な範囲で上げてくれる世の中なので一応やってみた。\n変更前 2900MHzちょい CPU温度 min33度、max 57度 (1月、室内18度) 消費電力 idle 80w 1.7円/h CPUベンチ CPU-Z マルチスレッド3600程度 140w 3.0円/h GPUベンチ モンハンフロンティア4k 11000程度 240w 5.4円/h 変更後 ASUSマザボのおまかせOC機能 3641MHz CPU温度 min36度、max 71度 (1月、室内18度) 消費電力 - idle - 83w - 1.8円/h CPUベンチ CPU-Z マルチスレッド4500程度 大体1.3倍の向上 CPU-Zの1800Xのスコアと大差無し 165w 3.6円/h モンハンベンチはほぼ変わらないので省略 まとめ オーバークロックしてもidle時の商品電力はほとんど変わってなかった。現代のCPU賢い。 結局のところ使ってる期間のほとんどは大したCPU使用率にはならないのでほぼコスト変わらないのでは？となった。2018年にもなってエンコードしまくる事なんて無いし。ゲームについてはCPUの影響小さいし。 max70度は夏場で室温＋10度になるとサーマルスロットリング発動する可能性があるかもなので強いCPUクーラーに変えても良いかもしれない。簡易水冷でも検討しよう、楽しいし。\nあと、ウチのデスクトップPC、idleだと 1.82430=1296円、ぶん回して5.4円計算で3888円。スリープしてる時間もあるのでざっくりで1000円ぐらいしか使ってなさそうで意外。ディスプレイは別ですが…調べたらウチのディスプレイ P2715Qは50〜100Wらしい。今度計測してみよう。",
+  "keywords": [
     
-    
-      <link href="/css/fonts.css" rel="stylesheet" type="text/css">
-    
-  
-
-  
-  <title>Ryzen1700オーバークロック、電力計測</title>
-
-  
-  
-  <link rel="stylesheet" href="/css/hugo-octopress.css">
-
-  
-  
-    <link rel="stylesheet" href="https://u1tnk.github.io/css/custom.css">
-  
-
-  
-    <link rel="stylesheet" href="/css/fork-awesome.min.css">
-  
-
-  
-  <link href="https://u1tnk.github.io/favicon.png" rel="icon">
-
-  
-  
-
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-  <meta name="author" content="u1tnk">
-
-  
-  <meta name="generator" content="Hugo 0.40.1" />
-
-  
-  
-
-  
-  
+  ],
+  "articleBody": "購入から1年版経って今さらオーバークロックやってみるなど。 当初サーバ扱いしてたからオーバークロックなんぞよりも安定性と省電力が至上！って思ってガン無視ししてたけど、常用するようになったし、BIOSで設定一個変えるだけでマザボ側が勝手に安全な範囲で上げてくれる世の中なので一応やってみた。\n変更前 2900MHzちょい CPU温度 min33度、max 57度 (1月、室内18度) 消費電力 idle 80w 1.7円/h CPUベンチ CPU-Z マルチスレッド3600程度 140w 3.0円/h GPUベンチ モンハンフロンティア4k 11000程度 240w 5.4円/h 変更後 ASUSマザボのおまかせOC機能 3641MHz CPU温度 min36度、max 71度 (1月、室内18度) 消費電力 - idle - 83w - 1.8円/h CPUベンチ CPU-Z マルチスレッド4500程度 大体1.3倍の向上 CPU-Zの1800Xのスコアと大差無し 165w 3.6円/h モンハンベンチはほぼ変わらないので省略 まとめ オーバークロックしてもidle時の商品電力はほとんど変わってなかった。現代のCPU賢い。 結局のところ使ってる期間のほとんどは大したCPU使用率にはならないのでほぼコスト変わらないのでは？となった。2018年にもなってエンコードしまくる事なんて無いし。ゲームについてはCPUの影響小さいし。 max70度は夏場で室温＋10度になるとサーマルスロットリング発動する可能性があるかもなので強いCPUクーラーに変えても良いかもしれない。簡易水冷でも検討しよう、楽しいし。\nあと、ウチのデスクトップPC、idleだと 1.82430=1296円、ぶん回して5.4円計算で3888円。スリープしてる時間もあるのでざっくりで1000円ぐらいしか使ってなさそうで意外。ディスプレイは別ですが…調べたらウチのディスプレイ P2715Qは50〜100Wらしい。今度計測してみよう。\n",
+  "wordCount" : "51",
+  "inLanguage": "en",
+  "datePublished": "2019-01-04T13:30:58+09:00",
+  "dateModified": "2019-01-04T13:30:58+09:00",
+  "author":{
+    "@type": "Person",
+    "name": "u1tnk"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://u1tnk.github.io/blog/2019/01/04/ryzen1700oc/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "u1tnk.log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://u1tnk.github.io/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
-<body>
 
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
 
-<header role="banner">
-<hgroup>
-  
-  <h1><a href="https://u1tnk.github.io/">u1tnk.log</a></h1>
-    <h2></h2>
-</hgroup></header>
+</script>
 
-
-<nav role="navigation">
-<fieldset class="mobile-nav">
-  
-  <select onchange="location = this.value;">
-    <option value="">Navigate…</option>
-      
-        <option value="https://u1tnk.github.io/">» posts</option>
-      
-        <option value="https://u1tnk.github.io/about">» about</option>
-      
-        <option value="https://u1tnk.github.io/atom.xml">» rss</option>
-      
-  </select>
-</fieldset>
-
-
-<ul class="main-navigation">
-  
-  
-    
-      <li><a href="https://u1tnk.github.io/" title="posts">posts</a></li>
-    
-  
-    
-      <li><a href="https://u1tnk.github.io/about" title="about" >about</a></li>
-    
-  
-    
-      <li><a href="https://u1tnk.github.io/atom.xml" title="rss" >rss</a></li>
-    
-  
-</ul>
-
-<ul class="subscription">
-  
-</ul>
-
-
-</nav>
-
-
-<div id="main">
-  <div id="content">
-    <div>
-      <article class="hentry" role="article">
-
-        
-        
-
-<header>
-  <p class="meta">2019/01/04
-    
-    
-
-    
-    
-      - <a class="label" href="https://u1tnk.github.io/categories/pc/">pc </a><a class="label" href="https://u1tnk.github.io/categories/benchmark/">benchmark </a>
-    
-  </p>
-  <h1 class="entry-title">
-     Ryzen1700オーバークロック、電力計測 
-  </h1>
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://u1tnk.github.io/" accesskey="h" title="u1tnk.log (Alt + H)">u1tnk.log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://u1tnk.github.io/" title="posts">
+                    <span>posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://u1tnk.github.io/about" title="about">
+                    <span>about</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://u1tnk.github.io/atom.xml" title="rss">
+                    <span>rss</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 </header>
+<main class="main">
 
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      Ryzen1700オーバークロック、電力計測
+    </h1>
+    <div class="post-meta"><span title='2019-01-04 13:30:58 +0900 JST'>2019/01/04</span>&nbsp;·&nbsp;u1tnk
 
-        <div class="entry-content">
-          
-          
-          
-          
-
-<p>購入から1年版経って今さらオーバークロックやってみるなど。
+</div>
+  </header> 
+  <div class="post-content"><p>購入から1年版経って今さらオーバークロックやってみるなど。
 当初サーバ扱いしてたからオーバークロックなんぞよりも安定性と省電力が至上！って思ってガン無視ししてたけど、常用するようになったし、BIOSで設定一個変えるだけでマザボ側が勝手に安全な範囲で上げてくれる世の中なので一応やってみた。</p>
-
-<h2 id="変更前">変更前</h2>
-
+<h2 id="変更前">変更前<a hidden class="anchor" aria-hidden="true" href="#変更前">#</a></h2>
 <ul>
 <li>2900MHzちょい</li>
 <li>CPU温度 min33度、max 57度 (1月、室内18度)</li>
-
-<li><p>消費電力</p>
-
+<li>消費電力
 <ul>
 <li>idle
-
 <ul>
 <li>80w</li>
 <li>1.7円/h</li>
-</ul></li>
+</ul>
+</li>
 <li>CPUベンチ
-
 <ul>
 <li>CPU-Z
-
 <ul>
 <li>マルチスレッド3600程度</li>
-</ul></li>
+</ul>
+</li>
 <li>140w</li>
 <li>3.0円/h</li>
-</ul></li>
-
-<li><p>GPUベンチ</p>
-
+</ul>
+</li>
+<li>GPUベンチ
 <ul>
 <li>モンハンフロンティア4k
-
 <ul>
 <li>11000程度</li>
-</ul></li>
+</ul>
+</li>
 <li>240w</li>
-
-<li><p>5.4円/h</p>
-
-<h2 id="変更後">変更後</h2></li>
-</ul></li>
-</ul></li>
-
-<li><p>ASUSマザボのおまかせOC機能</p></li>
-
-<li><p>3641MHz</p></li>
-
-<li><p>CPU温度 min36度、max 71度 (1月、室内18度)</p></li>
-
-<li><p>消費電力
-    - idle
-        - 83w
-        - 1.8円/h</p>
-
+<li>5.4円/h</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="変更後">変更後<a hidden class="anchor" aria-hidden="true" href="#変更後">#</a></h2>
+<ul>
+<li>ASUSマザボのおまかせOC機能</li>
+<li>3641MHz</li>
+<li>CPU温度 min36度、max 71度 (1月、室内18度)</li>
+<li>消費電力
+- idle
+- 83w
+- 1.8円/h
 <ul>
 <li>CPUベンチ
-
 <ul>
 <li>CPU-Z
-
 <ul>
 <li>マルチスレッド4500程度</li>
 <li>大体1.3倍の向上</li>
 <li>CPU-Zの1800Xのスコアと大差無し</li>
-</ul></li>
+</ul>
+</li>
 <li>165w</li>
 <li>3.6円/h</li>
-</ul></li>
-<li>モンハンベンチはほぼ変わらないので省略
-<img src="/images/ryzen1700oc/after.png" alt="oc_after.png" /></li>
-</ul></li>
 </ul>
-
-<h2 id="まとめ">まとめ</h2>
-
+</li>
+<li>モンハンベンチはほぼ変わらないので省略
+<img loading="lazy" src="/images/ryzen1700oc/after.png" alt="oc_after.png"  />
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="まとめ">まとめ<a hidden class="anchor" aria-hidden="true" href="#まとめ">#</a></h2>
 <p>オーバークロックしてもidle時の商品電力はほとんど変わってなかった。現代のCPU賢い。
 結局のところ使ってる期間のほとんどは大したCPU使用率にはならないのでほぼコスト変わらないのでは？となった。2018年にもなってエンコードしまくる事なんて無いし。ゲームについてはCPUの影響小さいし。
 max70度は夏場で室温＋10度になるとサーマルスロットリング発動する可能性があるかもなので強いCPUクーラーに変えても良いかもしれない。簡易水冷でも検討しよう、楽しいし。</p>
+<p>あと、ウチのデスクトップPC、idleだと 1.8<em>24</em>30=1296円、ぶん回して5.4円計算で3888円。スリープしてる時間もあるのでざっくりで1000円ぐらいしか使ってなさそうで意外。ディスプレイは別ですが…調べたらウチのディスプレイ P2715Qは50〜100Wらしい。今度計測してみよう。</p>
 
-<p>あと、ウチのデスクトップPC、idleだと 1.8*24*30=1296円、ぶん回して5.4円計算で3888円。スリープしてる時間もあるのでざっくりで1000円ぐらいしか使ってなさそうで意外。ディスプレイは別ですが…調べたらウチのディスプレイ P2715Qは50〜100Wらしい。今度計測してみよう。</p>
-
-        </div>
-        
-
-<footer>
-  <p class="meta">
-    <span class="byline author vcard">Posted by <span class="fn">u1tnk</span></span>
-    
-    <time>Jan 4, 2019</time>
-    
-    </span>
-  </p>
-
-  
-
-  <p class="meta">
-    
-        <a class="basic-alignment left" href="https://u1tnk.github.io/blog/2019/01/02/migrate_hugo/" title="今さらOctopressからHugoに乗りかえた">今さらOctopressからHugoに乗りかえた</a>
-    
-
-    
-      <a class="basic-alignment right" href="https://u1tnk.github.io/blog/2019/01/05/my-desktop-201801/" title="自作デスクトップの構成2018年1月">自作デスクトップの構成2018年1月</a>
-    
-  </p>
-  
-</footer>
-
-      </article>
-    </div>
-    
-
-<aside class="sidebar thirds">
-  <section class="first odd">
-
-    
-
-    <p>
-      
-    </p>
-  </section>
-
-
-
-  
-  <ul class="sidebar-nav">
-    <li class="sidebar-nav-item">
-      
-      
-      
-      
-      
-         
-      
-      
-      
-      
-      
-      
-      
-      
-
-    
-    
-    </li>
-  </ul>
-
-  
-
-  
-
-  
-  
-  
-</aside>
 
   </div>
-</div>
 
-    <footer role="contentinfo">
-      <p>Copyright &copy; 2022 u1tnk - <a href="https://u1tnk.github.io/license/">License</a> -
-        <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
-      </p>
-    </footer>
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://u1tnk.github.io/">u1tnk.log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
 
-    
-    
-    
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
 
-    
-      <script>
-        var _gaq=[['_setAccount','UA-2532590-5'],['_trackPageview']];
-        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-        s.parentNode.insertBefore(g,s)}(document,'script'));
-      </script>
-    
-  </body>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
 </html>
-

@@ -1,332 +1,190 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
-    <loc>https://u1tnk.github.io/blog/2022/07/19/my-price2022/</loc>
-    <lastmod>2022-07-19T12:41:27+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/blog/2021/12/25/bestbuy2021/</loc>
-    <lastmod>2021-12-25T23:21:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/blog/2021/12/04/fbc-is-not-overcharging/</loc>
-    <lastmod>2021-12-04T23:38:58+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/blog/2021/06/30/wsl2_tips/</loc>
-    <lastmod>2021-06-30T19:11:23+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/blog/2021/06/28/wsl2_clipboard_config/</loc>
-    <lastmod>2021-06-28T15:26:11+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/blog/2021/06/28/wsl2_rails_test_system_config/</loc>
-    <lastmod>2021-06-28T11:17:59+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/blog/2020/12/17/structured_programming/</loc>
-    <lastmod>2020-12-17T20:04:36+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/blog/2020/09/28/panic_disorder/</loc>
-    <lastmod>2020-09-28T11:02:45+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/blog/2020/01/07/bestbuy2019/</loc>
-    <lastmod>2020-01-07T11:29:59+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/blog/2019/12/22/bestbuy2018review/</loc>
-    <lastmod>2019-12-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/blog/2019/12/18/my-desktop-201912/</loc>
-    <lastmod>2019-12-18T01:46:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/blog/2019/04/24/understand_freelancer_completely/</loc>
-    <lastmod>2019-04-24T23:24:31+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/blog/2019/04/16/fukuoka_other_gourmet/</loc>
-    <lastmod>2019-04-16T21:16:51+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/blog/2019/04/14/rtx810_ipv6_config/</loc>
-    <lastmod>2019-04-14T19:43:43+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/blog/2019/04/13/junior_high_school_exam_total/</loc>
-    <lastmod>2019-04-13T00:25:42+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/blog/2019/02/04/junior_high_school_exam_cost/</loc>
-    <lastmod>2019-02-04T20:16:16+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/blog/2019/01/05/my-desktop-201801/</loc>
-    <lastmod>2019-01-05T08:47:57+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/blog/2019/01/04/ryzen1700oc/</loc>
-    <lastmod>2019-01-04T13:30:58+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/blog/2019/01/02/migrate_hugo/</loc>
-    <lastmod>2019-01-02T12:10:55+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/about/</loc>
-    <lastmod>2019-01-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/blog/2019/01/02/bestbuy2018/</loc>
-    <lastmod>2019-01-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/blog/2018/09/09/my-price/</loc>
-    <lastmod>2018-09-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/blog/2018/07/28/camp-maker/</loc>
-    <lastmod>2018-07-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/blog/2018/04/15/bose-sound-sport-free/</loc>
-    <lastmod>2018-04-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/blog/2017/12/31/bestbuy2017/</loc>
-    <lastmod>2017-12-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/blog/2015/10/04/free/</loc>
-    <lastmod>2015-10-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/blog/2014/08/14/grape-research/</loc>
-    <lastmod>2014-08-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/blog/2014/06/19/ansible-study-01/</loc>
-    <lastmod>2014-06-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/blog/2014/04/17/aws-price/</loc>
-    <lastmod>2014-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/blog/2014/03/20/team-geek/</loc>
-    <lastmod>2014-03-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/blog/2014/03/15/jawsdays2014/</loc>
-    <lastmod>2014-03-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/blog/2013/07/28/nasne/</loc>
-    <lastmod>2013-07-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/categories/ansible/</loc>
-    <lastmod>2014-06-19T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/categories/aws/</loc>
-    <lastmod>2014-04-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/categories/benchmark/</loc>
-    <lastmod>2019-01-04T13:30:58+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/categories/book/</loc>
-    <lastmod>2014-03-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/categories/bose/</loc>
-    <lastmod>2018-04-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/categories/camp/</loc>
-    <lastmod>2018-07-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+    <loc>https://u1tnk.github.io/blog/2022/12/04/naming_variable/</loc>
+    <lastmod>2022-12-04T15:52:17+09:00</lastmod>
+  </url><url>
     <loc>https://u1tnk.github.io/categories/</loc>
-    <lastmod>2014-06-19T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/categories/docker/</loc>
-    <lastmod>2021-06-30T19:11:23+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/categories/family/</loc>
-    <lastmod>2019-04-13T00:25:42+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/categories/fbc/</loc>
-    <lastmod>2021-12-04T23:38:58+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/categories/fjordbootcamp/</loc>
-    <lastmod>2021-12-04T23:38:58+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/categories/food/</loc>
-    <lastmod>2019-04-16T21:16:51+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/categories/freelancer/</loc>
-    <lastmod>2019-04-24T23:24:31+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/categories/gadget/</loc>
-    <lastmod>2021-12-25T23:21:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/categories/grape/</loc>
-    <lastmod>2014-08-14T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/categories/health/</loc>
-    <lastmod>2020-09-28T11:02:45+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/categories/hugo/</loc>
-    <lastmod>2019-01-02T12:10:55+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/categories/job/</loc>
-    <lastmod>2019-04-24T23:24:31+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+    <lastmod>2022-12-04T15:52:17+09:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/categories/coffee/</loc>
+    <lastmod>2022-12-04T15:52:17+09:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/post/</loc>
+    <lastmod>2022-12-04T15:52:17+09:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/</loc>
+    <lastmod>2022-12-04T15:52:17+09:00</lastmod>
+  </url><url>
     <loc>https://u1tnk.github.io/categories/money/</loc>
     <lastmod>2022-07-19T12:41:27+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/categories/network/</loc>
-    <lastmod>2019-04-14T19:43:43+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/categories/octopress/</loc>
-    <lastmod>2019-01-02T12:10:55+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/categories/pc/</loc>
-    <lastmod>2019-12-18T01:46:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/post/</loc>
-    <lastmod>2022-07-19T12:41:27+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/categories/rails/</loc>
-    <lastmod>2014-08-14T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/tags/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://u1tnk.github.io/categories/work/</loc>
     <lastmod>2022-07-19T12:41:27+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://u1tnk.github.io/blog/2022/07/19/my-price2022/</loc>
+    <lastmod>2022-07-19T12:41:27+09:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/categories/gadget/</loc>
+    <lastmod>2021-12-25T23:21:00+09:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/blog/2021/12/25/bestbuy2021/</loc>
+    <lastmod>2021-12-25T23:21:00+09:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/categories/fbc/</loc>
+    <lastmod>2021-12-04T23:38:58+09:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/categories/fjordbootcamp/</loc>
+    <lastmod>2021-12-04T23:38:58+09:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/blog/2021/12/04/fbc-is-not-overcharging/</loc>
+    <lastmod>2021-12-04T23:38:58+09:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/categories/docker/</loc>
+    <lastmod>2021-06-30T19:11:23+09:00</lastmod>
+  </url><url>
     <loc>https://u1tnk.github.io/categories/wsl2/</loc>
     <lastmod>2021-06-30T19:11:23+09:00</lastmod>
-    <priority>0</priority>
+  </url><url>
+    <loc>https://u1tnk.github.io/blog/2021/06/30/wsl2_tips/</loc>
+    <lastmod>2021-06-30T19:11:23+09:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/blog/2021/06/28/wsl2_clipboard_config/</loc>
+    <lastmod>2021-06-28T15:26:11+09:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/blog/2021/06/28/wsl2_rails_test_system_config/</loc>
+    <lastmod>2021-06-28T11:17:59+09:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/blog/2020/12/17/structured_programming/</loc>
+    <lastmod>2020-12-17T20:04:36+09:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/categories/health/</loc>
+    <lastmod>2020-09-28T11:02:45+09:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/blog/2020/09/28/panic_disorder/</loc>
+    <lastmod>2020-09-28T11:02:45+09:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/blog/2020/01/07/bestbuy2019/</loc>
+    <lastmod>2020-01-07T11:29:59+09:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/blog/2019/12/22/bestbuy2018review/</loc>
+    <lastmod>2019-12-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/categories/pc/</loc>
+    <lastmod>2019-12-18T01:46:00+09:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/blog/2019/12/18/my-desktop-201912/</loc>
+    <lastmod>2019-12-18T01:46:00+09:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/blog/2019/04/24/understand_freelancer_completely/</loc>
+    <lastmod>2019-04-24T23:24:31+09:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/categories/freelancer/</loc>
+    <lastmod>2019-04-24T23:24:31+09:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/categories/job/</loc>
+    <lastmod>2019-04-24T23:24:31+09:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/categories/food/</loc>
+    <lastmod>2019-04-16T21:16:51+09:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/blog/2019/04/16/fukuoka_other_gourmet/</loc>
+    <lastmod>2019-04-16T21:16:51+09:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/categories/network/</loc>
+    <lastmod>2019-04-14T19:43:43+09:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/blog/2019/04/14/rtx810_ipv6_config/</loc>
+    <lastmod>2019-04-14T19:43:43+09:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/categories/family/</loc>
+    <lastmod>2019-04-13T00:25:42+09:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/blog/2019/04/13/junior_high_school_exam_total/</loc>
+    <lastmod>2019-04-13T00:25:42+09:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/blog/2019/02/04/junior_high_school_exam_cost/</loc>
+    <lastmod>2019-02-04T20:16:16+09:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/blog/2019/01/05/my-desktop-201801/</loc>
+    <lastmod>2019-01-05T08:47:57+09:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/categories/benchmark/</loc>
+    <lastmod>2019-01-04T13:30:58+09:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/blog/2019/01/04/ryzen1700oc/</loc>
+    <lastmod>2019-01-04T13:30:58+09:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/categories/hugo/</loc>
+    <lastmod>2019-01-02T12:10:55+09:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/categories/octopress/</loc>
+    <lastmod>2019-01-02T12:10:55+09:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/blog/2019/01/02/migrate_hugo/</loc>
+    <lastmod>2019-01-02T12:10:55+09:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/about/</loc>
+    <lastmod>2019-01-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/blog/2019/01/02/bestbuy2018/</loc>
+    <lastmod>2019-01-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/blog/2018/09/09/my-price/</loc>
+    <lastmod>2018-09-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/categories/camp/</loc>
+    <lastmod>2018-07-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/blog/2018/07/28/camp-maker/</loc>
+    <lastmod>2018-07-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/categories/bose/</loc>
+    <lastmod>2018-04-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/blog/2018/04/15/bose-sound-sport-free/</loc>
+    <lastmod>2018-04-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/blog/2017/12/31/bestbuy2017/</loc>
+    <lastmod>2017-12-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/blog/2015/10/04/free/</loc>
+    <lastmod>2015-10-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/categories/grape/</loc>
+    <lastmod>2014-08-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/blog/2014/08/14/grape-research/</loc>
+    <lastmod>2014-08-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/categories/rails/</loc>
+    <lastmod>2014-08-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/categories/ansible/</loc>
+    <lastmod>2014-06-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/blog/2014/06/19/ansible-study-01/</loc>
+    <lastmod>2014-06-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/categories/aws/</loc>
+    <lastmod>2014-04-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/blog/2014/04/17/aws-price/</loc>
+    <lastmod>2014-04-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/categories/book/</loc>
+    <lastmod>2014-03-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/blog/2014/03/20/team-geek/</loc>
+    <lastmod>2014-03-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/blog/2014/03/15/jawsdays2014/</loc>
+    <lastmod>2014-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/blog/2013/07/28/nasne/</loc>
+    <lastmod>2013-07-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/tags/</loc>
   </url>
-  
-  <url>
-    <loc>https://u1tnk.github.io/</loc>
-    <lastmod>2022-07-19T12:41:27+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
 </urlset>

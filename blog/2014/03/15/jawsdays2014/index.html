@@ -1,240 +1,321 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<html lang="en" dir="auto">
 
-  
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
-  <meta name="google-site-verification" content="Y9uGA9O73sv0k2GEuyVrCdITKeDD-VHTqab7KUM0olc" />
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>JAWS DAYS 2014に行ってきました | u1tnk.log</title>
+<meta name="keywords" content="">
+<meta name="description" content="Immutable Infrastructure JAWS DAYS 2014、Immutable Infrastructure について - naoyaのはてなダイアリー http://d.hatena.ne.jp/naoya/20140315/1394851727
+めっちゃ人居ました。個人的にrebuild.fm全部聞いてるのでほとんど聞いてたので割愛w
+クックパッドのデプロイとオートスケール 個人的一番勉強になったセッション。
+Cookpad&rsquo;s deployment and auto scaling // Speaker Deck https://speakerdeck.com/mirakui/cookpads-deployment-and-auto-scaling
+nameタグ、hostnameは起動時に自動採取
+→これはすぐにでも真似したい。 roleタグというのをつけてデプロイ内容をコントロール
+→ふむふむ Nameタグからip収集してpowerdnsで管理。
+→そうしたいよね… ec2からタグ情報取得するApiのImitに到達するらしいw キャッシュしてるとのこと
+Amazon AutoScaling使って無くて自作！
+CloudWatchが最短一分で秒単位で取得したい そこまで必要なのか… graceful terminate問題 それは確かに。多少のリクエストなら負荷で落ちるよりマシと思ってやってるが… ELBでは無くhaproxy使いたい。… haproxyの方が良いそうな。 ブラックボックスで問題起こったらよくわからんってのは確かに。 デプロイとにAutoScaalingと排他制御するため - 動くとやばいので、排他制御してると。ほー。デプロイ多いからこその問題。 問題調査のための、staticインスタンスとしてAutoScaleとは別管理のインスタンスがある。
+確かに。システムログとか見るヒマ無く勝手に落ちるからな…Amazon Autoscalingでもできるからやりたい 蛇足
+chefじゃなくてpuppet使ってるらしい。なんでだろ。 cookpadもhipchatoとのこと プロビジョニング＆デプロイ on AWSのキホン The Basics of Provisioning and Deploy on AWS #jawdays #infra http://www.slideshare.net/Ryuzee/the-basics-of-provisioning-and-deploy-on-aws-jawdays-infra 特段目新しい内容は無かったが、とにかく耳の痛い正論セッションでした。
+自動化しないリスク、コストを過少評価し過ぎ 自動化するなら最初から。デプロイするときに考えるじゃ遅い 自動化しない→ミスる→チェック増やす→コスト増える→＼(^o^)／ デプロイアンチパターン、手作業混合。 →これはやっちゃう… テスト自動化！小さい粒度でリリース！ sunsu&#43;graphite良いと。 カジュアルにVPC作った結果がこれだよ！ http://www.">
+<meta name="author" content="u1tnk">
+<link rel="canonical" href="https://u1tnk.github.io/blog/2014/03/15/jawsdays2014/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.bc1149f4a72aa4858d3a9f71462f75e5884ffe8073ea9d6d5761d5663d651e20.css" integrity="sha256-vBFJ9KcqpIWNOp9xRi915YhP/oBz6p1tV2HVZj1lHiA=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://u1tnk.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://u1tnk.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://u1tnk.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://u1tnk.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://u1tnk.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
 
-  
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="JAWS DAYS 2014に行ってきました" />
+<meta property="og:description" content="Immutable Infrastructure JAWS DAYS 2014、Immutable Infrastructure について - naoyaのはてなダイアリー http://d.hatena.ne.jp/naoya/20140315/1394851727
+めっちゃ人居ました。個人的にrebuild.fm全部聞いてるのでほとんど聞いてたので割愛w
+クックパッドのデプロイとオートスケール 個人的一番勉強になったセッション。
+Cookpad&rsquo;s deployment and auto scaling // Speaker Deck https://speakerdeck.com/mirakui/cookpads-deployment-and-auto-scaling
+nameタグ、hostnameは起動時に自動採取
+→これはすぐにでも真似したい。 roleタグというのをつけてデプロイ内容をコントロール
+→ふむふむ Nameタグからip収集してpowerdnsで管理。
+→そうしたいよね… ec2からタグ情報取得するApiのImitに到達するらしいw キャッシュしてるとのこと
+Amazon AutoScaling使って無くて自作！
+CloudWatchが最短一分で秒単位で取得したい そこまで必要なのか… graceful terminate問題 それは確かに。多少のリクエストなら負荷で落ちるよりマシと思ってやってるが… ELBでは無くhaproxy使いたい。… haproxyの方が良いそうな。 ブラックボックスで問題起こったらよくわからんってのは確かに。 デプロイとにAutoScaalingと排他制御するため - 動くとやばいので、排他制御してると。ほー。デプロイ多いからこその問題。 問題調査のための、staticインスタンスとしてAutoScaleとは別管理のインスタンスがある。
+確かに。システムログとか見るヒマ無く勝手に落ちるからな…Amazon Autoscalingでもできるからやりたい 蛇足
+chefじゃなくてpuppet使ってるらしい。なんでだろ。 cookpadもhipchatoとのこと プロビジョニング＆デプロイ on AWSのキホン The Basics of Provisioning and Deploy on AWS #jawdays #infra http://www.slideshare.net/Ryuzee/the-basics-of-provisioning-and-deploy-on-aws-jawdays-infra 特段目新しい内容は無かったが、とにかく耳の痛い正論セッションでした。
+自動化しないリスク、コストを過少評価し過ぎ 自動化するなら最初から。デプロイするときに考えるじゃ遅い 自動化しない→ミスる→チェック増やす→コスト増える→＼(^o^)／ デプロイアンチパターン、手作業混合。 →これはやっちゃう… テスト自動化！小さい粒度でリリース！ sunsu&#43;graphite良いと。 カジュアルにVPC作った結果がこれだよ！ http://www." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://u1tnk.github.io/blog/2014/03/15/jawsdays2014/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2014-03-15T00:00:00+00:00" />
+<meta property="article:modified_time" content="2014-03-15T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="JAWS DAYS 2014に行ってきました"/>
+<meta name="twitter:description" content="Immutable Infrastructure JAWS DAYS 2014、Immutable Infrastructure について - naoyaのはてなダイアリー http://d.hatena.ne.jp/naoya/20140315/1394851727
+めっちゃ人居ました。個人的にrebuild.fm全部聞いてるのでほとんど聞いてたので割愛w
+クックパッドのデプロイとオートスケール 個人的一番勉強になったセッション。
+Cookpad&rsquo;s deployment and auto scaling // Speaker Deck https://speakerdeck.com/mirakui/cookpads-deployment-and-auto-scaling
+nameタグ、hostnameは起動時に自動採取
+→これはすぐにでも真似したい。 roleタグというのをつけてデプロイ内容をコントロール
+→ふむふむ Nameタグからip収集してpowerdnsで管理。
+→そうしたいよね… ec2からタグ情報取得するApiのImitに到達するらしいw キャッシュしてるとのこと
+Amazon AutoScaling使って無くて自作！
+CloudWatchが最短一分で秒単位で取得したい そこまで必要なのか… graceful terminate問題 それは確かに。多少のリクエストなら負荷で落ちるよりマシと思ってやってるが… ELBでは無くhaproxy使いたい。… haproxyの方が良いそうな。 ブラックボックスで問題起こったらよくわからんってのは確かに。 デプロイとにAutoScaalingと排他制御するため - 動くとやばいので、排他制御してると。ほー。デプロイ多いからこその問題。 問題調査のための、staticインスタンスとしてAutoScaleとは別管理のインスタンスがある。
+確かに。システムログとか見るヒマ無く勝手に落ちるからな…Amazon Autoscalingでもできるからやりたい 蛇足
+chefじゃなくてpuppet使ってるらしい。なんでだろ。 cookpadもhipchatoとのこと プロビジョニング＆デプロイ on AWSのキホン The Basics of Provisioning and Deploy on AWS #jawdays #infra http://www.slideshare.net/Ryuzee/the-basics-of-provisioning-and-deploy-on-aws-jawdays-infra 特段目新しい内容は無かったが、とにかく耳の痛い正論セッションでした。
+自動化しないリスク、コストを過少評価し過ぎ 自動化するなら最初から。デプロイするときに考えるじゃ遅い 自動化しない→ミスる→チェック増やす→コスト増える→＼(^o^)／ デプロイアンチパターン、手作業混合。 →これはやっちゃう… テスト自動化！小さい粒度でリリース！ sunsu&#43;graphite良いと。 カジュアルにVPC作った結果がこれだよ！ http://www."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://u1tnk.github.io/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "JAWS DAYS 2014に行ってきました",
+      "item": "https://u1tnk.github.io/blog/2014/03/15/jawsdays2014/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "JAWS DAYS 2014に行ってきました",
+  "name": "JAWS DAYS 2014に行ってきました",
+  "description": "Immutable Infrastructure JAWS DAYS 2014、Immutable Infrastructure について - naoyaのはてなダイアリー http://d.hatena.ne.jp/naoya/20140315/1394851727\nめっちゃ人居ました。個人的にrebuild.fm全部聞いてるのでほとんど聞いてたので割愛w\nクックパッドのデプロイとオートスケール 個人的一番勉強になったセッション。\nCookpad\u0026rsquo;s deployment and auto scaling // Speaker Deck https://speakerdeck.com/mirakui/cookpads-deployment-and-auto-scaling\nnameタグ、hostnameは起動時に自動採取\n→これはすぐにでも真似したい。 roleタグというのをつけてデプロイ内容をコントロール\n→ふむふむ Nameタグからip収集してpowerdnsで管理。\n→そうしたいよね… ec2からタグ情報取得するApiのImitに到達するらしいw キャッシュしてるとのこと\nAmazon AutoScaling使って無くて自作！\nCloudWatchが最短一分で秒単位で取得したい そこまで必要なのか… graceful terminate問題 それは確かに。多少のリクエストなら負荷で落ちるよりマシと思ってやってるが… ELBでは無くhaproxy使いたい。… haproxyの方が良いそうな。 ブラックボックスで問題起こったらよくわからんってのは確かに。 デプロイとにAutoScaalingと排他制御するため - 動くとやばいので、排他制御してると。ほー。デプロイ多いからこその問題。 問題調査のための、staticインスタンスとしてAutoScaleとは別管理のインスタンスがある。\n確かに。システムログとか見るヒマ無く勝手に落ちるからな…Amazon Autoscalingでもできるからやりたい 蛇足\nchefじゃなくてpuppet使ってるらしい。なんでだろ。 cookpadもhipchatoとのこと プロビジョニング＆デプロイ on AWSのキホン The Basics of Provisioning and Deploy on AWS #jawdays #infra http://www.slideshare.net/Ryuzee/the-basics-of-provisioning-and-deploy-on-aws-jawdays-infra 特段目新しい内容は無かったが、とにかく耳の痛い正論セッションでした。\n自動化しないリスク、コストを過少評価し過ぎ 自動化するなら最初から。デプロイするときに考えるじゃ遅い 自動化しない→ミスる→チェック増やす→コスト増える→＼(^o^)／ デプロイアンチパターン、手作業混合。 →これはやっちゃう… テスト自動化！小さい粒度でリリース！ sunsu+graphite良いと。 カジュアルにVPC作った結果がこれだよ！ http://www.",
+  "keywords": [
     
-    
-      <link href="/css/fonts.css" rel="stylesheet" type="text/css">
-    
-  
-
-  
-  <title>JAWS DAYS 2014に行ってきました</title>
-
-  
-  
-  <link rel="stylesheet" href="/css/hugo-octopress.css">
-
-  
-  
-    <link rel="stylesheet" href="https://u1tnk.github.io/css/custom.css">
-  
-
-  
-    <link rel="stylesheet" href="/css/fork-awesome.min.css">
-  
-
-  
-  <link href="https://u1tnk.github.io/favicon.png" rel="icon">
-
-  
-  
-
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-  <meta name="author" content="u1tnk">
-
-  
-  <meta name="generator" content="Hugo 0.40.1" />
-
-  
-  
-
-  
-  
+  ],
+  "articleBody": "Immutable Infrastructure JAWS DAYS 2014、Immutable Infrastructure について - naoyaのはてなダイアリー http://d.hatena.ne.jp/naoya/20140315/1394851727\nめっちゃ人居ました。個人的にrebuild.fm全部聞いてるのでほとんど聞いてたので割愛w\nクックパッドのデプロイとオートスケール 個人的一番勉強になったセッション。\nCookpad’s deployment and auto scaling // Speaker Deck https://speakerdeck.com/mirakui/cookpads-deployment-and-auto-scaling\nnameタグ、hostnameは起動時に自動採取\n→これはすぐにでも真似したい。 roleタグというのをつけてデプロイ内容をコントロール\n→ふむふむ Nameタグからip収集してpowerdnsで管理。\n→そうしたいよね… ec2からタグ情報取得するApiのImitに到達するらしいw キャッシュしてるとのこと\nAmazon AutoScaling使って無くて自作！\nCloudWatchが最短一分で秒単位で取得したい そこまで必要なのか… graceful terminate問題 それは確かに。多少のリクエストなら負荷で落ちるよりマシと思ってやってるが… ELBでは無くhaproxy使いたい。… haproxyの方が良いそうな。 ブラックボックスで問題起こったらよくわからんってのは確かに。 デプロイとにAutoScaalingと排他制御するため - 動くとやばいので、排他制御してると。ほー。デプロイ多いからこその問題。 問題調査のための、staticインスタンスとしてAutoScaleとは別管理のインスタンスがある。\n確かに。システムログとか見るヒマ無く勝手に落ちるからな…Amazon Autoscalingでもできるからやりたい 蛇足\nchefじゃなくてpuppet使ってるらしい。なんでだろ。 cookpadもhipchatoとのこと プロビジョニング＆デプロイ on AWSのキホン The Basics of Provisioning and Deploy on AWS #jawdays #infra http://www.slideshare.net/Ryuzee/the-basics-of-provisioning-and-deploy-on-aws-jawdays-infra 特段目新しい内容は無かったが、とにかく耳の痛い正論セッションでした。\n自動化しないリスク、コストを過少評価し過ぎ 自動化するなら最初から。デプロイするときに考えるじゃ遅い 自動化しない→ミスる→チェック増やす→コスト増える→＼(^o^)／ デプロイアンチパターン、手作業混合。 →これはやっちゃう… テスト自動化！小さい粒度でリリース！ sunsu+graphite良いと。 カジュアルにVPC作った結果がこれだよ！ http://www.slideshare.net/Yuryu/aws-casual-talks-1-vpc 行ってないけど、資料流れてきたらめっちゃ気になってた事なので勉強になった。 カジュアルには行けない事が良くわかったw\n20140315 JAWS DAYS 2014 ACEに聞け！ CloudFormation編 http://www.slideshare.net/daisuke_m/20140315-jaws-days-2014acecfn\n2番目に勉強になった。\nやっぱ基本は一発作るのがメインのものなんだ とはいえ、UPDATE_STACKでメンテしていける。 UPDATE_STACKちゃんとせず、手でメンテすると詰むと。ウチのは完全詰んでるからどっかで精算せねばw BLUE-GREEN deploymentを CludFormationだけで実行するデモ。ここまでできると素晴しいなぁ… とはいえjsonの定義見るのキツいわw AWS CloudFormation tempate for PHP Blue-Green Deployment environment https://gist.github.com/miyamoto-daisuke/9544801 Immutable Infrastracture パネルディスカッション〜オレにも一言言わせろ〜 人大杉…立ち見でも厳しそうだったので断念。\nまとめ すぐに手をつけたいのはchef/powerdns/cloudformation/tag利用…あたりかなぁ。山積みすぎる… 人の多さと会場の割り当てに疑問を感じる。立ち見2回で足痛い… AWS面白い。改善頑張ろう。 ",
+  "wordCount" : "107",
+  "inLanguage": "en",
+  "datePublished": "2014-03-15T00:00:00Z",
+  "dateModified": "2014-03-15T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "u1tnk"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://u1tnk.github.io/blog/2014/03/15/jawsdays2014/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "u1tnk.log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://u1tnk.github.io/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
-<body>
 
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
 
-<header role="banner">
-<hgroup>
-  
-  <h1><a href="https://u1tnk.github.io/">u1tnk.log</a></h1>
-    <h2></h2>
-</hgroup></header>
+</script>
 
-
-<nav role="navigation">
-<fieldset class="mobile-nav">
-  
-  <select onchange="location = this.value;">
-    <option value="">Navigate…</option>
-      
-        <option value="https://u1tnk.github.io/">» posts</option>
-      
-        <option value="https://u1tnk.github.io/about">» about</option>
-      
-        <option value="https://u1tnk.github.io/atom.xml">» rss</option>
-      
-  </select>
-</fieldset>
-
-
-<ul class="main-navigation">
-  
-  
-    
-      <li><a href="https://u1tnk.github.io/" title="posts">posts</a></li>
-    
-  
-    
-      <li><a href="https://u1tnk.github.io/about" title="about" >about</a></li>
-    
-  
-    
-      <li><a href="https://u1tnk.github.io/atom.xml" title="rss" >rss</a></li>
-    
-  
-</ul>
-
-<ul class="subscription">
-  
-</ul>
-
-
-</nav>
-
-
-<div id="main">
-  <div id="content">
-    <div>
-      <article class="hentry" role="article">
-
-        
-        
-
-<header>
-  <p class="meta">2014/03/15
-    
-    
-
-    
-    
-      - <a class="label" href="https://u1tnk.github.io/categories/aws/">aws </a>
-    
-  </p>
-  <h1 class="entry-title">
-     JAWS DAYS 2014に行ってきました 
-  </h1>
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://u1tnk.github.io/" accesskey="h" title="u1tnk.log (Alt + H)">u1tnk.log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://u1tnk.github.io/" title="posts">
+                    <span>posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://u1tnk.github.io/about" title="about">
+                    <span>about</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://u1tnk.github.io/atom.xml" title="rss">
+                    <span>rss</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 </header>
+<main class="main">
 
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      JAWS DAYS 2014に行ってきました
+    </h1>
+    <div class="post-meta"><span title='2014-03-15 00:00:00 +0000 UTC'>2014/03/15</span>&nbsp;·&nbsp;u1tnk
 
-        <div class="entry-content">
-          
-          
-          
-          
-
-<h2 id="immutable-infrastructure">Immutable Infrastructure</h2>
-
+</div>
+  </header> 
+  <div class="post-content"><h2 id="immutable-infrastructure">Immutable Infrastructure<a hidden class="anchor" aria-hidden="true" href="#immutable-infrastructure">#</a></h2>
 <p>JAWS DAYS 2014、Immutable Infrastructure について - naoyaのはてなダイアリー <a href="http://d.hatena.ne.jp/naoya/20140315/1394851727">http://d.hatena.ne.jp/naoya/20140315/1394851727</a></p>
-
 <p>めっちゃ人居ました。個人的にrebuild.fm全部聞いてるのでほとんど聞いてたので割愛w</p>
-
-<h2 id="クックパッドのデプロイとオートスケール">クックパッドのデプロイとオートスケール</h2>
-
+<h2 id="クックパッドのデプロイとオートスケール">クックパッドのデプロイとオートスケール<a hidden class="anchor" aria-hidden="true" href="#クックパッドのデプロイとオートスケール">#</a></h2>
 <p>個人的一番勉強になったセッション。</p>
-
 <p>Cookpad&rsquo;s deployment and auto scaling // Speaker Deck <a href="https://speakerdeck.com/mirakui/cookpads-deployment-and-auto-scaling">https://speakerdeck.com/mirakui/cookpads-deployment-and-auto-scaling</a></p>
-
 <ul>
-<li>nameタグ、hostnameは起動時に自動採取
-
+<li>
+<p>nameタグ、hostnameは起動時に自動採取</p>
 <ul>
 <li>→これはすぐにでも真似したい。</li>
-</ul></li>
-<li>roleタグというのをつけてデプロイ内容をコントロール
-
+</ul>
+</li>
+<li>
+<p>roleタグというのをつけてデプロイ内容をコントロール</p>
 <ul>
 <li>→ふむふむ</li>
-</ul></li>
-<li>Nameタグからip収集してpowerdnsで管理。
-
+</ul>
+</li>
+<li>
+<p>Nameタグからip収集してpowerdnsで管理。</p>
 <ul>
 <li>→そうしたいよね…</li>
-</ul></li>
-
-<li><p>ec2からタグ情報取得するApiのImitに到達するらしいw キャッシュしてるとのこと</p></li>
-
-<li><p>Amazon AutoScaling使って無くて自作！</p>
-
+</ul>
+</li>
+<li>
+<p>ec2からタグ情報取得するApiのImitに到達するらしいw キャッシュしてるとのこと</p>
+</li>
+<li>
+<p>Amazon AutoScaling使って無くて自作！</p>
 <ul>
 <li>CloudWatchが最短一分で秒単位で取得したい
-
 <ul>
 <li>そこまで必要なのか…</li>
-</ul></li>
+</ul>
+</li>
 <li>graceful terminate問題
-
 <ul>
 <li>それは確かに。多少のリクエストなら負荷で落ちるよりマシと思ってやってるが…</li>
-</ul></li>
+</ul>
+</li>
 <li>ELBでは無くhaproxy使いたい。…
-
 <ul>
 <li>haproxyの方が良いそうな。</li>
 <li>ブラックボックスで問題起こったらよくわからんってのは確かに。</li>
-</ul></li>
+</ul>
+</li>
 <li>デプロイとにAutoScaalingと排他制御するため
-
-<ul>
-<li>動くとやばいので、排他制御してると。ほー。デプロイ多いからこその問題。</li>
-</ul></li>
-</ul></li>
-
-<li><p>問題調査のための、staticインスタンスとしてAutoScaleとは別管理のインスタンスがある。</p>
-
+- 動くとやばいので、排他制御してると。ほー。デプロイ多いからこその問題。</li>
+</ul>
+</li>
+<li>
+<p>問題調査のための、staticインスタンスとしてAutoScaleとは別管理のインスタンスがある。</p>
 <ul>
 <li>確かに。システムログとか見るヒマ無く勝手に落ちるからな…Amazon Autoscalingでもできるからやりたい</li>
-</ul></li>
-
-<li><p>蛇足</p>
-
+</ul>
+</li>
+<li>
+<p>蛇足</p>
 <ul>
 <li>chefじゃなくてpuppet使ってるらしい。なんでだろ。</li>
 <li>cookpadもhipchatoとのこと</li>
-</ul></li>
 </ul>
-
-<h2 id="プロビジョニング-デプロイ-on-awsのキホン">プロビジョニング＆デプロイ on AWSのキホン</h2>
-
+</li>
+</ul>
+<h2 id="プロビジョニングデプロイ-on-awsのキホン">プロビジョニング＆デプロイ on AWSのキホン<a hidden class="anchor" aria-hidden="true" href="#プロビジョニングデプロイ-on-awsのキホン">#</a></h2>
 <p>The Basics of Provisioning and Deploy on AWS #jawdays #infra <a href="http://www.slideshare.net/Ryuzee/the-basics-of-provisioning-and-deploy-on-aws-jawdays-infra">http://www.slideshare.net/Ryuzee/the-basics-of-provisioning-and-deploy-on-aws-jawdays-infra</a>
 特段目新しい内容は無かったが、とにかく耳の痛い正論セッションでした。</p>
-
 <ul>
 <li>自動化しないリスク、コストを過少評価し過ぎ</li>
 <li>自動化するなら最初から。デプロイするときに考えるじゃ遅い</li>
 <li>自動化しない→ミスる→チェック増やす→コスト増える→＼(^o^)／</li>
 <li>デプロイアンチパターン、手作業混合。
-
 <ul>
 <li>→これはやっちゃう…</li>
-</ul></li>
+</ul>
+</li>
 <li>テスト自動化！小さい粒度でリリース！</li>
 <li>sunsu+graphite良いと。</li>
 </ul>
-
-<h2 id="カジュアルにvpc作った結果がこれだよ">カジュアルにVPC作った結果がこれだよ！</h2>
-
+<h2 id="カジュアルにvpc作った結果がこれだよ">カジュアルにVPC作った結果がこれだよ！<a hidden class="anchor" aria-hidden="true" href="#カジュアルにvpc作った結果がこれだよ">#</a></h2>
 <p><a href="http://www.slideshare.net/Yuryu/aws-casual-talks-1-vpc">http://www.slideshare.net/Yuryu/aws-casual-talks-1-vpc</a>
 行ってないけど、資料流れてきたらめっちゃ気になってた事なので勉強になった。
 カジュアルには行けない事が良くわかったw</p>
-
-<h2 id="20140315-jaws-days-2014-aceに聞け-cloudformation編">20140315 JAWS DAYS 2014 ACEに聞け！ CloudFormation編</h2>
-
+<h2 id="20140315-jaws-days-2014-aceに聞け-cloudformation編">20140315 JAWS DAYS 2014 ACEに聞け！ CloudFormation編<a hidden class="anchor" aria-hidden="true" href="#20140315-jaws-days-2014-aceに聞け-cloudformation編">#</a></h2>
 <p><a href="http://www.slideshare.net/daisuke_m/20140315-jaws-days-2014acecfn">http://www.slideshare.net/daisuke_m/20140315-jaws-days-2014acecfn</a></p>
-
 <p>2番目に勉強になった。</p>
-
 <ul>
 <li>やっぱ基本は一発作るのがメインのものなんだ</li>
 <li>とはいえ、UPDATE_STACKでメンテしていける。</li>
@@ -242,114 +323,93 @@
 <li>BLUE-GREEN deploymentを CludFormationだけで実行するデモ。ここまでできると素晴しいなぁ…</li>
 <li>とはいえjsonの定義見るのキツいわw AWS CloudFormation tempate for PHP Blue-Green Deployment environment <a href="https://gist.github.com/miyamoto-daisuke/9544801">https://gist.github.com/miyamoto-daisuke/9544801</a></li>
 </ul>
-
-<h1 id="immutable-infrastracture-パネルディスカッション-オレにも一言言わせろ">Immutable Infrastracture パネルディスカッション〜オレにも一言言わせろ〜</h1>
-
+<h1 id="immutable-infrastracture-パネルディスカッションオレにも一言言わせろ">Immutable Infrastracture パネルディスカッション〜オレにも一言言わせろ〜<a hidden class="anchor" aria-hidden="true" href="#immutable-infrastracture-パネルディスカッションオレにも一言言わせろ">#</a></h1>
 <p>人大杉…立ち見でも厳しそうだったので断念。</p>
-
-<h2 id="まとめ">まとめ</h2>
-
+<h2 id="まとめ">まとめ<a hidden class="anchor" aria-hidden="true" href="#まとめ">#</a></h2>
 <ul>
 <li>すぐに手をつけたいのはchef/powerdns/cloudformation/tag利用…あたりかなぁ。山積みすぎる…</li>
 <li>人の多さと会場の割り当てに疑問を感じる。立ち見2回で足痛い…</li>
 <li>AWS面白い。改善頑張ろう。</li>
 </ul>
 
-        </div>
-        
-
-<footer>
-  <p class="meta">
-    <span class="byline author vcard">Posted by <span class="fn">u1tnk</span></span>
-    
-    <time>Mar 15, 2014</time>
-    
-    </span>
-  </p>
-
-  
-
-  <p class="meta">
-    
-        <a class="basic-alignment left" href="https://u1tnk.github.io/blog/2013/07/28/nasne/" title="nasne&#43;iOSは無茶苦茶便利だがTwonkeyBeamは使わない方が幸せ。黙ってDixim使っとけ！">nasne&#43;iOSは無茶苦茶便利だがTwonkeyBeamは使わない方が幸せ。黙ってDixim使っとけ！</a>
-    
-
-    
-      <a class="basic-alignment right" href="https://u1tnk.github.io/blog/2014/03/20/team-geek/" title="Team Geek読んだ">Team Geek読んだ</a>
-    
-  </p>
-  
-</footer>
-
-      </article>
-    </div>
-    
-
-<aside class="sidebar thirds">
-  <section class="first odd">
-
-    
-
-    <p>
-      
-    </p>
-  </section>
-
-
-
-  
-  <ul class="sidebar-nav">
-    <li class="sidebar-nav-item">
-      
-      
-      
-      
-      
-         
-      
-      
-      
-      
-      
-      
-      
-      
-
-    
-    
-    </li>
-  </ul>
-
-  
-
-  
-
-  
-  
-  
-</aside>
 
   </div>
-</div>
 
-    <footer role="contentinfo">
-      <p>Copyright &copy; 2022 u1tnk - <a href="https://u1tnk.github.io/license/">License</a> -
-        <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
-      </p>
-    </footer>
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://u1tnk.github.io/">u1tnk.log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
 
-    
-    
-    
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
 
-    
-      <script>
-        var _gaq=[['_setAccount','UA-2532590-5'],['_trackPageview']];
-        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-        s.parentNode.insertBefore(g,s)}(document,'script'));
-      </script>
-    
-  </body>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
 </html>
-

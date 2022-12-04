@@ -1,220 +1,222 @@
-
-
-
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<html lang="en" dir="auto">
 
-  
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
-  <meta name="google-site-verification" content="Y9uGA9O73sv0k2GEuyVrCdITKeDD-VHTqab7KUM0olc" />
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>ansible | u1tnk.log</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="u1tnk">
+<link rel="canonical" href="https://u1tnk.github.io/categories/ansible/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.bc1149f4a72aa4858d3a9f71462f75e5884ffe8073ea9d6d5761d5663d651e20.css" integrity="sha256-vBFJ9KcqpIWNOp9xRi915YhP/oBz6p1tV2HVZj1lHiA=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://u1tnk.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://u1tnk.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://u1tnk.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://u1tnk.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://u1tnk.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://u1tnk.github.io/categories/ansible/atom.xml">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
 
-  
-    
-    
-      <link href="/css/fonts.css" rel="stylesheet" type="text/css">
-    
-  
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
 
-  
-  <title>Ansible</title>
+            .list {
+                background: var(--theme);
+            }
 
-  
-  
-  <link rel="stylesheet" href="/css/hugo-octopress.css">
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
 
-  
-  
-    <link rel="stylesheet" href="https://u1tnk.github.io/css/custom.css">
-  
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
 
-  
-    <link rel="stylesheet" href="/css/fork-awesome.min.css">
-  
+    </style>
+</noscript><meta property="og:title" content="ansible" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://u1tnk.github.io/categories/ansible/" />
 
-  
-  <link href="https://u1tnk.github.io/favicon.png" rel="icon">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ansible"/>
+<meta name="twitter:description" content=""/>
 
-  
-  <link href="https://u1tnk.github.io/categories/ansible/atom.xml" rel="alternate" type="application/rss+xml" title="u1tnk.log" />
-
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-  <meta name="author" content="u1tnk">
-
-  
-  <meta name="generator" content="Hugo 0.40.1" />
-
-  
-  
-
-  
-  
 </head>
-<body>
 
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
 
-<header role="banner">
-<hgroup>
-  
-  <h1><a href="https://u1tnk.github.io/">u1tnk.log</a></h1>
-    <h2></h2>
-</hgroup></header>
+</script>
 
-
-<nav role="navigation">
-<fieldset class="mobile-nav">
-  
-  <select onchange="location = this.value;">
-    <option value="">Navigate…</option>
-      
-        <option value="https://u1tnk.github.io/">» posts</option>
-      
-        <option value="https://u1tnk.github.io/about">» about</option>
-      
-        <option value="https://u1tnk.github.io/atom.xml">» rss</option>
-      
-  </select>
-</fieldset>
-
-
-<ul class="main-navigation">
-  
-  
-    
-      <li><a href="https://u1tnk.github.io/" title="posts">posts</a></li>
-    
-  
-    
-      <li><a href="https://u1tnk.github.io/about" title="about" >about</a></li>
-    
-  
-    
-      <li><a href="https://u1tnk.github.io/atom.xml" title="rss" >rss</a></li>
-    
-  
-</ul>
-
-<ul class="subscription">
-  
-</ul>
-
-
-</nav>
-
-
-<div id="main">
-  <div id="content">
-    <div>
-      <article role="article">
-        <header>
-          <h1 class="entry-title">
-            Category: Ansible
-          </h1>
-        </header>
-        <div id="blog-archives" class="category">
-          
-          <h2>
-            2014
-          </h2>
-          <article>
-            <h1>
-              <a href="https://u1tnk.github.io/blog/2014/06/19/ansible-study-01/" title="ansible 勉強会 #1メモ">ansible 勉強会 #1メモ</a>
-            </h1>
-            <time>
-              <span class="month">Jun</span>
-              <span class="day">19</span>
-            </time>
-            <footer>
-              <span class="categories"> 
-                
-                
-                posted in:
-                 <a class="category" href="https://u1tnk.github.io/categories/ansible">ansible</a>
-              </br>
-                
-
-                
-                
-              </span>
-            </footer>
-          </article>
-          
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://u1tnk.github.io/" accesskey="h" title="u1tnk.log (Alt + H)">u1tnk.log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
         </div>
-      </article>
-    </div>
+        <ul id="menu">
+            <li>
+                <a href="https://u1tnk.github.io/" title="posts">
+                    <span>posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://u1tnk.github.io/about" title="about">
+                    <span>about</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://u1tnk.github.io/atom.xml" title="rss">
+                    <span>rss</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header">
+  <h1>
+    ansible
+  </h1>
+</header>
 
-    
-
-<aside class="sidebar thirds">
-  <section class="first odd">
-
-    
-
-    <p>
-      
-    </p>
-  </section>
-
-
-
-  
-  <ul class="sidebar-nav">
-    <li class="sidebar-nav-item">
-      
-      
-      
-      
-      
-         
-      
-      
-      
-      
-      
-      
-      
-      
-
-    
-    
-    </li>
-  </ul>
-
-  
-
-  
-
-  
-  
-  
-</aside>
-
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>ansible 勉強会 #1メモ
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Ansible 勉強会 #1 - connpass
+に行ってきたのでメモ。資料は↑にほぼあるようです。
+Ansible の基本 &#43; MySQL レプリケーションを設定する事例 by @IanMLewis まさに基本。普段使ってるので大体押さえられてた。
+MySQLを構築してみる bennojoy/ansible-roles ansibleworksの人のリポジトリらしい。参考になりそう。 when あんま使いこなしてないので見とこう。 サンプルyaml見ると、自分のyamlが使いこなして無い感ある… mysql_replicationモジュールは便利感あるが、ちょっと簡単そうに見えないw 基本の直後に見るのはキツい印象。 dynamic inventoryが便利な話: no more host list! by @tagomoris 某巨大メッセージングアプリ企業で普通に使ってるっぽい エージェントいらないからCentOS5でも動くという理由が大きいらしい。納得。 日本語情報あんま無いのが弱点は同意。っつーか俺書け。 Inventryに普通のvars定義できたという恐らくかなり基本に気づいてなかった… hoge[1:2].local → hoge1.local…とか使える。 Dyanamic Inventry存在すら気づいてなかった… ec2用のscriptは既存である。 JSON返すだけなので自作もラク。 ansible.cfg置けば -i不要という事に気づいた。 明日からマネしたい！ 2000台完走実績あるらしい。さすが某巨大メッセージングアプリ企業 おまけ DynamicInventryでは_meta使って —host はスキップさせるのがオススメ。
+callback pluginを使ったタスク実行時間の可視化について by @rudy pluginはmoduleと違ってpythonで本体を拡張。 -i “localhost, ” とかできる事に気づいて衝撃。 callback_plugins に入れるだけ。実行ホストに置けば良いのラクだな。 実用上は使わない気がするが、bot連携すると面白いかも。 AnsibleのJUNOS設定モジュールを書いてみた by @saito_hideki Ansibleでルータ設定をしているという、まったく参考にはならないが衝撃の発表。
+MSPだってansibleしたい by @LaughK MSP(運用、保守代行) 客のサーバだからに(ほとんど)何も入れなくて良いという理由。 目指せ、サーバー構築1200台 by @myb1126 採用はエージェントレスが決め手との事。 構成管理ツールAnsibleの構成管理について by @iktakahiro playbookだけディレクトリ分けるのアリかも。 「冪等性は忘れよう」w 発表されてたのは複雑な気がする…とはいえbest practiceは複数サービスになると厳しいので、考えないとまずそう。 Vagrant × Ansible by @tomohiro_urakawa inventoryはvagrantが生成すんのか。べんりー Vagrant provisionで実行 正直言うとそれでもわざわざVagrantに実行させるメリットが見えない…っつーか小さくしか見えない。 chefからansibleに乗り換えた話 by @futoase やはりchefより良いのは以下2点...</p>
   </div>
-</div>
+  <footer class="entry-footer"><span title='2014-06-19 00:00:00 +0000 UTC'>2014/06/19</span>&nbsp;·&nbsp;u1tnk</footer>
+  <a class="entry-link" aria-label="post link to ansible 勉強会 #1メモ" href="https://u1tnk.github.io/blog/2014/06/19/ansible-study-01/"></a>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://u1tnk.github.io/">u1tnk.log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
 
-    <footer role="contentinfo">
-      <p>Copyright &copy; 2022 u1tnk - <a href="https://u1tnk.github.io/license/">License</a> -
-        <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
-      </p>
-    </footer>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
 
-    
-    
-    
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
 
-    
-      <script>
-        var _gaq=[['_setAccount','UA-2532590-5'],['_trackPageview']];
-        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-        s.parentNode.insertBefore(g,s)}(document,'script'));
-      </script>
-    
-  </body>
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
 </html>
-

@@ -1,149 +1,218 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<html lang="en" dir="auto">
 
-  
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
-  <meta name="google-site-verification" content="Y9uGA9O73sv0k2GEuyVrCdITKeDD-VHTqab7KUM0olc" />
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>EC2インスタンス価格の必要なところだけ表にしてみた | u1tnk.log</title>
+<meta name="keywords" content="">
+<meta name="description" content="何？ EC2の価格表で以下が欲しかったので作った。
+2月にほぼ手作業で同じようなデータ作ったけど、大幅値下げで既に使いものにならなくなったので業を煮やした。いや値下げは嬉しいんだけど。
+同様にネットで見かけるまとめも見やすいものは古くなってたり…
+以下公式の不満。
+一画面でECUとかGiBとか比較できない リザーブドインスタンスにしたときのならし月額(一括払いを月額に按分して時間分と足す)が欲しい(見積りツールにはある) オンデマンドとリザーブドインスタンスどんぐらい違うか見たい ECUあたりとかメモリあたりの単価も比較したい 3年とかさすがに使えないのでいらない 中度とか軽度買うぐらいならオンデマンドで良いのでいらない このページのもデザイン的に見やすくないのでSpreadSheetなりに貼りつけて利用を推奨。(以下リンク先のCSSゼロの方がまだ見やすいという…) やはりみづらいのでgoogle spread sheetに貼りつけた https://docs.google.com/spreadsheets/d/1QzsUHO4Nd07TL5FAnVM2yvLRa3uOslY7pDTrmhwuAf0/edit?usp=sharing どうやった？ 以下ページのJSでHTML化。このページのはスナップショットとしてコピペ。 https://dl.dropboxusercontent.com/u/3400756/aws_price.html
+料金表のページのソースを見るとJSONPで呼んでたので使わせてもらった。おそらく外部利用を想定してないので止まっても文句は言いません。(見れなくなったら困るのでコピペった) 表について RI = リザーブドインスタンス一年重度使用 OD = オンデマンド(普通) m1.small比OD価格のm1.small比。 安い順にソートしている。ファミリー毎の方がコスパとか見やすかったかも。 内容感想 m1.medium/m1.largeが消えてた…別ページにあるんだろうけど。 m1.small、特殊用途のhs以外全てSSD化してた。HDDは死んだ… m1.small、単価見ると高い！しょぼい用途には使うけど… m3.mediumも2月時点のm1.small(RIならしで約$34だった)と大差無い。 2月時点のm1.mediumよりC3.largeが安いってw m1.mediumのリザーブドインスタンスどうしろと… c3.largeがオンデマンドでも月一万切る上、メモリ/ECU共にコスパ高い! large以上は特段コスパ良くなったりはしない。 m3の中途半端さ。largeならc3かr3使うと思う。 4/17時点の価格表 size vCPU ECU memoryGiB storageGB RI一括 RI/時間 RIならし月額 OD時間 OD月額 OD m1.small比 OD月額/ECU OD月額/GiB t1.micro1variable0.615ebsonly620.00911.640.02618.720.42NaN30.43 m1.small111.71 x 1601350.01723.490.06143.92143.9225.83 m3.medium133.751 x 4 SSD2440.0341.930.10172.721.6524.2419.39 c3.large273.752 x 16 SSD3570.04763.590.12892.162.0913.1624.57 m3.large26.57.51 x 32 SSD4870.06184.50.203146.163.3222.4819.48 r3.">
+<meta name="author" content="u1tnk">
+<link rel="canonical" href="https://u1tnk.github.io/blog/2014/04/17/aws-price/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.bc1149f4a72aa4858d3a9f71462f75e5884ffe8073ea9d6d5761d5663d651e20.css" integrity="sha256-vBFJ9KcqpIWNOp9xRi915YhP/oBz6p1tV2HVZj1lHiA=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://u1tnk.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://u1tnk.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://u1tnk.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://u1tnk.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://u1tnk.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
 
-  
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="EC2インスタンス価格の必要なところだけ表にしてみた" />
+<meta property="og:description" content="何？ EC2の価格表で以下が欲しかったので作った。
+2月にほぼ手作業で同じようなデータ作ったけど、大幅値下げで既に使いものにならなくなったので業を煮やした。いや値下げは嬉しいんだけど。
+同様にネットで見かけるまとめも見やすいものは古くなってたり…
+以下公式の不満。
+一画面でECUとかGiBとか比較できない リザーブドインスタンスにしたときのならし月額(一括払いを月額に按分して時間分と足す)が欲しい(見積りツールにはある) オンデマンドとリザーブドインスタンスどんぐらい違うか見たい ECUあたりとかメモリあたりの単価も比較したい 3年とかさすがに使えないのでいらない 中度とか軽度買うぐらいならオンデマンドで良いのでいらない このページのもデザイン的に見やすくないのでSpreadSheetなりに貼りつけて利用を推奨。(以下リンク先のCSSゼロの方がまだ見やすいという…) やはりみづらいのでgoogle spread sheetに貼りつけた https://docs.google.com/spreadsheets/d/1QzsUHO4Nd07TL5FAnVM2yvLRa3uOslY7pDTrmhwuAf0/edit?usp=sharing どうやった？ 以下ページのJSでHTML化。このページのはスナップショットとしてコピペ。 https://dl.dropboxusercontent.com/u/3400756/aws_price.html
+料金表のページのソースを見るとJSONPで呼んでたので使わせてもらった。おそらく外部利用を想定してないので止まっても文句は言いません。(見れなくなったら困るのでコピペった) 表について RI = リザーブドインスタンス一年重度使用 OD = オンデマンド(普通) m1.small比OD価格のm1.small比。 安い順にソートしている。ファミリー毎の方がコスパとか見やすかったかも。 内容感想 m1.medium/m1.largeが消えてた…別ページにあるんだろうけど。 m1.small、特殊用途のhs以外全てSSD化してた。HDDは死んだ… m1.small、単価見ると高い！しょぼい用途には使うけど… m3.mediumも2月時点のm1.small(RIならしで約$34だった)と大差無い。 2月時点のm1.mediumよりC3.largeが安いってw m1.mediumのリザーブドインスタンスどうしろと… c3.largeがオンデマンドでも月一万切る上、メモリ/ECU共にコスパ高い! large以上は特段コスパ良くなったりはしない。 m3の中途半端さ。largeならc3かr3使うと思う。 4/17時点の価格表 size vCPU ECU memoryGiB storageGB RI一括 RI/時間 RIならし月額 OD時間 OD月額 OD m1.small比 OD月額/ECU OD月額/GiB t1.micro1variable0.615ebsonly620.00911.640.02618.720.42NaN30.43 m1.small111.71 x 1601350.01723.490.06143.92143.9225.83 m3.medium133.751 x 4 SSD2440.0341.930.10172.721.6524.2419.39 c3.large273.752 x 16 SSD3570.04763.590.12892.162.0913.1624.57 m3.large26.57.51 x 32 SSD4870.06184.50.203146.163.3222.4819.48 r3." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://u1tnk.github.io/blog/2014/04/17/aws-price/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2014-04-17T00:00:00+00:00" />
+<meta property="article:modified_time" content="2014-04-17T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="EC2インスタンス価格の必要なところだけ表にしてみた"/>
+<meta name="twitter:description" content="何？ EC2の価格表で以下が欲しかったので作った。
+2月にほぼ手作業で同じようなデータ作ったけど、大幅値下げで既に使いものにならなくなったので業を煮やした。いや値下げは嬉しいんだけど。
+同様にネットで見かけるまとめも見やすいものは古くなってたり…
+以下公式の不満。
+一画面でECUとかGiBとか比較できない リザーブドインスタンスにしたときのならし月額(一括払いを月額に按分して時間分と足す)が欲しい(見積りツールにはある) オンデマンドとリザーブドインスタンスどんぐらい違うか見たい ECUあたりとかメモリあたりの単価も比較したい 3年とかさすがに使えないのでいらない 中度とか軽度買うぐらいならオンデマンドで良いのでいらない このページのもデザイン的に見やすくないのでSpreadSheetなりに貼りつけて利用を推奨。(以下リンク先のCSSゼロの方がまだ見やすいという…) やはりみづらいのでgoogle spread sheetに貼りつけた https://docs.google.com/spreadsheets/d/1QzsUHO4Nd07TL5FAnVM2yvLRa3uOslY7pDTrmhwuAf0/edit?usp=sharing どうやった？ 以下ページのJSでHTML化。このページのはスナップショットとしてコピペ。 https://dl.dropboxusercontent.com/u/3400756/aws_price.html
+料金表のページのソースを見るとJSONPで呼んでたので使わせてもらった。おそらく外部利用を想定してないので止まっても文句は言いません。(見れなくなったら困るのでコピペった) 表について RI = リザーブドインスタンス一年重度使用 OD = オンデマンド(普通) m1.small比OD価格のm1.small比。 安い順にソートしている。ファミリー毎の方がコスパとか見やすかったかも。 内容感想 m1.medium/m1.largeが消えてた…別ページにあるんだろうけど。 m1.small、特殊用途のhs以外全てSSD化してた。HDDは死んだ… m1.small、単価見ると高い！しょぼい用途には使うけど… m3.mediumも2月時点のm1.small(RIならしで約$34だった)と大差無い。 2月時点のm1.mediumよりC3.largeが安いってw m1.mediumのリザーブドインスタンスどうしろと… c3.largeがオンデマンドでも月一万切る上、メモリ/ECU共にコスパ高い! large以上は特段コスパ良くなったりはしない。 m3の中途半端さ。largeならc3かr3使うと思う。 4/17時点の価格表 size vCPU ECU memoryGiB storageGB RI一括 RI/時間 RIならし月額 OD時間 OD月額 OD m1.small比 OD月額/ECU OD月額/GiB t1.micro1variable0.615ebsonly620.00911.640.02618.720.42NaN30.43 m1.small111.71 x 1601350.01723.490.06143.92143.9225.83 m3.medium133.751 x 4 SSD2440.0341.930.10172.721.6524.2419.39 c3.large273.752 x 16 SSD3570.04763.590.12892.162.0913.1624.57 m3.large26.57.51 x 32 SSD4870.06184.50.203146.163.3222.4819.48 r3."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://u1tnk.github.io/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "EC2インスタンス価格の必要なところだけ表にしてみた",
+      "item": "https://u1tnk.github.io/blog/2014/04/17/aws-price/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "EC2インスタンス価格の必要なところだけ表にしてみた",
+  "name": "EC2インスタンス価格の必要なところだけ表にしてみた",
+  "description": "何？ EC2の価格表で以下が欲しかったので作った。\n2月にほぼ手作業で同じようなデータ作ったけど、大幅値下げで既に使いものにならなくなったので業を煮やした。いや値下げは嬉しいんだけど。\n同様にネットで見かけるまとめも見やすいものは古くなってたり…\n以下公式の不満。\n一画面でECUとかGiBとか比較できない リザーブドインスタンスにしたときのならし月額(一括払いを月額に按分して時間分と足す)が欲しい(見積りツールにはある) オンデマンドとリザーブドインスタンスどんぐらい違うか見たい ECUあたりとかメモリあたりの単価も比較したい 3年とかさすがに使えないのでいらない 中度とか軽度買うぐらいならオンデマンドで良いのでいらない このページのもデザイン的に見やすくないのでSpreadSheetなりに貼りつけて利用を推奨。(以下リンク先のCSSゼロの方がまだ見やすいという…) やはりみづらいのでgoogle spread sheetに貼りつけた https://docs.google.com/spreadsheets/d/1QzsUHO4Nd07TL5FAnVM2yvLRa3uOslY7pDTrmhwuAf0/edit?usp=sharing どうやった？ 以下ページのJSでHTML化。このページのはスナップショットとしてコピペ。 https://dl.dropboxusercontent.com/u/3400756/aws_price.html\n料金表のページのソースを見るとJSONPで呼んでたので使わせてもらった。おそらく外部利用を想定してないので止まっても文句は言いません。(見れなくなったら困るのでコピペった) 表について RI = リザーブドインスタンス一年重度使用 OD = オンデマンド(普通) m1.small比OD価格のm1.small比。 安い順にソートしている。ファミリー毎の方がコスパとか見やすかったかも。 内容感想 m1.medium/m1.largeが消えてた…別ページにあるんだろうけど。 m1.small、特殊用途のhs以外全てSSD化してた。HDDは死んだ… m1.small、単価見ると高い！しょぼい用途には使うけど… m3.mediumも2月時点のm1.small(RIならしで約$34だった)と大差無い。 2月時点のm1.mediumよりC3.largeが安いってw m1.mediumのリザーブドインスタンスどうしろと… c3.largeがオンデマンドでも月一万切る上、メモリ/ECU共にコスパ高い! large以上は特段コスパ良くなったりはしない。 m3の中途半端さ。largeならc3かr3使うと思う。 4/17時点の価格表 size vCPU ECU memoryGiB storageGB RI一括 RI/時間 RIならし月額 OD時間 OD月額 OD m1.small比 OD月額/ECU OD月額/GiB t1.micro1variable0.615ebsonly620.00911.640.02618.720.42NaN30.43 m1.small111.71 x 1601350.01723.490.06143.92143.9225.83 m3.medium133.751 x 4 SSD2440.0341.930.10172.721.6524.2419.39 c3.large273.752 x 16 SSD3570.04763.590.12892.162.0913.1624.57 m3.large26.57.51 x 32 SSD4870.06184.50.203146.163.3222.4819.48 r3.",
+  "keywords": [
     
-    
-      <link href="/css/fonts.css" rel="stylesheet" type="text/css">
-    
-  
-
-  
-  <title>EC2インスタンス価格の必要なところだけ表にしてみた</title>
-
-  
-  
-  <link rel="stylesheet" href="/css/hugo-octopress.css">
-
-  
-  
-    <link rel="stylesheet" href="https://u1tnk.github.io/css/custom.css">
-  
-
-  
-    <link rel="stylesheet" href="/css/fork-awesome.min.css">
-  
-
-  
-  <link href="https://u1tnk.github.io/favicon.png" rel="icon">
-
-  
-  
-
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-  <meta name="author" content="u1tnk">
-
-  
-  <meta name="generator" content="Hugo 0.40.1" />
-
-  
-  
-
-  
-  
+  ],
+  "articleBody": "何？ EC2の価格表で以下が欲しかったので作った。\n2月にほぼ手作業で同じようなデータ作ったけど、大幅値下げで既に使いものにならなくなったので業を煮やした。いや値下げは嬉しいんだけど。\n同様にネットで見かけるまとめも見やすいものは古くなってたり…\n以下公式の不満。\n一画面でECUとかGiBとか比較できない リザーブドインスタンスにしたときのならし月額(一括払いを月額に按分して時間分と足す)が欲しい(見積りツールにはある) オンデマンドとリザーブドインスタンスどんぐらい違うか見たい ECUあたりとかメモリあたりの単価も比較したい 3年とかさすがに使えないのでいらない 中度とか軽度買うぐらいならオンデマンドで良いのでいらない このページのもデザイン的に見やすくないのでSpreadSheetなりに貼りつけて利用を推奨。(以下リンク先のCSSゼロの方がまだ見やすいという…) やはりみづらいのでgoogle spread sheetに貼りつけた https://docs.google.com/spreadsheets/d/1QzsUHO4Nd07TL5FAnVM2yvLRa3uOslY7pDTrmhwuAf0/edit?usp=sharing どうやった？ 以下ページのJSでHTML化。このページのはスナップショットとしてコピペ。 https://dl.dropboxusercontent.com/u/3400756/aws_price.html\n料金表のページのソースを見るとJSONPで呼んでたので使わせてもらった。おそらく外部利用を想定してないので止まっても文句は言いません。(見れなくなったら困るのでコピペった) 表について RI = リザーブドインスタンス一年重度使用 OD = オンデマンド(普通) m1.small比OD価格のm1.small比。 安い順にソートしている。ファミリー毎の方がコスパとか見やすかったかも。 内容感想 m1.medium/m1.largeが消えてた…別ページにあるんだろうけど。 m1.small、特殊用途のhs以外全てSSD化してた。HDDは死んだ… m1.small、単価見ると高い！しょぼい用途には使うけど… m3.mediumも2月時点のm1.small(RIならしで約$34だった)と大差無い。 2月時点のm1.mediumよりC3.largeが安いってw m1.mediumのリザーブドインスタンスどうしろと… c3.largeがオンデマンドでも月一万切る上、メモリ/ECU共にコスパ高い! large以上は特段コスパ良くなったりはしない。 m3の中途半端さ。largeならc3かr3使うと思う。 4/17時点の価格表 size vCPU ECU memoryGiB storageGB RI一括 RI/時間 RIならし月額 OD時間 OD月額 OD m1.small比 OD月額/ECU OD月額/GiB t1.micro1variable0.615ebsonly620.00911.640.02618.720.42NaN30.43 m1.small111.71 x 1601350.01723.490.06143.92143.9225.83 m3.medium133.751 x 4 SSD2440.0341.930.10172.721.6524.2419.39 c3.large273.752 x 16 SSD3570.04763.590.12892.162.0913.1624.57 m3.large26.57.51 x 32 SSD4870.06184.50.203146.163.3222.4819.48 r3.large26.5151 x 32 SSD7770.04899.310.210151.193.4423.2610.08 c3.xlarge4147.52 x 40 SSD7130.094127.090.255183.64.1813.1124.48 m3.xlarge413152 x 40 SSD9730.123169.640.405291.66.6322.4319.44 r3.xlarge41330.51 x 80 SSD15540.096198.620.420302.396.8823.269.91 c3.2xlarge828152 x 80 SSD14270.188254.270.511367.918.3713.1324.52 m3.2xlarge826302 x 80 SSD19480.246339.450.810583.213.2722.4319.44 r3.2xlarge826611 x 160 SSD31080.192397.240.840604.7913.7723.269.91 g2.2xlarge8261560 SSD34060.21435.030.898646.5514.7224.8643.1 i2.xlarge41430.51 x 800 SSD26700.228386.661.001720.7116.451.4823.63 c3.4xlarge1655302 x 160 SSD28540.375507.831.021735.1116.7313.3624.5 r3.4xlarge16521221 x 320 SSD62160.384794.481.6801209.5927.5423.269.91 i2.2xlarge827612 x 800 SSD53390.456773.232.0011440.7232.853.3623.61 c3.8xlarge32108602 x 320 SSD57080.751015.662.0431470.9633.4913.6224.51 r3.8xlarge321042442 x 320 SSD124320.7681588.963.3602419.1955.0823.269.91 i2.4xlarge16531224 x 800 SSD106770.911544.954.0022881.4465.654.3623.61 hs1.8xlarge163511724 x 2048128221.3172016.735.400388888.52111.0833.23 i2.8xlarge321042448 x 800 SSD213541.8223091.348.0045762.88131.2155.4123.61 ",
+  "wordCount" : "135",
+  "inLanguage": "en",
+  "datePublished": "2014-04-17T00:00:00Z",
+  "dateModified": "2014-04-17T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "u1tnk"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://u1tnk.github.io/blog/2014/04/17/aws-price/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "u1tnk.log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://u1tnk.github.io/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
-<body>
 
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
 
-<header role="banner">
-<hgroup>
-  
-  <h1><a href="https://u1tnk.github.io/">u1tnk.log</a></h1>
-    <h2></h2>
-</hgroup></header>
+</script>
 
-
-<nav role="navigation">
-<fieldset class="mobile-nav">
-  
-  <select onchange="location = this.value;">
-    <option value="">Navigate…</option>
-      
-        <option value="https://u1tnk.github.io/">» posts</option>
-      
-        <option value="https://u1tnk.github.io/about">» about</option>
-      
-        <option value="https://u1tnk.github.io/atom.xml">» rss</option>
-      
-  </select>
-</fieldset>
-
-
-<ul class="main-navigation">
-  
-  
-    
-      <li><a href="https://u1tnk.github.io/" title="posts">posts</a></li>
-    
-  
-    
-      <li><a href="https://u1tnk.github.io/about" title="about" >about</a></li>
-    
-  
-    
-      <li><a href="https://u1tnk.github.io/atom.xml" title="rss" >rss</a></li>
-    
-  
-</ul>
-
-<ul class="subscription">
-  
-</ul>
-
-
-</nav>
-
-
-<div id="main">
-  <div id="content">
-    <div>
-      <article class="hentry" role="article">
-
-        
-        
-
-<header>
-  <p class="meta">2014/04/17
-    
-    
-
-    
-    
-      - <a class="label" href="https://u1tnk.github.io/categories/aws/">aws </a><a class="label" href="https://u1tnk.github.io/categories/money/">money </a>
-    
-  </p>
-  <h1 class="entry-title">
-     EC2インスタンス価格の必要なところだけ表にしてみた 
-  </h1>
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://u1tnk.github.io/" accesskey="h" title="u1tnk.log (Alt + H)">u1tnk.log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://u1tnk.github.io/" title="posts">
+                    <span>posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://u1tnk.github.io/about" title="about">
+                    <span>about</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://u1tnk.github.io/atom.xml" title="rss">
+                    <span>rss</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 </header>
+<main class="main">
 
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      EC2インスタンス価格の必要なところだけ表にしてみた
+    </h1>
+    <div class="post-meta"><span title='2014-04-17 00:00:00 +0000 UTC'>2014/04/17</span>&nbsp;·&nbsp;u1tnk
 
-        <div class="entry-content">
-          
-          
-          
-          
-
-<h2 id="何">何？</h2>
-
+</div>
+  </header> 
+  <div class="post-content"><h2 id="何">何？<a hidden class="anchor" aria-hidden="true" href="#何">#</a></h2>
 <p>EC2の価格表で以下が欲しかったので作った。</p>
-
 <p>2月にほぼ手作業で同じようなデータ作ったけど、大幅値下げで既に使いものにならなくなったので業を煮やした。いや値下げは嬉しいんだけど。</p>
-
 <p>同様にネットで見かけるまとめも見やすいものは古くなってたり…</p>
-
 <p>以下公式の不満。</p>
-
 <ul>
 <li>一画面でECUとかGiBとか比較できない</li>
 <li>リザーブドインスタンスにしたときのならし月額(一括払いを月額に按分して時間分と足す)が欲しい(見積りツールにはある)</li>
@@ -152,32 +221,25 @@
 <li>3年とかさすがに使えないのでいらない</li>
 <li>中度とか軽度買うぐらいならオンデマンドで良いのでいらない</li>
 <li>このページのもデザイン的に見やすくないのでSpreadSheetなりに貼りつけて利用を推奨。(以下リンク先のCSSゼロの方がまだ見やすいという…)
-
 <ul>
 <li>やはりみづらいのでgoogle spread sheetに貼りつけた <a href="https://docs.google.com/spreadsheets/d/1QzsUHO4Nd07TL5FAnVM2yvLRa3uOslY7pDTrmhwuAf0/edit?usp=sharing">https://docs.google.com/spreadsheets/d/1QzsUHO4Nd07TL5FAnVM2yvLRa3uOslY7pDTrmhwuAf0/edit?usp=sharing</a></li>
-</ul></li>
 </ul>
-
-<h2 id="どうやった">どうやった？</h2>
-
+</li>
+</ul>
+<h2 id="どうやった">どうやった？<a hidden class="anchor" aria-hidden="true" href="#どうやった">#</a></h2>
 <p>以下ページのJSでHTML化。このページのはスナップショットとしてコピペ。
 <a href="https://dl.dropboxusercontent.com/u/3400756/aws_price.html">https://dl.dropboxusercontent.com/u/3400756/aws_price.html</a></p>
-
 <ul>
 <li>料金表のページのソースを見るとJSONPで呼んでたので使わせてもらった。おそらく外部利用を想定してないので止まっても文句は言いません。(見れなくなったら困るのでコピペった)</li>
 </ul>
-
-<h2 id="表について">表について</h2>
-
+<h2 id="表について">表について<a hidden class="anchor" aria-hidden="true" href="#表について">#</a></h2>
 <ul>
 <li>RI = リザーブドインスタンス一年重度使用</li>
 <li>OD = オンデマンド(普通)</li>
 <li>m1.small比OD価格のm1.small比。</li>
 <li>安い順にソートしている。ファミリー毎の方がコスパとか見やすかったかも。</li>
 </ul>
-
-<h2 id="内容感想">内容感想</h2>
-
+<h2 id="内容感想">内容感想<a hidden class="anchor" aria-hidden="true" href="#内容感想">#</a></h2>
 <ul>
 <li>m1.medium/m1.largeが消えてた…別ページにあるんだろうけど。</li>
 <li>m1.small、特殊用途のhs以外全てSSD化してた。HDDは死んだ…</li>
@@ -188,9 +250,7 @@
 <li>large以上は特段コスパ良くなったりはしない。</li>
 <li>m3の中途半端さ。largeならc3かr3使うと思う。</li>
 </ul>
-
-<h2 id="4-17時点の価格表">4/17時点の価格表</h2>
-
+<h2 id="417時点の価格表">4/17時点の価格表<a hidden class="anchor" aria-hidden="true" href="#417時点の価格表">#</a></h2>
 <table id="result" border="1">
     <tbody><tr>
         <th>size</th>
@@ -231,101 +291,84 @@
 <tr><td align="left">i2.8xlarge</td><td align="right">32</td><td align="right">104</td><td align="right">244</td><td align="right">8 x 800 SSD</td><td align="right">21354</td><td align="right">1.822</td><td align="right">3091.34</td><td align="right">8.004</td><td align="right">5762.88</td><td align="right">131.21</td><td align="right">55.41</td><td align="right">23.61</td></tr>
 </tbody></table>
 
-        </div>
-        
-
-<footer>
-  <p class="meta">
-    <span class="byline author vcard">Posted by <span class="fn">u1tnk</span></span>
-    
-    <time>Apr 17, 2014</time>
-    
-    </span>
-  </p>
-
-  
-
-  <p class="meta">
-    
-        <a class="basic-alignment left" href="https://u1tnk.github.io/blog/2014/03/20/team-geek/" title="Team Geek読んだ">Team Geek読んだ</a>
-    
-
-    
-      <a class="basic-alignment right" href="https://u1tnk.github.io/blog/2014/06/19/ansible-study-01/" title="ansible 勉強会 #1メモ">ansible 勉強会 #1メモ</a>
-    
-  </p>
-  
-</footer>
-
-      </article>
-    </div>
-    
-
-<aside class="sidebar thirds">
-  <section class="first odd">
-
-    
-
-    <p>
-      
-    </p>
-  </section>
-
-
-
-  
-  <ul class="sidebar-nav">
-    <li class="sidebar-nav-item">
-      
-      
-      
-      
-      
-         
-      
-      
-      
-      
-      
-      
-      
-      
-
-    
-    
-    </li>
-  </ul>
-
-  
-
-  
-
-  
-  
-  
-</aside>
 
   </div>
-</div>
 
-    <footer role="contentinfo">
-      <p>Copyright &copy; 2022 u1tnk - <a href="https://u1tnk.github.io/license/">License</a> -
-        <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
-      </p>
-    </footer>
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://u1tnk.github.io/">u1tnk.log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
 
-    
-    
-    
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
 
-    
-      <script>
-        var _gaq=[['_setAccount','UA-2532590-5'],['_trackPageview']];
-        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-        s.parentNode.insertBefore(g,s)}(document,'script'));
-      </script>
-    
-  </body>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
 </html>
-

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>coffee on u1tnk.log</title>
+    <link>https://u1tnk.github.io/categories/coffee/</link>
+    <description>Recent content in coffee on u1tnk.log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Sun, 04 Dec 2022 15:52:17 +0900</lastBuildDate><atom:link href="https://u1tnk.github.io/categories/coffee/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[初心者向け]変数の命名、基本のキ</title>
+      <link>https://u1tnk.github.io/blog/2022/12/04/naming_variable/</link>
+      <pubDate>Sun, 04 Dec 2022 15:52:17 +0900</pubDate>
+      
+      <guid>https://u1tnk.github.io/blog/2022/12/04/naming_variable/</guid>
+      <description>フィヨルドブートキャンプ Part 2 Advent Calendar 2022 - Adventar の4日目の記事です。
+フィヨルドブートキャンプ | FBC (以下FBC)の提出物のレビューをするときに参考URLに使えそうな資料を自分で書こうシリーズの2年ぶり2回目となります。
+って書いていて気づきましたがAdventCalendarが3回目ということは丸二年以上メンターやってるんですね。早いなあ😲
+なにこれ？ FBCの提出物をレビューしていて、rubyの最初の方でよく変数名についての指摘をするので、右も左も分からない初心者の方に変数名の大事さ、どういう事を気をつけて欲しいかを説明します。
+注意事項 プログラミング初心者向けの記事です。 「初心者に分かりやすい」を最優先でざっくり書くので正確では無かったりしてもご容赦ください 🙏 頻出の例を書くので、生徒さんの提出物と同じ例があるかもしれませんが特定の提出物を貶す意図はありません。 前提: 変数名がなぜ大事なのか FBCで教えるプログラミングは仕事で使うものなので読みやすいプログラムにする必要があります。仕事で使う文章を分かりやすくすることと同じ。 その変数に何が入っているか？は変数名で推測できなければ処理の流れを追うしかなくてとても大変。 Rubyの作者の Matz の好きな言葉は 「名前重要」ってぐらい大事なんです。 Rubyist Hotlinks 【第 1 回】 まつもとゆきひろさん
+どんな変数名が良いのか 理想を書くと「そのプログラムを読む人全員が中身を推測でき、読みやすく書きやすい簡潔な名前であること」です。
+「書きやすい」は自分なのですぐ分かりますが、「読みやすい」は書いているときは分かるので注意しづらいです。 他の人(仕事であれば同僚、レビュワー、未来の自分)が読みやすくなるようにという視点を持つと良いです。
+指摘事例 名前と中身が違う file_content = &amp;#34;/path/file.txt&amp;#34; ↓
+file_path = &amp;#34;/path/file.txt&amp;#34; この例だとfile_contentなのでファイルの中身と思いきやファイルパスが入っているので中身が違うという事です。
+最初からすみませんがあんまり良い例では無い気はします 😓
+この問題自体は頻出ですが、違い方が幅広くて引用すると具体的になり過ぎてしまうので 🙏
+こんな事はしないって思うかもしれませんが、英語の意味を考えるとちょっと違うとか、変数名を同じパターンでつけてたけど一部のデータがちょっと意味が違う…とか気を抜くといつのまにか発生してしまうものです。
+表記ゆれ file_string = read_file(&amp;#39;path/file.txt&amp;#39;) formatted_text = format(file_string) ↓
+file_string = read_file(&amp;#39;path/file.txt&amp;#39;) formatted_string = format(file_string) ここはstringとtextと同じ意味なのに同じプログラムで複数使ってしまっているということです。
+同じプログラムで同じようなものに別の単語を使っているとそこに意図があるものかと考えてしまいます。</description>
+    </item>
+    
+  </channel>
+</rss>
