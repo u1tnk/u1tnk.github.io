@@ -14,6 +14,7 @@
       
       <guid>https://u1tnk.github.io/blog/2022/12/04/naming_variable/</guid>
       <description>フィヨルドブートキャンプ Part 2 Advent Calendar 2022 - Adventar の4日目の記事です。
+昨日はmaeda-mさんの Heroku の代替 OSS を試した話 | お日記させていただいてもよろしいでしょうか。 でした。
 フィヨルドブートキャンプ | FBC (以下FBC)の提出物のレビューをするときに参考URLに使えそうな資料を自分で書こうシリーズの2年ぶり2回目となります。
 って書いていて気づきましたがAdventCalendarが3回目ということは丸二年以上メンターやってるんですね。早いなあ😲
 なにこれ？ FBCの提出物をレビューしていて、rubyの最初の方でよく変数名についての指摘をするので、右も左も分からない初心者の方に変数名の大事さ、どういう事を気をつけて欲しいかを説明します。
@@ -25,9 +26,7 @@ file_path = &amp;#34;/path/file.txt&amp;#34; この例だとfile_contentなの�
 最初からすみませんがあんまり良い例では無い気はします 😓
 この問題自体は頻出ですが、違い方が幅広くて引用すると具体的になり過ぎてしまうので 🙏
 こんな事はしないって思うかもしれませんが、英語の意味を考えるとちょっと違うとか、変数名を同じパターンでつけてたけど一部のデータがちょっと意味が違う…とか気を抜くといつのまにか発生してしまうものです。
-表記ゆれ file_string = read_file(&amp;#39;path/file.txt&amp;#39;) formatted_text = format(file_string) ↓
-file_string = read_file(&amp;#39;path/file.txt&amp;#39;) formatted_string = format(file_string) ここはstringとtextと同じ意味なのに同じプログラムで複数使ってしまっているということです。
-同じプログラムで同じようなものに別の単語を使っているとそこに意図があるものかと考えてしまいます。</description>
+表記ゆれ file_string = read_file(&amp;#39;path/file.txt&amp;#39;) formatted_text = format(file_string) ↓</description>
     </item>
     
     <item>
