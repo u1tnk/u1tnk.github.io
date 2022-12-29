@@ -142,6 +142,22 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>今さらOctopressからHugoに乗りかえた
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Octopressどころか自分でブログをビルドする事自体が乗り遅れてる事は自覚している。
+だが、乗りかえに労力を割くのもイヤでそのままにしてたらマシン乗りかえてブログ書く度にgemでハマる。 Rails開発者なのでruby環境自体は苦では無いがOctopressもはやメンテもされてないので見つからないgemとかあって不毛でしかない。
+マネージドサービスも変なところもイヤだし金もかけたくないし、アフィリンク入れたページもあるので規約とか確認するのもめんどい。 という事で流行ってたhugoにすることにした。aptで入ったしgoでできたコマンド一個で動くようなのでOctopressよりも過去互換性が高そうなので、延命処置には十分かと。jekyllも考えたがより流行ってそうな方にしただけ。
+ざっくり乗り替え手順 公式の https://gohugo.io/tools/migrations/ にあった https://github.com/codebrane/octohug を実行。ポスト少ないのでvimで頑張ってフォロー。公式だから信用したがたぶんダメツール。 slug(titleじゃないaliasのようなもの？) に日付入りのpathが入っていて、permalinksにはfilenameを使うので消した categoriesがCategoriesと間違っていてしかも中身が消えていた。 titleがfilenameになっていた。日本語タイトルを元からコピー。 themeを選定。参考サイトで使っていたHugo Octopress | Hugo Themes を利用。 Octopressにこだわる理由はカケラも無いが、ある程度設定するとthemeごとに挙動が結構変わるので変えるのを諦めた。 以下、公式の設定にあるっぽいが対応してなかったのでforkして修正 DateFormatが変えられない 動作確認しつつ、config.toml等を設定 themeの方にサンプルがあったので編集していった 固定ページは content/hoge.md に移動。 元のoctopressのデータを削除してhugoのファイルをコピーして以下を submoduleにする themes以下にthemeを配置 publicにxxx.github.io.git (デプロイ用) permalinkを合わせる [permalinks] post = &#34;/blog/:year/:month/:day/:filename/&#34; rssのurlを合わせる octopressのときは atom.xmlで hugoだと index.xmlだったので合わせた。rssuriという情報もあるが deprecated。 また、Hugo-Octopressではindex.xmlが直書きだったので無効にしてメニュー作成時に自力でリンクを作った。どうせHugo-Octopressはforkしたので書き替えても良かった。
+[outputFormats.RSS] baseName = &#34;atom&#34; デプロイ 以下で public を xxx.github.io.git にする。 git submodule add -b master git@github.com:&lt;USERNAME&gt;/&lt;USERNAME&gt;.github.io.git public サイト生成 hugo デプロイ実行 cd public git push origin master ローカルテスト 以下コマンド後 localhost:1313...</p>
+  </div>
+  <footer class="entry-footer"><span title='2019-01-02 12:10:55 +0900 JST'>2019/01/02</span>&nbsp;·&nbsp;u1tnk</footer>
+  <a class="entry-link" aria-label="post link to 今さらOctopressからHugoに乗りかえた" href="https://u1tnk.github.io/blog/2019/01/02/migrate_hugo/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>買って良かったもの2018
     </h2>
   </header>
@@ -291,20 +307,6 @@ MSPだってansibleしたい by @LaughK MSP(運用、保守代行) 客のサー�
   </div>
   <footer class="entry-footer"><span title='2014-04-17 00:00:00 +0000 UTC'>2014/04/17</span>&nbsp;·&nbsp;u1tnk</footer>
   <a class="entry-link" aria-label="post link to EC2インスタンス価格の必要なところだけ表にしてみた" href="https://u1tnk.github.io/blog/2014/04/17/aws-price/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Team Geek読んだ
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>同僚に貸して頂いて読みました。感謝。
-Googleの中の人がチーム開発するにあたってどういう事を心がけているか？という本。 プログラマ本だけどプログラマ専用の内容は少なめ。一部削れば自己啓発書コーナーにあっても不思議じゃない。
-とにかくHRT(信頼 Humility、尊敬 Respect、謙虚 Trust) 有害な人対策なども。無自覚なのも含めて難しい問題だと実感。有害な人対策自体も参考になるが、自分も有害になってないか？で心が痛い。 採用は妥協しない、チームメイトになったら大人として扱う。 ミッションステートメントは共有はもちろん今自分がしっかり理解しているとは言えないなぁ… かなり社内政治についても書いてる。必要悪的ではあるが。 面白かったし、色々参考になった。 自省としては、HRTはやってるつもりだけど、嗜好が合わないと謙虚さが失われがちなので気をつけようと。</p>
-  </div>
-  <footer class="entry-footer"><span title='2014-03-20 00:00:00 +0000 UTC'>2014/03/20</span>&nbsp;·&nbsp;u1tnk</footer>
-  <a class="entry-link" aria-label="post link to Team Geek読んだ" href="https://u1tnk.github.io/blog/2014/03/20/team-geek/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
