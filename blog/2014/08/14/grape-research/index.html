@@ -8,7 +8,7 @@
 <title>Grapeが良さそうだったけどやめた | u1tnk.log</title>
 <meta name="keywords" content="">
 <meta name="description" content="RailsでAPI作ってるのでGrapeが良さそうと聞いて調べて、おお！やってみよう！ と思って細かく調べたけど結果やめました。
-参考資料 https://github.com/intridea/grape Ruby - RailsとGrapeで行う最高のWeb API開発 - Qiita Grape - RailsでスピーディにAPIを作成！ - 酒と泪とRubyとRailsと Ruby初心者がRailsとGrapeでREST APIを作る - morishitter blog 良さそうな点 routes情報と全controllerが一つにまとまるので見易い versioningやapiのprefix等柔軟に設定できる 微妙なところ filterにonly,except等が無かった 1ファイルで見通しが良いけども、増え過ぎて分割したら何の為にやったのか感が凄そう 単体で使えるものなのでRailsと重複する機能が多くてもったいない気持ちになる まとめ カバー範囲が違えど、二種のフレームワークを混在して使う事への抵抗が大きかった。大して大きな機能が無いので、だったらRailsのみでシンプルにした方が良いかなと。
+参考資料  https://github.com/intridea/grape Ruby - RailsとGrapeで行う最高のWeb API開発 - Qiita Grape - RailsでスピーディにAPIを作成！ - 酒と泪とRubyとRailsと Ruby初心者がRailsとGrapeでREST APIを作る - morishitter blog  良さそうな点  routes情報と全controllerが一つにまとまるので見易い versioningやapiのprefix等柔軟に設定できる  微妙なところ  filterにonly,except等が無かった 1ファイルで見通しが良いけども、増え過ぎて分割したら何の為にやったのか感が凄そう 単体で使えるものなのでRailsと重複する機能が多くてもったいない気持ちになる  まとめ カバー範囲が違えど、二種のフレームワークを混在して使う事への抵抗が大きかった。大して大きな機能が無いので、だったらRailsのみでシンプルにした方が良いかなと。
 Railsと組み合わせて使うなら既存の非APIアプリに追加してシンプルなちょっとしたAPIを作る…とかなら良いのかもという気はしました。">
 <meta name="author" content="u1tnk">
 <link rel="canonical" href="https://u1tnk.github.io/blog/2014/08/14/grape-research/">
@@ -58,9 +58,17 @@ Railsと組み合わせて使うなら既存の非APIアプリに追加してシ
         }
 
     </style>
-</noscript><meta property="og:title" content="Grapeが良さそうだったけどやめた" />
+</noscript>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TEHPR3E7L5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TEHPR3E7L5');
+</script><meta property="og:title" content="Grapeが良さそうだったけどやめた" />
 <meta property="og:description" content="RailsでAPI作ってるのでGrapeが良さそうと聞いて調べて、おお！やってみよう！ と思って細かく調べたけど結果やめました。
-参考資料 https://github.com/intridea/grape Ruby - RailsとGrapeで行う最高のWeb API開発 - Qiita Grape - RailsでスピーディにAPIを作成！ - 酒と泪とRubyとRailsと Ruby初心者がRailsとGrapeでREST APIを作る - morishitter blog 良さそうな点 routes情報と全controllerが一つにまとまるので見易い versioningやapiのprefix等柔軟に設定できる 微妙なところ filterにonly,except等が無かった 1ファイルで見通しが良いけども、増え過ぎて分割したら何の為にやったのか感が凄そう 単体で使えるものなのでRailsと重複する機能が多くてもったいない気持ちになる まとめ カバー範囲が違えど、二種のフレームワークを混在して使う事への抵抗が大きかった。大して大きな機能が無いので、だったらRailsのみでシンプルにした方が良いかなと。
+参考資料  https://github.com/intridea/grape Ruby - RailsとGrapeで行う最高のWeb API開発 - Qiita Grape - RailsでスピーディにAPIを作成！ - 酒と泪とRubyとRailsと Ruby初心者がRailsとGrapeでREST APIを作る - morishitter blog  良さそうな点  routes情報と全controllerが一つにまとまるので見易い versioningやapiのprefix等柔軟に設定できる  微妙なところ  filterにonly,except等が無かった 1ファイルで見通しが良いけども、増え過ぎて分割したら何の為にやったのか感が凄そう 単体で使えるものなのでRailsと重複する機能が多くてもったいない気持ちになる  まとめ カバー範囲が違えど、二種のフレームワークを混在して使う事への抵抗が大きかった。大して大きな機能が無いので、だったらRailsのみでシンプルにした方が良いかなと。
 Railsと組み合わせて使うなら既存の非APIアプリに追加してシンプルなちょっとしたAPIを作る…とかなら良いのかもという気はしました。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://u1tnk.github.io/blog/2014/08/14/grape-research/" /><meta property="article:section" content="post" />
@@ -70,7 +78,7 @@ Railsと組み合わせて使うなら既存の非APIアプリに追加してシ
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Grapeが良さそうだったけどやめた"/>
 <meta name="twitter:description" content="RailsでAPI作ってるのでGrapeが良さそうと聞いて調べて、おお！やってみよう！ と思って細かく調べたけど結果やめました。
-参考資料 https://github.com/intridea/grape Ruby - RailsとGrapeで行う最高のWeb API開発 - Qiita Grape - RailsでスピーディにAPIを作成！ - 酒と泪とRubyとRailsと Ruby初心者がRailsとGrapeでREST APIを作る - morishitter blog 良さそうな点 routes情報と全controllerが一つにまとまるので見易い versioningやapiのprefix等柔軟に設定できる 微妙なところ filterにonly,except等が無かった 1ファイルで見通しが良いけども、増え過ぎて分割したら何の為にやったのか感が凄そう 単体で使えるものなのでRailsと重複する機能が多くてもったいない気持ちになる まとめ カバー範囲が違えど、二種のフレームワークを混在して使う事への抵抗が大きかった。大して大きな機能が無いので、だったらRailsのみでシンプルにした方が良いかなと。
+参考資料  https://github.com/intridea/grape Ruby - RailsとGrapeで行う最高のWeb API開発 - Qiita Grape - RailsでスピーディにAPIを作成！ - 酒と泪とRubyとRailsと Ruby初心者がRailsとGrapeでREST APIを作る - morishitter blog  良さそうな点  routes情報と全controllerが一つにまとまるので見易い versioningやapiのprefix等柔軟に設定できる  微妙なところ  filterにonly,except等が無かった 1ファイルで見通しが良いけども、増え過ぎて分割したら何の為にやったのか感が凄そう 単体で使えるものなのでRailsと重複する機能が多くてもったいない気持ちになる  まとめ カバー範囲が違えど、二種のフレームワークを混在して使う事への抵抗が大きかった。大して大きな機能が無いので、だったらRailsのみでシンプルにした方が良いかなと。
 Railsと組み合わせて使うなら既存の非APIアプリに追加してシンプルなちょっとしたAPIを作る…とかなら良いのかもという気はしました。"/>
 
 
@@ -100,11 +108,11 @@ Railsと組み合わせて使うなら既存の非APIアプリに追加してシ
   "@type": "BlogPosting",
   "headline": "Grapeが良さそうだったけどやめた",
   "name": "Grapeが良さそうだったけどやめた",
-  "description": "RailsでAPI作ってるのでGrapeが良さそうと聞いて調べて、おお！やってみよう！ と思って細かく調べたけど結果やめました。\n参考資料 https://github.com/intridea/grape Ruby - RailsとGrapeで行う最高のWeb API開発 - Qiita Grape - RailsでスピーディにAPIを作成！ - 酒と泪とRubyとRailsと Ruby初心者がRailsとGrapeでREST APIを作る - morishitter blog 良さそうな点 routes情報と全controllerが一つにまとまるので見易い versioningやapiのprefix等柔軟に設定できる 微妙なところ filterにonly,except等が無かった 1ファイルで見通しが良いけども、増え過ぎて分割したら何の為にやったのか感が凄そう 単体で使えるものなのでRailsと重複する機能が多くてもったいない気持ちになる まとめ カバー範囲が違えど、二種のフレームワークを混在して使う事への抵抗が大きかった。大して大きな機能が無いので、だったらRailsのみでシンプルにした方が良いかなと。\nRailsと組み合わせて使うなら既存の非APIアプリに追加してシンプルなちょっとしたAPIを作る…とかなら良いのかもという気はしました。",
+  "description": "RailsでAPI作ってるのでGrapeが良さそうと聞いて調べて、おお！やってみよう！ と思って細かく調べたけど結果やめました。\n参考資料  https://github.com/intridea/grape Ruby - RailsとGrapeで行う最高のWeb API開発 - Qiita Grape - RailsでスピーディにAPIを作成！ - 酒と泪とRubyとRailsと Ruby初心者がRailsとGrapeでREST APIを作る - morishitter blog  良さそうな点  routes情報と全controllerが一つにまとまるので見易い versioningやapiのprefix等柔軟に設定できる  微妙なところ  filterにonly,except等が無かった 1ファイルで見通しが良いけども、増え過ぎて分割したら何の為にやったのか感が凄そう 単体で使えるものなのでRailsと重複する機能が多くてもったいない気持ちになる  まとめ カバー範囲が違えど、二種のフレームワークを混在して使う事への抵抗が大きかった。大して大きな機能が無いので、だったらRailsのみでシンプルにした方が良いかなと。\nRailsと組み合わせて使うなら既存の非APIアプリに追加してシンプルなちょっとしたAPIを作る…とかなら良いのかもという気はしました。",
   "keywords": [
     
   ],
-  "articleBody": "RailsでAPI作ってるのでGrapeが良さそうと聞いて調べて、おお！やってみよう！ と思って細かく調べたけど結果やめました。\n参考資料 https://github.com/intridea/grape Ruby - RailsとGrapeで行う最高のWeb API開発 - Qiita Grape - RailsでスピーディにAPIを作成！ - 酒と泪とRubyとRailsと Ruby初心者がRailsとGrapeでREST APIを作る - morishitter blog 良さそうな点 routes情報と全controllerが一つにまとまるので見易い versioningやapiのprefix等柔軟に設定できる 微妙なところ filterにonly,except等が無かった 1ファイルで見通しが良いけども、増え過ぎて分割したら何の為にやったのか感が凄そう 単体で使えるものなのでRailsと重複する機能が多くてもったいない気持ちになる まとめ カバー範囲が違えど、二種のフレームワークを混在して使う事への抵抗が大きかった。大して大きな機能が無いので、だったらRailsのみでシンプルにした方が良いかなと。\nRailsと組み合わせて使うなら既存の非APIアプリに追加してシンプルなちょっとしたAPIを作る…とかなら良いのかもという気はしました。\n",
+  "articleBody": "RailsでAPI作ってるのでGrapeが良さそうと聞いて調べて、おお！やってみよう！ と思って細かく調べたけど結果やめました。\n参考資料  https://github.com/intridea/grape Ruby - RailsとGrapeで行う最高のWeb API開発 - Qiita Grape - RailsでスピーディにAPIを作成！ - 酒と泪とRubyとRailsと Ruby初心者がRailsとGrapeでREST APIを作る - morishitter blog  良さそうな点  routes情報と全controllerが一つにまとまるので見易い versioningやapiのprefix等柔軟に設定できる  微妙なところ  filterにonly,except等が無かった 1ファイルで見通しが良いけども、増え過ぎて分割したら何の為にやったのか感が凄そう 単体で使えるものなのでRailsと重複する機能が多くてもったいない気持ちになる  まとめ カバー範囲が違えど、二種のフレームワークを混在して使う事への抵抗が大きかった。大して大きな機能が無いので、だったらRailsのみでシンプルにした方が良いかなと。\nRailsと組み合わせて使うなら既存の非APIアプリに追加してシンプルなちょっとしたAPIを作る…とかなら良いのかもという気はしました。\n",
   "wordCount" : "30",
   "inLanguage": "en",
   "datePublished": "2014-08-14T00:00:00Z",

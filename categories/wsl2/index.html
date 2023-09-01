@@ -55,7 +55,15 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="wsl2" />
+</noscript>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TEHPR3E7L5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TEHPR3E7L5');
+</script><meta property="og:title" content="wsl2" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://u1tnk.github.io/categories/wsl2/" />
@@ -138,12 +146,12 @@
   </header>
   <div class="entry-content">
     <p>tipsというかWSL2に移行して開発していてハマったことや、定着した運用方法についてのメモ。
-前提 主にRails開発をしていて、vim/tmuxとほぼターミナルとブラウザだけで開発作業を行っているのでその範囲。 ubuntu-18.04利用。 linuxの知識はある前提で書いている。 WindowsTerminalを使用している Linuxインストールまで WSL2でLinuxを使おう | FJORD BOOT CAMP（フィヨルドブートキャンプ）
+前提  主にRails開発をしていて、vim/tmuxとほぼターミナルとブラウザだけで開発作業を行っているのでその範囲。 ubuntu-18.04利用。 linuxの知識はある前提で書いている。 WindowsTerminalを使用している  Linuxインストールまで WSL2でLinuxを使おう | FJORD BOOT CAMP（フィヨルドブートキャンプ）
 僕がメンターをしているフィヨルドブートキャンプのこの資料で大丈夫です(ちょっと宣伝)
 ubuntuのバージョンについて WSL2/ubuntu20.04で capybara動かんのか… NotImplementedError (fork() function is unimplemented on this machine)
 が回避できぬ。
 WSL2でも ubuntu18.04なら動くっぽいんだが…
-— ゆーいち@イカX (@u1tnk) January 4, 2021 という事があり、20.04をやめて18.04を利用している。この時点なので今は不明。 GUIも無いし、WSL2だとデバイスドライバとかも関係無いので新しいメリットも無いので安定バージョンで良い。
+— ゆーいち@イカX (@u1tnk) January 4, 2021  という事があり、20.04をやめて18.04を利用している。この時点なので今は不明。 GUIも無いし、WSL2だとデバイスドライバとかも関係無いので新しいメリットも無いので安定バージョンで良い。
 起動と終了 ubuntuアプリを起動したり、wslコマンドで起動する。WindowsTerminalを使えば内部では wslコマンドを使っているので勝手に起動する。 終了するときは wsl --shutdown をpowershellなりで実行すれば良い。
 systemdが動いていない 本物のubuntuと違いsystemdが動いていないので、サービスの自動起動ができない。よってcrondとかも起動していないので注意。
 自動起動はできないが動かないわけでは無いので、zshrc(shellによって調整してください)に以下のようなscriptをしこんでWindowsTerminalから開いたときに自動で起動するようにしている。 ここではdockerの起動とsmbサーバへのmountをやっている

@@ -14,12 +14,12 @@
       
       <guid>https://u1tnk.github.io/blog/2021/06/30/wsl2_tips/</guid>
       <description>tipsというかWSL2に移行して開発していてハマったことや、定着した運用方法についてのメモ。
-前提 主にRails開発をしていて、vim/tmuxとほぼターミナルとブラウザだけで開発作業を行っているのでその範囲。 ubuntu-18.04利用。 linuxの知識はある前提で書いている。 WindowsTerminalを使用している Linuxインストールまで WSL2でLinuxを使おう | FJORD BOOT CAMP（フィヨルドブートキャンプ）
+前提  主にRails開発をしていて、vim/tmuxとほぼターミナルとブラウザだけで開発作業を行っているのでその範囲。 ubuntu-18.04利用。 linuxの知識はある前提で書いている。 WindowsTerminalを使用している  Linuxインストールまで WSL2でLinuxを使おう | FJORD BOOT CAMP（フィヨルドブートキャンプ）
 僕がメンターをしているフィヨルドブートキャンプのこの資料で大丈夫です(ちょっと宣伝)
 ubuntuのバージョンについて WSL2/ubuntu20.04で capybara動かんのか… NotImplementedError (fork() function is unimplemented on this machine)
 が回避できぬ。
 WSL2でも ubuntu18.04なら動くっぽいんだが…
-&amp;mdash; ゆーいち@イカX (@u1tnk) January 4, 2021 という事があり、20.04をやめて18.04を利用している。この時点なので今は不明。 GUIも無いし、WSL2だとデバイスドライバとかも関係無いので新しいメリットも無いので安定バージョンで良い。
+&amp;mdash; ゆーいち@イカX (@u1tnk) January 4, 2021  という事があり、20.04をやめて18.04を利用している。この時点なので今は不明。 GUIも無いし、WSL2だとデバイスドライバとかも関係無いので新しいメリットも無いので安定バージョンで良い。
 起動と終了 ubuntuアプリを起動したり、wslコマンドで起動する。WindowsTerminalを使えば内部では wslコマンドを使っているので勝手に起動する。 終了するときは wsl --shutdown をpowershellなりで実行すれば良い。
 systemdが動いていない 本物のubuntuと違いsystemdが動いていないので、サービスの自動起動ができない。よってcrondとかも起動していないので注意。
 自動起動はできないが動かないわけでは無いので、zshrc(shellによって調整してください)に以下のようなscriptをしこんでWindowsTerminalから開いたときに自動で起動するようにしている。 ここではdockerの起動とsmbサーバへのmountをやっている
@@ -37,7 +37,7 @@ windows側のクリップボードを双方向で使えるアプリをインス�
 windowsにデフォルトに入っている clipboard.exe はクリップボードへの書き込みはできるが、逆はできず。 逆は https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.management/get-clipboard?view=powershell-5.1 で可能なようだがWSL側から動かす方向が分からなかったので手軽なコレを採用した。 インストールしてWSL側のPATHに入れておく。
 tmux 以下設定は vim形式のキーバインド前提となっている。
 tmux.conf
-bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel &amp;#34;win32yank.exe -i&amp;#34; bind p run-shell &amp;#39;win32yank.exe -o | xargs -0 -I{} tmux set-buffer -- {} &amp;amp;&amp;amp; tmux paste-buffer&amp;#39; vim tmuxとは関係なくコレだけで共有できる。WSL便利というか不思議というか。 vimをclipboard利用できるようにビルドする必要はあるが、情報はいくらでもあるので割愛。 個人的にはneovimを使っているので最初から使えた。
+bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel &amp;quot;win32yank.exe -i&amp;quot; bind p run-shell &#39;win32yank.exe -o | xargs -0 -I{} tmux set-buffer -- {} &amp;amp;&amp;amp; tmux paste-buffer&#39; vim tmuxとは関係なくコレだけで共有できる。WSL便利というか不思議というか。 vimをclipboard利用できるようにビルドする必要はあるが、情報はいくらでもあるので割愛。 個人的にはneovimを使っているので最初から使えた。
 set clipboard&amp;amp; set clipboard^=unnamedplus 所感 まとめてみると記事にまとめる意味あんのかコレ。というレベルの内容になったが、WSL2の情報は少なくて、当初うまく動かないときにXServer入れないとvimからクリップボード使えないのでは？とか標準だから clipboard.exeとか使ってハマったりしたので、たったこんだけでできるよ！という事で。
 当初これのやり方が分からず、WSL2でもsshサーバ起動してRLoginからsshしていたりしていたが、XServerの不調とかにコピペ失敗して気づいてXServer再起動したり、ひどいときにはXServer再起動に失敗してwindows再起動したり… 😭 などのイライラ一切無く、超安定 するようになっている。満足。</description>
     </item>
@@ -53,7 +53,7 @@ set clipboard&amp;amp; set clipboard^=unnamedplus 所感 まとめてみると�
 イメージ ubuntu18.04。 20.04だと 2021/1/4当時動かないspecが存在したので18.04を利用。
 ライブラリ sudo apt update sudo apt install curl build-essential unzip wget chromeのインストール wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb sudo apt install ./google-chrome-stable_current_amd64.deb -y chromedriverのインストール export LATEST_VERSION=`curl https://chromedriver.storage.googleapis.com/LATEST_RELEASE` wget https://chromedriver.storage.googleapis.com/$LATEST_VERSION/chromedriver_linux64.zip unzip chromedriver_linux64.zip sudo mv chromedriver /usr/local/bin/ systemテストの設定 System specを動かすのにはまった - Qiita から引用。 headlessで動作するよう設定する。 画面を表示したい場合はwindows側に X serverインストール、転送の設定などが必要になる。
 rails_helper.rb (rails関係のtestをするファイルからrequireしておく)
-Capybara.default_driver = :selenium_chrome_headless Capybara.register_driver :selenium_chrome_headless do |app| options = Selenium::WebDriver::Chrome::Options.new options.add_argument(&amp;#39;--headless&amp;#39;) options.add_argument(&amp;#39;--no-sandbox&amp;#39;) options.add_argument(&amp;#39;--disable-gpu&amp;#39;) options.add_argument(&amp;#39;--window-size=1280,1024&amp;#39;) Capybara::Selenium::Driver.new(app, browser: :chrome, options: options) end spec_helper.</description>
+Capybara.default_driver = :selenium_chrome_headless Capybara.register_driver :selenium_chrome_headless do |app| options = Selenium::WebDriver::Chrome::Options.new options.add_argument(&#39;--headless&#39;) options.add_argument(&#39;--no-sandbox&#39;) options.add_argument(&#39;--disable-gpu&#39;) options.add_argument(&#39;--window-size=1280,1024&#39;) Capybara::Selenium::Driver.new(app, browser: :chrome, options: options) end spec_helper.</description>
     </item>
     
   </channel>

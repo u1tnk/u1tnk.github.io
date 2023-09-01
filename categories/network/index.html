@@ -55,7 +55,15 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="network" />
+</noscript>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TEHPR3E7L5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TEHPR3E7L5');
+</script><meta property="og:title" content="network" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://u1tnk.github.io/categories/network/" />
@@ -140,7 +148,7 @@
     <p>ローカルはipv4のみでds-liteを使っていたが、ちゃんとipv6を使いたくなったので、iijのIPoEオプション契約にて、 ipv6のトラフィックはipv6で、ipv4はds-liteで通信する設定がうまく動いたので保存。
 作成した手順 そのもの同じ事をしてるサイトは無く、設定読みながら関係ありそうなところを切り貼りするもうまく動かず、設定オールリセットして、GUIのウィザードでipv6のみ設定、ipv6のみ疎通したところで、ds-liteの設定のみ追加してうまく動いた。
 メモ
-ipv6 route default gateway dhcp lan2 ipv6だけダメだったときに設定してみたが、うまく動かない。現状からこれ追加してもダメなので何かが間違っているらしい。 filter類は無くても繋がるだろうと思って無視してたが、現状は入っている、必要だったのか？ 設定 以下動作状況からレポート機能で出力して、冗長なコメントを削った。
+ ipv6 route default gateway dhcp lan2 ipv6だけダメだったときに設定してみたが、うまく動かない。現状からこれ追加してもダメなので何かが間違っているらしい。 filter類は無くても繋がるだろうと思って無視してたが、現状は入っている、必要だったのか？  設定 以下動作状況からレポート機能で出力して、冗長なコメントを削った。
 #	RTX810 Rev.11.01.33 (Fri Apr 20 08:44:58 2018) # #	Reporting Date: Apr 14 14:41:32 2019 # # IP configuration # ip route default gateway tunnel 1 # # IPv6 configuration # ipv6 prefix 1 ra-prefix@lan2::/64 # # LAN configuration # ip lan1 address 192.168.100.1/24 ipv6 lan1 address ra-prefix@lan2::1/64 ipv6 lan1 rtadv send 1 o_flag=on ipv6 lan1 dhcp service server ipv6 lan2 secure filter in 101030 101031 101032 101098 ipv6 lan2 secure filter out 101099 dynamic 101080 101081 101082 101083 101084 101085 101098 101099 ipv6 lan2 dhcp service client ir=on # # Provider Type configuration # provider lan1 name LAN: provider lan2 name ipv6 PRV/0/4/0/0/1/1:iij # # PP configuration # pp disable all # # TUNNEL configuration # no tunnel enable all ### TUNNEL 1 ### tunnel select 1 tunnel encapsulation ipip tunnel endpoint address 2404:8e00::feed:101 tunnel enable 1 # # IP filter configuration # ip filter 500000 restrict * * * * * # # IPv6 filter configuration # ipv6 filter 101030 pass * * icmp6 * * ipv6 filter 101031 pass * * tcp * ident ipv6 filter 101032 pass * * udp * 546 ipv6 filter 101098 reject * * * * * ipv6 filter 101099 pass * * * * * # # IPv6 dynamic filter configuration # ipv6 filter dynamic 101080 * * ftp ipv6 filter dynamic 101081 * * domain ipv6 filter dynamic 101082 * * www ipv6 filter dynamic 101083 * * smtp ipv6 filter dynamic 101084 * * pop3 ipv6 filter dynamic 101085 * * submission ipv6 filter dynamic 101098 * * tcp ipv6 filter dynamic 101099 * * udp # # TELNETD configuration # telnetd host lan # # DHCP configuration # dhcp service server dhcp server rfc2131 compliant except remain-silent dhcp scope 1 192....</p>
   </div>
   <footer class="entry-footer"><span title='2019-04-14 19:43:43 +0900 JST'>2019/04/14</span>&nbsp;·&nbsp;u1tnk</footer>

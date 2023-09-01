@@ -12,7 +12,7 @@ windows側のクリップボードを双方向で使えるアプリをインス�
 windowsにデフォルトに入っている clipboard.exe はクリップボードへの書き込みはできるが、逆はできず。 逆は https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.management/get-clipboard?view=powershell-5.1 で可能なようだがWSL側から動かす方向が分からなかったので手軽なコレを採用した。 インストールしてWSL側のPATHに入れておく。
 tmux 以下設定は vim形式のキーバインド前提となっている。
 tmux.conf
-bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel &#34;win32yank.exe -i&#34; bind p run-shell &#39;win32yank.exe -o | xargs -0 -I{} tmux set-buffer -- {} &amp;&amp; tmux paste-buffer&#39; vim tmuxとは関係なくコレだけで共有できる。WSL便利というか不思議というか。 vimをclipboard利用できるようにビルドする必要はあるが、情報はいくらでもあるので割愛。 個人的にはneovimを使っているので最初から使えた。
+bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel &quot;win32yank.exe -i&quot; bind p run-shell &#39;win32yank.exe -o | xargs -0 -I{} tmux set-buffer -- {} &amp;&amp; tmux paste-buffer&#39; vim tmuxとは関係なくコレだけで共有できる。WSL便利というか不思議というか。 vimをclipboard利用できるようにビルドする必要はあるが、情報はいくらでもあるので割愛。 個人的にはneovimを使っているので最初から使えた。
 set clipboard&amp; set clipboard^=unnamedplus 所感 まとめてみると記事にまとめる意味あんのかコレ。というレベルの内容になったが、WSL2の情報は少なくて、当初うまく動かないときにXServer入れないとvimからクリップボード使えないのでは？とか標準だから clipboard.exeとか使ってハマったりしたので、たったこんだけでできるよ！という事で。
 当初これのやり方が分からず、WSL2でもsshサーバ起動してRLoginからsshしていたりしていたが、XServerの不調とかにコピペ失敗して気づいてXServer再起動したり、ひどいときにはXServer再起動に失敗してwindows再起動したり… 😭 などのイライラ一切無く、超安定 するようになっている。満足。">
 <meta name="author" content="u1tnk">
@@ -63,13 +63,21 @@ set clipboard&amp; set clipboard^=unnamedplus 所感 まとめてみると記事
         }
 
     </style>
-</noscript><meta property="og:title" content="WSL2でvim/tmuxでクリップボード共有できるようにする" />
+</noscript>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TEHPR3E7L5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TEHPR3E7L5');
+</script><meta property="og:title" content="WSL2でvim/tmuxでクリップボード共有できるようにする" />
 <meta property="og:description" content="概要 vim、tmux、windws側のcopy/pasteを全て連携させる。 WSL2移行前に使っていたVIrtualBox環境からの移行で、結局の所ssh&#43;x転送をやめた結果 xselが使えなくなったのでwindowsのexeを直接叩けばOKだった…というだけ。
 windows側のクリップボードを双方向で使えるアプリをインストール https://github.com/equalsraf/win32yank を利用。
 windowsにデフォルトに入っている clipboard.exe はクリップボードへの書き込みはできるが、逆はできず。 逆は https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.management/get-clipboard?view=powershell-5.1 で可能なようだがWSL側から動かす方向が分からなかったので手軽なコレを採用した。 インストールしてWSL側のPATHに入れておく。
 tmux 以下設定は vim形式のキーバインド前提となっている。
 tmux.conf
-bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel &#34;win32yank.exe -i&#34; bind p run-shell &#39;win32yank.exe -o | xargs -0 -I{} tmux set-buffer -- {} &amp;&amp; tmux paste-buffer&#39; vim tmuxとは関係なくコレだけで共有できる。WSL便利というか不思議というか。 vimをclipboard利用できるようにビルドする必要はあるが、情報はいくらでもあるので割愛。 個人的にはneovimを使っているので最初から使えた。
+bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel &quot;win32yank.exe -i&quot; bind p run-shell &#39;win32yank.exe -o | xargs -0 -I{} tmux set-buffer -- {} &amp;&amp; tmux paste-buffer&#39; vim tmuxとは関係なくコレだけで共有できる。WSL便利というか不思議というか。 vimをclipboard利用できるようにビルドする必要はあるが、情報はいくらでもあるので割愛。 個人的にはneovimを使っているので最初から使えた。
 set clipboard&amp; set clipboard^=unnamedplus 所感 まとめてみると記事にまとめる意味あんのかコレ。というレベルの内容になったが、WSL2の情報は少なくて、当初うまく動かないときにXServer入れないとvimからクリップボード使えないのでは？とか標準だから clipboard.exeとか使ってハマったりしたので、たったこんだけでできるよ！という事で。
 当初これのやり方が分からず、WSL2でもsshサーバ起動してRLoginからsshしていたりしていたが、XServerの不調とかにコピペ失敗して気づいてXServer再起動したり、ひどいときにはXServer再起動に失敗してwindows再起動したり… 😭 などのイライラ一切無く、超安定 するようになっている。満足。" />
 <meta property="og:type" content="article" />
@@ -84,7 +92,7 @@ windows側のクリップボードを双方向で使えるアプリをインス�
 windowsにデフォルトに入っている clipboard.exe はクリップボードへの書き込みはできるが、逆はできず。 逆は https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.management/get-clipboard?view=powershell-5.1 で可能なようだがWSL側から動かす方向が分からなかったので手軽なコレを採用した。 インストールしてWSL側のPATHに入れておく。
 tmux 以下設定は vim形式のキーバインド前提となっている。
 tmux.conf
-bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel &#34;win32yank.exe -i&#34; bind p run-shell &#39;win32yank.exe -o | xargs -0 -I{} tmux set-buffer -- {} &amp;&amp; tmux paste-buffer&#39; vim tmuxとは関係なくコレだけで共有できる。WSL便利というか不思議というか。 vimをclipboard利用できるようにビルドする必要はあるが、情報はいくらでもあるので割愛。 個人的にはneovimを使っているので最初から使えた。
+bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel &quot;win32yank.exe -i&quot; bind p run-shell &#39;win32yank.exe -o | xargs -0 -I{} tmux set-buffer -- {} &amp;&amp; tmux paste-buffer&#39; vim tmuxとは関係なくコレだけで共有できる。WSL便利というか不思議というか。 vimをclipboard利用できるようにビルドする必要はあるが、情報はいくらでもあるので割愛。 個人的にはneovimを使っているので最初から使えた。
 set clipboard&amp; set clipboard^=unnamedplus 所感 まとめてみると記事にまとめる意味あんのかコレ。というレベルの内容になったが、WSL2の情報は少なくて、当初うまく動かないときにXServer入れないとvimからクリップボード使えないのでは？とか標準だから clipboard.exeとか使ってハマったりしたので、たったこんだけでできるよ！という事で。
 当初これのやり方が分からず、WSL2でもsshサーバ起動してRLoginからsshしていたりしていたが、XServerの不調とかにコピペ失敗して気づいてXServer再起動したり、ひどいときにはXServer再起動に失敗してwindows再起動したり… 😭 などのイライラ一切無く、超安定 するようになっている。満足。"/>
 
@@ -115,7 +123,7 @@ set clipboard&amp; set clipboard^=unnamedplus 所感 まとめてみると記事
   "@type": "BlogPosting",
   "headline": "WSL2でvim/tmuxでクリップボード共有できるようにする",
   "name": "WSL2でvim\/tmuxでクリップボード共有できるようにする",
-  "description": "概要 vim、tmux、windws側のcopy/pasteを全て連携させる。 WSL2移行前に使っていたVIrtualBox環境からの移行で、結局の所ssh+x転送をやめた結果 xselが使えなくなったのでwindowsのexeを直接叩けばOKだった…というだけ。\nwindows側のクリップボードを双方向で使えるアプリをインストール https://github.com/equalsraf/win32yank を利用。\nwindowsにデフォルトに入っている clipboard.exe はクリップボードへの書き込みはできるが、逆はできず。 逆は https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.management/get-clipboard?view=powershell-5.1 で可能なようだがWSL側から動かす方向が分からなかったので手軽なコレを採用した。 インストールしてWSL側のPATHに入れておく。\ntmux 以下設定は vim形式のキーバインド前提となっている。\ntmux.conf\nbind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel \u0026#34;win32yank.exe -i\u0026#34; bind p run-shell \u0026#39;win32yank.exe -o | xargs -0 -I{} tmux set-buffer -- {} \u0026amp;\u0026amp; tmux paste-buffer\u0026#39; vim tmuxとは関係なくコレだけで共有できる。WSL便利というか不思議というか。 vimをclipboard利用できるようにビルドする必要はあるが、情報はいくらでもあるので割愛。 個人的にはneovimを使っているので最初から使えた。\nset clipboard\u0026amp; set clipboard^=unnamedplus 所感 まとめてみると記事にまとめる意味あんのかコレ。というレベルの内容になったが、WSL2の情報は少なくて、当初うまく動かないときにXServer入れないとvimからクリップボード使えないのでは？とか標準だから clipboard.exeとか使ってハマったりしたので、たったこんだけでできるよ！という事で。\n当初これのやり方が分からず、WSL2でもsshサーバ起動してRLoginからsshしていたりしていたが、XServerの不調とかにコピペ失敗して気づいてXServer再起動したり、ひどいときにはXServer再起動に失敗してwindows再起動したり… 😭 などのイライラ一切無く、超安定 するようになっている。満足。",
+  "description": "概要 vim、tmux、windws側のcopy/pasteを全て連携させる。 WSL2移行前に使っていたVIrtualBox環境からの移行で、結局の所ssh+x転送をやめた結果 xselが使えなくなったのでwindowsのexeを直接叩けばOKだった…というだけ。\nwindows側のクリップボードを双方向で使えるアプリをインストール https://github.com/equalsraf/win32yank を利用。\nwindowsにデフォルトに入っている clipboard.exe はクリップボードへの書き込みはできるが、逆はできず。 逆は https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.management/get-clipboard?view=powershell-5.1 で可能なようだがWSL側から動かす方向が分からなかったので手軽なコレを採用した。 インストールしてWSL側のPATHに入れておく。\ntmux 以下設定は vim形式のキーバインド前提となっている。\ntmux.conf\nbind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel \u0026quot;win32yank.exe -i\u0026quot; bind p run-shell 'win32yank.exe -o | xargs -0 -I{} tmux set-buffer -- {} \u0026amp;\u0026amp; tmux paste-buffer' vim tmuxとは関係なくコレだけで共有できる。WSL便利というか不思議というか。 vimをclipboard利用できるようにビルドする必要はあるが、情報はいくらでもあるので割愛。 個人的にはneovimを使っているので最初から使えた。\nset clipboard\u0026amp; set clipboard^=unnamedplus 所感 まとめてみると記事にまとめる意味あんのかコレ。というレベルの内容になったが、WSL2の情報は少なくて、当初うまく動かないときにXServer入れないとvimからクリップボード使えないのでは？とか標準だから clipboard.exeとか使ってハマったりしたので、たったこんだけでできるよ！という事で。\n当初これのやり方が分からず、WSL2でもsshサーバ起動してRLoginからsshしていたりしていたが、XServerの不調とかにコピペ失敗して気づいてXServer再起動したり、ひどいときにはXServer再起動に失敗してwindows再起動したり… 😭 などのイライラ一切無く、超安定 するようになっている。満足。",
   "keywords": [
     
   ],
@@ -225,8 +233,8 @@ WSL2移行前に使っていたVIrtualBox環境からの移行で、結局の所
 <h2 id="tmux">tmux<a hidden class="anchor" aria-hidden="true" href="#tmux">#</a></h2>
 <p>以下設定は vim形式のキーバインド前提となっている。</p>
 <p>tmux.conf</p>
-<pre tabindex="0"><code>bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel &#34;win32yank.exe -i&#34;
-bind p run-shell &#39;win32yank.exe -o | xargs -0 -I{} tmux set-buffer -- {} &amp;&amp; tmux paste-buffer&#39;
+<pre tabindex="0"><code>bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel &quot;win32yank.exe -i&quot;
+bind p run-shell 'win32yank.exe -o | xargs -0 -I{} tmux set-buffer -- {} &amp;&amp; tmux paste-buffer'
 </code></pre><h2 id="vim">vim<a hidden class="anchor" aria-hidden="true" href="#vim">#</a></h2>
 <p>tmuxとは関係なくコレだけで共有できる。WSL便利というか不思議というか。
 vimをclipboard利用できるようにビルドする必要はあるが、情報はいくらでもあるので割愛。

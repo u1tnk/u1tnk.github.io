@@ -55,7 +55,15 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="Posts" />
+</noscript>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TEHPR3E7L5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TEHPR3E7L5');
+</script><meta property="og:title" content="Posts" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://u1tnk.github.io/post/" />
@@ -156,8 +164,8 @@
 2月にほぼ手作業で同じようなデータ作ったけど、大幅値下げで既に使いものにならなくなったので業を煮やした。いや値下げは嬉しいんだけど。
 同様にネットで見かけるまとめも見やすいものは古くなってたり…
 以下公式の不満。
-一画面でECUとかGiBとか比較できない リザーブドインスタンスにしたときのならし月額(一括払いを月額に按分して時間分と足す)が欲しい(見積りツールにはある) オンデマンドとリザーブドインスタンスどんぐらい違うか見たい ECUあたりとかメモリあたりの単価も比較したい 3年とかさすがに使えないのでいらない 中度とか軽度買うぐらいならオンデマンドで良いのでいらない このページのもデザイン的に見やすくないのでSpreadSheetなりに貼りつけて利用を推奨。(以下リンク先のCSSゼロの方がまだ見やすいという…) やはりみづらいのでgoogle spread sheetに貼りつけた https://docs.google.com/spreadsheets/d/1QzsUHO4Nd07TL5FAnVM2yvLRa3uOslY7pDTrmhwuAf0/edit?usp=sharing どうやった？ 以下ページのJSでHTML化。このページのはスナップショットとしてコピペ。 https://dl.dropboxusercontent.com/u/3400756/aws_price.html
-料金表のページのソースを見るとJSONPで呼んでたので使わせてもらった。おそらく外部利用を想定してないので止まっても文句は言いません。(見れなくなったら困るのでコピペった) 表について RI = リザーブドインスタンス一年重度使用 OD = オンデマンド(普通) m1.small比OD価格のm1.small比。 安い順にソートしている。ファミリー毎の方がコスパとか見やすかったかも。 内容感想 m1.medium/m1.largeが消えてた…別ページにあるんだろうけど。 m1.small、特殊用途のhs以外全てSSD化してた。HDDは死んだ… m1.small、単価見ると高い！しょぼい用途には使うけど… m3.mediumも2月時点のm1.small(RIならしで約$34だった)と大差無い。 2月時点のm1.mediumよりC3.largeが安いってw m1.mediumのリザーブドインスタンスどうしろと… c3.largeがオンデマンドでも月一万切る上、メモリ/ECU共にコスパ高い! large以上は特段コスパ良くなったりはしない。 m3の中途半端さ。largeならc3かr3使うと思う。 4/17時点の価格表 size vCPU ECU memoryGiB storageGB RI一括 RI/時間 RIならし月額 OD時間 OD月額 OD m1.small比 OD月額/ECU OD月額/GiB t1.micro1variable0.615ebsonly620.00911.640.02618.720.42NaN30.43 m1.small111.71 x 1601350.01723.490.06143.92143.9225.83 m3.medium133.751 x 4 SSD2440.0341.930.10172.721.6524.2419.39 c3.large273.752 x 16 SSD3570.04763.590.12892.162.0913.1624.57 m3.large26.57.51 x 32 SSD4870.06184.50.203146.163.3222.4819.48 r3....</p>
+ 一画面でECUとかGiBとか比較できない リザーブドインスタンスにしたときのならし月額(一括払いを月額に按分して時間分と足す)が欲しい(見積りツールにはある) オンデマンドとリザーブドインスタンスどんぐらい違うか見たい ECUあたりとかメモリあたりの単価も比較したい 3年とかさすがに使えないのでいらない 中度とか軽度買うぐらいならオンデマンドで良いのでいらない このページのもデザイン的に見やすくないのでSpreadSheetなりに貼りつけて利用を推奨。(以下リンク先のCSSゼロの方がまだ見やすいという…)  やはりみづらいのでgoogle spread sheetに貼りつけた https://docs.google.com/spreadsheets/d/1QzsUHO4Nd07TL5FAnVM2yvLRa3uOslY7pDTrmhwuAf0/edit?usp=sharing    どうやった？ 以下ページのJSでHTML化。このページのはスナップショットとしてコピペ。 https://dl.dropboxusercontent.com/u/3400756/aws_price.html
+ 料金表のページのソースを見るとJSONPで呼んでたので使わせてもらった。おそらく外部利用を想定してないので止まっても文句は言いません。(見れなくなったら困るのでコピペった)  表について  RI = リザーブドインスタンス一年重度使用 OD = オンデマンド(普通) m1.small比OD価格のm1.small比。 安い順にソートしている。ファミリー毎の方がコスパとか見やすかったかも。  内容感想  m1.medium/m1.largeが消えてた…別ページにあるんだろうけど。 m1.small、特殊用途のhs以外全てSSD化してた。HDDは死んだ… m1.small、単価見ると高い！しょぼい用途には使うけど… m3.mediumも2月時点のm1.small(RIならしで約$34だった)と大差無い。 2月時点のm1.mediumよりC3.largeが安いってw m1.mediumのリザーブドインスタンスどうしろと… c3.largeがオンデマンドでも月一万切る上、メモリ/ECU共にコスパ高い! large以上は特段コスパ良くなったりはしない。 m3の中途半端さ。largeならc3かr3使うと思う。  4/17時点の価格表  size vCPU ECU memoryGiB storageGB RI一括 RI/時間 RIならし月額 OD時間 OD月額 OD m1.small比 OD月額/ECU OD月額/GiB  t1.micro1variable0.615ebsonly620.00911.640.02618.720.42NaN30.43 m1.small111.71 x 1601350....</p>
   </div>
   <footer class="entry-footer"><span title='2014-04-17 00:00:00 +0000 UTC'>2014/04/17</span>&nbsp;·&nbsp;u1tnk</footer>
   <a class="entry-link" aria-label="post link to EC2インスタンス価格の必要なところだけ表にしてみた" href="https://u1tnk.github.io/blog/2014/04/17/aws-price/"></a>
@@ -171,7 +179,7 @@
   <div class="entry-content">
     <p>同僚に貸して頂いて読みました。感謝。
 Googleの中の人がチーム開発するにあたってどういう事を心がけているか？という本。 プログラマ本だけどプログラマ専用の内容は少なめ。一部削れば自己啓発書コーナーにあっても不思議じゃない。
-とにかくHRT(信頼 Humility、尊敬 Respect、謙虚 Trust) 有害な人対策なども。無自覚なのも含めて難しい問題だと実感。有害な人対策自体も参考になるが、自分も有害になってないか？で心が痛い。 採用は妥協しない、チームメイトになったら大人として扱う。 ミッションステートメントは共有はもちろん今自分がしっかり理解しているとは言えないなぁ… かなり社内政治についても書いてる。必要悪的ではあるが。 面白かったし、色々参考になった。 自省としては、HRTはやってるつもりだけど、嗜好が合わないと謙虚さが失われがちなので気をつけようと。</p>
+ とにかくHRT(信頼 Humility、尊敬 Respect、謙虚 Trust) 有害な人対策なども。無自覚なのも含めて難しい問題だと実感。有害な人対策自体も参考になるが、自分も有害になってないか？で心が痛い。 採用は妥協しない、チームメイトになったら大人として扱う。 ミッションステートメントは共有はもちろん今自分がしっかり理解しているとは言えないなぁ… かなり社内政治についても書いてる。必要悪的ではあるが。  面白かったし、色々参考になった。 自省としては、HRTはやってるつもりだけど、嗜好が合わないと謙虚さが失われがちなので気をつけようと。</p>
   </div>
   <footer class="entry-footer"><span title='2014-03-20 00:00:00 +0000 UTC'>2014/03/20</span>&nbsp;·&nbsp;u1tnk</footer>
   <a class="entry-link" aria-label="post link to Team Geek読んだ" href="https://u1tnk.github.io/blog/2014/03/20/team-geek/"></a>
@@ -187,15 +195,12 @@ Googleの中の人がチーム開発するにあたってどういう事を心�
 めっちゃ人居ました。個人的にrebuild.fm全部聞いてるのでほとんど聞いてたので割愛w
 クックパッドのデプロイとオートスケール 個人的一番勉強になったセッション。
 Cookpad’s deployment and auto scaling // Speaker Deck https://speakerdeck.com/mirakui/cookpads-deployment-and-auto-scaling
-nameタグ、hostnameは起動時に自動採取
-→これはすぐにでも真似したい。 roleタグというのをつけてデプロイ内容をコントロール
-→ふむふむ Nameタグからip収集してpowerdnsで管理。
-→そうしたいよね… ec2からタグ情報取得するApiのImitに到達するらしいw キャッシュしてるとのこと
-Amazon AutoScaling使って無くて自作！
-CloudWatchが最短一分で秒単位で取得したい そこまで必要なのか… graceful terminate問題 それは確かに。多少のリクエストなら負荷で落ちるよりマシと思ってやってるが… ELBでは無くhaproxy使いたい。… haproxyの方が良いそうな。 ブラックボックスで問題起こったらよくわからんってのは確かに。 デプロイとにAutoScaalingと排他制御するため - 動くとやばいので、排他制御してると。ほー。デプロイ多いからこその問題。 問題調査のための、staticインスタンスとしてAutoScaleとは別管理のインスタンスがある。
-確かに。システムログとか見るヒマ無く勝手に落ちるからな…Amazon Autoscalingでもできるからやりたい 蛇足
-chefじゃなくてpuppet使ってるらしい。なんでだろ。 cookpadもhipchatoとのこと プロビジョニング＆デプロイ on AWSのキホン The Basics of Provisioning and Deploy on AWS #jawdays #infra http://www.slideshare.net/Ryuzee/the-basics-of-provisioning-and-deploy-on-aws-jawdays-infra 特段目新しい内容は無かったが、とにかく耳の痛い正論セッションでした。
-自動化しないリスク、コストを過少評価し過ぎ 自動化するなら最初から。デプロイするときに考えるじゃ遅い 自動化しない→ミスる→チェック増やす→コスト増える→＼(^o^)／ デプロイアンチパターン、手作業混合。 →これはやっちゃう… テスト自動化！小さい粒度でリリース！ sunsu&#43;graphite良いと。 カジュアルにVPC作った結果がこれだよ！ http://www....</p>
+  nameタグ、hostnameは起動時に自動採取
+ →これはすぐにでも真似したい。    roleタグというのをつけてデプロイ内容をコントロール
+ →ふむふむ    Nameタグからip収集してpowerdnsで管理。
+ →そうしたいよね…    ec2からタグ情報取得するApiのImitに到達するらしいw キャッシュしてるとのこと
+  Amazon AutoScaling使って無くて自作！
+ CloudWatchが最短一分で秒単位で取得したい  そこまで必要なのか…   graceful terminate問題  それは確かに。多少のリクエストなら負荷で落ちるよりマシと思ってやってるが…   ELBでは無くhaproxy使いたい。…  haproxyの方が良いそうな。 ブラックボックスで問題起こったらよくわからんってのは確かに。   デプロイとにAutoScaalingと排他制御するため - 動くとやばいので、排他制御してると。ほー。デプロイ多いからこその問題。    問題調査のための、staticインスタンスとしてAutoScaleとは別管理のインスタンスがある。...</p>
   </div>
   <footer class="entry-footer"><span title='2014-03-15 00:00:00 +0000 UTC'>2014/03/15</span>&nbsp;·&nbsp;u1tnk</footer>
   <a class="entry-link" aria-label="post link to JAWS DAYS 2014に行ってきました" href="https://u1tnk.github.io/blog/2014/03/15/jawsdays2014/"></a>
@@ -208,26 +213,19 @@ chefじゃなくてpuppet使ってるらしい。なんでだろ。 cookpadもhi
   </header>
   <div class="entry-content">
     <p>nasne良さそうだけど、torne持ってるし録画サーバあるしいらんと思ってたけど、録画サーバが壊れた(たぶんPT2の故障)ので検討。
-PT2買い替えでなおる気がするけど、実はソフト側の問題でハマったら辛い。 そもそもPT2&#43;ubuntu環境も結構不安定。番組によっては変換でよくハマってたし。 以下の記事見て自分の用途(PS3/iPad/iPhoneで見る、たまに持ち出し)が全て満たされると確信。 年末年始の特番対策に PS3＋torne&#43;nasne で録画環境を強化してみたら外から録画予約も出来るようになったし超満足した件 - 941::blog
-設置 アンテナ挿す B-CAS挿す 電源挿す こんだけ、簡単！ 設定 ブラウザで機器設定1 チャンネルスキャン ネットワーク設定 予約サービスCHAN-TORU登録 外部予約用だが、PS3無い人はこれで予約すれば良い google/twitterアカウント使えるので登録ラク。 PS3トルネアプリでnasne登録 PS3/torneアプリの存在意義 ここで、torneとはtorneアプリの事であり、PS3外付けチューナ製品の事では無い、そちらはtorneチューナと呼ぶ。
+ PT2買い替えでなおる気がするけど、実はソフト側の問題でハマったら辛い。 そもそもPT2&#43;ubuntu環境も結構不安定。番組によっては変換でよくハマってたし。 以下の記事見て自分の用途(PS3/iPad/iPhoneで見る、たまに持ち出し)が全て満たされると確信。  年末年始の特番対策に PS3＋torne&#43;nasne で録画環境を強化してみたら外から録画予約も出来るようになったし超満足した件 - 941::blog
+設置  アンテナ挿す B-CAS挿す 電源挿す こんだけ、簡単！  設定  ブラウザで機器設定1   チャンネルスキャン ネットワーク設定 予約サービスCHAN-TORU登録  外部予約用だが、PS3無い人はこれで予約すれば良い google/twitterアカウント使えるので登録ラク。 PS3トルネアプリでnasne登録    PS3/torneアプリの存在意義 ここで、torneとはtorneアプリの事であり、PS3外付けチューナ製品の事では無い、そちらはtorneチューナと呼ぶ。
 結論から言うとPS3持ってるなら使うだけのメリットはある。
 が、持ってなくてメイン視聴がiOSもしくはDLNA機器(DTCP-IP対応)なら買う程では無い。
 torneチューナは既に持ってる人なら併用するとダブルチューナの意味はある。が、持ってなければnasne買い足しの方が良い。
-メリット 録画管理機能使える(予約管理は上述のCHAN-TORUでもできる) 番組表サクサク便利 torneチューナと予約/データを統合管理 torneチューナあるときはここで予約して時間が重複したらtorneチューナで録画してくれる 未/既視聴管理ができる デメリット torneアプリ、PS3共に起動遅い torneチューナ運用時との比較で意外に良かったところ 録画にPS3起動が必要無い!
+メリット  録画管理機能使える(予約管理は上述のCHAN-TORUでもできる) 番組表サクサク便利 torneチューナと予約/データを統合管理 torneチューナあるときはここで予約して時間が重複したらtorneチューナで録画してくれる 未/既視聴管理ができる  デメリット  torneアプリ、PS3共に起動遅い  torneチューナ運用時との比較で意外に良かったところ 録画にPS3起動が必要無い!
 ささいなようで素晴らしい。突然鳴り響くファンの音に怯える事も無い。部屋も暑くならないんだ！
 Twonkey Beamと Dixim digital TV どちらもiOSでDTCP-IP対応DLNAクライアントで、LAN内でnasneの動画が見れます。ライブチューナでTVも見れます。 が、決定的に「品質」が違います。
 以下起動した直後のスクショ。 こちらがDixim
 で、こちらがTwonkey
 どちらがnasneで動画再生するのにわかりやすいかなんて一目瞭然ですね。 ちなみにまずは右上のちっさーーーいwifiアイコンをクリックするのが正解です。
 これからも万事この調子。
-普通に見るのも、ダウンロードするのも「Beam」するんです！意味がわかりません。 再生中にsuspend-resumeするとよく固まります。 番組によっては再生できません。2 30秒スキップなんて親切機能はありません。頑張って指で調整して早送りした結果固まります。 固まらなくてもBeam失敗したときにエラーポップアップすら出ない事が多い。静かにエラー起きてるっぽい。 レビュー記事でTwonkeyはUIがちょっとよくない…とか書いてるのを見た事あるけど、
-__ひどいUIを頑張って理解した結果、UIだけじゃなくて品質自体が悪い事を理解してしまう。__が現実でした。
-一方Diximの方は普通です。ちゃんとしてます。「番組によっては固まる」事があるのみ発生しましたが頻度が違います。 オススメできます
-それでもダウンロードムーブしたい！ iOSでのダウンロードムーブは2013/07現在Twonkeyしか対応していません。
-どうしても持ち出したい！という事であればTwonkeyしか選択肢が無いのです。残念ながら…
-私も最初は我慢して使おうと思ってました。…が、
-再生できない事がある 早送りができない(できるけど、調整がめんどい&amp;固まるリスク) 中断するとresumeで固まるリスク、更に早送りで固まるリスク …めんどくさすぎてほとんど使ってません。
-まとめ iPad&#43;nasne&#43;Diximを家で使うのは非常に快適です。リビングも静かになったし買って良かった。...</p>
+ 普通に見るのも、ダウンロードするのも「Beam」するんです！意味がわかりません。 再生中にsuspend-resumeするとよく固まります。 番組によっては再生できません。2   30秒スキップなんて親切機能はありません。頑張って指で調整して早送りした結果固まります。 固まらなくてもBeam失敗したときにエラーポップアップすら出ない事が多い。静かにエラー起きてるっぽい。  レビュー記事でTwonkeyはUIがちょっとよくない…とか書いてるのを見た事あるけど、...</p>
   </div>
   <footer class="entry-footer"><span title='2013-07-28 00:00:00 +0000 UTC'>2013/07/28</span>&nbsp;·&nbsp;u1tnk</footer>
   <a class="entry-link" aria-label="post link to nasne&#43;iOSは無茶苦茶便利だがTwonkeyBeamは使わない方が幸せ。黙ってDixim使っとけ！" href="https://u1tnk.github.io/blog/2013/07/28/nasne/"></a>

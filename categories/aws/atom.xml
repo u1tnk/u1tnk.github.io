@@ -17,8 +17,8 @@
 2月にほぼ手作業で同じようなデータ作ったけど、大幅値下げで既に使いものにならなくなったので業を煮やした。いや値下げは嬉しいんだけど。
 同様にネットで見かけるまとめも見やすいものは古くなってたり…
 以下公式の不満。
-一画面でECUとかGiBとか比較できない リザーブドインスタンスにしたときのならし月額(一括払いを月額に按分して時間分と足す)が欲しい(見積りツールにはある) オンデマンドとリザーブドインスタンスどんぐらい違うか見たい ECUあたりとかメモリあたりの単価も比較したい 3年とかさすがに使えないのでいらない 中度とか軽度買うぐらいならオンデマンドで良いのでいらない このページのもデザイン的に見やすくないのでSpreadSheetなりに貼りつけて利用を推奨。(以下リンク先のCSSゼロの方がまだ見やすいという…) やはりみづらいのでgoogle spread sheetに貼りつけた https://docs.google.com/spreadsheets/d/1QzsUHO4Nd07TL5FAnVM2yvLRa3uOslY7pDTrmhwuAf0/edit?usp=sharing どうやった？ 以下ページのJSでHTML化。このページのはスナップショットとしてコピペ。 https://dl.dropboxusercontent.com/u/3400756/aws_price.html
-料金表のページのソースを見るとJSONPで呼んでたので使わせてもらった。おそらく外部利用を想定してないので止まっても文句は言いません。(見れなくなったら困るのでコピペった) 表について RI = リザーブドインスタンス一年重度使用 OD = オンデマンド(普通) m1.small比OD価格のm1.small比。 安い順にソートしている。ファミリー毎の方がコスパとか見やすかったかも。 内容感想 m1.medium/m1.largeが消えてた…別ページにあるんだろうけど。 m1.small、特殊用途のhs以外全てSSD化してた。HDDは死んだ… m1.small、単価見ると高い！しょぼい用途には使うけど… m3.mediumも2月時点のm1.small(RIならしで約$34だった)と大差無い。 2月時点のm1.mediumよりC3.largeが安いってw m1.mediumのリザーブドインスタンスどうしろと… c3.largeがオンデマンドでも月一万切る上、メモリ/ECU共にコスパ高い! large以上は特段コスパ良くなったりはしない。 m3の中途半端さ。largeならc3かr3使うと思う。 4/17時点の価格表 size vCPU ECU memoryGiB storageGB RI一括 RI/時間 RIならし月額 OD時間 OD月額 OD m1.small比 OD月額/ECU OD月額/GiB t1.micro1variable0.615ebsonly620.00911.640.02618.720.42NaN30.43 m1.small111.71 x 1601350.01723.490.06143.92143.9225.83 m3.medium133.751 x 4 SSD2440.0341.930.10172.721.6524.2419.39 c3.large273.752 x 16 SSD3570.04763.590.12892.162.0913.1624.57 m3.large26.57.51 x 32 SSD4870.06184.50.203146.163.3222.4819.48 r3.</description>
+ 一画面でECUとかGiBとか比較できない リザーブドインスタンスにしたときのならし月額(一括払いを月額に按分して時間分と足す)が欲しい(見積りツールにはある) オンデマンドとリザーブドインスタンスどんぐらい違うか見たい ECUあたりとかメモリあたりの単価も比較したい 3年とかさすがに使えないのでいらない 中度とか軽度買うぐらいならオンデマンドで良いのでいらない このページのもデザイン的に見やすくないのでSpreadSheetなりに貼りつけて利用を推奨。(以下リンク先のCSSゼロの方がまだ見やすいという…)  やはりみづらいのでgoogle spread sheetに貼りつけた https://docs.google.com/spreadsheets/d/1QzsUHO4Nd07TL5FAnVM2yvLRa3uOslY7pDTrmhwuAf0/edit?usp=sharing    どうやった？ 以下ページのJSでHTML化。このページのはスナップショットとしてコピペ。 https://dl.dropboxusercontent.com/u/3400756/aws_price.html
+ 料金表のページのソースを見るとJSONPで呼んでたので使わせてもらった。おそらく外部利用を想定してないので止まっても文句は言いません。(見れなくなったら困るのでコピペった)  表について  RI = リザーブドインスタンス一年重度使用 OD = オンデマンド(普通) m1.small比OD価格のm1.small比。 安い順にソートしている。ファミリー毎の方がコスパとか見やすかったかも。  内容感想  m1.medium/m1.largeが消えてた…別ページにあるんだろうけど。 m1.small、特殊用途のhs以外全てSSD化してた。HDDは死んだ… m1.small、単価見ると高い！しょぼい用途には使うけど… m3.mediumも2月時点のm1.small(RIならしで約$34だった)と大差無い。 2月時点のm1.mediumよりC3.largeが安いってw m1.mediumのリザーブドインスタンスどうしろと… c3.largeがオンデマンドでも月一万切る上、メモリ/ECU共にコスパ高い! large以上は特段コスパ良くなったりはしない。 m3の中途半端さ。largeならc3かr3使うと思う。  4/17時点の価格表  size vCPU ECU memoryGiB storageGB RI一括 RI/時間 RIならし月額 OD時間 OD月額 OD m1.small比 OD月額/ECU OD月額/GiB  t1.micro1variable0.615ebsonly620.00911.640.02618.720.42NaN30.43 m1.small111.71 x 1601350.</description>
     </item>
     
     <item>
@@ -31,15 +31,12 @@
 めっちゃ人居ました。個人的にrebuild.fm全部聞いてるのでほとんど聞いてたので割愛w
 クックパッドのデプロイとオートスケール 個人的一番勉強になったセッション。
 Cookpad&amp;rsquo;s deployment and auto scaling // Speaker Deck https://speakerdeck.com/mirakui/cookpads-deployment-and-auto-scaling
-nameタグ、hostnameは起動時に自動採取
-→これはすぐにでも真似したい。 roleタグというのをつけてデプロイ内容をコントロール
-→ふむふむ Nameタグからip収集してpowerdnsで管理。
-→そうしたいよね… ec2からタグ情報取得するApiのImitに到達するらしいw キャッシュしてるとのこと
-Amazon AutoScaling使って無くて自作！
-CloudWatchが最短一分で秒単位で取得したい そこまで必要なのか… graceful terminate問題 それは確かに。多少のリクエストなら負荷で落ちるよりマシと思ってやってるが… ELBでは無くhaproxy使いたい。… haproxyの方が良いそうな。 ブラックボックスで問題起こったらよくわからんってのは確かに。 デプロイとにAutoScaalingと排他制御するため - 動くとやばいので、排他制御してると。ほー。デプロイ多いからこその問題。 問題調査のための、staticインスタンスとしてAutoScaleとは別管理のインスタンスがある。
-確かに。システムログとか見るヒマ無く勝手に落ちるからな…Amazon Autoscalingでもできるからやりたい 蛇足
-chefじゃなくてpuppet使ってるらしい。なんでだろ。 cookpadもhipchatoとのこと プロビジョニング＆デプロイ on AWSのキホン The Basics of Provisioning and Deploy on AWS #jawdays #infra http://www.slideshare.net/Ryuzee/the-basics-of-provisioning-and-deploy-on-aws-jawdays-infra 特段目新しい内容は無かったが、とにかく耳の痛い正論セッションでした。
-自動化しないリスク、コストを過少評価し過ぎ 自動化するなら最初から。デプロイするときに考えるじゃ遅い 自動化しない→ミスる→チェック増やす→コスト増える→＼(^o^)／ デプロイアンチパターン、手作業混合。 →これはやっちゃう… テスト自動化！小さい粒度でリリース！ sunsu+graphite良いと。 カジュアルにVPC作った結果がこれだよ！ http://www.</description>
+  nameタグ、hostnameは起動時に自動採取
+ →これはすぐにでも真似したい。    roleタグというのをつけてデプロイ内容をコントロール
+ →ふむふむ    Nameタグからip収集してpowerdnsで管理。
+ →そうしたいよね…    ec2からタグ情報取得するApiのImitに到達するらしいw キャッシュしてるとのこと
+  Amazon AutoScaling使って無くて自作！
+ CloudWatchが最短一分で秒単位で取得したい  そこまで必要なのか…   graceful terminate問題  それは確かに。多少のリクエストなら負荷で落ちるよりマシと思ってやってるが…   ELBでは無くhaproxy使いたい。…  haproxyの方が良いそうな。 ブラックボックスで問題起こったらよくわからんってのは確かに。   デプロイとにAutoScaalingと排他制御するため - 動くとやばいので、排他制御してると。ほー。デプロイ多いからこその問題。    問題調査のための、staticインスタンスとしてAutoScaleとは別管理のインスタンスがある。</description>
     </item>
     
   </channel>

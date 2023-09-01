@@ -55,7 +55,15 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="ansible" />
+</noscript>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TEHPR3E7L5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TEHPR3E7L5');
+</script><meta property="og:title" content="ansible" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://u1tnk.github.io/categories/ansible/" />
@@ -140,9 +148,8 @@
     <p>Ansible 勉強会 #1 - connpass
 に行ってきたのでメモ。資料は↑にほぼあるようです。
 Ansible の基本 &#43; MySQL レプリケーションを設定する事例 by @IanMLewis まさに基本。普段使ってるので大体押さえられてた。
-MySQLを構築してみる bennojoy/ansible-roles ansibleworksの人のリポジトリらしい。参考になりそう。 when あんま使いこなしてないので見とこう。 サンプルyaml見ると、自分のyamlが使いこなして無い感ある… mysql_replicationモジュールは便利感あるが、ちょっと簡単そうに見えないw 基本の直後に見るのはキツい印象。 dynamic inventoryが便利な話: no more host list! by @tagomoris 某巨大メッセージングアプリ企業で普通に使ってるっぽい エージェントいらないからCentOS5でも動くという理由が大きいらしい。納得。 日本語情報あんま無いのが弱点は同意。っつーか俺書け。 Inventryに普通のvars定義できたという恐らくかなり基本に気づいてなかった… hoge[1:2].local → hoge1.local…とか使える。 Dyanamic Inventry存在すら気づいてなかった… ec2用のscriptは既存である。 JSON返すだけなので自作もラク。 ansible.cfg置けば -i不要という事に気づいた。 明日からマネしたい！ 2000台完走実績あるらしい。さすが某巨大メッセージングアプリ企業 おまけ DynamicInventryでは_meta使って —host はスキップさせるのがオススメ。
-callback pluginを使ったタスク実行時間の可視化について by @rudy pluginはmoduleと違ってpythonで本体を拡張。 -i “localhost, ” とかできる事に気づいて衝撃。 callback_plugins に入れるだけ。実行ホストに置けば良いのラクだな。 実用上は使わない気がするが、bot連携すると面白いかも。 AnsibleのJUNOS設定モジュールを書いてみた by @saito_hideki Ansibleでルータ設定をしているという、まったく参考にはならないが衝撃の発表。
-MSPだってansibleしたい by @LaughK MSP(運用、保守代行) 客のサーバだからに(ほとんど)何も入れなくて良いという理由。 目指せ、サーバー構築1200台 by @myb1126 採用はエージェントレスが決め手との事。 構成管理ツールAnsibleの構成管理について by @iktakahiro playbookだけディレクトリ分けるのアリかも。 「冪等性は忘れよう」w 発表されてたのは複雑な気がする…とはいえbest practiceは複数サービスになると厳しいので、考えないとまずそう。 Vagrant × Ansible by @tomohiro_urakawa inventoryはvagrantが生成すんのか。べんりー Vagrant provisionで実行 正直言うとそれでもわざわざVagrantに実行させるメリットが見えない…っつーか小さくしか見えない。 chefからansibleに乗り換えた話 by @futoase やはりchefより良いのは以下2点...</p>
+MySQLを構築してみる  bennojoy/ansible-roles ansibleworksの人のリポジトリらしい。参考になりそう。 when あんま使いこなしてないので見とこう。 サンプルyaml見ると、自分のyamlが使いこなして無い感ある… mysql_replicationモジュールは便利感あるが、ちょっと簡単そうに見えないw 基本の直後に見るのはキツい印象。  dynamic inventoryが便利な話: no more host list! by @tagomoris  某巨大メッセージングアプリ企業で普通に使ってるっぽい エージェントいらないからCentOS5でも動くという理由が大きいらしい。納得。 日本語情報あんま無いのが弱点は同意。っつーか俺書け。 Inventryに普通のvars定義できたという恐らくかなり基本に気づいてなかった… hoge[1:2].local → hoge1.local…とか使える。 Dyanamic Inventry存在すら気づいてなかった… ec2用のscriptは既存である。 JSON返すだけなので自作もラク。 ansible.cfg置けば -i不要という事に気づいた。 明日からマネしたい！ 2000台完走実績あるらしい。さすが某巨大メッセージングアプリ企業  おまけ DynamicInventryでは_meta使って —host はスキップさせるのがオススメ。
+callback pluginを使ったタスク実行時間の可視化について by @rudy  pluginはmoduleと違ってpythonで本体を拡張。 -i “localhost, ” とかできる事に気づいて衝撃。 callback_plugins に入れるだけ。実行ホストに置けば良いのラクだな。 実用上は使わない気がするが、bot連携すると面白いかも。  AnsibleのJUNOS設定モジュールを書いてみた by @saito_hideki Ansibleでルータ設定をしているという、まったく参考にはならないが衝撃の発表。...</p>
   </div>
   <footer class="entry-footer"><span title='2014-06-19 00:00:00 +0000 UTC'>2014/06/19</span>&nbsp;·&nbsp;u1tnk</footer>
   <a class="entry-link" aria-label="post link to ansible 勉強会 #1メモ" href="https://u1tnk.github.io/blog/2014/06/19/ansible-study-01/"></a>
