@@ -7,12 +7,16 @@
 <meta name="robots" content="index, follow">
 <title>WSL2で rails test:system を動かす為の設定 | u1tnk.log</title>
 <meta name="keywords" content="">
-<meta name="description" content="chromeインストールなど若干環境構築難易度が高いのでまとめた。
+<meta name="description" content="2023/10/15 修正 状況だいぶ変わっていてubuntuも22.04で問題無いし、chromedriverも入れてくれるgemがあるのでchromeのインストール以外ほぼ不要となっている。
 前提 Railsはインストールして systemテスト以外は動いている前提。
-イメージ ubuntu18.04。 20.04だと 2021/1/4当時動かないspecが存在したので18.04を利用。
-ライブラリ sudo apt update sudo apt install curl build-essential unzip wget chromeのインストール wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb sudo apt install ./google-chrome-stable_current_amd64.deb -y chromedriverのインストール export LATEST_VERSION=`curl https://chromedriver.storage.googleapis.com/LATEST_RELEASE` wget https://chromedriver.storage.googleapis.com/$LATEST_VERSION/chromedriver_linux64.zip unzip chromedriver_linux64.zip sudo mv chromedriver /usr/local/bin/ systemテストの設定 System specを動かすのにはまった - Qiita から引用。 headlessで動作するよう設定する。 画面を表示したい場合はwindows側に X serverインストール、転送の設定などが必要になる。
+イメージ ubuntu22.04
+ubuntu18.04。 20.04だと 2021/1/4当時動かないspecが存在したので18.04を利用。
+ライブラリ 22.04でデフォルトで大体入ってるので不要そう。
+sudo apt update sudo apt install curl build-essential unzip wget chromeのインストール wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb sudo apt install ./google-chrome-stable_current_amd64.deb -y chromedriverのインストール selenium-webdriver gemが入っていれば不要。 参考: RSpecを実行するとWebdrivers::VersionErrorが発生する場合の対処方法 - Qiita
+export LATEST_VERSION=`curl https://chromedriver.storage.googleapis.com/LATEST_RELEASE` wget https://chromedriver.storage.googleapis.com/$LATEST_VERSION/chromedriver_linux64.zip unzip chromedriver_linux64.zip sudo mv chromedriver /usr/local/bin/ systemテストの設定 現状不要。
+System specを動かすのにはまった - Qiita から引用。 headlessで動作するよう設定する。 画面を表示したい場合はwindows側に X serverインストール、転送の設定などが必要になる。
 rails_helper.rb (rails関係のtestをするファイルからrequireしておく)
-Capybara.default_driver = :selenium_chrome_headless Capybara.register_driver :selenium_chrome_headless do |app| options = Selenium::WebDriver::Chrome::Options.new options.add_argument(&#39;--headless&#39;) options.add_argument(&#39;--no-sandbox&#39;) options.add_argument(&#39;--disable-gpu&#39;) options.add_argument(&#39;--window-size=1280,1024&#39;) Capybara::Selenium::Driver.new(app, browser: :chrome, options: options) end spec_helper.">
+Capybara.default_driver = :selenium_chrome_headless Capybara.register_driver :selenium_chrome_headless do |app| options = Selenium::WebDriver::Chrome::Options.">
 <meta name="author" content="u1tnk">
 <link rel="canonical" href="https://u1tnk.github.io/blog/2021/06/28/wsl2_rails_test_system_config/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.bc1149f4a72aa4858d3a9f71462f75e5884ffe8073ea9d6d5761d5663d651e20.css" integrity="sha256-vBFJ9KcqpIWNOp9xRi915YhP/oBz6p1tV2HVZj1lHiA=" rel="preload stylesheet" as="style">
@@ -70,12 +74,16 @@ Capybara.default_driver = :selenium_chrome_headless Capybara.register_driver :se
 
   gtag('config', 'G-TEHPR3E7L5');
 </script><meta property="og:title" content="WSL2で rails test:system を動かす為の設定" />
-<meta property="og:description" content="chromeインストールなど若干環境構築難易度が高いのでまとめた。
+<meta property="og:description" content="2023/10/15 修正 状況だいぶ変わっていてubuntuも22.04で問題無いし、chromedriverも入れてくれるgemがあるのでchromeのインストール以外ほぼ不要となっている。
 前提 Railsはインストールして systemテスト以外は動いている前提。
-イメージ ubuntu18.04。 20.04だと 2021/1/4当時動かないspecが存在したので18.04を利用。
-ライブラリ sudo apt update sudo apt install curl build-essential unzip wget chromeのインストール wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb sudo apt install ./google-chrome-stable_current_amd64.deb -y chromedriverのインストール export LATEST_VERSION=`curl https://chromedriver.storage.googleapis.com/LATEST_RELEASE` wget https://chromedriver.storage.googleapis.com/$LATEST_VERSION/chromedriver_linux64.zip unzip chromedriver_linux64.zip sudo mv chromedriver /usr/local/bin/ systemテストの設定 System specを動かすのにはまった - Qiita から引用。 headlessで動作するよう設定する。 画面を表示したい場合はwindows側に X serverインストール、転送の設定などが必要になる。
+イメージ ubuntu22.04
+ubuntu18.04。 20.04だと 2021/1/4当時動かないspecが存在したので18.04を利用。
+ライブラリ 22.04でデフォルトで大体入ってるので不要そう。
+sudo apt update sudo apt install curl build-essential unzip wget chromeのインストール wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb sudo apt install ./google-chrome-stable_current_amd64.deb -y chromedriverのインストール selenium-webdriver gemが入っていれば不要。 参考: RSpecを実行するとWebdrivers::VersionErrorが発生する場合の対処方法 - Qiita
+export LATEST_VERSION=`curl https://chromedriver.storage.googleapis.com/LATEST_RELEASE` wget https://chromedriver.storage.googleapis.com/$LATEST_VERSION/chromedriver_linux64.zip unzip chromedriver_linux64.zip sudo mv chromedriver /usr/local/bin/ systemテストの設定 現状不要。
+System specを動かすのにはまった - Qiita から引用。 headlessで動作するよう設定する。 画面を表示したい場合はwindows側に X serverインストール、転送の設定などが必要になる。
 rails_helper.rb (rails関係のtestをするファイルからrequireしておく)
-Capybara.default_driver = :selenium_chrome_headless Capybara.register_driver :selenium_chrome_headless do |app| options = Selenium::WebDriver::Chrome::Options.new options.add_argument(&#39;--headless&#39;) options.add_argument(&#39;--no-sandbox&#39;) options.add_argument(&#39;--disable-gpu&#39;) options.add_argument(&#39;--window-size=1280,1024&#39;) Capybara::Selenium::Driver.new(app, browser: :chrome, options: options) end spec_helper." />
+Capybara.default_driver = :selenium_chrome_headless Capybara.register_driver :selenium_chrome_headless do |app| options = Selenium::WebDriver::Chrome::Options." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://u1tnk.github.io/blog/2021/06/28/wsl2_rails_test_system_config/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-06-28T11:17:59+09:00" />
@@ -83,12 +91,16 @@ Capybara.default_driver = :selenium_chrome_headless Capybara.register_driver :se
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="WSL2で rails test:system を動かす為の設定"/>
-<meta name="twitter:description" content="chromeインストールなど若干環境構築難易度が高いのでまとめた。
+<meta name="twitter:description" content="2023/10/15 修正 状況だいぶ変わっていてubuntuも22.04で問題無いし、chromedriverも入れてくれるgemがあるのでchromeのインストール以外ほぼ不要となっている。
 前提 Railsはインストールして systemテスト以外は動いている前提。
-イメージ ubuntu18.04。 20.04だと 2021/1/4当時動かないspecが存在したので18.04を利用。
-ライブラリ sudo apt update sudo apt install curl build-essential unzip wget chromeのインストール wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb sudo apt install ./google-chrome-stable_current_amd64.deb -y chromedriverのインストール export LATEST_VERSION=`curl https://chromedriver.storage.googleapis.com/LATEST_RELEASE` wget https://chromedriver.storage.googleapis.com/$LATEST_VERSION/chromedriver_linux64.zip unzip chromedriver_linux64.zip sudo mv chromedriver /usr/local/bin/ systemテストの設定 System specを動かすのにはまった - Qiita から引用。 headlessで動作するよう設定する。 画面を表示したい場合はwindows側に X serverインストール、転送の設定などが必要になる。
+イメージ ubuntu22.04
+ubuntu18.04。 20.04だと 2021/1/4当時動かないspecが存在したので18.04を利用。
+ライブラリ 22.04でデフォルトで大体入ってるので不要そう。
+sudo apt update sudo apt install curl build-essential unzip wget chromeのインストール wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb sudo apt install ./google-chrome-stable_current_amd64.deb -y chromedriverのインストール selenium-webdriver gemが入っていれば不要。 参考: RSpecを実行するとWebdrivers::VersionErrorが発生する場合の対処方法 - Qiita
+export LATEST_VERSION=`curl https://chromedriver.storage.googleapis.com/LATEST_RELEASE` wget https://chromedriver.storage.googleapis.com/$LATEST_VERSION/chromedriver_linux64.zip unzip chromedriver_linux64.zip sudo mv chromedriver /usr/local/bin/ systemテストの設定 現状不要。
+System specを動かすのにはまった - Qiita から引用。 headlessで動作するよう設定する。 画面を表示したい場合はwindows側に X serverインストール、転送の設定などが必要になる。
 rails_helper.rb (rails関係のtestをするファイルからrequireしておく)
-Capybara.default_driver = :selenium_chrome_headless Capybara.register_driver :selenium_chrome_headless do |app| options = Selenium::WebDriver::Chrome::Options.new options.add_argument(&#39;--headless&#39;) options.add_argument(&#39;--no-sandbox&#39;) options.add_argument(&#39;--disable-gpu&#39;) options.add_argument(&#39;--window-size=1280,1024&#39;) Capybara::Selenium::Driver.new(app, browser: :chrome, options: options) end spec_helper."/>
+Capybara.default_driver = :selenium_chrome_headless Capybara.register_driver :selenium_chrome_headless do |app| options = Selenium::WebDriver::Chrome::Options."/>
 
 
 <script type="application/ld+json">
@@ -117,12 +129,12 @@ Capybara.default_driver = :selenium_chrome_headless Capybara.register_driver :se
   "@type": "BlogPosting",
   "headline": "WSL2で rails test:system を動かす為の設定",
   "name": "WSL2で rails test:system を動かす為の設定",
-  "description": "chromeインストールなど若干環境構築難易度が高いのでまとめた。\n前提 Railsはインストールして systemテスト以外は動いている前提。\nイメージ ubuntu18.04。 20.04だと 2021/1/4当時動かないspecが存在したので18.04を利用。\nライブラリ sudo apt update sudo apt install curl build-essential unzip wget chromeのインストール wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb sudo apt install ./google-chrome-stable_current_amd64.deb -y chromedriverのインストール export LATEST_VERSION=`curl https://chromedriver.storage.googleapis.com/LATEST_RELEASE` wget https://chromedriver.storage.googleapis.com/$LATEST_VERSION/chromedriver_linux64.zip unzip chromedriver_linux64.zip sudo mv chromedriver /usr/local/bin/ systemテストの設定 System specを動かすのにはまった - Qiita から引用。 headlessで動作するよう設定する。 画面を表示したい場合はwindows側に X serverインストール、転送の設定などが必要になる。\nrails_helper.rb (rails関係のtestをするファイルからrequireしておく)\nCapybara.default_driver = :selenium_chrome_headless Capybara.register_driver :selenium_chrome_headless do |app| options = Selenium::WebDriver::Chrome::Options.new options.add_argument('--headless') options.add_argument('--no-sandbox') options.add_argument('--disable-gpu') options.add_argument('--window-size=1280,1024') Capybara::Selenium::Driver.new(app, browser: :chrome, options: options) end spec_helper.",
+  "description": "2023/10/15 修正 状況だいぶ変わっていてubuntuも22.04で問題無いし、chromedriverも入れてくれるgemがあるのでchromeのインストール以外ほぼ不要となっている。\n前提 Railsはインストールして systemテスト以外は動いている前提。\nイメージ ubuntu22.04\nubuntu18.04。 20.04だと 2021/1/4当時動かないspecが存在したので18.04を利用。\nライブラリ 22.04でデフォルトで大体入ってるので不要そう。\nsudo apt update sudo apt install curl build-essential unzip wget chromeのインストール wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb sudo apt install ./google-chrome-stable_current_amd64.deb -y chromedriverのインストール selenium-webdriver gemが入っていれば不要。 参考: RSpecを実行するとWebdrivers::VersionErrorが発生する場合の対処方法 - Qiita\nexport LATEST_VERSION=`curl https://chromedriver.storage.googleapis.com/LATEST_RELEASE` wget https://chromedriver.storage.googleapis.com/$LATEST_VERSION/chromedriver_linux64.zip unzip chromedriver_linux64.zip sudo mv chromedriver /usr/local/bin/ systemテストの設定 現状不要。\nSystem specを動かすのにはまった - Qiita から引用。 headlessで動作するよう設定する。 画面を表示したい場合はwindows側に X serverインストール、転送の設定などが必要になる。\nrails_helper.rb (rails関係のtestをするファイルからrequireしておく)\nCapybara.default_driver = :selenium_chrome_headless Capybara.register_driver :selenium_chrome_headless do |app| options = Selenium::WebDriver::Chrome::Options.",
   "keywords": [
     
   ],
-  "articleBody": "chromeインストールなど若干環境構築難易度が高いのでまとめた。\n前提 Railsはインストールして systemテスト以外は動いている前提。\nイメージ ubuntu18.04。 20.04だと 2021/1/4当時動かないspecが存在したので18.04を利用。\nライブラリ sudo apt update sudo apt install curl build-essential unzip wget chromeのインストール wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb sudo apt install ./google-chrome-stable_current_amd64.deb -y chromedriverのインストール export LATEST_VERSION=`curl https://chromedriver.storage.googleapis.com/LATEST_RELEASE` wget https://chromedriver.storage.googleapis.com/$LATEST_VERSION/chromedriver_linux64.zip unzip chromedriver_linux64.zip sudo mv chromedriver /usr/local/bin/ systemテストの設定 System specを動かすのにはまった - Qiita から引用。 headlessで動作するよう設定する。 画面を表示したい場合はwindows側に X serverインストール、転送の設定などが必要になる。\nrails_helper.rb (rails関係のtestをするファイルからrequireしておく)\nCapybara.default_driver = :selenium_chrome_headless Capybara.register_driver :selenium_chrome_headless do |app| options = Selenium::WebDriver::Chrome::Options.new options.add_argument('--headless') options.add_argument('--no-sandbox') options.add_argument('--disable-gpu') options.add_argument('--window-size=1280,1024') Capybara::Selenium::Driver.new(app, browser: :chrome, options: options) end spec_helper.rb\n config.before(:each, type: :system) do driven_by :selenium_chrome_headless end ",
-  "wordCount" : "79",
+  "articleBody": "2023/10/15 修正 状況だいぶ変わっていてubuntuも22.04で問題無いし、chromedriverも入れてくれるgemがあるのでchromeのインストール以外ほぼ不要となっている。\n前提 Railsはインストールして systemテスト以外は動いている前提。\nイメージ ubuntu22.04\nubuntu18.04。 20.04だと 2021/1/4当時動かないspecが存在したので18.04を利用。\nライブラリ 22.04でデフォルトで大体入ってるので不要そう。\nsudo apt update sudo apt install curl build-essential unzip wget chromeのインストール wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb sudo apt install ./google-chrome-stable_current_amd64.deb -y chromedriverのインストール selenium-webdriver gemが入っていれば不要。 参考: RSpecを実行するとWebdrivers::VersionErrorが発生する場合の対処方法 - Qiita\nexport LATEST_VERSION=`curl https://chromedriver.storage.googleapis.com/LATEST_RELEASE` wget https://chromedriver.storage.googleapis.com/$LATEST_VERSION/chromedriver_linux64.zip unzip chromedriver_linux64.zip sudo mv chromedriver /usr/local/bin/ systemテストの設定 現状不要。\nSystem specを動かすのにはまった - Qiita から引用。 headlessで動作するよう設定する。 画面を表示したい場合はwindows側に X serverインストール、転送の設定などが必要になる。\nrails_helper.rb (rails関係のtestをするファイルからrequireしておく)\nCapybara.default_driver = :selenium_chrome_headless Capybara.register_driver :selenium_chrome_headless do |app| options = Selenium::WebDriver::Chrome::Options.new options.add_argument('--headless') options.add_argument('--no-sandbox') options.add_argument('--disable-gpu') options.add_argument('--window-size=1280,1024') Capybara::Selenium::Driver.new(app, browser: :chrome, options: options) end spec_helper.rb\n config.before(:each, type: :system) do driven_by :selenium_chrome_headless end ",
+  "wordCount" : "90",
   "inLanguage": "en",
   "datePublished": "2021-06-28T11:17:59+09:00",
   "dateModified": "2021-06-28T11:17:59+09:00",
@@ -216,23 +228,28 @@ Capybara.default_driver = :selenium_chrome_headless Capybara.register_driver :se
 
 </div>
   </header> 
-  <div class="post-content"><p>chromeインストールなど若干環境構築難易度が高いのでまとめた。</p>
+  <div class="post-content"><h2 id="20231015-修正">2023/10/15 修正<a hidden class="anchor" aria-hidden="true" href="#20231015-修正">#</a></h2>
+<p><strong>状況だいぶ変わっていてubuntuも22.04で問題無いし、chromedriverも入れてくれるgemがあるのでchromeのインストール以外ほぼ不要となっている。</strong></p>
 <h2 id="前提">前提<a hidden class="anchor" aria-hidden="true" href="#前提">#</a></h2>
 <p>Railsはインストールして systemテスト以外は動いている前提。</p>
 <h2 id="イメージ">イメージ<a hidden class="anchor" aria-hidden="true" href="#イメージ">#</a></h2>
-<p>ubuntu18.04。 20.04だと 2021/1/4当時動かないspecが存在したので18.04を利用。</p>
+<p>ubuntu22.04</p>
+<p><del>ubuntu18.04。 20.04だと 2021/1/4当時動かないspecが存在したので18.04を利用。</del></p>
 <h2 id="ライブラリ">ライブラリ<a hidden class="anchor" aria-hidden="true" href="#ライブラリ">#</a></h2>
+<p><strong>22.04でデフォルトで大体入ってるので不要そう。</strong></p>
 <pre tabindex="0"><code>sudo apt update
  sudo apt install curl build-essential unzip wget
 </code></pre><h2 id="chromeのインストール">chromeのインストール<a hidden class="anchor" aria-hidden="true" href="#chromeのインストール">#</a></h2>
 <pre tabindex="0"><code>wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install ./google-chrome-stable_current_amd64.deb -y
 </code></pre><h2 id="chromedriverのインストール">chromedriverのインストール<a hidden class="anchor" aria-hidden="true" href="#chromedriverのインストール">#</a></h2>
+<p><strong>selenium-webdriver gemが入っていれば不要。</strong> 参考: <a href="https://qiita.com/jnchito/items/f994dd3ac2cdc39bff8c">RSpecを実行するとWebdrivers::VersionErrorが発生する場合の対処方法 - Qiita</a></p>
 <pre tabindex="0"><code>export LATEST_VERSION=`curl https://chromedriver.storage.googleapis.com/LATEST_RELEASE`
 wget https://chromedriver.storage.googleapis.com/$LATEST_VERSION/chromedriver_linux64.zip
 unzip chromedriver_linux64.zip
 sudo mv chromedriver /usr/local/bin/
 </code></pre><h2 id="systemテストの設定">systemテストの設定<a hidden class="anchor" aria-hidden="true" href="#systemテストの設定">#</a></h2>
+<p><strong>現状不要。</strong></p>
 <p><a href="https://qiita.com/jhanyu/items/e2f467684873d806ad00">System specを動かすのにはまった - Qiita</a> から引用。
 headlessで動作するよう設定する。
 画面を表示したい場合はwindows側に X serverインストール、転送の設定などが必要になる。</p>
