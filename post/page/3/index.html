@@ -156,6 +156,26 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>自作デスクトップの構成2018年1月
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>完全に自分用まとめ。
+…のはずだったのに結構労作になってしまった。どのパーツがどんぐらい古いのかとかあやふやだったからちょうど良いか。
+CPU Ryzen1700 2017年5月購入
+AMD CPU Ryzen7 1700 with WraithSpire 65W cooler AM4 YD1700BBAEBOXposted with カエレバAMD 2017-03-03  経済的8コアで選んだけどオーバークロック耐性高くてラッキー Ryzen1700オーバークロック、電力計測
+内部でDocker使ってるVM立てててもオール100%になる事などほぼ無いので8コアあれば現状十分。 クーラーはリテールそのまま。
+GPU GTX 1070 2017年5月購入
+ZOTAC GEFORCE GTX 1070 MINI グラフィックスボード VD6148 ZTGTX1070-8GD5MINI01posted with カエレバZOTAC 2016-09-23  最低限VR readyなものを…と考えて選択。VRは堪能してもうやらないのでストVにはオーバースペック感。ファンはあるが、ゲームやらない限り回らない(65度あたりかららしい)ので静音。
+メモリ DDR4 32GB 2017年5月購入 2017年7月購入(16GB買い足し)
+CORSAIR DDR4-2666MHz デスクトップPC用 メモリモジュール VENGEANCE LPX Series 8GB×2枚キット CMK16GX4M2A2666C16posted with カエレバCorsair 2015-08-01  Crucial [Micron製] DDR4 デスクPC用メモリー 8GB x2 ( 2133MT/s / PC4-17000 / CL15 / 288pin / DR x8 Unbuffered DIMM ) 永久保証 CT2K8G4DFD8213posted with カエレバCrucial(クルーシャル) 2014-09-09  どうしてPC4-21300とPC4-17000 が混ざってるんでしょうね…表記がバラバラなのが悪いんや 😭 よくわからなくなったらPCx-xxxx のところだけ見ましょう。 まあ量の方が大事だし体感できるレベルの差じゃないので良しとしましょう。AMD Ryzenのゲーミング性能はメモリークロックが重要 | ちもろぐ らしいんだけど… 😓 とはいえノートでは16GB生活しかしてなったので32GBはまったく不足しなくて快適です。...</p>
+  </div>
+  <footer class="entry-footer"><span title='2019-01-05 08:47:57 +0900 JST'>2019/01/05</span>&nbsp;·&nbsp;u1tnk</footer>
+  <a class="entry-link" aria-label="post link to 自作デスクトップの構成2018年1月" href="https://u1tnk.github.io/blog/2019/01/05/my-desktop-201801/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>Ryzen1700オーバークロック、電力計測
     </h2>
   </header>
@@ -297,22 +317,6 @@ Railsと組み合わせて使うなら既存の非APIアプリに追加してシ
   <footer class="entry-footer"><span title='2014-08-14 00:00:00 +0000 UTC'>2014/08/14</span>&nbsp;·&nbsp;u1tnk</footer>
   <a class="entry-link" aria-label="post link to Grapeが良さそうだったけどやめた" href="https://u1tnk.github.io/blog/2014/08/14/grape-research/"></a>
 </article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>ansible 勉強会 #1メモ
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Ansible 勉強会 #1 - connpass
-に行ってきたのでメモ。資料は↑にほぼあるようです。
-Ansible の基本 &#43; MySQL レプリケーションを設定する事例 by @IanMLewis まさに基本。普段使ってるので大体押さえられてた。
-MySQLを構築してみる  bennojoy/ansible-roles ansibleworksの人のリポジトリらしい。参考になりそう。 when あんま使いこなしてないので見とこう。 サンプルyaml見ると、自分のyamlが使いこなして無い感ある… mysql_replicationモジュールは便利感あるが、ちょっと簡単そうに見えないw 基本の直後に見るのはキツい印象。  dynamic inventoryが便利な話: no more host list! by @tagomoris  某巨大メッセージングアプリ企業で普通に使ってるっぽい エージェントいらないからCentOS5でも動くという理由が大きいらしい。納得。 日本語情報あんま無いのが弱点は同意。っつーか俺書け。 Inventryに普通のvars定義できたという恐らくかなり基本に気づいてなかった… hoge[1:2].local → hoge1.local…とか使える。 Dyanamic Inventry存在すら気づいてなかった… ec2用のscriptは既存である。 JSON返すだけなので自作もラク。 ansible.cfg置けば -i不要という事に気づいた。 明日からマネしたい！ 2000台完走実績あるらしい。さすが某巨大メッセージングアプリ企業  おまけ DynamicInventryでは_meta使って —host はスキップさせるのがオススメ。
-callback pluginを使ったタスク実行時間の可視化について by @rudy  pluginはmoduleと違ってpythonで本体を拡張。 -i “localhost, ” とかできる事に気づいて衝撃。 callback_plugins に入れるだけ。実行ホストに置けば良いのラクだな。 実用上は使わない気がするが、bot連携すると面白いかも。  AnsibleのJUNOS設定モジュールを書いてみた by @saito_hideki Ansibleでルータ設定をしているという、まったく参考にはならないが衝撃の発表。...</p>
-  </div>
-  <footer class="entry-footer"><span title='2014-06-19 00:00:00 +0000 UTC'>2014/06/19</span>&nbsp;·&nbsp;u1tnk</footer>
-  <a class="entry-link" aria-label="post link to ansible 勉強会 #1メモ" href="https://u1tnk.github.io/blog/2014/06/19/ansible-study-01/"></a>
-</article>
 <footer class="page-footer">
   <nav class="pagination">
     <a class="prev" href="https://u1tnk.github.io/post/page/2/">
@@ -325,7 +329,7 @@ callback pluginを使ったタスク実行時間の可視化について by @rud
     </main>
     
 <footer class="footer">
-    <span>&copy; 2023 <a href="https://u1tnk.github.io/">u1tnk.log</a></span>
+    <span>&copy; 2024 <a href="https://u1tnk.github.io/">u1tnk.log</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

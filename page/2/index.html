@@ -150,6 +150,29 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>失なわれた構造化プログラミング、そしてオブジェクト指向へ…
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>この記事はフィヨルドブートキャンプ Part 2 Advent Calendar 2020 - Adventarの18日目です。 昨日は同じくメンターの10ヶ月フィヨルドブートキャンプのメンターをして感じたプログラミング学習中に落ち込みやすい3つのこと｜りほ｜noteの記事でした。 初学者ほど学習内容の詳細よりモチベが大事なのでエモい話役に立つよな！って思いました。
+で、僕はめっちゃ技術系の細かい話です😇
+前提 フィヨルドブートキャンプの現役生特に初学者、プログラミングに入りたてぐらいの方向けの記事です。
+メンターをさせて頂いていて、よく指摘する内容だけど、この部分だけ教える事はほぼ無いので書きました。
+(主にフィヨルドブートキャンプ生に向けた)注意事項  ブートキャンプの課題のネタバレにならないサンプルを考えようとは思ったのですが、手間だったのと分かりやすいのでlsコマンドの例をそのまま使います。 模範回答でも無いし入力関係の一部しか使ってないので見ても良いとは思いますが、気になる方は課題をクリアしてから見てください。 サンプルはよく見るパターンを抜粋、簡略化したものを私が書いたものです。似たコードを書いた事のある人が居るかもしれませんが、貶める意図はありません。 構造化プログラミング、オブジェクト指向についてのエキスパートと呼べるほどでは無いのでおかしな記述をしていたら指摘を頂けると嬉しいです。 日本語も入っているし実行していないので間違っているかもしれません。rubyで書いてるつもりですがrubyっぽい仮想言語のコードと思ってください。  はじめに 皆さんは構造化プログラミングという言葉を知っているでしょうか？
+オブジェクト指向プログラミングがデファクトになる前に存在した古の手法でインターネット老人会員しか知らないと思います。
+僕がプログラマになったときは構造化プログラミングが普通でオブジェクト指向ってのがあるらしいぞ？ってぐらいの時期だったので、オブジェクト指向を学んだときに「なるほど！部品となるサブルーチンにデータもまとまって独立すんのか！メンテナンス性上がるわ！すげえ！」とか感じたわけですが、最初からオブジェクト指向だと、なんで動くのにオブジェクトとかメッセージとか言ってんだよ意味わかんねーよ！ってなるよなぁーって思ってたのでこの記事を書きました。 オブジェクト指向でなぜつくるのか 第2版 | 平澤 章 | コンピュータ・IT | Kindleストア | Amazon もちろんこの本を読めば大体分かるとは思いますが。
+今さら教えるべき！とは思いませんが、オブジェクト指向で作ってはいるけどそもそも構造化ができてないなーと思う事があります。(ブートキャンプ生等初学者はもちろん仕事でもたまに) 詳しい内容は 構造化プログラミング - Wikipedia 、プログラミング入門入門 - けるぶれつーるず あたりの説明を見てもらえると良いのですが、私が重要と思っているのが構造化と再利用、要するに「再利用可能な機能に切り出して部品化して順番に呼び出す」という所です。これを簡単な例を用いて解説します。
+構造化されていないコード フィヨルドの課題にあるlsコマンドのlオプションのみ対応してファイルを複数引数で取る(無いときもある)rubyプログラムです。
+入力まわり以外は省略していますし、便利ライブラリも使っていません。
+処理省略してるし、慣れた方にはこんなコード書かねぇよ！ってつっこまれそうですが、最初は色々書いてると混乱してこんな風になったりすると思います。
+# オプションlがある if ARGV[0] == &#39;l&#39; if ARGV.count &gt; 2 # 引数があるときの情報取得、整理 else # 引数が無いときの情報取得、整理 end else if ARGV.count &gt; 1 # 引数があるときの情報取得、整理 else # 引数が無いときの情報取得、整理 end end if ARGV[0] == &#39;l&#39; if ARGV....</p>
+  </div>
+  <footer class="entry-footer"><span title='2020-12-17 20:04:36 +0900 JST'>2020/12/17</span>&nbsp;·&nbsp;u1tnk</footer>
+  <a class="entry-link" aria-label="post link to 失なわれた構造化プログラミング、そしてオブジェクト指向へ…" href="https://u1tnk.github.io/blog/2020/12/17/structured_programming/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>メンタル疾患寛解しました
     </h2>
   </header>
@@ -360,26 +383,6 @@ REC COFFEE とにかく雰囲気良し、フードもスイーツも美味い(�
   <footer class="entry-footer"><span title='2019-02-04 20:16:16 +0900 JST'>2019/02/04</span>&nbsp;·&nbsp;u1tnk</footer>
   <a class="entry-link" aria-label="post link to 中学受験ウチの場合の費用まとめ" href="https://u1tnk.github.io/blog/2019/02/04/junior_high_school_exam_cost/"></a>
 </article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>自作デスクトップの構成2018年1月
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>完全に自分用まとめ。
-…のはずだったのに結構労作になってしまった。どのパーツがどんぐらい古いのかとかあやふやだったからちょうど良いか。
-CPU Ryzen1700 2017年5月購入
-AMD CPU Ryzen7 1700 with WraithSpire 65W cooler AM4 YD1700BBAEBOXposted with カエレバAMD 2017-03-03  経済的8コアで選んだけどオーバークロック耐性高くてラッキー Ryzen1700オーバークロック、電力計測
-内部でDocker使ってるVM立てててもオール100%になる事などほぼ無いので8コアあれば現状十分。 クーラーはリテールそのまま。
-GPU GTX 1070 2017年5月購入
-ZOTAC GEFORCE GTX 1070 MINI グラフィックスボード VD6148 ZTGTX1070-8GD5MINI01posted with カエレバZOTAC 2016-09-23  最低限VR readyなものを…と考えて選択。VRは堪能してもうやらないのでストVにはオーバースペック感。ファンはあるが、ゲームやらない限り回らない(65度あたりかららしい)ので静音。
-メモリ DDR4 32GB 2017年5月購入 2017年7月購入(16GB買い足し)
-CORSAIR DDR4-2666MHz デスクトップPC用 メモリモジュール VENGEANCE LPX Series 8GB×2枚キット CMK16GX4M2A2666C16posted with カエレバCorsair 2015-08-01  Crucial [Micron製] DDR4 デスクPC用メモリー 8GB x2 ( 2133MT/s / PC4-17000 / CL15 / 288pin / DR x8 Unbuffered DIMM ) 永久保証 CT2K8G4DFD8213posted with カエレバCrucial(クルーシャル) 2014-09-09  どうしてPC4-21300とPC4-17000 が混ざってるんでしょうね…表記がバラバラなのが悪いんや 😭 よくわからなくなったらPCx-xxxx のところだけ見ましょう。 まあ量の方が大事だし体感できるレベルの差じゃないので良しとしましょう。AMD Ryzenのゲーミング性能はメモリークロックが重要 | ちもろぐ らしいんだけど… 😓 とはいえノートでは16GB生活しかしてなったので32GBはまったく不足しなくて快適です。...</p>
-  </div>
-  <footer class="entry-footer"><span title='2019-01-05 08:47:57 +0900 JST'>2019/01/05</span>&nbsp;·&nbsp;u1tnk</footer>
-  <a class="entry-link" aria-label="post link to 自作デスクトップの構成2018年1月" href="https://u1tnk.github.io/blog/2019/01/05/my-desktop-201801/"></a>
-</article>
 <footer class="page-footer">
   <nav class="pagination">
     <a class="prev" href="https://u1tnk.github.io/">
@@ -392,7 +395,7 @@ CORSAIR DDR4-2666MHz デスクトップPC用 メモリモジュール VENGEANCE 
     </main>
     
 <footer class="footer">
-    <span>&copy; 2023 <a href="https://u1tnk.github.io/">u1tnk.log</a></span>
+    <span>&copy; 2024 <a href="https://u1tnk.github.io/">u1tnk.log</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
