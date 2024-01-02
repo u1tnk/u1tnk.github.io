@@ -156,6 +156,27 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>WSL2で rails test:system を動かす為の設定
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>2023/10/15 修正 状況だいぶ変わっていてubuntuも22.04で問題無いし、chromedriverも入れてくれるgemがあるのでchromeのインストール以外ほぼ不要となっている。
+前提 Railsはインストールして systemテスト以外は動いている前提。
+イメージ ubuntu22.04
+ubuntu18.04。 20.04だと 2021/1/4当時動かないspecが存在したので18.04を利用。
+ライブラリ 22.04でデフォルトで大体入ってるので不要そう。
+sudo apt update sudo apt install curl build-essential unzip wget chromeのインストール wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb sudo apt install ./google-chrome-stable_current_amd64.deb -y chromedriverのインストール selenium-webdriver gemが入っていれば不要。 参考: RSpecを実行するとWebdrivers::VersionErrorが発生する場合の対処方法 - Qiita
+export LATEST_VERSION=`curl https://chromedriver.storage.googleapis.com/LATEST_RELEASE` wget https://chromedriver.storage.googleapis.com/$LATEST_VERSION/chromedriver_linux64.zip unzip chromedriver_linux64.zip sudo mv chromedriver /usr/local/bin/ systemテストの設定 現状不要。
+System specを動かすのにはまった - Qiita から引用。 headlessで動作するよう設定する。 画面を表示したい場合はwindows側に X serverインストール、転送の設定などが必要になる。
+rails_helper.rb (rails関係のtestをするファイルからrequireしておく)
+Capybara.default_driver = :selenium_chrome_headless Capybara.register_driver :selenium_chrome_headless do |app| options = Selenium::WebDriver::Chrome::Options....</p>
+  </div>
+  <footer class="entry-footer"><span title='2021-06-28 11:17:59 +0900 JST'>2021/06/28</span>&nbsp;·&nbsp;u1tnk</footer>
+  <a class="entry-link" aria-label="post link to WSL2で rails test:system を動かす為の設定" href="https://u1tnk.github.io/blog/2021/06/28/wsl2_rails_test_system_config/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>失なわれた構造化プログラミング、そしてオブジェクト指向へ…
     </h2>
   </header>
@@ -363,31 +384,6 @@ REC COFFEE とにかく雰囲気良し、フードもスイーツも美味い(�
   </div>
   <footer class="entry-footer"><span title='2019-04-13 00:25:42 +0900 JST'>2019/04/13</span>&nbsp;·&nbsp;u1tnk</footer>
   <a class="entry-link" aria-label="post link to 中学受験総括" href="https://u1tnk.github.io/blog/2019/04/13/junior_high_school_exam_total/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>中学受験ウチの場合の費用まとめ
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>先日受験が終わり、おカネ大好き人間として総費用が気になったのでまとめ。
-結果 276万
-全然正確な数字でも無いので300万は行かなかったって感じですね 😇
-前提条件  横浜在住 共働き、一人っ子なので本気でやると決めてからはケチらない方針だった。とはいえ夫婦で教えていたので全てカネで解決する系にはしていない。 一般的では無い費用もあるのであくまでウチの場合  塾費用 以下理由で200万とする。6年生夏期講習関係で一気に15万とか言われて笑った思い出 😅
- 日能研 さすがに3年分の明細は取っていなかったのでモデルケースの200万としておく 中学受験の費用っていくらくらい？（私立にかかる費用）｜インターエデュ・ドットコム 正確な数字が出したかった 😢  ざっくり、4年で40万、5年で60万、6年で100万って感じ。  入塾するときは月額2万ですよー(長期休みとか模試代とか教科書代とか別だったり)とか言われて、習いごと感覚で入れてしまって気づいたら…   一番上のクラスだとオプション講座が必須になったりするので上位校の場合は増えると思った方が良い。  ウチは中ぐらいのクラス。   ウチは両親共に教えてたので後半オプション系は取らずに絞ったのでモデルケースよりは安いかも。 テストは別、教材は別、冬季、夏期講習は別、オプション授業は別…と超絶分かりにくくしてあるので総額が見えづらい。最 模試などのコストは含む。 上位校向け塾のSAPIXはもうちょっと高いらしい。集団塾に向かない子向けの個別塾/家庭教師はコマ数にもよるがさらに高い    書籍代 約5万
-ざっとamazonの履歴検索したのでまだ漏れてそうではあるが、大体以下のような本を買ってた。 本好きなので多めではある。
- 中学受験全体のノウハウ本 算数/国語とかの教え方 マンガ勉強本、歴史が大きいが地理とか理科とかもちょいちょい 赤本(過去問題集)4校分  講演会費用 約2万
-参考にしていた本の著者が話すイベントがあったり、最終的にプロ家庭教師の 安浪 京子 プロフィール | 文春オンラインという方の話が現実感あって納得感あったので何回か通った。夫婦通算で5〜6回ぐらい参加した。一回2〜3000円ってところ。 これは行かない人の方が多そう。
-コンサル費用 約13万
-この費用は少数派と思われる。6年夏に行き詰まり、上記安浪さんの会社で家庭教師/コンサルをやっていたのでコンタクトを取って相談。 家庭教師は予約で一杯で無理だったが単発のコンサルなら対応可能という事でお願いして4回やってもらった。 2時間3万とかなり高額だが、学習方針、併願プランのレビュー、志望校頻出分野ピンポイント指導等あって、毎回相談して良かったと思える内容だった。 塾の先生にも色々相談はしていたが、塾の先生は塾の利益に反するアドバイスができない事もあって、第三者の立場でコンサルしてもらえるのは意味があると思う。
-家庭教師、個別塾 0円
-よほど早熟の子以外は宿題のフォローが必要になるため、お金に余裕がある家庭だとそこを外注するパターンは多いらしい(実際知り合いレベルで話も聞いた)その場合、塾のフォローに塾を超えるコストがかかるという凄い事になる事もあるらしい。ウチは自分が自宅仕事なのもあって算数は自分、妻が他の教科という分担でフォローした。 金をかけなかっただけで手間は死ぬほどかかっている。
-入試代 約15万(税込み、明細は税抜)
-ウチは2日で終わったし、1月受験も少なめだったので控えめ。30万行ってもおかしくは無い。...</p>
-  </div>
-  <footer class="entry-footer"><span title='2019-02-04 20:16:16 +0900 JST'>2019/02/04</span>&nbsp;·&nbsp;u1tnk</footer>
-  <a class="entry-link" aria-label="post link to 中学受験ウチの場合の費用まとめ" href="https://u1tnk.github.io/blog/2019/02/04/junior_high_school_exam_cost/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
