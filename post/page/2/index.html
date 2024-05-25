@@ -156,6 +156,25 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>WSL2でvim/tmuxでクリップボード共有できるようにする
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>概要 vim、tmux、windws側のcopy/pasteを全て連携させる。 WSL2移行前に使っていたVIrtualBox環境からの移行で、結局の所ssh&#43;x転送をやめた結果 xselが使えなくなったのでwindowsのexeを直接叩けばOKだった…というだけ。
+windows側のクリップボードを双方向で使えるアプリをインストール https://github.com/equalsraf/win32yank を利用。
+windowsにデフォルトに入っている clipboard.exe はクリップボードへの書き込みはできるが、逆はできず。 逆は https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.management/get-clipboard?view=powershell-5.1 で可能なようだがWSL側から動かす方向が分からなかったので手軽なコレを採用した。 インストールしてWSL側のPATHに入れておく。
+tmux 以下設定は vim形式のキーバインド前提となっている。
+tmux.conf
+bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel &#34;win32yank.exe -i&#34; bind p run-shell &#39;win32yank.exe -o | xargs -0 -I{} tmux set-buffer -- {} &amp;&amp; tmux paste-buffer&#39; vim tmuxとは関係なくコレだけで共有できる。WSL便利というか不思議というか。 vimをclipboard利用できるようにビルドする必要はあるが、情報はいくらでもあるので割愛。 個人的にはneovimを使っているので最初から使えた。
+set clipboard&amp; set clipboard^=unnamedplus 所感 まとめてみると記事にまとめる意味あんのかコレ。というレベルの内容になったが、WSL2の情報は少なくて、当初うまく動かないときにXServer入れないとvimからクリップボード使えないのでは？とか標準だから clipboard.exeとか使ってハマったりしたので、たったこんだけでできるよ！という事で。
+当初これのやり方が分からず、WSL2でもsshサーバ起動してRLoginからsshしていたりしていたが、XServerの不調とかにコピペ失敗して気づいてXServer再起動したり、ひどいときにはXServer再起動に失敗してwindows再起動したり… 😭 などのイライラ一切無く、超安定 するようになっている。満足。</p>
+  </div>
+  <footer class="entry-footer"><span title='2021-06-28 15:26:11 +0900 JST'>2021/06/28</span>&nbsp;·&nbsp;u1tnk</footer>
+  <a class="entry-link" aria-label="post link to WSL2でvim/tmuxでクリップボード共有できるようにする" href="https://u1tnk.github.io/blog/2021/06/28/wsl2_clipboard_config/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>WSL2で rails test:system を動かす為の設定
     </h2>
   </header>
@@ -367,23 +386,6 @@ REC COFFEE とにかく雰囲気良し、フードもスイーツも美味い(�
   </div>
   <footer class="entry-footer"><span title='2019-04-14 19:43:43 +0900 JST'>2019/04/14</span>&nbsp;·&nbsp;u1tnk</footer>
   <a class="entry-link" aria-label="post link to ヤマハルータRTX810でipv6とds-liteを両立させた" href="https://u1tnk.github.io/blog/2019/04/14/rtx810_ipv6_config/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>中学受験総括
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>TL;DR 今年２月、娘が中学受験をして私立中学に行かせる事にしたが、どうして中学受験するに至ったか？やってみてどうだったか驚いたところ、未経験者が知らなそうなところ、を思いつくままにまとめた…だけなんだけど別世界過ぎて自分でも引く程の長文に。おそらく俺のブログ過去最長。
-ヒマな人、子供が居て受験検討中、中学受験仲間ぐらいじゃないとオススメしない。 コストのみについては 中学受験ウチの場合の費用まとめ に 既にまとめてある。
-前提 両親共に地方出身な為中学受験経験は無し、知識も無し。教育は重要とは思っているが、特に英才教育指向は無い。 のんびり屋の娘に若干の危機感あり。 具体的な成績については娘のプライバシーなのでぼかす。日能研で中くらいのクラスとだけ。
-受験した理由ざっくりまとめ  共働き、一人っ子と教育費にかける余裕がある。  二人以上でかけ算と思うとさすがに恐しい… 😨   クラスの半数弱は受験する小学校だった  駅前大規模マンションのすぐ裏の学校なので平均的な教育投資額が高い(と思われる)。 少数派の塾に行かない側に入れてセルフイメージで「私は勉強しない側、できなくても良い側」と思われる恐怖感があった。   友達に影響されやすい子なので、友達全体が勉強する事が当然という環境にしたかった。  一人で勝手に好きな事に打ちこんでいく等のタイプならさせない判断をしたかもしれない。勝手に勉強するタイプもやんなくて良いかもしれないが親の欲が出てさせそう 😅    二月の勝者  ちょいちょいこのマンガから引用するので先に紹介。 単なるマンガとして見てもそこそこ楽しいので中学受験知識ゼロの方、興味無い方にも読んで欲しい。現状既刊4巻で手軽だし。 著者は後述する中学受験ムックマンガも書いてるのもあってしっかり取材して書いてるので、極端だったり大袈裟だったりするがウソでは無い。 ウチの受験始まる前に始まってれば実際に役に立ったんじゃないかと思う。 出てくる家庭も実際に居そうで困る。 まるみちゃんには頑張って欲しい 💪
-受験して良かったか？ まだ入学したばかりなので現時点だがもちろん良かった。 そもそも投入したカネ、労力、時間が大き過ぎて失敗だったと言えるわけは無く、ほぼポジショントークではある。
-良かった(と思っている)点  年齢が上がるだけよりハードになる高校受験をしなくて良い。  首都圏の中学生の塾22時とかになるとか… うっかり、のんびり屋の娘が内申競争で勝てる気がしない  高校受験用の塾では内申対策の指導はもちろん宿題の管理までやったりするそうな… 😰     ウチの場合は教えたり一緒に勉強したりをかなりやっていた上、テストの度に家族みんなで一喜一憂と家族の繋がりはむしろ増えた。 子供の良い所、悪い所に向き合わざるを得なくなるので子供の理解が深まった。 教育としても厳しい環境を乗り超えた経験はプラスになると思う。  悪かった点  コスト、高校受験だってカネはかかるが、小学生という管理しないと動かない時期にやると親の消費時間がすごい。繋がりが増える裏返しではある。 旅行やキャンプと楽しみが減った ストレスが継続的にかかり、特に小6に反抗期に入り(個人差デカい、女子は早いっぽい)ケンカが増えた。双方の成長の機会ではあったかもしれないが、自分としても後悔するレベルに怒ってしまう事も多々あったし、今の関係性にも影響が多少はあると思う。 姿勢や体力向上、視力等健康面には悪影響はどうしてもある。  俺のせいかアニメ、マンガ、ゲーム好きなので大差無かった可能性はあるが、外遊びは確実に減った。    その他   友達と遊ぶ時間が減る。というのはありそうだが、あまり変わらない気がする。 自分がヒマでも受験する子が多い地域なので遊ぶ相手が減るし、学校や塾友達と休み時間には喋ったりもしていて孤独では無かったと思う。...</p>
-  </div>
-  <footer class="entry-footer"><span title='2019-04-13 00:25:42 +0900 JST'>2019/04/13</span>&nbsp;·&nbsp;u1tnk</footer>
-  <a class="entry-link" aria-label="post link to 中学受験総括" href="https://u1tnk.github.io/blog/2019/04/13/junior_high_school_exam_total/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
