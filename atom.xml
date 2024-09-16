@@ -6,7 +6,19 @@
     <description>Recent content on u1tnk.log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sat, 25 May 2024 16:00:00 +0900</lastBuildDate><atom:link href="https://u1tnk.github.io/atom.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 Sep 2024 22:57:30 +0900</lastBuildDate><atom:link href="https://u1tnk.github.io/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>embulk 0.9系から0.11系へのアップデートメモ</title>
+      <link>https://u1tnk.github.io/blog/2024/09/08/update_embulk_11/</link>
+      <pubDate>Sun, 08 Sep 2024 22:57:30 +0900</pubDate>
+      
+      <guid>https://u1tnk.github.io/blog/2024/09/08/update_embulk_11/</guid>
+      <description>アップデート時に結構ハマったので最低限やったことのメモ。(免責: 環境による)
+参考: Embulk v0.11 でなにが変わるのか: ユーザーの皆様へ
+前提 元の環境でやっていたこと。
+ embulk.jarをDLしてpathの通った場所に置く。 必要なgemを embulk gem install でinstall rubyスクリプトで生成した設定をrunに渡して実行  やったこと  DLするembulk.jarを 0.11.4にした JRubyの最新版のjarをDL propertiesに設定  $HOME/.embulk/embulk.properties に作成 JRUBYのjarを指定  jruby=file:///path/to/jruby.jar   gem_home  gem_home=/path/to/bundle rubyから実行すると GEM_HOMEが設定されているせいかSHELLのときとズレてしまったので設定     embulkの呼び出し方を java -jar /path/to/embulk.jar に変更 embulkのgem install に embulk自体を追加  msgpackもinstallする必要があるとdocumentにあったが、他のgem install時に入ったようなのでやっていない    </description>
+    </item>
+    
     <item>
       <title>フリーランスとしての自己紹介と仕事の条件(2024最新)</title>
       <link>https://u1tnk.github.io/blog/2024/05/25/my-price2024/</link>

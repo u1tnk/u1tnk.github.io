@@ -156,6 +156,28 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>WSL2でのweb開発環境構築tips
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>tipsというかWSL2に移行して開発していてハマったことや、定着した運用方法についてのメモ。
+前提  主にRails開発をしていて、vim/tmuxとほぼターミナルとブラウザだけで開発作業を行っているのでその範囲。 ubuntu-18.04利用。 linuxの知識はある前提で書いている。 WindowsTerminalを使用している  Linuxインストールまで WSL2でLinuxを使おう | FJORD BOOT CAMP（フィヨルドブートキャンプ）
+僕がメンターをしているフィヨルドブートキャンプのこの資料で大丈夫です(ちょっと宣伝)
+ubuntuのバージョンについて WSL2/ubuntu20.04で capybara動かんのか… NotImplementedError (fork() function is unimplemented on this machine)
+が回避できぬ。
+WSL2でも ubuntu18.04なら動くっぽいんだが…
+— ゆーいち@イカX (@u1tnk) January 4, 2021  という事があり、20.04をやめて18.04を利用している。この時点なので今は不明。 GUIも無いし、WSL2だとデバイスドライバとかも関係無いので新しいメリットも無いので安定バージョンで良い。
+起動と終了 ubuntuアプリを起動したり、wslコマンドで起動する。WindowsTerminalを使えば内部では wslコマンドを使っているので勝手に起動する。 終了するときは wsl --shutdown をpowershellなりで実行すれば良い。
+systemdが動いていない 本物のubuntuと違いsystemdが動いていないので、サービスの自動起動ができない。よってcrondとかも起動していないので注意。
+自動起動はできないが動かないわけでは無いので、zshrc(shellによって調整してください)に以下のようなscriptをしこんでWindowsTerminalから開いたときに自動で起動するようにしている。 ここではdockerの起動とsmbサーバへのmountをやっている
+#! /usr/bin/env ruby exit unless `ps aux | grep docker | grep -v grep`.empty? `sudo service docker start` `sudo mount -t cifs -o username=xxxx,password=xxxx,iocharset=utf8 //192....</p>
+  </div>
+  <footer class="entry-footer"><span title='2021-06-30 19:11:23 +0900 JST'>2021/06/30</span>&nbsp;·&nbsp;u1tnk</footer>
+  <a class="entry-link" aria-label="post link to WSL2でのweb開発環境構築tips" href="https://u1tnk.github.io/blog/2021/06/30/wsl2_tips/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>WSL2でvim/tmuxでクリップボード共有できるようにする
     </h2>
   </header>
@@ -370,22 +392,6 @@ REC COFFEE とにかく雰囲気良し、フードもスイーツも美味い(�
   </div>
   <footer class="entry-footer"><span title='2019-04-16 21:16:51 +0900 JST'>2019/04/16</span>&nbsp;·&nbsp;u1tnk</footer>
   <a class="entry-link" aria-label="post link to RubyKaigi2019 参加者向けグルメ情報補足版" href="https://u1tnk.github.io/blog/2019/04/16/fukuoka_other_gourmet/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>ヤマハルータRTX810でipv6とds-liteを両立させた
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>ローカルはipv4のみでds-liteを使っていたが、ちゃんとipv6を使いたくなったので、iijのIPoEオプション契約にて、 ipv6のトラフィックはipv6で、ipv4はds-liteで通信する設定がうまく動いたので保存。
-作成した手順 そのもの同じ事をしてるサイトは無く、設定読みながら関係ありそうなところを切り貼りするもうまく動かず、設定オールリセットして、GUIのウィザードでipv6のみ設定、ipv6のみ疎通したところで、ds-liteの設定のみ追加してうまく動いた。
-メモ
- ipv6 route default gateway dhcp lan2 ipv6だけダメだったときに設定してみたが、うまく動かない。現状からこれ追加してもダメなので何かが間違っているらしい。 filter類は無くても繋がるだろうと思って無視してたが、現状は入っている、必要だったのか？  設定 以下動作状況からレポート機能で出力して、冗長なコメントを削った。
-#	RTX810 Rev.11.01.33 (Fri Apr 20 08:44:58 2018) # #	Reporting Date: Apr 14 14:41:32 2019 # # IP configuration # ip route default gateway tunnel 1 # # IPv6 configuration # ipv6 prefix 1 ra-prefix@lan2::/64 # # LAN configuration # ip lan1 address 192.168.100.1/24 ipv6 lan1 address ra-prefix@lan2::1/64 ipv6 lan1 rtadv send 1 o_flag=on ipv6 lan1 dhcp service server ipv6 lan2 secure filter in 101030 101031 101032 101098 ipv6 lan2 secure filter out 101099 dynamic 101080 101081 101082 101083 101084 101085 101098 101099 ipv6 lan2 dhcp service client ir=on # # Provider Type configuration # provider lan1 name LAN: provider lan2 name ipv6 PRV/0/4/0/0/1/1:iij # # PP configuration # pp disable all # # TUNNEL configuration # no tunnel enable all ### TUNNEL 1 ### tunnel select 1 tunnel encapsulation ipip tunnel endpoint address 2404:8e00::feed:101 tunnel enable 1 # # IP filter configuration # ip filter 500000 restrict * * * * * # # IPv6 filter configuration # ipv6 filter 101030 pass * * icmp6 * * ipv6 filter 101031 pass * * tcp * ident ipv6 filter 101032 pass * * udp * 546 ipv6 filter 101098 reject * * * * * ipv6 filter 101099 pass * * * * * # # IPv6 dynamic filter configuration # ipv6 filter dynamic 101080 * * ftp ipv6 filter dynamic 101081 * * domain ipv6 filter dynamic 101082 * * www ipv6 filter dynamic 101083 * * smtp ipv6 filter dynamic 101084 * * pop3 ipv6 filter dynamic 101085 * * submission ipv6 filter dynamic 101098 * * tcp ipv6 filter dynamic 101099 * * udp # # TELNETD configuration # telnetd host lan # # DHCP configuration # dhcp service server dhcp server rfc2131 compliant except remain-silent dhcp scope 1 192....</p>
-  </div>
-  <footer class="entry-footer"><span title='2019-04-14 19:43:43 +0900 JST'>2019/04/14</span>&nbsp;·&nbsp;u1tnk</footer>
-  <a class="entry-link" aria-label="post link to ヤマハルータRTX810でipv6とds-liteを両立させた" href="https://u1tnk.github.io/blog/2019/04/14/rtx810_ipv6_config/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

@@ -150,6 +150,21 @@
 
 <article class="first-entry"> 
   <header class="entry-header">
+    <h2>embulk 0.9系から0.11系へのアップデートメモ
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>アップデート時に結構ハマったので最低限やったことのメモ。(免責: 環境による)
+参考: Embulk v0.11 でなにが変わるのか: ユーザーの皆様へ
+前提 元の環境でやっていたこと。
+ embulk.jarをDLしてpathの通った場所に置く。 必要なgemを embulk gem install でinstall rubyスクリプトで生成した設定をrunに渡して実行  やったこと  DLするembulk.jarを 0.11.4にした JRubyの最新版のjarをDL propertiesに設定  $HOME/.embulk/embulk.properties に作成 JRUBYのjarを指定  jruby=file:///path/to/jruby.jar   gem_home  gem_home=/path/to/bundle rubyから実行すると GEM_HOMEが設定されているせいかSHELLのときとズレてしまったので設定     embulkの呼び出し方を java -jar /path/to/embulk.jar に変更 embulkのgem install に embulk自体を追加  msgpackもinstallする必要があるとdocumentにあったが、他のgem install時に入ったようなのでやっていない    </p>
+  </div>
+  <footer class="entry-footer"><span title='2024-09-08 22:57:30 +0900 JST'>2024/09/08</span>&nbsp;·&nbsp;u1tnk</footer>
+  <a class="entry-link" aria-label="post link to embulk 0.9系から0.11系へのアップデートメモ" href="https://u1tnk.github.io/blog/2024/09/08/update_embulk_11/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>フリーランスとしての自己紹介と仕事の条件(2024最新)
     </h2>
   </header>
@@ -390,28 +405,6 @@ file_path = &#34;/path/file.txt&#34; この例だとfile_contentなのでファ�
   </div>
   <footer class="entry-footer"><span title='2021-12-04 23:38:58 +0900 JST'>2021/12/04</span>&nbsp;·&nbsp;u1tnk</footer>
   <a class="entry-link" aria-label="post link to フィヨルドブートキャンプはぼったくりか？" href="https://u1tnk.github.io/blog/2021/12/04/fbc-is-not-overcharging/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>WSL2でのweb開発環境構築tips
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>tipsというかWSL2に移行して開発していてハマったことや、定着した運用方法についてのメモ。
-前提  主にRails開発をしていて、vim/tmuxとほぼターミナルとブラウザだけで開発作業を行っているのでその範囲。 ubuntu-18.04利用。 linuxの知識はある前提で書いている。 WindowsTerminalを使用している  Linuxインストールまで WSL2でLinuxを使おう | FJORD BOOT CAMP（フィヨルドブートキャンプ）
-僕がメンターをしているフィヨルドブートキャンプのこの資料で大丈夫です(ちょっと宣伝)
-ubuntuのバージョンについて WSL2/ubuntu20.04で capybara動かんのか… NotImplementedError (fork() function is unimplemented on this machine)
-が回避できぬ。
-WSL2でも ubuntu18.04なら動くっぽいんだが…
-— ゆーいち@イカX (@u1tnk) January 4, 2021  という事があり、20.04をやめて18.04を利用している。この時点なので今は不明。 GUIも無いし、WSL2だとデバイスドライバとかも関係無いので新しいメリットも無いので安定バージョンで良い。
-起動と終了 ubuntuアプリを起動したり、wslコマンドで起動する。WindowsTerminalを使えば内部では wslコマンドを使っているので勝手に起動する。 終了するときは wsl --shutdown をpowershellなりで実行すれば良い。
-systemdが動いていない 本物のubuntuと違いsystemdが動いていないので、サービスの自動起動ができない。よってcrondとかも起動していないので注意。
-自動起動はできないが動かないわけでは無いので、zshrc(shellによって調整してください)に以下のようなscriptをしこんでWindowsTerminalから開いたときに自動で起動するようにしている。 ここではdockerの起動とsmbサーバへのmountをやっている
-#! /usr/bin/env ruby exit unless `ps aux | grep docker | grep -v grep`.empty? `sudo service docker start` `sudo mount -t cifs -o username=xxxx,password=xxxx,iocharset=utf8 //192....</p>
-  </div>
-  <footer class="entry-footer"><span title='2021-06-30 19:11:23 +0900 JST'>2021/06/30</span>&nbsp;·&nbsp;u1tnk</footer>
-  <a class="entry-link" aria-label="post link to WSL2でのweb開発環境構築tips" href="https://u1tnk.github.io/blog/2021/06/30/wsl2_tips/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
