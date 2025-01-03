@@ -2,20 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://u1tnk.github.io/blog/2024/12/28/review_2024/</loc>
-    <lastmod>2024-12-28T00:27:07+09:00</lastmod>
+    <loc>https://u1tnk.github.io/categories/</loc>
+    <lastmod>2025-01-01T23:53:27+09:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/categories/gadget/</loc>
+    <lastmod>2025-01-01T23:53:27+09:00</lastmod>
   </url><url>
     <loc>https://u1tnk.github.io/post/</loc>
-    <lastmod>2024-12-28T00:27:07+09:00</lastmod>
+    <lastmod>2025-01-01T23:53:27+09:00</lastmod>
   </url><url>
     <loc>https://u1tnk.github.io/</loc>
+    <lastmod>2025-01-01T23:53:27+09:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/blog/2025/01/01/bestbuy2024/</loc>
+    <lastmod>2025-01-01T23:53:27+09:00</lastmod>
+  </url><url>
+    <loc>https://u1tnk.github.io/blog/2024/12/28/review_2024/</loc>
     <lastmod>2024-12-28T00:27:07+09:00</lastmod>
   </url><url>
     <loc>https://u1tnk.github.io/blog/2024/09/08/update_embulk_11/</loc>
     <lastmod>2024-09-08T22:57:30+09:00</lastmod>
-  </url><url>
-    <loc>https://u1tnk.github.io/categories/</loc>
-    <lastmod>2024-05-25T16:00:00+09:00</lastmod>
   </url><url>
     <loc>https://u1tnk.github.io/categories/money/</loc>
     <lastmod>2024-05-25T16:00:00+09:00</lastmod>
@@ -25,9 +31,6 @@
   </url><url>
     <loc>https://u1tnk.github.io/blog/2024/05/25/my-price2024/</loc>
     <lastmod>2024-05-25T16:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://u1tnk.github.io/categories/gadget/</loc>
-    <lastmod>2024-01-02T11:19:51+09:00</lastmod>
   </url><url>
     <loc>https://u1tnk.github.io/blog/2024/01/02/bestbuy_review_2023/</loc>
     <lastmod>2024-01-02T11:19:51+09:00</lastmod>
